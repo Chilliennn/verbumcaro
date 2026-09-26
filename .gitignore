@@ -1,0 +1,31 @@
+# Python artifacts & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Pipeline local storage & scraper caches
+pipeline/data/01_raw/
+pipeline/data/02_intermediate/
+pipeline/data/failed_urls.json
+
+# Node & Frontend dependencies
+node_modules/
+dist/
+.next/
+out/
+build/
+.cache/
+
+# Environment configs & logs
+*.log
+.env
+.env.local
+.env.*.local
+.DS_Store
+Thumbs.db

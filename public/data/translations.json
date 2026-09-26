@@ -1,12 +1,20 @@
 [
   {
     "id": "catholic_org",
-    "name": "New Jerusalem Bible (Catholic Online)",
+    "name": "New Jerusalem Bible (English)",
     "language": "en",
     "languageName": "English",
     "direction": "ltr",
     "hasHeadings": false,
-    "hasFootnotes": false,
-    "totalBooks": 73
+    "hasFootnotes": false
+  },
+  {
+    "id": "sigao",
+    "name": "思高圣经 (Studium Biblicum)",
+    "language": "zh-Hans",
+    "languageName": "中文 (简体)",
+    "direction": "ltr",
+    "hasHeadings": true,
+    "hasFootnotes": false
   }
 ]
