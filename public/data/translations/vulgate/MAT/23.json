@@ -1,0 +1,241 @@
+{
+  "translationId": "vulgate",
+  "book": "MAT",
+  "chapter": 23,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Tunc Jesus locutus est ad turbas, et ad discipulos suos,",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "dicens: Super cathedram Moysi sederunt scribæ et pharisæi.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Omnia ergo quæcumque dixerint vobis, servate, et facite: secundum opera vero eorum nolite facere: dicunt enim, et non faciunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Alligant enim onera gravia, et importabilia, et imponunt in humeros hominum: digito autem suo nolunt ea movere.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Omnia vero opera sua faciunt ut videantur ab hominibus: dilatant enim phylacteria sua, et magnificant fimbrias.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Amant autem primos recubitus in cœnis, et primas cathedras in synagogis,",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "et salutationes in foro, et vocari ab hominibus Rabbi.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Vos autem nolite vocari Rabbi: unus est enim magister vester, omnes autem vos fratres estis.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Et patrem nolite vocare vobis super terram: unus est enim pater vester qui in cælis est.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Nec vocemini magistri: quia magister vester unus est, Christus.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Qui major est vestrum, erit minister vester.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Qui autem se exaltaverit, humiliabitur: et qui se humiliaverit, exaltabitur.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Væ autem vobis scribæ et pharisæi hypocritæ, quia clauditis regnum cælorum ante homines! vos enim non intratis, nec introëuntes sinitis intrare.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Væ vobis scribæ et pharisæi hypocritæ, quia comeditis domos viduarum, orationes longas orantes! propter hoc amplius accipietis judicium.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Væ vobis scribæ et pharisæi hypocritæ, quia circuitis mare, et aridam, ut faciatis unum proselytum, et cum fuerit factus, facitis eum filium gehennæ duplo quam vos.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Væ vobis duces cæci, qui dicitis: Quicumque juraverit per templum, nihil est: qui autem juraverit in auro templo, debet.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Stulti et cæci: quid enim majus est? aurum, an templum, quod sanctificat aurum?",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Et quicumque juraverit in altari, nihil est: quicumque autem juraverit in dono, quod est super illud, debet.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Cæci: quid enim majus est, donum, an altare, quod sanctificat donum?",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Qui ergo jurat in altari, jurat in eo, et in omnibus quæ super illud sunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Et quicumque juraverit in templo, jurat in illo, et in eo qui habitat in ipso:",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "et qui jurat in cælo, jurat in throno Dei, et in eo qui sedet super eum.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Væ vobis scribæ et pharisæi hypocritæ, qui decimatis mentham, et anethum, et cyminum, et reliquistis quæ graviora sunt legis, judicium, et misericordiam, et fidem! hæc oportuit facere, et illa non omittere.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Duces cæci, excolantes culicem, camelum autem glutientes.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Væ vobis scribæ et pharisæi hypocritæ, quia mundatis quod deforis est calicis et paropsidis; intus autem pleni estis rapina et immunditia!",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Pharisæe cæce, munda prius quod intus est calicis, et paropsidis, ut fiat id, quod deforis est, mundum.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Væ vobis scribæ et pharisæi hypocritæ, quia similes estis sepulchris dealbatis, quæ a foris parent hominibus speciosa, intus vero pleni sunt ossibus mortuorum, et omni spurcitia!",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Sic et vos a foris quidem paretis hominibus justi: intus autem pleni estis hypocrisi et iniquitate.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Væ vobis scribæ et pharisæi hypocritæ, qui ædificatis sepulchra prophetarum, et ornatis monumenta justorum,",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "et dicitis: Si fuissemus in diebus patrum nostrorum, non essemus socii eorum in sanguine prophetarum!",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "itaque testimonio estis vobismetipsis, quia filii estis eorum, qui prophetas occiderunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Et vos implete mensuram patrum vestrorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Serpentes, genimina viperarum, quomodo fugietis a judicio gehennæ?",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Ideo ecce ego mitto ad vos prophetas, et sapientes, et scribas, et ex illis occidetis, et crucifigetis, et ex eis flagellabitis in synagogis vestris, et persequemini de civitate in civitatem:",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "ut veniat super vos omnis sanguis justus, qui effusus est super terram, a sanguine Abel justi usque ad sanguinem Zachariæ, filii Barachiæ, quem occidistis inter templum et altare.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Amen dico vobis, venient hæc omnia super generationem istam.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Jerusalem, Jerusalem, quæ occidis prophetas, et lapidas eos, qui ad te missi sunt, quoties volui congregare filios tuos, quemadmodum gallina congregat pullos suos sub alas, et noluisti?",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Ecce relinquetur vobis domus vestra deserta.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Dico enim vobis, non me videbitis amodo, donec dicatis: Benedictus, qui venit in nomine Domini.",
+      "footnotes": []
+    }
+  ]
+}

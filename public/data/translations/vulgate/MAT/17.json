@@ -1,0 +1,163 @@
+{
+  "translationId": "vulgate",
+  "book": "MAT",
+  "chapter": 17,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Et post dies sex assumit Jesus Petrum, et Jacobum, et Joannem fratrem ejus, et ducit illos in montem excelsum seorsum:",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "et transfiguratus est ante eos. Et resplenduit facies ejus sicut sol: vestimenta autem ejus facta sunt alba sicut nix.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Et ecce apparuerunt illis Moyses et Elias cum eo loquentes.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Respondens autem Petrus, dixit ad Jesum: Domine, bonum est nos hic esse: si vis, faciamus tria tabernacula, tibi unum, Moysi unum, et Eliæ unum.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Adhuc eo loquente, ecce nubes lucida obumbravit eos. Et ecce vox de nube, dicens: Hic est Filius meus dilectus, in quo mihi bene complacui: ipsum audite.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Et audientes discipuli ceciderunt in faciem suam, et timuerunt valde.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Et accessit Jesus, et tetigit eos: dixitque eis: Surgite, et nolite timere.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Levantes autem oculos suos, neminem viderunt, nisi solum Jesum.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Et descendentibus illis de monte, præcepit eis Jesus, dicens: Nemini dixeritis visionem, donec Filius hominis a mortuis resurgat.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Et interrogaverunt eum discipuli, dicentes: Quid ergo scribæ dicunt, quod Eliam oporteat primum venire?",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "At ille respondens, ait eis: Elias quidem venturus est, et restituet omnia.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Dico autem vobis, quia Elias jam venit, et non cognoverunt eum, sed fecerunt in eo quæcumque voluerunt. Sic et Filius hominis passurus est ab eis.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Tunc intellexerunt discipuli, quia de Joanne Baptista dixisset eis.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Et cum venisset ad turbam, accessit ad eum homo genibus provolutus ante eum, dicens: Domine, miserere filio meo, quia lunaticus est, et male patitur: nam sæpe cadit in ignem, et crebro in aquam.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Et obtuli eum discipulis tuis, et non potuerunt curare eum.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Respondens autem Jesus, ait: O generatio incredula, et perversa, quousque ero vobiscum? usquequo patiar vos? Afferte huc illum ad me.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Et increpavit illum Jesus, et exiit ab eo dæmonium, et curatus est puer ex illa hora.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Tunc accesserunt discipuli ad Jesum secreto, et dixerunt: Quare nos non potuimus ejicere illum?",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Dixit illis Jesus: Propter incredulitatem vestram. Amen quippe dico vobis, si habueritis fidem sicut granum sinapis, dicetis monti huic: Transi hinc illuc, et transibit, et nihil impossibile erit vobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Hoc autem genus non ejicitur nisi per orationem et jejunium.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Conversantibus autem eis in Galilæa, dixit illis Jesus: Filius hominis tradendus est in manus hominum:",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "et occident eum, et tertia die resurget. Et contristati sunt vehementer.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Et cum venissent Capharnaum, accesserunt qui didrachma accipiebant ad Petrum, et dixerunt ei: Magister vester non solvit didrachma?",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Ait: Etiam. Et cum intrasset in domum, prævenit eum Jesus, dicens: Quid tibi videtur Simon? reges terræ a quibus accipiunt tributum vel censum? a filiis suis, an ab alienis?",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Et ille dixit: Ab alienis. Dixit illi Jesus: Ergo liberi sunt filii.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Ut autem non scandalizemus eos, vade ad mare, et mitte hamum: et eum piscem, qui primus ascenderit, tolle: et aperto ore ejus, invenies staterem: illum sumens, da eis pro me et te.",
+      "footnotes": []
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 1,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "[Beatus vir qui non abiit in consilio impiorum, et in via peccatorum non stetit, et in cathedra pestilentiæ non sedit;",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "sed in lege Domini voluntas ejus, et in lege ejus meditabitur die ac nocte.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Et erit tamquam lignum quod plantatum est secus decursus aquarum, quod fructum suum dabit in tempore suo: et folium ejus non defluet; et omnia quæcumque faciet prosperabuntur.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Non sic impii, non sic; sed tamquam pulvis quem projicit ventus a facie terræ.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Ideo non resurgent impii in judicio, neque peccatores in concilio justorum:",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "quoniam novit Dominus viam justorum, et iter impiorum peribit.]",
+      "footnotes": []
+    }
+  ]
+}

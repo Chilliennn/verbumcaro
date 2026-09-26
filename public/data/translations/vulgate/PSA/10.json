@@ -1,0 +1,55 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 10,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "In finem. Psalmus David.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "[In Domino confido; quomodo dicitis animæ meæ: Transmigra in montem sicut passer?",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Quoniam ecce peccatores intenderunt arcum; paraverunt sagittas suas in pharetra, ut sagittent in obscuro rectos corde:",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "quoniam quæ perfecisti destruxerunt; justus autem, quid fecit?",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Dominus in templo sancto suo; Dominus in cælo sedes ejus. Oculi ejus in pauperem respiciunt; palpebræ ejus interrogant filios hominum.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Dominus interrogat justum et impium; qui autem diligit iniquitatem, odit animam suam.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Pluet super peccatores laqueos; ignis et sulphur, et spiritus procellarum, pars calicis eorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Quoniam justus Dominus, et justitias dilexit: æquitatem vidit vultus ejus.]",
+      "footnotes": []
+    }
+  ]
+}

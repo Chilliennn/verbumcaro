@@ -1,0 +1,25 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 132,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Canticum graduum David. [Ecce quam bonum et quam jucundum, habitare fratres in unum!",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Sicut unguentum in capite, quod descendit in barbam, barbam Aaron, quod descendit in oram vestimenti ejus;",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "sicut ros Hermon, qui descendit in montem Sion. Quoniam illic mandavit Dominus benedictionem, et vitam usque in sæculum.]",
+      "footnotes": []
+    }
+  ]
+}

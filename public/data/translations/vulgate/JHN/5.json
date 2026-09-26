@@ -1,0 +1,289 @@
+{
+  "translationId": "vulgate",
+  "book": "JHN",
+  "chapter": 5,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Post hæc erat dies festus Judæorum, et ascendit Jesus Jerosolymam.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Est autem Jerosolymis probatica piscina, quæ cognominatur hebraice Bethsaida, quinque porticus habens.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "In his jacebat multitudo magna languentium, cæcorum, claudorum, aridorum, exspectantium aquæ motum.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Angelus autem Domini descendebat secundum tempus in piscinam, et movebatur aqua. Et qui prior descendisset in piscinam post motionem aquæ, sanus fiebat a quacumque detinebatur infirmitate.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Erat autem quidam homo ibi triginta et octo annos habens in infirmitate sua.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Hunc autem cum vidisset Jesus jacentem, et cognovisset quia jam multum tempus haberet, dicit ei: Vis sanus fieri?",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Respondit ei languidus: Domine, hominem non habeo, ut, cum turbata fuerit aqua, mittat me in piscinam: dum venio enim ego, alius ante me descendit.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Dicit ei Jesus: Surge, tolle grabatum tuum et ambula.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Et statim sanus factus est homo ille: et sustulit grabatum suum, et ambulabat. Erat autem sabbatum in die illo.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Dicebant ergo Judæi illi qui sanatus fuerat: Sabbatum est, non licet tibi tollere grabatum tuum.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Respondit eis: Qui me sanum fecit, ille mihi dixit: Tolle grabatum tuum et ambula.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Interrogaverunt ergo eum: Quis est ille homo qui dixit tibi: Tolle grabatum tuum et ambula?",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Is autem qui sanus fuerat effectus, nesciebat quis esset. Jesus enim declinavit a turba constituta in loco.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Postea invenit eum Jesus in templo, et dixit illi: Ecce sanus factus es; jam noli peccare, ne deterius tibi aliquid contingat.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Abiit ille homo, et nuntiavit Judæis quia Jesus esset, qui fecit eum sanum.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Propterea persequebantur Judæi Jesum, quia hæc faciebat in sabbato.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Jesus autem respondit eis: Pater meus usque modo operatur, et ego operor.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Propterea ergo magis quærebant eum Judæi interficere: quia non solum solvebat sabbatum, sed et patrem suum dicebat Deum, æqualem se faciens Deo. Respondit itaque Jesus, et dixit eis:",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Amen, amen dico vobis: non potest Filius a se facere quidquam, nisi quod viderit Patrem facientem: quæcumque enim ille fecerit, hæc et Filius similiter facit.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Pater enim diligit Filium, et omnia demonstrat ei quæ ipse facit: et majora his demonstrabit ei opera, ut vos miremini.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Sicut enim Pater suscitat mortuos, et vivificat, sic et Filius, quos vult, vivificat.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Neque enim Pater judicat quemquam: sed omne judicium dedit Filio,",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "ut omnes honorificent Filium, sicut honorificant Patrem; qui non honorificat Filium, non honorificat Patrem, qui misit illum.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Amen, amen dico vobis, quia qui verbum meum audit, et credit ei qui misit me, habet vitam æternam, et in judicium non venit, sed transiit a morte in vitam.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Amen, amen dico vobis, quia venit hora, et nunc est, quando mortui audient vocem Filii Dei: et qui audierint, vivent.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Sicut enim Pater habet vitam in semetipso, sic dedit et Filio habere vitam in semetipso:",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "et potestatem dedit ei judicium facere, quia Filius hominis est.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Nolite mirari hoc, quia venit hora in qua omnes qui in monumentis sunt audient vocem Filii Dei:",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "et procedent qui bona fecerunt, in resurrectionem vitæ; qui vero mala egerunt, in resurrectionem judicii.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Non possum ego a meipso facere quidquam. Sicut audio, judico: et judicium meum justum est, quia non quæro voluntatem meam, sed voluntatem ejus qui misit me.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Si ego testimonium perhibeo de meipso, testimonium meum non est verum.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Alius est qui testimonium perhibet de me: et scio quia verum est testimonium, quod perhibet de me.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Vos misistis ad Joannem, et testimonium perhibuit veritati.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Ego autem non ab homine testimonium accipio: sed hæc dico ut vos salvi sitis.",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Ille erat lucerna ardens et lucens: vos autem voluistis ad horam exsultare in luce ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Ego autem habeo testimonium majus Joanne. Opera enim quæ dedit mihi Pater ut perficiam ea: ipsa opera, quæ ego facio, testimonium perhibent de me, quia Pater misit me:",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "et qui misit me Pater, ipse testimonium perhibuit de me: neque vocem ejus umquam audistis, neque speciem ejus vidistis:",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "et verbum ejus non habetis in vobis manens: quia quem misit ille, huic vos non creditis.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Scrutamini Scripturas, quia vos putatis in ipsis vitam æternam habere: et illæ sunt quæ testimonium perhibent de me:",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "et non vultis venire ad me ut vitam habeatis.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Claritatem ab hominibus non accipio.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Sed cognovi vos, quia dilectionem Dei non habetis in vobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Ego veni in nomine Patris mei, et non accipitis me; si alius venerit in nomine suo, illum accipietis.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Quomodo vos potestis credere, qui gloriam ab invicem accipitis, et gloriam quæ a solo Deo est, non quæritis?",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Nolite putare quia ego accusaturus sim vos apud Patrem: est qui accusat vos Moyses, in quo vos speratis.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Si enim crederetis Moysi, crederetis forsitan et mihi: de me enim ille scripsit.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Si autem illius litteris non creditis, quomodo verbis meis credetis?",
+      "footnotes": []
+    }
+  ]
+}

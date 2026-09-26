@@ -1,0 +1,37 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 42,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Psalmus David. [Judica me, Deus, et discerne causam meam de gente non sancta: ab homine iniquo et doloso erue me.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Quia tu es, Deus, fortitudo mea: quare me repulisti? et quare tristis incedo, dum affligit me inimicus?",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Emitte lucem tuam et veritatem tuam: ipsa me deduxerunt, et adduxerunt in montem sanctum tuum, et in tabernacula tua.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Et introibo ad altare Dei, ad Deum qui lætificat juventutem meam. Confitebor tibi in cithara, Deus, Deus meus.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Quare tristis es, anima mea? et quare conturbas me? Spera in Deo, quoniam adhuc confitebor illi, salutare vultus mei, et Deus meus.]",
+      "footnotes": []
+    }
+  ]
+}

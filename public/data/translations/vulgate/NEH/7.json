@@ -1,0 +1,445 @@
+{
+  "translationId": "vulgate",
+  "book": "NEH",
+  "chapter": 7,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Postquam autem ædificatus est murus, et posui valvas, et recensui janitores, et cantores, et Levitas,",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "præcepi Hanani fratri meo, et Hananiæ principi domus de Jerusalem (ipse enim quasi vir verax et timens Deum plus ceteris videbatur),",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "et dixi eis: Non aperiantur portæ Jerusalem usque ad calorem solis. Cumque adhuc assisterent, clausæ portæ sunt, et oppilatæ: et posui custodes de habitatoribus Jerusalem, singulos per vices suas, et unumquemque contra domum suam.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Civitas autem erat lata nimis et grandis, et populus parvus in medio ejus, et non erant domus ædificatæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Deus autem dedit in corde meo, et congregavi optimates, et magistratus, et vulgus, ut recenserem eos: et inveni librum census eorum qui ascenderant primum, et inventum est scriptum in eo.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Isti filii provinciæ, qui ascenderunt de captivitate migrantium, quos transtulerat Nabuchodonosor rex Babylonis, et reversi sunt in Jerusalem et in Judæam, unusquisque in civitatem suam.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Qui venerunt cum Zorobabel, Josue, Nehemias, Azarias, Raamias, Nahamani, Mardochæus, Belsam, Mespharath, Begoai, Nahum, Baana. Numerus virorum populi Israël:",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "filii Pharos, duo millia centum septuaginta duo:",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "filii Saphatia, trecenti septuaginta duo:",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "filii Area, sexcenti quinquaginta duo:",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "filii Phahathmoab filiorum Josue et Joab, duo millia octingenti decem et octo:",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "filii Ælam, mille ducenti quinquaginta quatuor:",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "filii Zethua, octingenti quadraginta quinque:",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "filii Zachai, septingenti sexaginta:",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "filii Bannui, sexcenti quadraginta octo:",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "filii Bebai, sexcenti viginti octo:",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "filii Azgad, duo millia trecenti viginti duo:",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "filii Adonicam, sexcenti sexaginta septem:",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "filii Beguai, duo millia sexaginta septem:",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "filii Adin, sexcenti quinquaginta quinque:",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "filii Ater, filii Hezeciæ, nonaginta octo:",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "filii Hasem, trecenti viginti octo:",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "filii Besai, trecenti viginti quatuor:",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "filii Hareph, centum duodecim:",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "filii Gabaon, nonaginta quinque:",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "filii Bethlehem et Netupha, centum octoginta octo.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Viri Anathoth, centum viginti octo.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Viri Bethazmoth, quadraginta duo.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Viri Cariathiarim, Cephira, et Beroth, septingenti quadraginta tres.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Viri Rama et Geba, sexcenti viginti unus.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Viri Machmas, centum viginti duo.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Viri Bethel et Hai, centum viginti tres.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Viri Nebo alterius, quinquaginta duo.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Viri Ælam alterius, mille ducenti quinquaginta quatuor.",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Filii Harem, trecenti viginti.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Filii Jericho, trecenti quadraginta quinque.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Filii Lod Hadid et Ono, septingenti viginti unus.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Filii Senaa, tria millia nongenti triginta.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Sacerdotes: filii Idaia in domo Josue, nongenti septuaginta tres.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Filii Emmer, mille quinquaginta duo.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Filii Phashur, mille ducenti quadraginta septem.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Filii Arem, mille decem et septem. Levitæ:",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "filii Josue et Cedmihel filiorum",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Oduiæ, septuaginta quatuor. Cantores:",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "filii Asaph, centum quadraginta octo.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Janitores: filii Sellum, filii Ater, filii Telmon, filii Accub, filii Hatita, filii Sobai: centum triginta octo.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Nathinæi: filii Soha, filii Hasupha, filii Tebbaoth,",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "filii Ceros, filii Siaa, filii Phadon, filii Lebana, filii Hagaba, filii Selmai,",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "filii Hanan, filii Geddel, filii Gaher,",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "filii Raaia, filii Rasin, filii Necoda,",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "filii Gezem, filii Aza, filii Phasea,",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "filii Besai, filii Munim, filii Nephussim,",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "filii Bacbuc, filii Hacupha, filii Harhur,",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "filii Besloth, filii Mahida, filii Harsa,",
+      "footnotes": []
+    },
+    {
+      "verse": 55,
+      "heading": null,
+      "text": "filii Bercos, filii Sisara, filii Thema,",
+      "footnotes": []
+    },
+    {
+      "verse": 56,
+      "heading": null,
+      "text": "filii Nasia, filii Hatipha,",
+      "footnotes": []
+    },
+    {
+      "verse": 57,
+      "heading": null,
+      "text": "filii servorum Salomonis, filii Sothai, filii Sophereth, filii Pharida,",
+      "footnotes": []
+    },
+    {
+      "verse": 58,
+      "heading": null,
+      "text": "filii Jahala, filii Darcon, filii Jeddel,",
+      "footnotes": []
+    },
+    {
+      "verse": 59,
+      "heading": null,
+      "text": "filii Saphatia, filii Hatil, filii Phochereth, qui erat ortus ex Sabaim filio Amon.",
+      "footnotes": []
+    },
+    {
+      "verse": 60,
+      "heading": null,
+      "text": "Omnes Nathinæi, et filii servorum Salomonis, trecenti nonaginta duo.",
+      "footnotes": []
+    },
+    {
+      "verse": 61,
+      "heading": null,
+      "text": "Hi sunt autem qui ascenderunt de Thelmela, Thelharsa, Cherub, Addon, et Emmer: et non potuerunt indicare domum patrum suorum, et semen suum, utrum ex Israël essent,",
+      "footnotes": []
+    },
+    {
+      "verse": 62,
+      "heading": null,
+      "text": "filii Dalaia, filii Tobia, filii Necoda, sexcenti quadraginta duo.",
+      "footnotes": []
+    },
+    {
+      "verse": 63,
+      "heading": null,
+      "text": "Et de sacerdotibus, filii Habia, filii Accos, filii Berzellai, qui accepit de filiabus Berzellai Galaaditis uxorem, et vocatus est nomine eorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 64,
+      "heading": null,
+      "text": "Hi quæsierunt scripturam suam in censu, et non invenerunt: et ejecti sunt de sacerdotio.",
+      "footnotes": []
+    },
+    {
+      "verse": 65,
+      "heading": null,
+      "text": "Dixitque Athersatha eis ut non manducarent de Sanctis sanctorum, donec staret sacerdos doctus et eruditus.",
+      "footnotes": []
+    },
+    {
+      "verse": 66,
+      "heading": null,
+      "text": "Omnis multitudo quasi vir unus quadraginta duo millia trecenti sexaginta,",
+      "footnotes": []
+    },
+    {
+      "verse": 67,
+      "heading": null,
+      "text": "absque servis et ancillis eorum, qui erant septem millia trecenti triginta septem, et inter eos cantores et cantatrices, ducenti quadraginta quinque.",
+      "footnotes": []
+    },
+    {
+      "verse": 68,
+      "heading": null,
+      "text": "Equi eorum, septingenti triginta sex: muli eorum, ducenti quadraginta quinque:",
+      "footnotes": []
+    },
+    {
+      "verse": 69,
+      "heading": null,
+      "text": "cameli eorum, quadringenti triginta quinque: asini, sex millia septingenti viginti.",
+      "footnotes": []
+    },
+    {
+      "verse": 70,
+      "heading": null,
+      "text": "Nonnulli autem de principibus familiarum dederunt in opus. Athersatha dedit in thesaurum auri drachmas mille, phialas quinquaginta, tunicas sacerdotales quingentas triginta.",
+      "footnotes": []
+    },
+    {
+      "verse": 71,
+      "heading": null,
+      "text": "Et de principibus familiarum dederunt in thesaurum operis, auri drachmas viginti millia, et argenti mnas duo millia ducentas.",
+      "footnotes": []
+    },
+    {
+      "verse": 72,
+      "heading": null,
+      "text": "Et quod dedit reliquus populus, auri drachmas viginti millia, et argenti mnas duo millia, et tunicas sacerdotales sexaginta septem.",
+      "footnotes": []
+    },
+    {
+      "verse": 73,
+      "heading": null,
+      "text": "Habitaverunt autem sacerdotes, et Levitæ, et janitores, et cantores, et reliquum vulgus, et Nathinæi, et omnis Israël, in civitatibus suis.",
+      "footnotes": []
+    }
+  ]
+}

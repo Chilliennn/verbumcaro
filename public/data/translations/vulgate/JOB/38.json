@@ -1,0 +1,253 @@
+{
+  "translationId": "vulgate",
+  "book": "JOB",
+  "chapter": 38,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Respondens autem Dominus Job de turbine, dixit:",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "[Quis est iste involvens sententias sermonibus imperitis?",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Accinge sicut vir lumbos tuos: interrogabo te, et responde mihi.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Ubi eras quando ponebam fundamenta terræ? indica mihi, si habes intelligentiam.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Quis posuit mensuras ejus, si nosti? vel quis tetendit super eam lineam?",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Super quo bases illius solidatæ sunt? aut quis demisit lapidem angularem ejus,",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "cum me laudarent simul astra matutina, et jubilarent omnes filii Dei?",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Quis conclusit ostiis mare, quando erumpebat quasi de vulva procedens;",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "cum ponerem nubem vestimentum ejus, et caligine illud quasi pannis infantiæ obvolverem?",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Circumdedi illud terminis meis, et posui vectem et ostia,",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "et dixi: Usque huc venies, et non procedes amplius, et hic confringes tumentes fluctus tuos.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Numquid post ortum tuum præcepisti diluculo, et ostendisti auroræ locum suum?",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Et tenuisti concutiens extrema terræ, et excussisti impios ex ea?",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Restituetur ut lutum signaculum, et stabit sicut vestimentum:",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "auferetur ab impiis lux sua, et brachium excelsum confringetur.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Numquid ingressus es profunda maris, et in novissimis abyssi deambulasti?",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Numquid apertæ sunt tibi portæ mortis, et ostia tenebrosa vidisti?",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Numquid considerasti latitudinem terræ? indica mihi, si nosti, omnia:",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "in qua via lux habitet, et tenebrarum quis locus sit:",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "ut ducas unumquodque ad terminos suos, et intelligas semitas domus ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Sciebas tunc quod nasciturus esses, et numerum dierum tuorum noveras?",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Numquid ingressus es thesauros nivis, aut thesauros grandinis aspexisti,",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "quæ præparavi in tempus hostis, in diem pugnæ et belli?",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Per quam viam spargitur lux, dividitur æstus super terram?",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Quis dedit vehementissimo imbri cursum, et viam sonantis tonitrui,",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "ut plueret super terram absque homine in deserto, ubi nullus mortalium commoratur;",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "ut impleret inviam et desolatam, et produceret herbas virentes?",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Quis est pluviæ pater? vel quis genuit stillas roris?",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "De cujus utero egressa est glacies? et gelu de cælo quis genuit?",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "In similitudinem lapidis aquæ durantur, et superficies abyssi constringitur.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Numquid conjungere valebis micantes stellas Pleiadas, aut gyrum Arcturi poteris dissipare?",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Numquid producis luciferum in tempore suo, et vesperum super filios terræ consurgere facis?",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Numquid nosti ordinem cæli, et pones rationem ejus in terra?",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Numquid elevabis in nebula vocem tuam, et impetus aquarum operiet te?",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Numquid mittes fulgura, et ibunt, et revertentia dicent tibi: Adsumus?",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Quis posuit in visceribus hominis sapientiam? vel quis dedit gallo intelligentiam?",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Quis enarrabit cælorum rationem? et concentum cæli quis dormire faciet?",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Quando fundebatur pulvis in terra, et glebæ compingebantur?",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Numquid capies leænæ prædam, et animam catulorum ejus implebis,",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "quando cubant in antris, et in specubus insidiantur?",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Quis præparat corvo escam suam, quando pulli ejus clamant ad Deum, vagantes, eo quod non habeant cibos?]",
+      "footnotes": []
+    }
+  ]
+}

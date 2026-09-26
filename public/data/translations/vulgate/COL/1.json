@@ -1,0 +1,181 @@
+{
+  "translationId": "vulgate",
+  "book": "COL",
+  "chapter": 1,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Paulus Apostolus Jesu Christi per voluntatem Dei, et Timotheus frater:",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "eis, qui sunt Colossis, sanctis, et fidelibus fratribus in Christo Jesu.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Gratia vobis, et pax a Deo Patre nostro, et Domino Jesu Christo. Gratias agimus Deo, et Patri Domini nostri Jesu Christi semper pro vobis orantes:",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "audientes fidem vestram in Christo Jesu, et dilectionem quam habetis in sanctos omnes",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "propter spem, quæ reposita est vobis in cælis: quam audistis in verbo veritatis Evangelii:",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "quod pervenit ad vos, sicut et in universo mundo est, et fructificat, et crescit sicut in vobis, ex ea die, qua audistis, et cognovistis gratiam Dei in veritate,",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "sicut didicistis ab Epaphra carissimo conservo nostro, qui est fidelis pro vobis minister Christi Jesu,",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "qui etiam manifestavit nobis dilectionem vestram in spiritu.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Ideo et nos ex qua die audivimus, non cessamus pro vobis orantes, et postulantes ut impleamini agnitione voluntatis ejus, in omni sapientia et intellectu spiritali:",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "ut ambuletis digne Deo per omnia placentes: in omni opere bono fructificantes, et crescentes in scientia Dei:",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "in omni virtute confortati secundum potentiam claritatis ejus, in omni patientia et longanimitate cum gaudio,",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "gratias agentes Deo Patri, qui dignos nos fecit in partem sortis sanctorum in lumine:",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "qui eripuit nos de potestate tenebrarum, et transtulit in regnum filii dilectionis suæ,",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "in quo habemus redemptionem per sanguinem ejus, remissionem peccatorum:",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "qui est imago Dei invisibilis, primogenitus omnis creaturæ:",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "quoniam in ipso condita sunt universa in cælis, et in terra, visibilia, et invisibilia, sive throni, sive dominationes, sive principatus, sive potestates: omnia per ipsum et in ipso creata sunt:",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "et ipse est ante omnes, et omnia in ipso constant.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Et ipse est caput corporis Ecclesiæ, qui est principium, primogenitus ex mortuis: ut sit in omnibus ipse primatum tenens:",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "quia in ipso complacuit, omnem plenitudinem inhabitare:",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "et per eum reconciliare omnia in ipsum, pacificans per sanguinem crucis ejus, sive quæ in terris, sive quæ in cælis sunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Et vos cum essetis aliquando alienati, et inimici sensu in operibus malis:",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "nunc autem reconciliavit in corpore carnis ejus per mortem, exhibere vos sanctos, et immaculatos, et irreprehensibiles coram ipso:",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "si tamen permanetis in fide fundati, et stabiles, et immobiles a spe Evangelii, quod audistis, quod prædicatum est in universa creatura, quæ sub cælo est, cujus factus sum ego Paulus minister.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Qui nunc gaudeo in passionibus pro vobis, et adimpleo ea quæ desunt passionem Christi, in carne mea pro corpore ejus, quod est Ecclesia:",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "cujus factus sum ego minister secundum dispensationem Dei, quæ data est mihi in vos, ut impleam verbum Dei:",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "mysterium, quod absconditum fuit a sæculis, et generationibus, nunc autem manifestatum est sanctis ejus,",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "quibus voluit Deus notas facere divitias gloriæ sacramenti hujus in gentibus, quod est Christus, in vobis spes gloriæ,",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "quem nos annuntiamus, corripientes omnem hominem, et docentes omnem hominem, in omni sapientia, ut exhibeamus omnem hominem perfectum in Christo Jesu:",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "in quo et laboro, certando secundum operationem ejus, quam operatur in me in virtute.",
+      "footnotes": []
+    }
+  ]
+}

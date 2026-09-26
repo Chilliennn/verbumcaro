@@ -1,0 +1,541 @@
+{
+  "translationId": "vulgate",
+  "book": "1MA",
+  "chapter": 10,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Et anno centesimo sexagesimo, ascendit Alexander Antiochi filius, qui cognominatus est Nobilis, et occupavit Ptolemaidam: et receperunt eum, et regnavit illic.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Et audivit Demetrius rex, et congregavit exercitum copiosum valde, et exivit obviam illi in prælium.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Et misit Demetrius epistolam ad Jonathan verbis pacificis, ut magnificaret eum.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Dixit enim: Anticipemus facere pacem cum eo, priusquam faciat cum Alexandro adversum nos:",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "recordabitur enim omnium malorum, quæ fecimus in eum, et in fratrem ejus, et in gentem ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Et dedit ei potestatem congregandi exercitum, et fabricare arma, et esse ipsum socium ejus: et obsides, qui erant in arce, jussit tradi ei.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Et venit Jonathas in Jerusalem, et legit epistolas in auditu omnis populi, et eorum qui in arce erant.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Et timuerunt timore magno, quoniam audierunt quod dedit ei rex potestatem congregandi exercitum.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Et traditi sunt Jonathæ obsides, et reddidit eos parentibus suis:",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "et habitavit Jonathas in Jerusalem, et cœpit ædificare et innovare civitatem.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Et dixit facientibus opera ut exstruerent muros, et montem Sion in circuitu lapidibus quadratis ad munitionem: et ita fecerunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Et fugerunt alienigenæ, qui erant in munitionibus quas Bacchides ædificaverat:",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "et reliquit unusquisque locum suum, et abiit in terram suam:",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "tantum in Bethsura remanserunt aliqui ex his qui reliquerant legem et præcepta Dei: erat enim hæc eis ad refugium.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Et audivit Alexander rex promissa, quæ promisit Demetrius Jonathæ: et narraverunt ei prælia, et virtutes quas ipse fecit, et fratres ejus, et labores quos laboraverunt:",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "et ait: Numquid inveniemus aliquem virum talem? et nunc faciemus eum amicum, et socium nostrum.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Et scripsit epistolam, et misit ei secundum hæc verba, dicens:",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Rex Alexander fratri Jonathæ salutem.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Audivimus de te quod vir potens sis viribus, et aptus es ut sis amicus noster:",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "et nunc constituimus te hodie summum sacerdotem gentis tuæ, et ut amicus voceris regis (et misit ei purpuram, et coronam auream) et quæ nostra sunt sentias nobiscum, et conserves amicitias ad nos.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Et induit se Jonathas stola sancta septimo mense, anno centesimo sexagesimo, in die solemni scenopegiæ: et congregavit exercitum, et fecit arma copiosa.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Et audivit Demetrius verba ista, et contristatus est nimis, et ait:",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Quid hoc fecimus, quod præoccupavit nos Alexander apprehendere amicitiam Judæorum ad munimen sui?",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "scribam et ego illis verba deprecatoria, et dignitates, et dona, ut sint mecum in adjutorium.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Et scripsit eis in hæc verba: Rex Demetrius genti Judæorum salutem.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Quoniam servastis ad nos pactum, et mansistis in amicitia nostra, et non accessistis ad inimicos nostros, audivimus, et gavisi sumus.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Et nunc perseverate adhuc conservare ad nos fidem, et retribuemus vobis bona pro his quæ fecistis nobiscum:",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "et remittemus vobis præstationes multas, et dabimus vobis donationes.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Et nunc absolvo vos et omnes Judæos a tributis, et pretia salis indulgeo, et coronas remitto, et tertias seminis:",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "et dimidiam partem fructus ligni, quod est portionis meæ, relinquo vobis ex hodierno die, et deinceps, ne accipiatur a terra Juda, et a tribus civitatibus quæ additæ sunt illi ex Samaria et Galilæa; ex hodierna die et in totum tempus:",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "et Jerusalem sit sancta, et libera cum finibus suis: et decimæ et tributa ipsius sint.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Remitto etiam potestatem arcis, quæ est in Jerusalem: et do eam summo sacerdoti, ut constituat in ea viros quoscumque ipse elegerit, qui custodiant eam.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Et omnem animam Judæorum, quæ captiva est a terra Juda in omni regno meo, relinquo liberam gratis, ut omnes a tributis solvantur, etiam pecorum suorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Et omnes dies solemnes, et sabbata, et neomeniæ, et dies decreti, et tres dies ante diem solemnem, et tres dies post diem solemnem, sint omnes immunitatis et remissionis omnibus Judæis, qui sunt in regno meo:",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "et nemo habebit potestatem agere aliquid, et movere negotia adversus aliquem illorum in omni causa.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Et ascribantur ex Judæis in exercitu regis ad triginta millia virorum: et dabuntur illis copiæ ut oportet omnibus exercitibus regis, et ex eis ordinabuntur qui sint in munitionibus regis magni:",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "et ex his constituentur super negotia regni, quæ aguntur ex fide, et principes sint ex eis, et ambulent in legibus suis, sicut præcepit rex in terra Juda.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Et tres civitates, quæ additæ sunt Judææ ex regione Samariæ, cum Judæa reputentur: ut sint sub uno, et non obediant alii potestati, nisi summi sacerdotis.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Ptolemaida et confines ejus, quas dedi donum sanctis qui sunt in Jerusalem, ad necessarios sumptus sanctorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Et ego do singulis annis quindecim millia siclorum argenti de rationibus regis, quæ me contingunt:",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "et omne quod reliquum fuerit, quod non reddiderant qui super negotia erant annis prioribus, ex hoc dabunt in opera domus.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Et super hæc quinque millia siclorum argenti, quæ accipiebant de sanctorum ratione per singulos annos: et hæc ad sacerdotes pertineant, qui ministerio funguntur.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Et quicumque confugerint in templum quod est Jerosolymis, et in omnibus finibus ejus, obnoxii regi in omni negotio dimittantur, et universa quæ sunt eis in regno meo, libera habeant.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Et ad ædificanda vel restauranda opera sanctorum, sumptus dabuntur de ratione regis:",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "et ad exstruendos muros Jerusalem, et communiendos in circuitu, sumptus dabuntur de ratione regis, et ad construendos muros in Judæa.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Ut audivit autem Jonathas et populus sermones istos, non crediderunt eis, nec receperunt eos: quia recordati sunt malitiæ magnæ, quam fecerat in Israël, et tribulaverat eos valde.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Et complacuit eis in Alexandrum, quia ipse fuerat eis princeps sermonum pacis, et ipsi auxilium ferebant omnibus diebus.",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "Et congregavit rex Alexander exercitum magnum, et admovit castra contra Demetrium.",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "Et commiserunt prælium duo reges, et fugit exercitus Demetrii, et insecutus est eum Alexander, et incubuit super eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "Et invaluit prælium nimis, donec occidit sol: et cecidit Demetrius in die illa.",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "Et misit Alexander ad Ptolemæum regem Ægypti legatos secundum hæc verba, dicens:",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "Quoniam regressus sum in regnum meum, et sedi in sede patrum meorum, et obtinui principatum, et contrivi Demetrium, et possedi regionem nostram,",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "et commisi pugnam cum eo, et contritus est ipse et castra ejus a nobis, et sedimus in sede regni ejus:",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "et nunc statuamus ad invicem amicitiam: et da mihi filiam tuam uxorem, et ego ero gener tuus, et dabo tibi dona, et ipsi, digna te.",
+      "footnotes": []
+    },
+    {
+      "verse": 55,
+      "heading": null,
+      "text": "Et respondit rex Ptolemæus, dicens: Felix dies, in qua reversus es ad terram patrum tuorum, et sedisti in sede regni eorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 56,
+      "heading": null,
+      "text": "Et nunc faciam tibi quod scripsisti: sed occurre mihi Ptolemaidam, ut videamus invicem nos, et spondeam tibi sicut dixisti.",
+      "footnotes": []
+    },
+    {
+      "verse": 57,
+      "heading": null,
+      "text": "Et exivit Ptolemæus de Ægypto, ipse et Cleopatra filia ejus, et venit Ptolemaidam anno centesimo sexagesimo secundo.",
+      "footnotes": []
+    },
+    {
+      "verse": 58,
+      "heading": null,
+      "text": "Et occurrit ei Alexander rex, et dedit ei Cleopatram filiam suam: et fecit nuntias ejus Ptolemaidæ, sicut reges in magna gloria.",
+      "footnotes": []
+    },
+    {
+      "verse": 59,
+      "heading": null,
+      "text": "Et scripsit rex Alexander Jonathæ, ut veniret obviam sibi.",
+      "footnotes": []
+    },
+    {
+      "verse": 60,
+      "heading": null,
+      "text": "Et abiit cum gloria Ptolemaidam, et occurrit ibi duobus regibus, et dedit illis argentum multum, et aurum, et dona: et invenit gratiam in conspectu eorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 61,
+      "heading": null,
+      "text": "Et convenerunt adversus eum viri pestilentes ex Israël, viri iniqui interpellantes adversus eum: et non intendit ad eos rex.",
+      "footnotes": []
+    },
+    {
+      "verse": 62,
+      "heading": null,
+      "text": "Et jussit spoliari Jonathan vestibus suis, et indui eum purpura: et ita fecerunt. Et collocavit eum rex sedere secum.",
+      "footnotes": []
+    },
+    {
+      "verse": 63,
+      "heading": null,
+      "text": "Dixitque principibus suis: Exite cum eo in medium civitatis, et prædicate, ut nemo adversus eum interpellet de ullo negotio, nec quisquam ei molestus sit de ulla ratione.",
+      "footnotes": []
+    },
+    {
+      "verse": 64,
+      "heading": null,
+      "text": "Et factum est, ut viderunt qui interpellabant gloriam ejus, quæ prædicabatur, et opertum eum purpura, fugerunt omnes:",
+      "footnotes": []
+    },
+    {
+      "verse": 65,
+      "heading": null,
+      "text": "et magnificavit eum rex, et scripsit eum inter primos amicos, et posuit eum ducem, et participem principatus.",
+      "footnotes": []
+    },
+    {
+      "verse": 66,
+      "heading": null,
+      "text": "Et reversus est Jonathas in Jerusalem cum pace et lætitia.",
+      "footnotes": []
+    },
+    {
+      "verse": 67,
+      "heading": null,
+      "text": "In anno centesimo sexagesimo quinto, venit Demetrius filius Demetrii a Creta in terram patrum suorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 68,
+      "heading": null,
+      "text": "Et audivit Alexander rex, et contristatus est valde, et reversus est Antiochum.",
+      "footnotes": []
+    },
+    {
+      "verse": 69,
+      "heading": null,
+      "text": "Et constituit Demetrius rex Apollonium ducem, qui præerat Cœlesyriæ: et congregavit exercitum magnum, et accessit ad Jamniam: et misit ad Jonathan summum sacerdotem,",
+      "footnotes": []
+    },
+    {
+      "verse": 70,
+      "heading": null,
+      "text": "dicens: Tu solus resistis nobis: ego autem factus sum in derisum, et in opprobrium, propterea quia tu potestatem adversum nos exerces in montibus.",
+      "footnotes": []
+    },
+    {
+      "verse": 71,
+      "heading": null,
+      "text": "Nunc ergo si confidis in virtutibus tuis, descende ad nos in campum, et comparemus illic invicem: quia mecum est virtus bellorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 72,
+      "heading": null,
+      "text": "Interroga, et disce quis sum ego, et ceteri qui auxilio sunt mihi, qui et dicunt quia non potest stare pes vester ante faciem nostram, quia bis in fugam conversi sunt patres tui in terra sua:",
+      "footnotes": []
+    },
+    {
+      "verse": 73,
+      "heading": null,
+      "text": "et nunc quomodo poteris sustinere equitatum et exercitum tantum in campo, ubi non est lapis, neque saxum, neque locus fugiendi?",
+      "footnotes": []
+    },
+    {
+      "verse": 74,
+      "heading": null,
+      "text": "Ut audivit autem Jonathas sermones Apollonii, motus est animo: et elegit decem millia virorum, et exiit ab Jerusalem, et occurrit ei Simon frater ejus in adjutorium:",
+      "footnotes": []
+    },
+    {
+      "verse": 75,
+      "heading": null,
+      "text": "et applicuerunt castra in Joppen, et exclusit eum a civitate, quia custodia Apollonii Joppe erat: et oppugnavit eam.",
+      "footnotes": []
+    },
+    {
+      "verse": 76,
+      "heading": null,
+      "text": "Et exterriti qui erant in civitate, aperuerunt ei, et obtinuit Jonathas Joppen.",
+      "footnotes": []
+    },
+    {
+      "verse": 77,
+      "heading": null,
+      "text": "Et audivit Apollonius, et admovit tria millia equitum, et exercitum multum.",
+      "footnotes": []
+    },
+    {
+      "verse": 78,
+      "heading": null,
+      "text": "Et abiit Azotum tamquam iter faciens, et statim exiit in campum, eo quod haberet multitudinem equitum, et confideret in eis. Et insecutus est eum Jonathas in Azotum, et commiserunt prælium.",
+      "footnotes": []
+    },
+    {
+      "verse": 79,
+      "heading": null,
+      "text": "Et reliquit Apollonius in castris mille equites post eos occulte.",
+      "footnotes": []
+    },
+    {
+      "verse": 80,
+      "heading": null,
+      "text": "Et cognovit Jonathas quoniam insidiæ sunt post se, et circuierunt castra ejus, et jecerunt jacula in populum a mane usque ad vesperam.",
+      "footnotes": []
+    },
+    {
+      "verse": 81,
+      "heading": null,
+      "text": "Populus autem stabat, sicut præceperat Jonathas: et laboraverunt equi eorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 82,
+      "heading": null,
+      "text": "Et ejecit Simon exercitum suum, et commisit contra legionem: equites enim fatigati erant: et contriti sunt ab eo, et fugerunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 83,
+      "heading": null,
+      "text": "Et qui dispersi sunt per campum, fugerunt in Azotum, et intraverunt in Bethdagon idolum suum, ut ibi se liberarent.",
+      "footnotes": []
+    },
+    {
+      "verse": 84,
+      "heading": null,
+      "text": "Et succendit Jonathas Azotum, et civitates quæ erant in circuitu ejus, et accepit spolia eorum, et templum Dagon: et omnes qui fugerunt in illud, succendit igni.",
+      "footnotes": []
+    },
+    {
+      "verse": 85,
+      "heading": null,
+      "text": "Et fuerunt qui ceciderunt gladio, cum his qui succensi sunt, fere octo millia virorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 86,
+      "heading": null,
+      "text": "Et movit inde Jonathas castra, et applicuit ea Ascalonem: et exierunt de civitate obviam illi in magna gloria.",
+      "footnotes": []
+    },
+    {
+      "verse": 87,
+      "heading": null,
+      "text": "Et reversus est Jonathas in Jerusalem cum suis, habentibus spolia multa.",
+      "footnotes": []
+    },
+    {
+      "verse": 88,
+      "heading": null,
+      "text": "Et factum est, ut audivit Alexander rex sermones istos, addidit adhuc glorificare Jonathan.",
+      "footnotes": []
+    },
+    {
+      "verse": 89,
+      "heading": null,
+      "text": "Et misit ei fibulam auream, sicut consuetudo est dari cognatis regum. Et dedit ei Accaron, et omnes fines ejus, in possessionem.",
+      "footnotes": []
+    }
+  ]
+}

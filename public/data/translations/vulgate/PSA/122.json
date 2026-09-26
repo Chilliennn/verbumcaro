@@ -1,0 +1,31 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 122,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Canticum graduum. [Ad te levavi oculos meos, qui habitas in cælis.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Ecce sicut oculi servorum in manibus dominorum suorum; sicut oculi ancillæ in manibus dominæ suæ: ita oculi nostri ad Dominum Deum nostrum, donec misereatur nostri.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Miserere nostri, Domine, miserere nostri, quia multum repleti sumus despectione;",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "quia multum repleta est anima nostra opprobrium abundantibus, et despectio superbis.]",
+      "footnotes": []
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 105,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Alleluja. [Confitemini Domino, quoniam bonus, quoniam in sæculum misericordia ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Quis loquetur potentias Domini; auditas faciet omnes laudes ejus?",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Beati qui custodiunt judicium, et faciunt justitiam in omni tempore.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Memento nostri, Domine, in beneplacito populi tui; visita nos in salutari tuo:",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "ad videndum in bonitate electorum tuorum; ad lætandum in lætitia gentis tuæ: ut lauderis cum hæreditate tua.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Peccavimus cum patribus nostris: injuste egimus; iniquitatem fecimus.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Patres nostri in Ægypto non intellexerunt mirabilia tua; non fuerunt memores multitudinis misericordiæ tuæ. Et irritaverunt ascendentes in mare, mare Rubrum;",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "et salvavit eos propter nomen suum, ut notam faceret potentiam suam.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Et increpuit mare Rubrum et exsiccatum est, et deduxit eos in abyssis sicut in deserto.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Et salvavit eos de manu odientium, et redemit eos de manu inimici.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Et operuit aqua tribulantes eos; unus ex eis non remansit.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Et crediderunt verbis ejus, et laudaverunt laudem ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Cito fecerunt; obliti sunt operum ejus: et non sustinuerunt consilium ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Et concupierunt concupiscentiam in deserto, et tentaverunt Deum in inaquoso.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Et dedit eis petitionem ipsorum, et misit saturitatem in animas eorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Et irritaverunt Moysen in castris; Aaron, sanctum Domini.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Aperta est terra, et deglutivit Dathan, et operuit super congregationem Abiron.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Et exarsit ignis in synagoga eorum: flamma combussit peccatores.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Et fecerunt vitulum in Horeb, et adoraverunt sculptile.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Et mutaverunt gloriam suam in similitudinem vituli comedentis fœnum.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Obliti sunt Deum qui salvavit eos; qui fecit magnalia in Ægypto,",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "mirabilia in terra Cham, terribilia in mari Rubro.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Et dixit ut disperderet eos, si non Moyses, electus ejus, stetisset in confractione in conspectu ejus, ut averteret iram ejus, ne disperderet eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Et pro nihilo habuerunt terram desiderabilem; non crediderunt verbo ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Et murmuraverunt in tabernaculis suis; non exaudierunt vocem Domini.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Et elevavit manum suam super eos ut prosterneret eos in deserto:",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "et ut dejiceret semen eorum in nationibus, et dispergeret eos in regionibus.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Et initiati sunt Beelphegor, et comederunt sacrificia mortuorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Et irritaverunt eum in adinventionibus suis, et multiplicata est in eis ruina.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Et stetit Phinees, et placavit, et cessavit quassatio.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Et reputatum est ei in justitiam, in generationem et generationem usque in sempiternum.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Et irritaverunt eum ad aquas contradictionis, et vexatus est Moyses propter eos:",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "quia exacerbaverunt spiritum ejus, et distinxit in labiis suis.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Non disperdiderunt gentes quas dixit Dominus illis:",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "et commisti sunt inter gentes, et didicerunt opera eorum;",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "et servierunt sculptilibus eorum, et factum est illis in scandalum.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Et immolaverunt filios suos et filias suas dæmoniis.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Et effuderunt sanguinem innocentem, sanguinem filiorum suorum et filiarum suarum, quas sacrificaverunt sculptilibus Chanaan. Et infecta est terra in sanguinibus,",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "et contaminata est in operibus eorum: et fornicati sunt in adinventionibus suis.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Et iratus est furore Dominus in populum suum, et abominatus est hæreditatem suam.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Et tradidit eos in manus gentium; et dominati sunt eorum qui oderunt eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Et tribulaverunt eos inimici eorum, et humiliati sunt sub manibus eorum;",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "sæpe liberavit eos. Ipsi autem exacerbaverunt eum in consilio suo, et humiliati sunt in iniquitatibus suis.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Et vidit cum tribularentur, et audivit orationem eorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Et memor fuit testamenti sui, et pœnituit eum secundum multitudinem misericordiæ suæ:",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "et dedit eos in misericordias, in conspectu omnium qui ceperant eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Salvos nos fac, Domine Deus noster, et congrega nos de nationibus: ut confiteamur nomini sancto tuo, et gloriemur in laude tua.",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "Benedictus Dominus Deus Israël, a sæculo et usque in sæculum; et dicet omnis populus: Fiat, fiat.]",
+      "footnotes": []
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "translationId": "vulgate",
+  "book": "1CH",
+  "chapter": 2,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Filii autem Israël: Ruben, Simeon, Levi, Juda, Issachar, et Zabulon,",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Dan, Joseph, Benjamin, Nephthali, Gad, et Aser.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Filii Juda: Her, Onan, et Sela: hi tres nati sunt ei de filia Sue Chananitide. Fuit autem Her primogenitus Juda malus coram Domino, et occidit eum.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Thamar autem nurus ejus peperit ei Phares et Zara: omnes ergo filii Juda, quinque.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Filii autem Phares: Hesron et Hamul.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Filii quoque Zaræ: Zamri, et Ethan, et Eman, Chalchal quoque, et Dara, simul quinque.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Filii Charmi: Achar, qui turbavit Israël, et peccavit in furto anathematis.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Filii Ethan: Azarias.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Filii autem Hesron qui nati sunt ei: Jerameel, et Ram, et Calubi.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Porro Ram genuit Aminadab. Aminadab autem genuit Nahasson, principem filiorum Juda.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Nahasson quoque genuit Salma, de quo ortus est Booz.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Booz vero genuit Obed, qui et ipse genuit Isai.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Isai autem genuit primogenitum Eliab, secundum Abinadab, tertium Simmaa,",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "quartum Nathanaël, quintum Raddai,",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "sextum Asom, septimum David.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Quorum sorores fuerunt Sarvia et Abigail. Filii Sarviæ: Abisai, Joab, et Asaël, tres.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Abigail autem genuit Amasa, cujus pater fuit Jether Ismahelites.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Caleb vero filius Hesron accepit uxorem nomine Azuba, de qua genuit Jerioth: fueruntque filii ejus Jaser, et Sobab, et Ardon.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Cumque mortua fuisset Azuba, accepit uxorem Caleb Ephratha, quæ peperit ei Hur.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Porro Hur genuit Uri, et Uri genuit Bezeleel.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Post hæc ingressus est Hesron ad filiam Machir patris Galaad, et accepit eam cum esset annorum sexaginta: quæ peperit ei Segub.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Sed et Segub genuit Jair, et possedit viginti tres civitates in terra Galaad.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Cepitque Gessur et Aram oppida Jair, et Canath, et viculos ejus sexaginta civitatum: omnes isti filii Machir patris Galaad.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Cum autem mortuus esset Hesron, ingressus est Caleb ad Ephratha. Habuit quoque Hesron uxorem Abia, quæ peperit ei Assur patrem Thecuæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Nati sunt autem filii Jerameel primogeniti Hesron, Ram primogenitus ejus, et Buna, et Aram, et Asom, et Achia.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Duxit quoque uxorem alteram Jerameel, nomine Atara, quæ fuit mater Onam.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Sed et filii Ram primogeniti Jerameel fuerunt Moos, Jamin, et Achar.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Onam autem habuit filios Semei et Jada. Filii autem Semei: Nadab et Abisur.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Nomen vero uxoris Abisur, Abihail, quæ peperit ei Ahobban et Molid.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Filii autem Nadab fuerunt Saled et Apphaim. Mortuus est autem Saled absque liberis.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Filius vero Apphaim, Jesi: qui Jesi genuit Sesan. Porro Sesan genuit Oholai.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Filii autem Jada fratris Semei: Jether, et Jonathan. Sed et Jether mortuus est absque liberis.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Porro Jonathan genuit Phaleth, et Ziza. Isti fuerunt filii Jerameel.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Sesan autem non habuit filios, sed filias: et servum ægyptium nomine Jeraa.",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Deditque ei filiam suam uxorem: quæ peperit ei Ethei.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Ethei autem genuit Nathan, et Nathan genuit Zabad.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Zabad quoque genuit Ophlal, et Ophlal genuit Obed.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Obed genuit Jehu, Jehu genuit Azariam,",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Azarias genuit Helles, et Helles genuit Elasa.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Elasa genuit Sisamoi, Sisamoi genuit Sellum,",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Sellum genuit Icamiam, Icamia autem genuit Elisama.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Filii autem Caleb fratris Jerameel: Mesa primogenitus ejus; ipse est pater Ziph: et filii Maresa patris Hebron.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Porro filii Hebron, Core, et Taphua, et Recem, et Samma.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Samma autem genuit Raham, patrem Jercaam, et Recem genuit Sammai.",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Filius Sammai, Maon: et Maon pater Bethsur.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Epha autem concubina Caleb peperit Haran, et Mosa, et Gezez. Porro Haran genuit Gezez.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Filii autem Jahaddai, Regom, et Joathan, et Gesan, et Phalet, et Epha, et Saaph.",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "Concubina Caleb Maacha, peperit Saber, et Tharana.",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "Genuit autem Saaph pater Madmena Sue, patrem Machbena et patrem Gabaa. Filia vero Caleb fuit Achsa.",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "Hi erant filii Caleb, filii Hur primogeniti Ephratha, Sobal pater Cariathiarim.",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "Salma pater Bethlehem, Hariph pater Bethgader.",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "Fuerunt autem filii Sobal patris Cariathiarim, qui videbat dimidium requietionum.",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "Et de cognatione Cariathiarim, Jethrei, et Aphuthei, et Semathei, et Maserei. Ex his egressi sunt Saraitæ, et Esthaolitæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "Filii Salma, Bethlehem, et Netophathi, coronæ domus Joab, et dimidium requietionis Sarai:",
+      "footnotes": []
+    },
+    {
+      "verse": 55,
+      "heading": null,
+      "text": "cognationes quoque scribarum habitantium in Jabes, canentes atque resonantes, et in tabernaculis commorantes. Hi sunt Cinæi, qui venerunt de Calore patris domus Rechab.",
+      "footnotes": []
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "translationId": "vulgate",
+  "book": "MAT",
+  "chapter": 25,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Tunc simile erit regnum cælorum decem virginibus: quæ accipientes lampades suas exierunt obviam sponso et sponsæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Quinque autem ex eis erant fatuæ, et quinque prudentes:",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "sed quinque fatuæ, acceptis lampadibus, non sumpserunt oleum secum:",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "prudentes vero acceperunt oleum in vasis suis cum lampadibus.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Moram autem faciente sponso, dormitaverunt omnes et dormierunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Media autem nocte clamor factus est: Ecce sponsus venit, exite obviam ei.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Tunc surrexerunt omnes virgines illæ, et ornaverunt lampades suas.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Fatuæ autem sapientibus dixerunt: Date nobis de oleo vestro, quia lampades nostræ extinguuntur.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Responderunt prudentes, dicentes: Ne forte non sufficiat nobis, et vobis, ite potius ad vendentes, et emite vobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Dum autem irent emere, venit sponsus: et quæ paratæ erant, intraverunt cum eo ad nuptias, et clausa est janua.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Novissime vero veniunt et reliquæ virgines, dicentes: Domine, domine, aperi nobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "At ille respondens, ait: Amen dico vobis, nescio vos.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Vigilate itaque, quia nescitis diem, neque horam.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Sicut enim homo peregre proficiscens, vocavit servos suos, et tradidit illis bona sua.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Et uni dedit quinque talenta, alii autem duo, alii vero unum, unicuique secundum propriam virtutem: et profectus est statim.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Abiit autem qui quinque talenta acceperat, et operatus est in eis, et lucratus est alia quinque.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Similiter et qui duo acceperat, lucratus est alia duo.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Qui autem unum acceperat, abiens fodit in terram, et abscondit pecuniam domini sui.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Post multum vero temporis venit dominus servorum illorum, et posuit rationem cum eis.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Et accedens qui quinque talenta acceperat, obtulit alia quinque talenta, dicens: Domine, quinque talenta tradidisti mihi, ecce alia quinque superlucratus sum.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Ait illi dominus ejus: Euge serve bone, et fidelis: quia super pauca fuisti fidelis, super multa te constituam; intra in gaudium domini tui.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Accessit autem et qui duo talenta acceperat, et ait: Domine, duo talenta tradidisti mihi, ecce alia duo lucratus sum.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Ait illi dominus ejus: Euge serve bone, et fidelis: quia super pauca fuisti fidelis, super multa te constituam; intra in gaudium domini tui.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Accedens autem et qui unum talentum acceperat, ait: Domine, scio quia homo durus es; metis ubi non seminasti, et congregas ubi non sparsisti:",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "et timens abii, et abscondi talentum tuum in terra: ecce habes quod tuum est.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Respondens autem dominus ejus, dixit ei: Serve male, et piger, sciebas quia meto ubi non semino, et congrego ubi non sparsi:",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "oportuit ergo te committere pecuniam meam numulariis, et veniens ego recepissem utique quod meum est cum usura.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Tollite itaque ab eo talentum, et date ei qui habet decem talenta:",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "omni enim habenti dabitur, et abundabit: ei autem qui non habet, et quod videtur habere, auferetur ab eo.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Et inutilem servum ejicite in tenebras exteriores: illic erit fletus, et stridor dentium.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Cum autem venerit Filius hominis in majestate sua, et omnes angeli cum eo, tunc sedebit super sedem majestatis suæ:",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "et congregabuntur ante eum omnes gentes, et separabit eos ab invicem, sicut pastor segregat oves ab hædis:",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "et statuet oves quidem a dextris suis, hædos autem a sinistris.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Tunc dicet rex his qui a dextris ejus erunt: Venite benedicti Patris mei, possidete paratum vobis regnum a constitutione mundi:",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "esurivi enim, et dedistis mihi manducare: sitivi, et dedistis mihi bibere: hospes eram, et collegistis me:",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "nudus, et cooperuistis me: infirmus, et visitastis me: in carcere eram, et venistis ad me.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Tunc respondebunt ei justi, dicentes: Domine, quando te vidimus esurientem, et pavimus te: sitientem, et dedimus tibi potum?",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "quando autem te vidimus hospitem, et collegimus te: aut nudum, et cooperuimus te?",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "aut quando te vidimus infirmum, aut in carcere, et venimus ad te?",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Et respondens rex, dicet illis: Amen dico vobis, quamdiu fecistis uni ex his fratribus meis minimis, mihi fecistis.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Tunc dicet et his qui a sinistris erunt: Discedite a me maledicti in ignem æternum, qui paratus est diabolo, et angelis ejus:",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "esurivi enim, et non dedistis mihi manducare: sitivi, et non desistis mihi potum:",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "hospes eram, et non collegistis me: nudus, et non cooperuistis me: infirmus, et in carcere, et non visitastis me.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Tunc respondebunt ei et ipsi, dicentes: Domine, quando te vidimus esurientem, aut sitientem, aut hospitem, aut nudum, aut infirmum, aut in carcere, et non ministravimus tibi?",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Tunc respondebit illis, dicens: Amen dico vobis: Quamdiu non fecistis uni de minoribus his, nec mihi fecistis.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Et ibunt hi in supplicium æternum: justi autem in vitam æternam.",
+      "footnotes": []
+    }
+  ]
+}

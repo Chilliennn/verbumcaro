@@ -1,0 +1,37 @@
+{
+  "translationId": "vulgate",
+  "book": "SNG",
+  "chapter": 8,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "[Quis mihi det te fratrem meum, sugentem ubera matris meæ, ut inveniam te foris, et deosculer te, et jam me nemo despiciat?",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Apprehendam te, et ducam in domum matris meæ: ibi me docebis, et dabo tibi poculum ex vino condito, et mustum malorum granatorum meorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Læva ejus sub capite meo, et dextera illius amplexabitur me.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Aquæ multæ non potuerunt extinguere caritatem, nec flumina obruent illam. Si dederit homo omnem substantiam domus suæ pro dilectione, quasi nihil despiciet eam.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Si murus est, ædificemus super eum propugnacula argentea; si ostium est, compingamus illud tabulis cedrinis.",
+      "footnotes": []
+    }
+  ]
+}

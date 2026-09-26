@@ -1,0 +1,49 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 119,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Canticum graduum. [Ad Dominum cum tribularer clamavi, et exaudivit me.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Domine, libera animam meam a labiis iniquis et a lingua dolosa.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Quid detur tibi, aut quid apponatur tibi ad linguam dolosam?",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Sagittæ potentis acutæ, cum carbonibus desolatoriis.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Heu mihi, quia incolatus meus prolongatus est! habitavi cum habitantibus Cedar;",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "multum incola fuit anima mea.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Cum his qui oderunt pacem eram pacificus; cum loquebar illis, impugnabant me gratis.]",
+      "footnotes": []
+    }
+  ]
+}

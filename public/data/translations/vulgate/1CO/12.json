@@ -1,0 +1,193 @@
+{
+  "translationId": "vulgate",
+  "book": "1CO",
+  "chapter": 12,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "De spiritualibus autem, nolo vos ignorare fratres.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Scitis quoniam cum gentes essetis, ad simulacra muta prout ducebamini euntes.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Ideo notum vobis facio, quod nemo in Spiritu Dei loquens, dicit anathema Jesu. Et nemo potest dicere, Dominus Jesus, nisi in Spiritu Sancto.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Divisiones vero gratiarum sunt, idem autem Spiritus:",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "et divisiones ministrationum sunt, idem autem Dominus:",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "et divisiones operationum sunt, idem vero Deus qui operatur omnia in omnibus.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Unicuique autem datur manifestatio Spiritus ad utilitatem.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Alii quidem per Spiritum datur sermo sapientiæ: alii autem sermo scientiæ secundum eumdem Spiritum:",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "alteri fides in eodem Spiritu: alii gratia sanitatum in uno Spiritu:",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "alii operatio virtutum, alii prophetia, alii discretio spirituum, alii genera linguarum, alii interpretatio sermonum.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Hæc autem omnia operantur unus atque idem Spiritus, dividens singulis prout vult.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Sicut enim corpus unum est, et membra habet multa, omnia autem membra corporis cum sint multa, unum tamen corpus sunt: ita et Christus.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Etenim in uno Spiritu omnes nos in unum corpus baptizati sumus, sive Judæi, sive gentiles, sive servi, sive liberi: et omnes in uno Spiritu potati sumus.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Nam et corpus non est unum membrum, sed multa.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Si dixerit pes: Quoniam non sum manus, non sum de corpore: num ideo non est de corpore?",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Et si dixerit auris: Quoniam non sum oculus, non sum de corpore: num ideo est de corpore?",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Si totum corpus oculus: ubi auditus? Si totum auditus: ubi odoratus?",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Nunc autem posuit Deus membra, unumquodque eorum in corpore sicut voluit.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Quod si essent omnia unum membrum, ubi corpus?",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Nunc autem multa quidem membra, unum autem corpus.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Non potest autem oculus dicere manui: Opera tua non indigeo: aut iterum caput pedibus: Non estis mihi necessarii.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Sed multo magis quæ videntur membra corporis infirmiora esse, necessariora sunt:",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "et quæ putamus ignobiliora membra esse corporis, his honorem abundantiorem circumdamus: et quæ inhonesta sunt nostra, abundantiorem honestatem habent.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Honesta autem nostra nullius egent: sed Deus temperavit corpus, ei cui deerat, abundantiorem tribuendo honorem,",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "ut non sit schisma in corpore, sed idipsum pro invicem sollicita sint membra.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Et si quid patitur unum membrum, compatiuntur omnia membra: sive gloriatur unum membrum, congaudent omnia membra.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Vos autem estis corpus Christi, et membra de membro.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Et quosdam quidem posuit Deus in ecclesia primum apostolos, secundo prophetas, exinde doctores, deinde virtutes, exinde gratias curationum, opitulationes, gubernationes, genera linguarum, interpretationes sermonum.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Numquid omnes apostoli? numquid omnes prophetæ? numquid omnes doctores?",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "numquid omnes virtutes? numquid omnes gratiam habent curationum? numquid omnes linguis loquuntur? numquid omnes interpretantur?",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Æmulamini autem charismata meliora. Et adhuc excellentiorem viam vobis demonstro.",
+      "footnotes": []
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "translationId": "vulgate",
+  "book": "JHN",
+  "chapter": 8,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Jesus autem perrexit in montem Oliveti:",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "et diluculo iterum venit in templum, et omnis populus venit ad eum, et sedens docebat eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Adducunt autem scribæ et pharisæi mulierem in adulterio deprehensam: et statuerunt eam in medio,",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "et dixerunt ei: Magister, hæc mulier modo deprehensa est in adulterio.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "In lege autem Moyses mandavit nobis hujusmodi lapidare. Tu ergo quid dicis?",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Hoc autem dicebant tentantes eum, ut possent accusare eum. Jesus autem inclinans se deorsum, digito scribebat in terra.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Cum ergo perseverarent interrogantes eum, erexit se, et dixit eis: Qui sine peccato est vestrum, primus in illam lapidem mittat.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Et iterum se inclinans, scribebat in terra.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Audientes autem unus post unum exibant, incipientes a senioribus: et remansit solus Jesus, et mulier in medio stans.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Erigens autem se Jesus, dixit ei: Mulier, ubi sunt qui te accusabant? nemo te condemnavit?",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Quæ dixit: Nemo, Domine. Dixit autem Jesus: Nec ego te condemnabo: vade, et jam amplius noli peccare.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Iterum ergo locutus est eis Jesus, dicens: Ego sum lux mundi: qui sequitur me, non ambulat in tenebris, sed habebit lumen vitæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Dixerunt ergo ei pharisæi: Tu de teipso testimonium perhibes; testimonium tuum non est verum.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Respondit Jesus, et dixit eis: Et si ego testimonium perhibeo de meipso, verum est testimonium meum: quia scio unde veni et quo vado; vos autem nescitis unde venio aut quo vado.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Vos secundum carnem judicatis: ego non judico quemquam;",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "et si judico ego, judicium meum verum est, quia solus non sum: sed ego et qui misit me, Pater.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Et in lege vestra scriptum est, quia duorum hominum testimonium verum est.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Ego sum qui testimonium perhibeo de meipso, et testimonium perhibet de me qui misit me, Pater.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Dicebant ergo ei: Ubi est Pater tuus? Respondit Jesus: Neque me scitis, neque Patrem meum: si me sciretis, forsitan et Patrem meum sciretis.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Hæc verba locutus est Jesus in gazophylacio, docens in templo: et nemo apprehendit eum, quia necdum venerat hora ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Dixit ergo iterum eis Jesus: Ego vado, et quæretis me, et in peccato vestro moriemini. Quo ego vado, vos non potestis venire.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Dicebant ergo Judæi: Numquid interficiet semetipsum, quia dixit: Quo ego vado, vos non potestis venire?",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Et dicebat eis: Vos de deorsum estis, ego de supernis sum. Vos de mundo hoc estis, ego non sum de hoc mundo.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Dixi ergo vobis quia moriemini in peccatis vestris: si enim non credideritis quia ego sum, moriemini in peccato vestro.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Dicebant ergo ei: Tu quis es? Dixit eis Jesus: Principium, qui et loquor vobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Multa habeo de vobis loqui, et judicare; sed qui me misit, verax est; et ego quæ audivi ab eo, hæc loquor in mundo.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Et non cognoverunt quia Patrem ejus dicebat Deum.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Dixit ergo eis Jesus: Cum exaltaveritis Filium hominis, tunc cognoscetis quia ego sum, et a meipso facio nihil, sed sicut docuit me Pater, hæc loquor:",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "et qui me misit, mecum est, et non reliquit me solum: quia ego quæ placita sunt ei, facio semper.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Hæc illo loquente, multi crediderunt in eum.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Dicebat ergo Jesus ad eos, qui crediderunt ei, Judæos: Si vos manseritis in sermone meo, vere discipuli mei eritis,",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "et cognoscetis veritatem, et veritas liberabit vos.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Responderunt ei: Semen Abrahæ sumus, et nemini servivimus umquam: quomodo tu dicis: Liberi eritis?",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Respondit eis Jesus: Amen, amen dico vobis: quia omnis qui facit peccatum, servus est peccati.",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Servus autem non manet in domo in æternum: filius autem manet in æternum.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Si ergo vos filius liberaverit, vere liberi eritis.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Scio quia filii Abrahæ estis: sed quæritis me interficere, quia sermo meus non capit in vobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Ego quod vidi apud Patrem meum, loquor: et vos quæ vidistis apud patrem vestrum, facitis.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Responderunt, et dixerunt ei: Pater noster Abraham est. Dicit eis Jesus: Si filii Abrahæ estis, opera Abrahæ facite.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Nunc autem quæritis me interficere, hominem, qui veritatem vobis locutus sum, quam audivi a Deo: hoc Abraham non fecit.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Vos facitis opera patris vestri. Dixerunt itaque ei: Nos ex fornicatione non sumus nati: unum patrem habemus Deum.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Dixit ergo eis Jesus: Si Deus pater vester esset, diligeretis utique et me; ego enim ex Deo processi, et veni: neque enim a meipso veni, sed ille me misit.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Quare loquelam meam non cognoscitis? Quia non potestis audire sermonem meum.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Vos ex patre diabolo estis: et desideria patris vestri vultis facere. Ille homicida erat ab initio, et in veritate non stetit: quia non est veritas in eo: cum loquitur mendacium, ex propriis loquitur, quia mendax est, et pater ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Ego autem si veritatem dico, non creditis mihi.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Quis ex vobis arguet me de peccato? si veritatem dico vobis, quare non creditis mihi?",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Qui ex Deo est, verba Dei audit. Propterea vos non auditis, quia ex Deo non estis.",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "Responderunt ergo Judæi, et dixerunt ei: Nonne bene dicimus nos quia Samaritanus es tu, et dæmonium habes?",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "Respondit Jesus: Ego dæmonium non habeo: sed honorifico Patrem meum, et vos inhonorastis me.",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "Ego autem non quæro gloriam meam: est qui quærat, et judicet.",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "Amen, amen dico vobis: si quis sermonem meum servaverit, mortem non videbit in æternum.",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "Dixerunt ergo Judæi: Nunc cognovimus quia dæmonium habes. Abraham mortuus est, et prophetæ; et tu dicis: Si quis sermonem meum servaverit, non gustabit mortem in æternum.",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "Numquid tu major es patre nostro Abraham, qui mortuus est? et prophetæ mortui sunt. Quem teipsum facis?",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "Respondit Jesus: Si ego glorifico meipsum, gloria mea nihil est: est Pater meus, qui glorificat me, quem vos dicitis quia Deus vester est,",
+      "footnotes": []
+    },
+    {
+      "verse": 55,
+      "heading": null,
+      "text": "et non cognovistis eum: ego autem novi eum. Et si dixero quia non scio eum, ero similis vobis, mendax. Sed scio eum, et sermonem ejus servo.",
+      "footnotes": []
+    },
+    {
+      "verse": 56,
+      "heading": null,
+      "text": "Abraham pater vester exsultavit ut videret diem meum: vidit, et gavisus est.",
+      "footnotes": []
+    },
+    {
+      "verse": 57,
+      "heading": null,
+      "text": "Dixerunt ergo Judæi ad eum: Quinquaginta annos nondum habes, et Abraham vidisti?",
+      "footnotes": []
+    },
+    {
+      "verse": 58,
+      "heading": null,
+      "text": "Dixit eis Jesus: Amen, amen dico vobis, antequam Abraham fieret, ego sum.",
+      "footnotes": []
+    },
+    {
+      "verse": 59,
+      "heading": null,
+      "text": "Tulerunt ergo lapides, ut jacerent in eum: Jesus autem abscondit se, et exivit de templo.",
+      "footnotes": []
+    }
+  ]
+}

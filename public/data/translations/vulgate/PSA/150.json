@@ -1,0 +1,43 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 150,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Alleluja. [Laudate Dominum in sanctis ejus; laudate eum in firmamento virtutis ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Laudate eum in virtutibus ejus; laudate eum secundum multitudinem magnitudinis ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Laudate eum in sono tubæ; laudate eum in psalterio et cithara.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Laudate eum in tympano et choro; laudate eum in chordis et organo.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Laudate eum in cymbalis benesonantibus; laudate eum in cymbalis jubilationis.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Omnis spiritus laudet Dominum! Alleluja.]",
+      "footnotes": []
+    }
+  ]
+}
