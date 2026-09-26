@@ -16,5 +16,14 @@
     "direction": "ltr",
     "hasHeadings": true,
     "hasFootnotes": false
+  },
+  {
+  "id": "shinkyo",
+  "name": "新共同訳 (Shinkyōdōyaku)",
+  "language": "ja",
+  "languageName": "日本語",
+  "direction": "ltr",
+  "hasHeadings": false,
+  "hasFootnotes": false
   }
 ]
