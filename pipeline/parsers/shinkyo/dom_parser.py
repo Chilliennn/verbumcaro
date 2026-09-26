@@ -6,6 +6,13 @@ from rich.console import Console
 
 console = Console()
 
+# Mapping for deuterocanonical chapters that YouVersion splits into distinct books
+USFM_FALLBACK = {
+    ("BAR", 6): ("LJE", 1),
+    ("DAN", 13): ("SUS", 1),
+    ("DAN", 14): ("BEL", 1)
+}
+
 class ShinkyoParser:
     def __init__(self):
         self.raw_dir = "pipeline/data/01_raw/shinkyo"
@@ -26,33 +33,29 @@ class ShinkyoParser:
 
         soup = BeautifulSoup(html, "lxml")
 
-        # Container for bible verses on bible.com
-        chapter_div = soup.find(attrs={"data-usfm": f"{book_code}.{chapter}"})
+        # Determine target usfm search prefixes
+        search_book, search_ch = USFM_FALLBACK.get((book_code, chapter), (book_code, chapter))
+
+        chapter_div = soup.find(attrs={"data-usfm": f"{search_book}.{search_ch}"})
         if not chapter_div:
-            # Fallback to search by class
             chapter_div = soup.find("div", class_=re.compile(r"ChapterContent.*__chapter"))
 
         if not chapter_div:
             console.print(f"[red]Could not locate chapter container in {filename}[/red]")
             return None
 
-        # Collect verses by USFM marker
         verses_map = {}
-        verse_elements = chapter_div.find_all(attrs={"data-usfm": re.compile(rf"^{book_code}\.{chapter}\.\d+")})
+        verse_elements = chapter_div.find_all(attrs={"data-usfm": re.compile(rf"^{search_book}\.{search_ch}\.\d+")})
 
         for v_el in verse_elements:
             usfm_val = v_el["data-usfm"]
-            # e.g., GEN.2.4 -> verse 4
-            v_num = int(usfm_val.split(".")[-1])
+            try:
+                v_num = int(usfm_val.split(".")[-1])
+            except ValueError:
+                continue
 
-            # Grab content spans
             content_spans = v_el.find_all(class_=re.compile(r"__content"))
-            text_bits = []
-            for c_span in content_spans:
-                text_bits.append(c_span.get_text())
-
-            text = "".join(text_bits).strip()
-            # Normalize whitespace
+            text = "".join(span.get_text() for span in content_spans).strip()
             text = re.sub(r"\s+", " ", text).strip()
 
             if not text:
@@ -61,7 +64,6 @@ class ShinkyoParser:
             if v_num not in verses_map:
                 verses_map[v_num] = text
             else:
-                # Some poetry verses are split across multiple lines
                 verses_map[v_num] += " " + text
 
         verses = []

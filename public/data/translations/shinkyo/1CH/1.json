@@ -1,0 +1,331 @@
+{
+  "translationId": "shinkyo",
+  "book": "1CH",
+  "chapter": 1,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "アダム、セト、エノシュ、",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "ケナン、マハラルエル、イエレド、",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "エノク、メトシェラ、レメク、",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "ノア、セム、ハム、ヤフェト。",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "ヤフェトの子らは、ゴメル、マゴグ、メディア、ヤワン、トバル、メシェク、ティラス。",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "ゴメルの子らは、アシュケナズ、ディファト、トガルマ。",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "ヤワンの子らは、エリシャ、タルシシュ、キティム、ロダニム。",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "ハムの子らは、クシュ、エジプト、プト、カナン。",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "クシュの子らは、セバ、ハビラ、サブタ、ラマ、サブテカ。ラマの子らは、シェバ、デダン。",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "クシュにはまた、ニムロドが生まれた。ニムロドは地上で最初の勇士となった。",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "エジプトには、リディア人、アナミム人、レハビム人、ナフトヒム人、",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "上エジプト人、カスルヒム人、カフトル人が生まれた。このカフトル人からペリシテ人が出た。",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "カナンには長男シドンとヘト、",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "また、エブス人、アモリ人、ギルガシ人、",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "ヒビ人、アルキ人、シニ人、",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "アルワド人、ツェマリ人、ハマト人が生まれた。",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "セムの子らは、エラム、アシュル、アルパクシャド、ルド、アラム、ウツ、フル、ゲテル、メシェク。",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "アルパクシャドにはシェラが生まれ、シェラにはエベルが生まれた。",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "エベルには二人の息子が生まれた。一人の名は、その時代に土地が分けられた（パラグ）のでペレグといい、その兄弟はヨクタンといった。",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "ヨクタンには、アルモダド、シェレフ、ハツァルマベト、イエラ、",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "ハドラム、ウザル、ディクラ、",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "エバル、アビマエル、シェバ、",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "オフィル、ハビラ、ヨバブが生まれた。これらは皆、ヨクタンの息子たちである。",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "セム、アルパクシャド、シェラ、",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "エベル、ペレグ、レウ、",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "セルグ、ナホル、テラ、",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "アブラム、これがアブラハムである。",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "アブラハムの子は、イサク、イシュマエル。",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "彼らの系図は次のとおりである。 イシュマエルの長男はネバヨト、次はケダル、アドベエル、ミブサム、",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "ミシュマ、ドマ、マサ、ハダド、テマ、",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "エトル、ナフィシュ、ケデマであり、以上がイシュマエルの息子たちであった。",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "アブラハムの側女ケトラが産んだ子は、ジムラン、ヨクシャン、メダン、ミディアン、イシュバク、シュア。ヨクシャンの子は、シェバ、デダン。",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "ミディアンの子は、エファ、エフェル、ハノク、アビダ、エルダア。これらは皆、ケトラの子孫である。",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "アブラハムにはイサクが生まれた。イサクの子は、エサウ、イスラエル。",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "エサウの子は、エリファズ、レウエル、エウシュ、ヤラム、コラ。",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "エリファズの子は、テマン、オマル、ツェフィ、ガタム、ケナズ、ティムナ、アマレク。",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "レウエルの子は、ナハト、ゼラ、シャンマ、ミザ。",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "セイルの子は、ロタン、ショバル、ツィブオン、アナ、ディション、エツェル、ディシャン。",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "ロタンの子は、ホリ、ホマムであり、ロタンの妹がティムナであった。",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "ショバルの子は、アルヤン、マナハト、エバル、シェフィ、オナム。ツィブオンの子は、アヤ、アナ。",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "アナの子は、ディション。ディションの子は、ハムラン、エシュバン、イトラン、ケラン。",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "エツェルの子は、ビルハン、ザアワン、ヤアカン。ディションの子は、ウツ、アラン。",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "イスラエルの人々を治める王がまだいなかった時代に、エドムの地を治めていた王たちは次のとおりである。ベオルの息子ベラ、その町の名はディンハバといった。",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "ベラが死んで、代わって王となったのは、ボツラ出身でゼラの息子ヨバブである。",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "ヨバブが死んで、代わって王となったのは、テマン人の土地から出たフシャムである。",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "フシャムが死んで、代わって王となったのは、ベダドの息子ハダドであり、モアブの野でミディアン人を撃退した人である。その町の名はアビトといった。",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "ハダドが死んで、代わって王となったのは、マスレカ出身のサムラである。",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "サムラが死んで、代わって王となったのはユーフラテス川のレホボト出身のシャウルである。",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "シャウルが死んで、代わって王となったのは、アクボルの息子バアル・ハナンである。",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "バアル・ハナンが死んで、代わって王となったのは、ハダドである。その町の名はパイといい、その妻の名はメヘタブエルといった。彼女はマトレドの娘で、メ・ザハブの孫娘である。",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "ハダドが死ぬと、エドムには首長たちが現れた。首長ティムナ、首長アルワ、首長エテト、",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "首長オホリバマ、首長エラ、首長ピノン、",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "首長ケナズ、首長テマン、首長ミブツァル、",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "首長マグディエル、首長イラム。以上がエドムの首長たちである。",
+      "footnotes": []
+    }
+  ]
+}
