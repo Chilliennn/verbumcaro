@@ -47,6 +47,23 @@ class VulgateParser:
 				verses.append({"verse": verse_number, "heading": None, "text": text, "footnotes": []})
 
 		if not verses:
+			anchors = [anchor for anchor in container.find_all("a") if anchor.get_text(strip=True).isdigit()]
+			for anchor in anchors:
+				parts = []
+				sibling = anchor.next_sibling
+				while sibling and not (
+					getattr(sibling, "name", None) == "a"
+					and sibling.get_text(strip=True).isdigit()
+				):
+					text = sibling.get_text(" ", strip=True) if hasattr(sibling, "get_text") else str(sibling).strip()
+					if text:
+						parts.append(text)
+					sibling = sibling.next_sibling
+				text = " ".join(parts).strip()
+				if text:
+					verses.append({"verse": int(anchor.get_text(strip=True)), "heading": None, "text": text, "footnotes": []})
+
+		if not verses:
 			return None
 		return {"rawTitle": title_text, "sourceFile": os.path.basename(file_path), "verses": verses}
 
