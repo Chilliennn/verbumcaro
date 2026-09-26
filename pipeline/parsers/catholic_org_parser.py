@@ -19,6 +19,10 @@ class CatholicOrgParser:
         chapter = int(parts[1])
 
         file_path = os.path.join(self.raw_dir, filename)
+        if not os.path.exists(file_path):
+            console.print(f"[bold red]Skipping parse - File not found: {filename}[/bold red]")
+            return None
+
         with open(file_path, "r", encoding="utf-8") as f:
             html = f.read()
 
@@ -41,7 +45,7 @@ class CatholicOrgParser:
             except ValueError:
                 continue
 
-            # Remove navigation/verse anchors before extracting pure verse content
+            # Remove anchors before extracting pure verse text
             for tag in p.find_all(["sup", "a"]):
                 if tag.has_attr("name"):
                     tag.decompose()
@@ -64,7 +68,7 @@ class CatholicOrgParser:
             "verses": verses
         }
 
-        # Save locally to intermediate directory
+        # Save to intermediate directory
         dest_path = os.path.join(self.out_dir, f"{book_code}_{chapter:03d}.json")
         with open(dest_path, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
