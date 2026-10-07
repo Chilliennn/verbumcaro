@@ -12,8 +12,9 @@ export function TranslationSelector({
   onChange
 }: TranslationSelectorProps) {
   return (
-    <div className="translation-selector">
+    <div className="version-wrap">
       <select
+        className="version-select"
         value={value}
         onChange={(event) => onChange(event.target.value)}
         aria-label="Bible translation"
@@ -24,8 +25,6 @@ export function TranslationSelector({
           </option>
         ))}
       </select>
-
-      <span>⌄</span>
     </div>
   );
 }

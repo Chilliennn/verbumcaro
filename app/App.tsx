@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "../components/layout/Header";
 import { ReaderToolbar } from "../components/layout/ReaderToolbar";
 import { AppShell } from "../components/layout/AppShell";
@@ -19,6 +19,9 @@ import type {
 } from "../features/reader/readerTypes";
 import { parseReference } from "../features/references/parser";
 import { canon } from "../lib/data/canon";
+
+const FONT_SIZE_KEY = "verbumcaro.fontSize";
+const DEFAULT_FONT_SIZE = 18;
 
 function getUrlState(): Partial<ReaderState> {
   const params = new URLSearchParams(window.location.search);
@@ -84,6 +87,20 @@ export default function App() {
   const [translations, setTranslations] = useState<Translation[]>([]);
   const [books, setBooks] = useState<Book[]>(canon);
   const [search, setSearch] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [fontSize, setFontSize] = useState(() => {
+    const saved = localStorage.getItem(FONT_SIZE_KEY);
+    return saved ? Number(saved) : DEFAULT_FONT_SIZE;
+  });
+  const [fontModalOpen, setFontModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--reader-font-size",
+      `${fontSize}px`
+    );
+    localStorage.setItem(FONT_SIZE_KEY, String(fontSize));
+  }, [fontSize]);
 
   useEffect(() => {
     bibleRepository.getTranslations().then(setTranslations);
@@ -100,87 +117,47 @@ export default function App() {
     updateUrl(reader);
   }, [reader]);
 
-  const title = useMemo(() => {
-    const book = books.find((item) => item.code === reader.left.bookCode);
-
-    return `${book?.name ?? "Bible"} ${reader.left.chapter}`;
-  }, [books, reader.left.bookCode, reader.left.chapter]);
-
-  function updateLeft(panel: PanelState) {
-    setReader((state) => {
-      const next = {
-        ...state,
-        left: panel,
-        ...(state.parallel && state.sync === "off"
-          ? {}
-          : {})
-      };
-
-      return next;
-    });
-  }
-
-  function updateRight(panel: PanelState) {
-    setReader((state) => ({
-      ...state,
-      right: panel
-    }));
-  }
-
   function submitSearch() {
-    const result = parseReference(search);
+    const trimmed = search.trim();
 
-    if (!result) {
+    if (!trimmed) {
+      setSearchQuery("");
       return;
     }
 
-    setReader((state) => {
-      const nextLeft = result.translationId
-        ? {
-            ...result.panel
-          }
-        : {
-            ...state.left,
-            ...result.panel
-          };
+    const result = parseReference(trimmed);
 
-      const nextRight = result.translationId
-        ? {
-            ...result.panel,
-            translationId:
-              result.translationId === "catholic_org"
-                ? "sigao"
-                : "catholic_org"
-          }
-        : {
-            ...state.right,
-            bookCode: result.panel.bookCode,
-            chapter: result.panel.chapter
-          };
+    if (result) {
+      setReader((state) => {
+        const nextLeft = result.translationId
+          ? { ...result.panel }
+          : { ...state.left, ...result.panel };
 
-      return {
-        ...state,
-        left: nextLeft,
-        right: nextRight
-      };
-    });
+        const nextRight = result.translationId
+          ? {
+              ...result.panel,
+              translationId:
+                result.translationId === "catholic_org" ? "sigao" : "catholic_org"
+            }
+          : {
+              ...state.right,
+              bookCode: result.panel.bookCode,
+              chapter: result.panel.chapter
+            };
+
+        return {
+          ...state,
+          left: nextLeft,
+          right: nextRight
+        };
+      });
+
+      setSearchQuery("");
+    } else {
+      setSearchQuery(trimmed);
+    }
 
     setSearch("");
-  }
-
-  function syncVerse(verse: number) {
-    if (reader.sync !== "verse") {
-      return;
-    }
-
-    const target = document.querySelector(
-      `.bible-panel:nth-child(2) [data-verse="${verse}"]`
-    );
-
-    target?.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
   }
 
   return (
@@ -191,11 +168,13 @@ export default function App() {
         search={search}
         onSearchChange={setSearch}
         onSearchSubmit={submitSearch}
+        onToggleFontModal={() => setFontModalOpen((value) => !value)}
       />
 
-      <main className="main-content">
+      <main
+        className={`main-content ${reader.parallel ? "parallel-scroll" : ""}`}
+      >
         <ReaderToolbar
-          title={title}
           sync={reader.sync === "verse"}
           parallel={reader.parallel}
           showHeadings={reader.showHeadings}
@@ -227,11 +206,69 @@ export default function App() {
           showHeadings={reader.showHeadings}
           sync={reader.sync === "verse"}
           parallel={reader.parallel}
-          onLeftChange={updateLeft}
-          onRightChange={updateRight}
-          onSyncVerse={syncVerse}
+          searchQuery={searchQuery}
+          onLeftChange={(panel) =>
+            setReader((state) => ({ ...state, left: panel }))
+          }
+          onRightChange={(panel) =>
+            setReader((state) => ({ ...state, right: panel }))
+          }
+          onSyncVerse={(verse) => {
+            if (reader.sync !== "verse") {
+              return;
+            }
+
+            const target = document.querySelector(
+              `.bible-panel:nth-child(2) [data-verse="${verse}"]`
+            );
+
+            target?.scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+          }}
         />
       </main>
+
+      {fontModalOpen && (
+        <div
+          className="font-modal-backdrop"
+          onClick={() => setFontModalOpen(false)}
+        >
+          <div
+            className="font-modal"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="font-modal-header">
+              <div className="font-modal-title">Font Size</div>
+              <button
+                className="font-modal-close"
+                onClick={() => setFontModalOpen(false)}
+                aria-label="Close"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="font-preview">
+              <span style={{ fontSize: 14 }}>Aa</span>
+              <span style={{ fontSize: 28 }}>Aa</span>
+            </div>
+
+            <input
+              type="range"
+              className="font-slider"
+              min="14"
+              max="28"
+              step="1"
+              value={fontSize}
+              onChange={(event) =>
+                setFontSize(Number(event.target.value))
+              }
+            />
+          </div>
+        </div>
+      )}
     </AppShell>
   );
 }

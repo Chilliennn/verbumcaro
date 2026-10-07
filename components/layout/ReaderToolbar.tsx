@@ -1,5 +1,4 @@
 interface ReaderToolbarProps {
-  title: string;
   sync: boolean;
   parallel: boolean;
   showHeadings: boolean;
@@ -9,7 +8,6 @@ interface ReaderToolbarProps {
 }
 
 export function ReaderToolbar({
-  title,
   sync,
   parallel,
   showHeadings,
@@ -19,28 +17,27 @@ export function ReaderToolbar({
 }: ReaderToolbarProps) {
   return (
     <div className="reader-toolbar">
-      <h1>{title}</h1>
-
       <div className="toolbar-actions">
+        <button
+          className={`toolbar-button ${showHeadings ? "active" : ""}`}
+          onClick={onHeadings}
+        >
+          <span>H1</span>
+        </button>
+
         <button
           className={`toolbar-button ${sync ? "active" : ""}`}
           onClick={onSync}
         >
-          ⇆ Sync
+          <span className="dot" />
+          <span>Sync</span>
         </button>
 
         <button
           className={`toolbar-button ${parallel ? "active" : ""}`}
           onClick={onParallel}
         >
-          ◫ Parallel
-        </button>
-
-        <button
-          className={`toolbar-button ${showHeadings ? "active" : ""}`}
-          onClick={onHeadings}
-        >
-          ¶ Headings
+          <span>Parallel</span>
         </button>
       </div>
     </div>

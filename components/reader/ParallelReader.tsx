@@ -13,6 +13,7 @@ interface ParallelReaderProps {
   showHeadings: boolean;
   sync: boolean;
   parallel: boolean;
+  searchQuery?: string;
   onLeftChange: (panel: PanelState) => void;
   onRightChange: (panel: PanelState) => void;
   onSyncVerse: (verse: number) => void;
@@ -26,20 +27,23 @@ export function ParallelReader({
   showHeadings,
   sync,
   parallel,
+  searchQuery,
   onLeftChange,
   onRightChange,
   onSyncVerse
 }: ParallelReaderProps) {
   return (
-    <div className={`reader-grid ${parallel ? "" : "single-panel"}`}>
+    <div className={`reader-grid ${parallel ? "parallel-mode" : "single-panel"}`}>
       <BiblePanel
         panel={left}
         books={books}
         translations={translations}
         showHeadings={showHeadings}
         sync={sync}
+        parallel={parallel}
+        searchQuery={searchQuery}
         onChange={onLeftChange}
-        onVerseVisible={onSyncVerse}
+        onVerseVisible={parallel ? onSyncVerse : undefined}
       />
 
       {parallel && (
@@ -49,8 +53,10 @@ export function ParallelReader({
           translations={translations}
           showHeadings={showHeadings}
           sync={sync}
+          parallel={parallel}
+          searchQuery={searchQuery}
           onChange={onRightChange}
-          onVerseVisible={() => undefined}
+          onVerseVisible={parallel ? onSyncVerse : undefined}
         />
       )}
     </div>

@@ -15,6 +15,8 @@ interface BiblePanelProps {
   translations: Translation[];
   showHeadings: boolean;
   sync: boolean;
+  parallel: boolean;
+  searchQuery?: string;
   onChange: (next: PanelState) => void;
   onVerseVisible?: (verse: number) => void;
 }
@@ -25,6 +27,8 @@ export function BiblePanel({
   translations,
   showHeadings,
   sync,
+  parallel,
+  searchQuery,
   onChange,
   onVerseVisible
 }: BiblePanelProps) {
@@ -69,6 +73,14 @@ export function BiblePanel({
       return;
     }
 
+    const scrollContainer = parallel
+      ? readerRef.current.closest(".main-content")
+      : readerRef.current;
+
+    if (!scrollContainer) {
+      return;
+    }
+
     const elements = readerRef.current.querySelectorAll("[data-verse]");
 
     const observer = new IntersectionObserver(
@@ -86,7 +98,7 @@ export function BiblePanel({
         }
       },
       {
-        root: readerRef.current,
+        root: scrollContainer,
         threshold: [0.4, 0.7, 1]
       }
     );
@@ -94,7 +106,7 @@ export function BiblePanel({
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, [chapter, sync, onVerseVisible]);
+  }, [chapter, sync, onVerseVisible, parallel]);
 
   function scrollToVerse(verse: number) {
     if (!readerRef.current) {
@@ -114,29 +126,46 @@ export function BiblePanel({
   return (
     <section className="bible-panel">
       <div className="panel-header">
-        <PassageSelector
-          book={book}
-          chapter={panel.chapter}
-          books={books}
-          onChange={(bookCode, chapterNumber) =>
-            onChange({
-              ...panel,
-              bookCode,
-              chapter: chapterNumber
-            })
-          }
-        />
+        <div className="panel-head-row">
+          <div style={{ minWidth: 0, flex: 1 }}>
+            <PassageSelector
+              book={book}
+              chapter={panel.chapter}
+              books={books}
+              onChange={(bookCode, chapterNumber) =>
+                onChange({
+                  ...panel,
+                  bookCode,
+                  chapter: chapterNumber
+                })
+              }
+            />
 
-        <TranslationSelector
-          value={panel.translationId}
-          translations={translations}
-          onChange={(translationId) =>
-            onChange({
-              ...panel,
-              translationId
-            })
-          }
-        />
+            <div className="version-wrap">
+              <TranslationSelector
+                value={panel.translationId}
+                translations={translations}
+                onChange={(translationId) =>
+                  onChange({
+                    ...panel,
+                    translationId
+                  })
+                }
+              />
+            </div>
+          </div>
+
+          <button
+            className="panel-close"
+            title="Panel controls"
+            aria-label="Panel controls"
+            type="button"
+          >
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M6 6l12 12M18 6l-12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div
@@ -154,6 +183,7 @@ export function BiblePanel({
         <ChapterReader
           chapter={chapter}
           showHeadings={showHeadings}
+          searchQuery={searchQuery}
           onFootnote={setFootnote}
         />
       </div>
