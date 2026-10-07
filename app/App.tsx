@@ -18,6 +18,7 @@ import type {
   ReaderState
 } from "../features/reader/readerTypes";
 import { parseReference } from "../features/references/parser";
+import { canon } from "../lib/data/canon";
 
 function getUrlState(): Partial<ReaderState> {
   const params = new URLSearchParams(window.location.search);
@@ -81,7 +82,7 @@ export default function App() {
   }));
 
   const [translations, setTranslations] = useState<Translation[]>([]);
-  const [books, setBooks] = useState<Book[]>([]);
+  const [books, setBooks] = useState<Book[]>(canon);
   const [search, setSearch] = useState("");
 
   useEffect(() => {

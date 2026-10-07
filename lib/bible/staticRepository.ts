@@ -5,23 +5,15 @@ import type {
   Translation
 } from "./repository";
 import { translations } from "../data/translations";
-
-const books: Book[] = [
-  {
-    code: "JHN",
-    name: "John",
-    testament: "NT",
-    chapters: 21
-  }
-];
+import { canon } from "../data/canon";
 
 class StaticBibleRepository implements BibleRepository {
   async getTranslations(): Promise<Translation[]> {
     return translations;
   }
 
-  async getBooks(): Promise<Book[]> {
-    return books;
+  async getBooks(_translationId: string): Promise<Book[]> {
+    return canon;
   }
 
   async getChapter(
