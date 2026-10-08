@@ -315,14 +315,20 @@ export default function App() {
               : "catholic_org";
 
           nextRight = {
-            ...state.right,
             translationId: alt,
             bookCode: primary.bookCode,
             chapter: primary.chapter,
             ...(primary.verseFilter && { verseFilter: primary.verseFilter })
           };
         } else {
-          if (
+          if (state.parallel) {
+            nextRight = {
+              translationId: state.right.translationId,
+              bookCode: primary.bookCode,
+              chapter: primary.chapter,
+              ...(primary.verseFilter && { verseFilter: primary.verseFilter })
+            };
+          } else if (
             state.right.bookCode === primary.bookCode &&
             state.right.chapter === primary.chapter
           ) {
@@ -357,9 +363,15 @@ export default function App() {
         setReader((state) => {
           const baseLeft = referenceResult.translationId
             ? { ...referenceResult.panel }
-            : { ...state.left, ...referenceResult.panel };
+            : {
+                translationId: state.left.translationId,
+                bookCode: referenceResult.panel.bookCode,
+                chapter: referenceResult.panel.chapter
+              };
 
-          const nextLeft = verseFilter ? { ...baseLeft, verseFilter } : baseLeft;
+          const nextLeft = verseFilter
+            ? { ...baseLeft, verseFilter }
+            : { ...baseLeft, verseFilter: undefined };
 
           const baseRight = referenceResult.translationId
             ? {
@@ -370,12 +382,14 @@ export default function App() {
                     : "catholic_org"
               }
             : {
-                ...state.right,
+                translationId: state.right.translationId,
                 bookCode: referenceResult.panel.bookCode,
                 chapter: referenceResult.panel.chapter
               };
 
-          const nextRight = verseFilter ? { ...baseRight, verseFilter } : baseRight;
+          const nextRight = verseFilter
+            ? { ...baseRight, verseFilter }
+            : { ...baseRight, verseFilter: undefined };
 
           return {
             ...state,
