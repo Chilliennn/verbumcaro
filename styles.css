@@ -326,7 +326,14 @@ button {
 }
 
 .main-content.scroll-sync .chapter-scroll {
+  flex: 0 0 auto;
   overflow: visible;
+}
+
+.bible-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .panel-header {
@@ -674,10 +681,15 @@ button {
 }
 
 .search-dropdown {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
   max-height: calc(100vh - 72px - 58px - 20px);
   overflow: auto;
   background: var(--white);
   border-bottom: 1px solid var(--stone-200);
+  z-index: 40;
 }
 
 .search-results-header {

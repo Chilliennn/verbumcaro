@@ -6,7 +6,6 @@ import { ParallelReader } from "../components/reader/ParallelReader";
 import { bibleRepository } from "../lib/bible/staticRepository";
 import type {
   Book,
-  Chapter,
   Translation
 } from "../lib/bible/repository";
 import {
@@ -107,7 +106,6 @@ export default function App() {
   });
   const [fontModalOpen, setFontModalOpen] = useState(false);
   const [availability, setAvailability] = useState<AvailabilityMap>({});
-  const [highlightVerse, setHighlightVerse] = useState<number | null>(null);
 
   useEffect(() => {
     document.documentElement.style.setProperty(
@@ -246,131 +244,122 @@ export default function App() {
     if (!trimmed) {
       setSearchQuery("");
       setSearchResults([]);
-      setHighlightVerse(null);
       return;
     }
 
     const results = parseSearchQuery(trimmed);
 
     if (results.length > 0) {
-      const exactRefs = results.filter((r) => r.verse !== undefined);
-      const chapterRefs = results.filter((r) => r.verse === undefined);
+      const groups = new Map<string, { bookCode: string; chapter: number; explicitTranslationId?: string; verses: number[] }>();
 
-      if (exactRefs.length === 1 && chapterRefs.length === 0) {
-        const result = exactRefs[0];
+      for (const result of results) {
         const translationId = result.translationId ?? "catholic_org";
+        const key = `${result.panel.bookCode}:${result.panel.chapter}:${translationId}`;
 
-        setReader((state) => {
-          const verseFilter =
-            result.verse !== undefined
-              ? { start: result.verse, end: result.verseEnd ?? result.verse }
-              : undefined;
+        if (!groups.has(key)) {
+          groups.set(key, {
+            bookCode: result.panel.bookCode,
+            chapter: result.panel.chapter,
+            explicitTranslationId: result.translationId,
+            verses: []
+          });
+        }
 
-          const nextLeft = {
-            ...result.panel,
-            translationId,
-            verseFilter
+        const group = groups.get(key)!;
+
+        if (result.verse !== undefined) {
+          const start = result.verse;
+          const end = result.verseEnd ?? result.verse;
+
+          for (let v = start; v <= end; v++) {
+            group.verses.push(v);
+          }
+        }
+      }
+
+      const groupArray = Array.from(groups.values()).map((g) => ({
+        bookCode: g.bookCode,
+        chapter: g.chapter,
+        explicitTranslationId: g.explicitTranslationId,
+        translationId: g.explicitTranslationId ?? "catholic_org",
+        verseFilter:
+          g.verses.length > 0
+            ? { start: Math.min(...g.verses), end: Math.max(...g.verses) }
+            : undefined
+      }));
+
+      const primary = groupArray[0];
+      const secondary = groupArray[1];
+
+      setReader((state) => {
+        const nextLeft = {
+          translationId: primary.translationId,
+          bookCode: primary.bookCode,
+          chapter: primary.chapter,
+          ...(primary.verseFilter && { verseFilter: primary.verseFilter })
+        };
+
+        let nextRight: PanelState;
+
+        if (secondary) {
+          nextRight = {
+            translationId: secondary.translationId,
+            bookCode: secondary.bookCode,
+            chapter: secondary.chapter,
+            ...(secondary.verseFilter && { verseFilter: secondary.verseFilter })
           };
+        } else if (primary.explicitTranslationId !== undefined) {
+          const alt =
+            primary.explicitTranslationId === "catholic_org"
+              ? "sigao"
+              : "catholic_org";
 
-          const nextRight =
-            result.translationId !== undefined
-              ? {
-                  ...result.panel,
-                  translationId:
-                    result.translationId === "catholic_org"
-                      ? "sigao"
-                      : "catholic_org",
-                  verseFilter
-                }
-              : state.right.bookCode === result.panel.bookCode &&
-                state.right.chapter === result.panel.chapter
-                ? { ...state.right, verseFilter }
-                : state.right;
-
-          return {
-            ...state,
-            left: nextLeft,
-            right: nextRight
+          nextRight = {
+            ...state.right,
+            translationId: alt,
+            bookCode: primary.bookCode,
+            chapter: primary.chapter,
+            ...(primary.verseFilter && { verseFilter: primary.verseFilter })
           };
-        });
-
-        setHighlightVerse(result.verse ?? null);
-        setSearchResults([]);
-        setSearchEmpty(false);
-        setSearchQuery("");
-      } else if (exactRefs.length > 0 || chapterRefs.length > 0) {
-        const verses: Array<{
-          bookCode: string;
-          chapter: number;
-          verse: number;
-          text: string;
-          translationId?: string;
-        }> = [];
-
-        for (const result of results) {
-          const translationId = result.translationId ?? "catholic_org";
-
-          try {
-            const response = await fetch(
-              `/data/translations/${translationId}/${result.panel.bookCode}/${result.panel.chapter}.json`
-            );
-
-            if (!response.ok) {
-              continue;
-            }
-
-            const data = (await response.json()) as Chapter;
-
-            if (result.verse !== undefined) {
-              const verseEnd = result.verseEnd ?? result.verse;
-
-              for (let v = result.verse; v <= verseEnd; v++) {
-                const found = data.verses.find((item) => item.verse === v);
-
-                if (found) {
-                  verses.push({
-                    bookCode: result.panel.bookCode,
-                    chapter: result.panel.chapter,
-                    verse: v,
-                    text: found.text,
-                    translationId
-                  });
-                }
-              }
-            } else {
-              for (const v of data.verses) {
-                verses.push({
-                  bookCode: result.panel.bookCode,
-                  chapter: result.panel.chapter,
-                  verse: v.verse,
-                  text: v.text,
-                  translationId
-                });
-              }
-            }
-          } catch {
-            // skip unavailable chapters
+        } else {
+          if (
+            state.right.bookCode === primary.bookCode &&
+            state.right.chapter === primary.chapter
+          ) {
+            nextRight = {
+              ...state.right,
+              ...(primary.verseFilter && { verseFilter: primary.verseFilter })
+            };
+          } else {
+            nextRight = state.right;
           }
         }
 
-        setSearchResults(verses);
-        setSearchEmpty(verses.length === 0);
-        setSearchQuery("");
-        setHighlightVerse(null);
-      }
+        return {
+          ...state,
+          left: nextLeft,
+          right: nextRight
+        };
+      });
+
+      setSearchResults([]);
+      setSearchEmpty(false);
+      setSearchQuery("");
     } else {
       const referenceResult = parseReference(trimmed);
 
       if (referenceResult) {
+        const verseFilter =
+          referenceResult.verse !== undefined
+            ? { start: referenceResult.verse, end: referenceResult.verse }
+            : undefined;
+
         setReader((state) => {
           const baseLeft = referenceResult.translationId
             ? { ...referenceResult.panel }
             : { ...state.left, ...referenceResult.panel };
 
-          const nextLeft =
-            referenceResult.verse !== undefined
-              ? { ...baseLeft, verseFilter: { start: referenceResult.verse, end: referenceResult.verse } }
-              : baseLeft;
+          const nextLeft = verseFilter ? { ...baseLeft, verseFilter } : baseLeft;
 
           const baseRight = referenceResult.translationId
             ? {
@@ -386,10 +375,7 @@ export default function App() {
                 chapter: referenceResult.panel.chapter
               };
 
-          const nextRight =
-            referenceResult.verse !== undefined
-              ? { ...baseRight, verseFilter: { start: referenceResult.verse, end: referenceResult.verse } }
-              : baseRight;
+          const nextRight = verseFilter ? { ...baseRight, verseFilter } : baseRight;
 
           return {
             ...state,
@@ -398,14 +384,14 @@ export default function App() {
           };
         });
 
-        setHighlightVerse(referenceResult.verse ?? null);
         setSearchResults([]);
         setSearchEmpty(false);
         setSearchQuery("");
       } else {
-        const availableBookCodes = getAvailableBooks(reader.left.translationId).map(
-          (book) => book.code
-        );
+        const availableBookCodes = getAvailableBooks(
+          reader.left.translationId
+        ).map((book) => book.code);
+
         const matches = await searchFullText(
           trimmed,
           reader.left.translationId,
@@ -415,7 +401,6 @@ export default function App() {
         setSearchResults(matches);
         setSearchEmpty(matches.length === 0);
         setSearchQuery("");
-        setHighlightVerse(null);
       }
     }
 
@@ -427,7 +412,6 @@ export default function App() {
     setSearchQuery("");
     setSearchResults([]);
     setSearchEmpty(false);
-    setHighlightVerse(null);
   }
 
   function navigateToResult(result: {
@@ -452,7 +436,6 @@ export default function App() {
       }
     }));
 
-    setHighlightVerse(result.verse);
     setSearchResults([]);
     setSearchQuery("");
     setSearch("");
@@ -545,7 +528,6 @@ export default function App() {
           sync={reader.sync === "verse"}
           parallel={reader.parallel}
           searchQuery={searchQuery}
-          highlightVerse={highlightVerse}
           leftAvailableBooks={getAvailableBooks(reader.left.translationId)}
           rightAvailableBooks={getAvailableBooks(reader.right.translationId)}
           onLeftChange={(panel) =>
@@ -567,9 +549,6 @@ export default function App() {
               behavior: "smooth",
               block: "center"
             });
-          }}
-          onHighlightVerse={(verse) => {
-            setHighlightVerse(verse);
           }}
           onClose={() =>
             setReader((state) => ({

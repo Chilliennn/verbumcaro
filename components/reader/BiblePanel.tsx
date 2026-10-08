@@ -17,10 +17,8 @@ interface BiblePanelProps {
   sync: boolean;
   parallel: boolean;
   searchQuery?: string;
-  highlightVerse?: number | null;
   onChange: (next: PanelState) => void;
   onVerseVisible?: (verse: number) => void;
-  onHighlightVerse?: (verse: number) => void;
   onClose?: () => void;
 }
 
@@ -32,10 +30,8 @@ export function BiblePanel({
   sync,
   parallel,
   searchQuery,
-  highlightVerse,
   onChange,
   onVerseVisible,
-  onHighlightVerse,
   onClose
 }: BiblePanelProps) {
   const [chapter, setChapter] = useState<Chapter | null>(null);
@@ -73,26 +69,6 @@ export function BiblePanel({
       cancelled = true;
     };
   }, [panel]);
-
-  useEffect(() => {
-    if (highlightVerse && chapter && readerRef.current) {
-      const element = readerRef.current.querySelector(
-        `[data-verse="${highlightVerse}"]`
-      );
-
-      readerRef.current.querySelectorAll(".verse-highlight").forEach((el) => {
-        el.classList.remove("verse-highlight");
-      });
-
-      element?.classList.add("verse-highlight");
-      element?.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-      onHighlightVerse?.(highlightVerse);
-    }
-  }, [chapter, highlightVerse, onHighlightVerse]);
 
   useEffect(() => {
     if (!sync || !readerRef.current || !onVerseVisible) {
