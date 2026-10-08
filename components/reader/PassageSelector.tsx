@@ -19,7 +19,7 @@ export function PassageSelector({
   const selectedBook = books.find((item) => item.code === book.code) ?? book;
 
   return (
-    <div className="selector-wrapper">
+    <>
       <button
         className="passage-selector"
         onClick={() => setOpen((value) => !value)}
@@ -106,6 +106,6 @@ export function PassageSelector({
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

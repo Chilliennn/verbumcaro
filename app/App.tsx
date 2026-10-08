@@ -6,6 +6,7 @@ import { ParallelReader } from "../components/reader/ParallelReader";
 import { bibleRepository } from "../lib/bible/staticRepository";
 import type {
   Book,
+  Chapter,
   Translation
 } from "../lib/bible/repository";
 import {
@@ -17,7 +18,7 @@ import type {
   PanelState,
   ReaderState
 } from "../features/reader/readerTypes";
-import { parseReference } from "../features/references/parser";
+import { parseSearchQuery, parseReference } from "../features/references/parser";
 import { canon } from "../lib/data/canon";
 
 const FONT_SIZE_KEY = "verbumcaro.fontSize";
@@ -73,6 +74,8 @@ function updateUrl(state: ReaderState) {
   );
 }
 
+type AvailabilityMap = Record<string, string[]>;
+
 export default function App() {
   const [dark, setDark] = useState(
     localStorage.getItem("verbumcaro.theme") === "dark"
@@ -88,11 +91,21 @@ export default function App() {
   const [books, setBooks] = useState<Book[]>(canon);
   const [search, setSearch] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<
+    Array<{
+      bookCode: string;
+      chapter: number;
+      verse: number;
+      text: string;
+      translationId?: string;
+    }>
+  >([]);
   const [fontSize, setFontSize] = useState(() => {
     const saved = localStorage.getItem(FONT_SIZE_KEY);
     return saved ? Number(saved) : DEFAULT_FONT_SIZE;
   });
   const [fontModalOpen, setFontModalOpen] = useState(false);
+  const [availability, setAvailability] = useState<AvailabilityMap>({});
 
   useEffect(() => {
     document.documentElement.style.setProperty(
@@ -105,6 +118,19 @@ export default function App() {
   useEffect(() => {
     bibleRepository.getTranslations().then(setTranslations);
     bibleRepository.getBooks("catholic_org").then(setBooks);
+
+    fetch("/data/availability.json")
+      .then(async (response) => {
+        if (!response.ok) {
+          return {};
+        }
+
+        return (await response.json()) as AvailabilityMap;
+      })
+      .then(setAvailability)
+      .catch(() => {
+        setAvailability({});
+      });
   }, []);
 
   useEffect(() => {
@@ -117,46 +143,183 @@ export default function App() {
     updateUrl(reader);
   }, [reader]);
 
-  function submitSearch() {
+  function getAvailableBooks(translationId: string): Book[] {
+    const availableCodes = availability[translationId];
+
+    if (!availableCodes || availableCodes.length === 0) {
+      return books;
+    }
+
+    const availableSet = new Set(availableCodes);
+
+    return books.filter((item) => availableSet.has(item.code));
+  }
+
+  async function submitSearch() {
     const trimmed = search.trim();
 
     if (!trimmed) {
       setSearchQuery("");
+      setSearchResults([]);
       return;
     }
 
-    const result = parseReference(trimmed);
+    const results = parseSearchQuery(trimmed);
 
-    if (result) {
-      setReader((state) => {
-        const nextLeft = result.translationId
-          ? { ...result.panel }
-          : { ...state.left, ...result.panel };
+    if (results.length > 0) {
+      const verses: Array<{
+        bookCode: string;
+        chapter: number;
+        verse: number;
+        text: string;
+        translationId?: string;
+      }> = [];
 
-        const nextRight = result.translationId
-          ? {
-              ...result.panel,
-              translationId:
-                result.translationId === "catholic_org" ? "sigao" : "catholic_org"
+      for (const result of results) {
+        const translationId = result.translationId ?? "catholic_org";
+
+        try {
+          const response = await fetch(
+            `/data/translations/${translationId}/${result.panel.bookCode}/${result.panel.chapter}.json`
+          );
+
+          if (!response.ok) {
+            continue;
+          }
+
+          const data = (await response.json()) as Chapter;
+
+          if (result.verse !== undefined) {
+            const verseEnd = result.verseEnd ?? result.verse;
+
+            for (let v = result.verse; v <= verseEnd; v++) {
+              const found = data.verses.find((item) => item.verse === v);
+
+              if (found) {
+                verses.push({
+                  bookCode: result.panel.bookCode,
+                  chapter: result.panel.chapter,
+                  verse: v,
+                  text: found.text,
+                  translationId
+                });
+              }
             }
-          : {
-              ...state.right,
-              bookCode: result.panel.bookCode,
-              chapter: result.panel.chapter
-            };
+          } else {
+            for (const v of data.verses) {
+              verses.push({
+                bookCode: result.panel.bookCode,
+                chapter: result.panel.chapter,
+                verse: v.verse,
+                text: v.text,
+                translationId
+              });
+            }
+          }
+        } catch {
+          // skip unavailable chapters
+        }
+      }
 
-        return {
-          ...state,
-          left: nextLeft,
-          right: nextRight
-        };
-      });
-
+      setSearchResults(verses);
       setSearchQuery("");
+
+      if (results.length === 1) {
+        const result = results[0];
+        const translationId = result.translationId ?? "catholic_org";
+
+        setReader((state) => {
+          const nextLeft = {
+            ...result.panel,
+            translationId
+          };
+
+          const nextRight =
+            result.translationId !== undefined
+              ? {
+                  ...result.panel,
+                  translationId:
+                    result.translationId === "catholic_org"
+                      ? "sigao"
+                      : "catholic_org"
+                }
+              : { ...state.right };
+
+          return {
+            ...state,
+            left: nextLeft,
+            right: nextRight
+          };
+        });
+      }
     } else {
-      setSearchQuery(trimmed);
+      const referenceResult = parseReference(trimmed);
+
+      if (referenceResult) {
+        setSearchResults([]);
+        setSearchQuery("");
+
+        setReader((state) => {
+          const nextLeft = referenceResult.translationId
+            ? { ...referenceResult.panel }
+            : { ...state.left, ...referenceResult.panel };
+
+          const nextRight = referenceResult.translationId
+            ? {
+                ...referenceResult.panel,
+                translationId:
+                  referenceResult.translationId === "catholic_org"
+                    ? "sigao"
+                    : "catholic_org"
+              }
+            : {
+                ...state.right,
+                bookCode: referenceResult.panel.bookCode,
+                chapter: referenceResult.panel.chapter
+              };
+
+          return {
+            ...state,
+            left: nextLeft,
+            right: nextRight
+          };
+        });
+      } else {
+        setSearchQuery(trimmed);
+        setSearchResults([]);
+      }
     }
 
+    setSearch("");
+  }
+
+  function clearSearch() {
+    setSearch("");
+    setSearchQuery("");
+    setSearchResults([]);
+  }
+
+  function navigateToResult(result: {
+    bookCode: string;
+    chapter: number;
+    translationId?: string;
+  }) {
+    setReader((state) => ({
+      ...state,
+      left: {
+        translationId: result.translationId ?? state.left.translationId,
+        bookCode: result.bookCode,
+        chapter: result.chapter
+      },
+      right: {
+        ...state.right,
+        bookCode: result.bookCode,
+        chapter: result.chapter
+      }
+    }));
+
+    setSearchResults([]);
+    setSearchQuery("");
     setSearch("");
   }
 
@@ -171,8 +334,42 @@ export default function App() {
         onToggleFontModal={() => setFontModalOpen((value) => !value)}
       />
 
+      {searchResults.length > 0 && (
+        <div className="search-dropdown">
+          <div className="search-results">
+            <div className="search-results-header">
+              <div className="search-results-title">
+                Search Results ({searchResults.length})
+              </div>
+              <button
+                className="search-results-clear"
+                onClick={clearSearch}
+                type="button"
+              >
+                Clear
+              </button>
+            </div>
+            <div className="search-results-list">
+              {searchResults.map((result, index) => (
+                <button
+                  key={`${result.bookCode}-${result.chapter}-${result.verse}-${index}`}
+                  className="search-result-item"
+                  onClick={() => navigateToResult(result)}
+                  type="button"
+                >
+                  <span className="search-result-ref">
+                    {result.bookCode} {result.chapter}:{result.verse}
+                  </span>
+                  <span className="search-result-text">{result.text}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <main
-        className={`main-content ${reader.parallel ? "parallel-scroll" : ""}`}
+        className={`main-content ${reader.parallel && reader.sync === "verse" ? "scroll-sync" : ""}`}
       >
         <ReaderToolbar
           sync={reader.sync === "verse"}
@@ -207,6 +404,8 @@ export default function App() {
           sync={reader.sync === "verse"}
           parallel={reader.parallel}
           searchQuery={searchQuery}
+          leftAvailableBooks={getAvailableBooks(reader.left.translationId)}
+          rightAvailableBooks={getAvailableBooks(reader.right.translationId)}
           onLeftChange={(panel) =>
             setReader((state) => ({ ...state, left: panel }))
           }

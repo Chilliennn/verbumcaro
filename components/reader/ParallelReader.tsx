@@ -14,6 +14,8 @@ interface ParallelReaderProps {
   sync: boolean;
   parallel: boolean;
   searchQuery?: string;
+  leftAvailableBooks?: Book[];
+  rightAvailableBooks?: Book[];
   onLeftChange: (panel: PanelState) => void;
   onRightChange: (panel: PanelState) => void;
   onSyncVerse: (verse: number) => void;
@@ -28,6 +30,8 @@ export function ParallelReader({
   sync,
   parallel,
   searchQuery,
+  leftAvailableBooks,
+  rightAvailableBooks,
   onLeftChange,
   onRightChange,
   onSyncVerse
@@ -36,7 +40,7 @@ export function ParallelReader({
     <div className={`reader-grid ${parallel ? "parallel-mode" : "single-panel"}`}>
       <BiblePanel
         panel={left}
-        books={books}
+        books={leftAvailableBooks ?? books}
         translations={translations}
         showHeadings={showHeadings}
         sync={sync}
@@ -49,7 +53,7 @@ export function ParallelReader({
       {parallel && (
         <BiblePanel
           panel={right}
-          books={books}
+          books={rightAvailableBooks ?? books}
           translations={translations}
           showHeadings={showHeadings}
           sync={sync}

@@ -127,7 +127,7 @@ export function BiblePanel({
     <section className="bible-panel">
       <div className="panel-header">
         <div className="panel-head-row">
-          <div style={{ minWidth: 0, flex: 1 }}>
+          <div className="selector-wrapper">
             <PassageSelector
               book={book}
               chapter={panel.chapter}
@@ -140,19 +140,6 @@ export function BiblePanel({
                 })
               }
             />
-
-            <div className="version-wrap">
-              <TranslationSelector
-                value={panel.translationId}
-                translations={translations}
-                onChange={(translationId) =>
-                  onChange({
-                    ...panel,
-                    translationId
-                  })
-                }
-              />
-            </div>
           </div>
 
           <button
@@ -165,6 +152,19 @@ export function BiblePanel({
               <path d="M6 6l12 12M18 6l-12 12" />
             </svg>
           </button>
+        </div>
+
+        <div className="version-row">
+          <TranslationSelector
+            value={panel.translationId}
+            translations={translations}
+            onChange={(translationId) =>
+              onChange({
+                ...panel,
+                translationId
+              })
+            }
+          />
         </div>
       </div>
 
