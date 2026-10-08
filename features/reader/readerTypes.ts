@@ -2,6 +2,7 @@ export interface PanelState {
   translationId: string;
   bookCode: string;
   chapter: number;
+  verseFilter?: { start: number; end: number };
 }
 
 export type SyncMode = "off" | "verse";

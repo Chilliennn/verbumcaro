@@ -17,8 +17,11 @@ interface BiblePanelProps {
   sync: boolean;
   parallel: boolean;
   searchQuery?: string;
+  highlightVerse?: number | null;
   onChange: (next: PanelState) => void;
   onVerseVisible?: (verse: number) => void;
+  onHighlightVerse?: (verse: number) => void;
+  onClose?: () => void;
 }
 
 export function BiblePanel({
@@ -29,8 +32,11 @@ export function BiblePanel({
   sync,
   parallel,
   searchQuery,
+  highlightVerse,
   onChange,
-  onVerseVisible
+  onVerseVisible,
+  onHighlightVerse,
+  onClose
 }: BiblePanelProps) {
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [footnote, setFootnote] = useState<string | null>(null);
@@ -69,13 +75,31 @@ export function BiblePanel({
   }, [panel]);
 
   useEffect(() => {
+    if (highlightVerse && chapter && readerRef.current) {
+      const element = readerRef.current.querySelector(
+        `[data-verse="${highlightVerse}"]`
+      );
+
+      readerRef.current.querySelectorAll(".verse-highlight").forEach((el) => {
+        el.classList.remove("verse-highlight");
+      });
+
+      element?.classList.add("verse-highlight");
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      onHighlightVerse?.(highlightVerse);
+    }
+  }, [chapter, highlightVerse, onHighlightVerse]);
+
+  useEffect(() => {
     if (!sync || !readerRef.current || !onVerseVisible) {
       return;
     }
 
-    const scrollContainer = parallel
-      ? readerRef.current.closest(".main-content")
-      : readerRef.current;
+    const scrollContainer = readerRef.current.closest(".main-content");
 
     if (!scrollContainer) {
       return;
@@ -106,53 +130,46 @@ export function BiblePanel({
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, [chapter, sync, onVerseVisible, parallel]);
-
-  function scrollToVerse(verse: number) {
-    if (!readerRef.current) {
-      return;
-    }
-
-    const element = readerRef.current.querySelector(
-      `[data-verse="${verse}"]`
-    );
-
-    element?.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }
+  }, [chapter, sync, onVerseVisible]);
 
   return (
     <section className="bible-panel">
       <div className="panel-header">
-        <div className="panel-head-row">
-          <div className="selector-wrapper">
-            <PassageSelector
-              book={book}
-              chapter={panel.chapter}
-              books={books}
-              onChange={(bookCode, chapterNumber) =>
-                onChange({
-                  ...panel,
-                  bookCode,
-                  chapter: chapterNumber
-                })
-              }
-            />
-          </div>
+          <div className="panel-head-row">
+            <div className="selector-wrapper">
+              <PassageSelector
+                book={book}
+                chapter={panel.chapter}
+                books={books}
+                translationLanguage={
+                  translations.find((t) => t.id === panel.translationId)
+                    ?.language
+                }
+                onChange={(bookCode, chapterNumber) =>
+                  onChange({
+                    ...panel,
+                    bookCode,
+                    chapter: chapterNumber,
+                    verseFilter: undefined
+                  })
+                }
+              />
+            </div>
 
-          <button
-            className="panel-close"
-            title="Panel controls"
-            aria-label="Panel controls"
-            type="button"
-          >
-            <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 6l12 12M18 6l-12 12" />
-            </svg>
-          </button>
-        </div>
+            {parallel && (
+              <button
+                className="panel-close"
+                title="Close panel"
+                aria-label="Close panel"
+                type="button"
+                onClick={onClose}
+              >
+                <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M6 6l12 12M18 6l-12 12" />
+                </svg>
+              </button>
+            )}
+          </div>
 
         <div className="version-row">
           <TranslationSelector
@@ -185,13 +202,21 @@ export function BiblePanel({
           showHeadings={showHeadings}
           searchQuery={searchQuery}
           onFootnote={setFootnote}
+          verseFilter={panel.verseFilter}
         />
       </div>
 
       {sync && (
         <button
           className="sync-helper"
-          onClick={() => scrollToVerse(1)}
+          onClick={() => {
+            const first = readerRef.current?.querySelector("[data-verse]");
+
+            first?.scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+          }}
           title="Return to verse 1"
         >
           ↑

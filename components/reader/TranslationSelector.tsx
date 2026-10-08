@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Translation } from "../../lib/bible/repository";
 
 interface TranslationSelectorProps {
@@ -13,10 +13,30 @@ export function TranslationSelector({
   onChange
 }: TranslationSelectorProps) {
   const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const selected = translations.find((item) => item.id === value);
 
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, [open]);
+
   return (
-    <div className="version-selector-wrap">
+    <div ref={wrapperRef} className="version-selector-wrap">
       <button
         className="version-selector"
         onClick={() => setOpen((value) => !value)}

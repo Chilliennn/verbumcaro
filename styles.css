@@ -297,6 +297,11 @@ button {
   grid-template-columns: 1fr;
 }
 
+.reader-grid.parallel-mode {
+  flex: 1;
+  min-height: 0;
+}
+
 .reader-grid.parallel-mode .bible-panel {
   overflow: hidden;
 }
@@ -317,6 +322,10 @@ button {
 
 .main-content.scroll-sync .reader-grid.parallel-mode .chapter-scroll {
   flex: 0 0 auto;
+  overflow: visible;
+}
+
+.main-content.scroll-sync .chapter-scroll {
   overflow: visible;
 }
 
@@ -601,6 +610,15 @@ button {
   background: var(--white);
 }
 
+.verse-highlight {
+  background: rgba(153, 27, 27, 0.08);
+  border-radius: 4px;
+}
+
+:root[data-theme="dark"] .verse-highlight {
+  background: rgba(185, 28, 28, 0.2);
+}
+
 .verse-number {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   font-size: 11px;
@@ -724,6 +742,13 @@ button {
   font-size: 16px;
   line-height: 1.5;
   color: var(--stone-800);
+}
+
+.search-empty {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  padding: 18px 14px;
+  color: var(--stone-500);
+  font-size: 13px;
 }
 
 .sync-helper {

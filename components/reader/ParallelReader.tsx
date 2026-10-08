@@ -14,11 +14,14 @@ interface ParallelReaderProps {
   sync: boolean;
   parallel: boolean;
   searchQuery?: string;
+  highlightVerse?: number | null;
   leftAvailableBooks?: Book[];
   rightAvailableBooks?: Book[];
   onLeftChange: (panel: PanelState) => void;
   onRightChange: (panel: PanelState) => void;
   onSyncVerse: (verse: number) => void;
+  onHighlightVerse?: (verse: number) => void;
+  onClose: () => void;
 }
 
 export function ParallelReader({
@@ -30,11 +33,14 @@ export function ParallelReader({
   sync,
   parallel,
   searchQuery,
+  highlightVerse,
   leftAvailableBooks,
   rightAvailableBooks,
   onLeftChange,
   onRightChange,
-  onSyncVerse
+  onSyncVerse,
+  onHighlightVerse,
+  onClose
 }: ParallelReaderProps) {
   return (
     <div className={`reader-grid ${parallel ? "parallel-mode" : "single-panel"}`}>
@@ -46,8 +52,11 @@ export function ParallelReader({
         sync={sync}
         parallel={parallel}
         searchQuery={searchQuery}
+        highlightVerse={highlightVerse}
         onChange={onLeftChange}
         onVerseVisible={parallel ? onSyncVerse : undefined}
+        onHighlightVerse={onHighlightVerse}
+        onClose={parallel ? onClose : undefined}
       />
 
       {parallel && (
@@ -59,8 +68,11 @@ export function ParallelReader({
           sync={sync}
           parallel={parallel}
           searchQuery={searchQuery}
+          highlightVerse={highlightVerse}
           onChange={onRightChange}
           onVerseVisible={parallel ? onSyncVerse : undefined}
+          onHighlightVerse={onHighlightVerse}
+          onClose={onClose}
         />
       )}
     </div>

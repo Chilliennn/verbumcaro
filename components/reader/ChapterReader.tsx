@@ -6,13 +6,15 @@ interface ChapterReaderProps {
   showHeadings: boolean;
   searchQuery?: string;
   onFootnote: (text: string) => void;
+  verseFilter?: { start: number; end: number } | null;
 }
 
 export function ChapterReader({
   chapter,
   showHeadings,
   searchQuery,
-  onFootnote
+  onFootnote,
+  verseFilter
 }: ChapterReaderProps) {
   if (!chapter) {
     return (
@@ -22,13 +24,22 @@ export function ChapterReader({
     );
   }
 
+  let filteredVerses = chapter.verses;
+
+  if (verseFilter) {
+    filteredVerses = filteredVerses.filter(
+      (verse) =>
+        verse.verse >= verseFilter.start && verse.verse <= verseFilter.end
+    );
+  }
+
   const query = searchQuery?.trim().toLowerCase();
 
   const verses = query
-    ? chapter.verses.filter((verse) =>
+    ? filteredVerses.filter((verse) =>
         verse.text.toLowerCase().includes(query)
       )
-    : chapter.verses;
+    : filteredVerses;
 
   return (
     <article className="chapter-reader">
