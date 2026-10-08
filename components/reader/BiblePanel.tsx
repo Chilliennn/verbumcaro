@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { getBookLanguageName, getBookName } from "../../lib/data/book_names";
 import type {
   Book,
   Chapter,
@@ -18,7 +19,7 @@ interface BiblePanelProps {
   parallel: boolean;
   searchQuery?: string;
   onChange: (next: PanelState) => void;
-  onVerseVisible?: (verse: number) => void;
+  onVerseVisible?: (verse: number, passageIndex: number) => void;
   onClose?: () => void;
 }
 
@@ -34,36 +35,33 @@ export function BiblePanel({
   onVerseVisible,
   onClose
 }: BiblePanelProps) {
-  const [chapter, setChapter] = useState<Chapter | null>(null);
+  const [chapters, setChapters] = useState<Array<Chapter | null>>([]);
+  const passages = panel.passages ?? [panel];
   const [footnote, setFootnote] = useState<string | null>(null);
   const readerRef = useRef<HTMLDivElement>(null);
 
-  const book =
-    books.find((item) => item.code === panel.bookCode) ?? books[0];
+  const translation = translations.find((t) => t.id === panel.translationId);
+  const bookLanguage = translation
+    ? getBookLanguageName(translation.language)
+    : "en";
+
 
   useEffect(() => {
     let cancelled = false;
 
-    fetch(
-      `/data/translations/${panel.translationId}/${panel.bookCode}/${panel.chapter}.json`
-    )
-      .then(async (response) => {
-        if (!response.ok) {
-          return null;
-        }
-
-        return (await response.json()) as Chapter;
-      })
-      .then((data) => {
-        if (!cancelled) {
-          setChapter(data);
-        }
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setChapter(null);
-        }
-      });
+    setChapters([]);
+    Promise.all((panel.passages ?? [panel]).map(async (passage) => {
+      try {
+        const response = await fetch(
+          `/data/translations/${panel.translationId}/${passage.bookCode}/${passage.chapter}.json`
+        );
+        return response.ok ? await response.json() as Chapter : null;
+      } catch {
+        return null;
+      }
+    })).then((data) => {
+      if (!cancelled) setChapters(data);
+    });
 
     return () => {
       cancelled = true;
@@ -94,7 +92,8 @@ export function BiblePanel({
             (visible.target as HTMLElement).dataset.verse
           );
 
-          onVerseVisible(verse);
+          const passageIndex = Number((visible.target as HTMLElement).closest("[data-passage-index]")?.getAttribute("data-passage-index") ?? 0);
+          onVerseVisible(verse, passageIndex);
         }
       },
       {
@@ -106,98 +105,56 @@ export function BiblePanel({
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, [chapter, sync, onVerseVisible]);
+  }, [chapters, sync, onVerseVisible]);
 
   return (
     <section className="bible-panel">
-      <div className="panel-header">
-          <div className="panel-head-row">
-            <div className="selector-wrapper">
-              <PassageSelector
-                book={book}
-                chapter={panel.chapter}
-                books={books}
-                translationLanguage={
-                  translations.find((t) => t.id === panel.translationId)
-                    ?.language
-                }
-                onChange={(bookCode, chapterNumber) =>
-                  onChange({
-                    ...panel,
-                    bookCode,
-                    chapter: chapterNumber,
-                    verseFilter: undefined
-                  })
-                }
-              />
-            </div>
-
-            {parallel && (
-              <button
-                className="panel-close"
-                title="Close panel"
-                aria-label="Close panel"
-                type="button"
-                onClick={onClose}
-              >
-                <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 6l12 12M18 6l-12 12" />
-                </svg>
-              </button>
-            )}
-          </div>
-
-        <div className="version-row">
-          <TranslationSelector
-            value={panel.translationId}
-            translations={translations}
-            onChange={(translationId) =>
-              onChange({
-                ...panel,
-                translationId
-              })
-            }
-          />
-        </div>
+      <div ref={readerRef} className="chapter-scroll passage-list">
+        {passages.map((passage, index) => {
+          const book = books.find((item) => item.code === passage.bookCode);
+          const displayBookName = getBookName(passage.bookCode, bookLanguage);
+          return (
+            <section className="passage-section" data-passage-index={index} key={`${passage.bookCode}-${passage.chapter}-${index}`}>
+              <div className="panel-header">
+                <div className="panel-head-row">
+                  <div className="selector-wrapper">
+                    {book ? (
+                      <PassageSelector
+                        book={book}
+                        chapter={passage.chapter}
+                        verseFilter={passage.verseFilter}
+                        books={books}
+                        translationLanguage={translation?.language}
+                        onChange={(bookCode, chapter) => onChange({
+                          translationId: panel.translationId, bookCode, chapter
+                        })}
+                      />
+                    ) : (
+                      <strong>{displayBookName} {passage.chapter}</strong>
+                    )}
+                  </div>
+                  {parallel && index === 0 && (
+                    <button className="panel-close" title="Close panel" aria-label="Close panel"
+                      type="button" onClick={onClose}>×</button>
+                  )}
+                </div>
+                <div className="version-row">
+                  <TranslationSelector value={panel.translationId} translations={translations}
+                    onChange={(translationId) => onChange({ ...panel, translationId })} />
+                </div>
+              </div>
+              <div className="passage-content">
+                {chapters.length === 0 ? (
+                  <div className="empty-chapter">Loading passage…</div>
+                ) : (
+                  <ChapterReader chapter={chapters[index] ?? null} showHeadings={showHeadings}
+                    searchQuery={searchQuery} onFootnote={setFootnote} verseFilter={passage.verseFilter} />
+                )}
+              </div>
+            </section>
+          );
+        })}
       </div>
-
-      <div
-        ref={readerRef}
-        className="chapter-scroll"
-        onDoubleClick={() => {
-          const selected = window.getSelection()?.toString().trim();
-
-          if (selected) {
-            // Stage 1 intentionally keeps native text selection.
-            // Context/AI actions will be added in a later stage.
-          }
-        }}
-      >
-        <ChapterReader
-          chapter={chapter}
-          showHeadings={showHeadings}
-          searchQuery={searchQuery}
-          onFootnote={setFootnote}
-          verseFilter={panel.verseFilter}
-        />
-      </div>
-
-      {sync && (
-        <button
-          className="sync-helper"
-          onClick={() => {
-            const first = readerRef.current?.querySelector("[data-verse]");
-
-            first?.scrollIntoView({
-              behavior: "smooth",
-              block: "center"
-            });
-          }}
-          title="Return to verse 1"
-        >
-          ↑
-        </button>
-      )}
 
       {footnote && (
         <div

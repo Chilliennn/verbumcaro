@@ -31,6 +31,12 @@ function getUrlState(): Partial<ReaderState> {
       return null;
     }
 
+    try {
+      if (value.startsWith("{")) return JSON.parse(value) as PanelState;
+    } catch {
+      return null;
+    }
+
     const [translationId, bookCode, chapter] = value.split(":");
 
     if (!translationId || !bookCode || !chapter) {
@@ -49,7 +55,8 @@ function getUrlState(): Partial<ReaderState> {
 
   return {
     ...(left ? { left } : {}),
-    ...(right ? { right } : {})
+    ...(right ? { right } : {}),
+    ...(params.has("q") ? { search: params.get("q") ?? "" } : {})
   };
 }
 
@@ -58,13 +65,15 @@ function updateUrl(state: ReaderState) {
 
   params.set(
     "left",
-    `${state.left.translationId}:${state.left.bookCode}:${state.left.chapter}`
+    JSON.stringify(state.left)
   );
 
   params.set(
     "right",
-    `${state.right.translationId}:${state.right.bookCode}:${state.right.chapter}`
+    JSON.stringify(state.right)
   );
+
+  if (state.search) params.set("q", state.search);
 
   window.history.replaceState(
     null,
@@ -88,7 +97,7 @@ export default function App() {
 
   const [translations, setTranslations] = useState<Translation[]>([]);
   const [books, setBooks] = useState<Book[]>(canon);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(reader.search ?? "");
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<
     Array<{
@@ -250,103 +259,30 @@ export default function App() {
     const results = parseSearchQuery(trimmed);
 
     if (results.length > 0) {
-      const groups = new Map<string, { bookCode: string; chapter: number; explicitTranslationId?: string; verses: number[] }>();
-
-      for (const result of results) {
-        const translationId = result.translationId ?? "catholic_org";
-        const key = `${result.panel.bookCode}:${result.panel.chapter}:${translationId}`;
-
-        if (!groups.has(key)) {
-          groups.set(key, {
-            bookCode: result.panel.bookCode,
-            chapter: result.panel.chapter,
-            explicitTranslationId: result.translationId,
-            verses: []
-          });
+      const passages = results.map((result) => ({
+        bookCode: result.panel.bookCode,
+        chapter: result.panel.chapter,
+        verseFilter: result.verse === undefined ? undefined : {
+          start: result.verse,
+          end: result.verseEnd ?? result.verse
         }
-
-        const group = groups.get(key)!;
-
-        if (result.verse !== undefined) {
-          const start = result.verse;
-          const end = result.verseEnd ?? result.verse;
-
-          for (let v = start; v <= end; v++) {
-            group.verses.push(v);
-          }
-        }
-      }
-
-      const groupArray = Array.from(groups.values()).map((g) => ({
-        bookCode: g.bookCode,
-        chapter: g.chapter,
-        explicitTranslationId: g.explicitTranslationId,
-        translationId: g.explicitTranslationId ?? "catholic_org",
-        verseFilter:
-          g.verses.length > 0
-            ? { start: Math.min(...g.verses), end: Math.max(...g.verses) }
-            : undefined
       }));
+      const explicitTranslationId = results.find((result) => result.translationId)?.translationId;
 
-      const primary = groupArray[0];
-      const secondary = groupArray[1];
-
-      setReader((state) => {
-        const nextLeft = {
-          translationId: primary.translationId,
-          bookCode: primary.bookCode,
-          chapter: primary.chapter,
-          ...(primary.verseFilter && { verseFilter: primary.verseFilter })
-        };
-
-        let nextRight: PanelState;
-
-        if (secondary) {
-          nextRight = {
-            translationId: secondary.translationId,
-            bookCode: secondary.bookCode,
-            chapter: secondary.chapter,
-            ...(secondary.verseFilter && { verseFilter: secondary.verseFilter })
-          };
-        } else if (primary.explicitTranslationId !== undefined) {
-          const alt =
-            primary.explicitTranslationId === "catholic_org"
-              ? "sigao"
-              : "catholic_org";
-
-          nextRight = {
-            translationId: alt,
-            bookCode: primary.bookCode,
-            chapter: primary.chapter,
-            ...(primary.verseFilter && { verseFilter: primary.verseFilter })
-          };
-        } else {
-          if (state.parallel) {
-            nextRight = {
-              translationId: state.right.translationId,
-              bookCode: primary.bookCode,
-              chapter: primary.chapter,
-              ...(primary.verseFilter && { verseFilter: primary.verseFilter })
-            };
-          } else if (
-            state.right.bookCode === primary.bookCode &&
-            state.right.chapter === primary.chapter
-          ) {
-            nextRight = {
-              ...state.right,
-              ...(primary.verseFilter && { verseFilter: primary.verseFilter })
-            };
-          } else {
-            nextRight = state.right;
-          }
+      setReader((state) => ({
+        ...state,
+        search: trimmed,
+        left: {
+          ...passages[0],
+          translationId: explicitTranslationId ?? state.left.translationId,
+          passages
+        },
+        right: {
+          ...passages[0],
+          translationId: state.right.translationId,
+          passages
         }
-
-        return {
-          ...state,
-          left: nextLeft,
-          right: nextRight
-        };
-      });
+      }));
 
       setSearchResults([]);
       setSearchEmpty(false);
@@ -393,6 +329,7 @@ export default function App() {
 
           return {
             ...state,
+            search: trimmed,
             left: nextLeft,
             right: nextRight
           };
@@ -417,12 +354,11 @@ export default function App() {
         setSearchQuery("");
       }
     }
-
-    setSearch("");
   }
 
   function clearSearch() {
     setSearch("");
+    setReader((state) => ({ ...state, search: "" }));
     setSearchQuery("");
     setSearchResults([]);
     setSearchEmpty(false);
@@ -443,7 +379,7 @@ export default function App() {
         verseFilter: { start: result.verse, end: result.verse }
       },
       right: {
-        ...state.right,
+        translationId: state.right.translationId,
         bookCode: result.bookCode,
         chapter: result.chapter,
         verseFilter: { start: result.verse, end: result.verse }
@@ -452,7 +388,6 @@ export default function App() {
 
     setSearchResults([]);
     setSearchQuery("");
-    setSearch("");
   }
 
   return (
@@ -550,13 +485,13 @@ export default function App() {
           onRightChange={(panel) =>
             setReader((state) => ({ ...state, right: panel }))
           }
-          onSyncVerse={(verse) => {
+          onSyncVerse={(verse, passageIndex) => {
             if (reader.sync !== "verse") {
               return;
             }
 
             const target = document.querySelector(
-              `.bible-panel:nth-child(2) [data-verse="${verse}"]`
+              `.bible-panel:nth-child(2) [data-passage-index="${passageIndex}"] [data-verse="${verse}"]`
             );
 
             target?.scrollIntoView({

@@ -1,5 +1,12 @@
-export interface PanelState {
+export interface PassageState {
+  bookCode: string;
+  chapter: number;
+  verseFilter?: { start: number; end: number };
+}
+
+export interface PanelState extends PassageState {
   translationId: string;
+  passages?: PassageState[];
   bookCode: string;
   chapter: number;
   verseFilter?: { start: number; end: number };
@@ -13,4 +20,5 @@ export interface ReaderState {
   sync: SyncMode;
   showHeadings: boolean;
   parallel: boolean;
+  search?: string;
 }

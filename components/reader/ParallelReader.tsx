@@ -18,7 +18,7 @@ interface ParallelReaderProps {
   rightAvailableBooks?: Book[];
   onLeftChange: (panel: PanelState) => void;
   onRightChange: (panel: PanelState) => void;
-  onSyncVerse: (verse: number) => void;
+  onSyncVerse: (verse: number, passageIndex: number) => void;
   onClose: () => void;
 }
 
@@ -63,7 +63,6 @@ export function ParallelReader({
           parallel={parallel}
           searchQuery={searchQuery}
           onChange={onRightChange}
-          onVerseVisible={parallel ? onSyncVerse : undefined}
           onClose={onClose}
         />
       )}

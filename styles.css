@@ -358,6 +358,15 @@ button {
   flex: 1;
 }
 
+.verse-ref {
+  padding: 6px 24px 10px;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-800);
+  letter-spacing: 0.02em;
+}
+
 .version-row {
   padding: 0 24px 15px;
 }
@@ -953,4 +962,16 @@ button {
   .passage-menu {
     max-height: calc(100vh - 145px);
   }
+}
+
+.chapter-scroll.passage-list {
+  padding: 0;
+}
+
+.passage-section + .passage-section {
+  border-top: 8px solid var(--stone-200);
+}
+
+.passage-content {
+  padding: 28px 30px 50px;
 }

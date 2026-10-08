@@ -5,6 +5,7 @@ import { getBookName, getBookLanguageName } from "../../lib/data/book_names";
 interface PassageSelectorProps {
   book: Book;
   chapter: number;
+  verseFilter?: { start: number; end: number };
   books: Book[];
   onChange: (bookCode: string, chapter: number) => void;
   translationLanguage?: string;
@@ -13,6 +14,7 @@ interface PassageSelectorProps {
 export function PassageSelector({
   book,
   chapter,
+  verseFilter,
   books,
   onChange,
   translationLanguage
@@ -50,7 +52,7 @@ export function PassageSelector({
         onClick={() => setOpen((value) => !value)}
         type="button"
       >
-        <span>{displayName} {chapter}</span>
+        <span>{displayName} {chapter}{verseFilter && `:${verseFilter.start}${verseFilter.end !== verseFilter.start ? `-${verseFilter.end}` : ""}`}</span>
         <svg
           className={`chevron ${open ? "open" : ""}`}
           viewBox="0 0 24 24"
