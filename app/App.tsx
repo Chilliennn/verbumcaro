@@ -268,10 +268,12 @@ export default function App() {
         }
       }));
       const explicitTranslationId = results.find((result) => result.translationId)?.translationId;
+      const rightTranslationId = results.find((result) => result.rightTranslationId)?.rightTranslationId;
 
       setReader((state) => ({
         ...state,
         search: trimmed,
+        parallel: rightTranslationId ? true : state.parallel,
         left: {
           ...passages[0],
           translationId: explicitTranslationId ?? state.left.translationId,
@@ -279,7 +281,7 @@ export default function App() {
         },
         right: {
           ...passages[0],
-          translationId: state.right.translationId,
+          translationId: rightTranslationId ?? state.right.translationId,
           passages
         }
       }));

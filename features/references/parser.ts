@@ -197,15 +197,27 @@ const LANGUAGE_MODIFIERS: Record<string, string> = {
   "/vulgate": "vulgate"
 };
 
+function extractLanguageModifiers(input: string) {
+  const aliases = Object.keys(LANGUAGE_MODIFIERS).map((alias) => alias.slice(1)).join("|");
+  const match = input.match(new RegExp(`\\s*\\/(${aliases})(?:\\s+\\/?(${aliases}))?$`, "i"));
+  return {
+    reference: match ? input.slice(0, match.index).trim() : input.trim(),
+    translationId: match ? LANGUAGE_MODIFIERS[`/${match[1].toLowerCase()}`] : undefined,
+    rightTranslationId: match?.[2] ? LANGUAGE_MODIFIERS[`/${match[2].toLowerCase()}`] : undefined
+  };
+}
+
 export interface ParsedReference {
   panel: PanelState;
   translationId?: string;
+  rightTranslationId?: string;
   verse?: number;
 }
 
 export interface SearchResult {
   panel: PanelState;
   translationId?: string;
+  rightTranslationId?: string;
   verse?: number;
   verseEnd?: number;
   raw: string;
@@ -214,16 +226,7 @@ export interface SearchResult {
 export function parseReference(input: string): ParsedReference | null {
   const normalized = input.trim();
 
-  const modifierMatch = normalized.match(
-    /(\s+)?(\/(?:en|eng|njb|chi|zh|ja|jap|jpn|lat|latin|sigao|vulgate|shinkyo))$/i
-  );
-
-  const modifier = modifierMatch?.[2]?.toLowerCase();
-  const translationId = modifier ? LANGUAGE_MODIFIERS[modifier] : undefined;
-
-  const reference = modifierMatch
-    ? normalized.slice(0, modifierMatch.index).trim()
-    : normalized;
+  const { reference, translationId, rightTranslationId } = extractLanguageModifiers(normalized);
 
   const match = reference.match(
     /^((?:\d\s*)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)(?::(\d+))?$/i
@@ -247,151 +250,57 @@ export function parseReference(input: string): ParsedReference | null {
       chapter: Number(match[2])
     },
     translationId,
+    rightTranslationId,
     verse: match[3] ? Number(match[3]) : undefined
   };
 }
 
 export function parseSearchQuery(input: string): SearchResult[] {
-  const normalized = input.trim();
-
-  if (!normalized) {
-    return [];
-  }
-
   const results: SearchResult[] = [];
-  const passages = normalized.split(/\s*;\s*/);
-
   let inheritedBook: string | undefined;
   let inheritedChapter: number | undefined;
 
-  for (const passage of passages) {
-    const trimmed = passage.trim();
+  for (const passage of input.trim().split(/\s*;\s*/)) {
+    const { reference, translationId, rightTranslationId } = extractLanguageModifiers(passage);
 
-    if (!trimmed) {
-      continue;
-    }
-
-    const modifierMatch = trimmed.match(
-      /(\s+)?(\/(?:en|eng|njb|chi|zh|ja|jap|jpn|lat|latin|sigao|vulgate|shinkyo))$/i
-    );
-
-    const modifier = modifierMatch?.[2]?.toLowerCase();
-    const translationId = modifier ? LANGUAGE_MODIFIERS[modifier] : undefined;
-    const withoutModifier = modifierMatch
-      ? trimmed.slice(0, modifierMatch.index).trim()
-      : trimmed;
-
-    const firstMatch = withoutModifier.match(
-      /^((?:\d\s*)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)(?::(\d+)(?:-(\d+))?)?/i
-    );
-
-    let bookCode: string | undefined;
-    let chapter: number | undefined;
-
-    if (firstMatch) {
-      const rawBook = firstMatch[1]
-        .toLowerCase()
-        .replace(/\s+/g, " ")
-        .trim();
-      bookCode = BOOK_ALIASES[rawBook];
-
-      if (bookCode) {
-        chapter = Number(firstMatch[2]);
-        inheritedBook = bookCode;
-        inheritedChapter = chapter;
-      }
-    }
-
-    if (!bookCode || !chapter) {
-      const chapterVerseMatch = withoutModifier.match(
-        /^(\d+):(\d+)(?:-(\d+))?$/
+    for (const part of reference.split(/\s*,\s*/)) {
+      if (!part) continue;
+      const full = part.match(
+        /^((?:\d\s*)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/i
       );
+      const chapterVerse = part.match(/^(\d+):(\d+)(?:-(\d+))?$/);
+      const verseOnly = part.match(/^(\d+)(?:-(\d+))?$/);
+      let bookCode = inheritedBook;
+      let chapter = inheritedChapter;
+      let verse: number | undefined;
+      let verseEnd: number | undefined;
 
-      if (chapterVerseMatch && inheritedBook) {
-        const cvChapter = Number(chapterVerseMatch[1]);
-        const cvVerseStart = Number(chapterVerseMatch[2]);
-        const cvVerseEnd = chapterVerseMatch[3]
-          ? Number(chapterVerseMatch[3])
-          : cvVerseStart;
-
-        results.push({
-          panel: {
-            translationId: translationId ?? "catholic_org",
-            bookCode: inheritedBook,
-            chapter: cvChapter
-          },
-          translationId,
-          verse: cvVerseStart,
-          verseEnd: cvVerseEnd,
-          raw: withoutModifier
-        });
-
-        inheritedChapter = cvChapter;
+      if (full) {
+        bookCode = BOOK_ALIASES[full[1].toLowerCase().replace(/\s+/g, " ").trim()];
+        chapter = Number(full[2]);
+        verse = full[3] ? Number(full[3]) : undefined;
+        verseEnd = full[4] ? Number(full[4]) : verse;
+      } else if (chapterVerse) {
+        chapter = Number(chapterVerse[1]);
+        verse = Number(chapterVerse[2]);
+        verseEnd = chapterVerse[3] ? Number(chapterVerse[3]) : verse;
+      } else if (verseOnly) {
+        verse = Number(verseOnly[1]);
+        verseEnd = verseOnly[2] ? Number(verseOnly[2]) : verse;
+      } else {
         continue;
       }
 
-      bookCode = inheritedBook;
-      chapter = inheritedChapter;
-    }
-
-    if (!bookCode || !chapter) {
-      continue;
-    }
-
-    const rest = firstMatch
-      ? withoutModifier.slice(firstMatch[0].length).trim()
-      : withoutModifier;
-
-    const commaParts = rest ? rest.split(/\s*,\s*/) : [];
-
-    const partsToProcess: Array<{
-      verseStart?: number;
-      verseEnd?: number;
-      raw: string;
-    }> = [];
-
-    if (firstMatch) {
-      const verseStart = firstMatch[3] ? Number(firstMatch[3]) : undefined;
-      const verseEnd = firstMatch[4]
-        ? Number(firstMatch[4])
-        : verseStart;
-
-      partsToProcess.push({
-        verseStart,
-        verseEnd,
-        raw: firstMatch[0]
-      });
-    }
-
-    for (const part of commaParts) {
-      const rangeMatch = part.match(/^(\d+)(?:-(\d+))?$/);
-
-      if (rangeMatch) {
-        partsToProcess.push({
-          verseStart: Number(rangeMatch[1]),
-          verseEnd: rangeMatch[2]
-            ? Number(rangeMatch[2])
-            : Number(rangeMatch[1]),
-          raw: part
-        });
-      }
-    }
-
-    for (const part of partsToProcess) {
-      if (part.verseStart === undefined) {
-        continue;
-      }
-
+      if (!bookCode || !chapter) continue;
+      inheritedBook = bookCode;
+      inheritedChapter = chapter;
       results.push({
-        panel: {
-          translationId: translationId ?? "catholic_org",
-          bookCode,
-          chapter
-        },
+        panel: { translationId: translationId ?? "catholic_org", bookCode, chapter },
         translationId,
-        verse: part.verseStart,
-        verseEnd: part.verseEnd,
-        raw: part.raw
+        rightTranslationId,
+        verse,
+        verseEnd,
+        raw: part
       });
     }
   }

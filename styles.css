@@ -975,3 +975,19 @@ button {
 .passage-content {
   padding: 28px 30px 50px;
 }
+
+/* Raise the open picker above the passage and translation controls. */
+.panel-header:has(.passage-picker-open) {
+  z-index: 10;
+}
+
+.selector-wrapper:has(.passage-picker-open) {
+  position: static;
+}
+
+.panel-header:has(.passage-picker-open) .passage-menu {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  z-index: 20;
+}

@@ -46,7 +46,7 @@ export function PassageSelector({
   }, [open]);
 
   return (
-    <div ref={wrapperRef}>
+    <div ref={wrapperRef} className={open ? "passage-picker-open" : undefined}>
       <button
         className="passage-selector"
         onClick={() => setOpen((value) => !value)}
