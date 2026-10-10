@@ -1,3 +1,4 @@
+import { BOOK_NAMES } from "../../lib/data/book_names";
 import type { PanelState } from "../reader/readerTypes";
 
 const BOOK_ALIASES: Record<string, string> = {
@@ -181,6 +182,12 @@ const BOOK_ALIASES: Record<string, string> = {
   revelation: "REV"
 };
 
+for (const [code, names] of Object.entries(BOOK_NAMES)) {
+  for (const name of Object.values(names)) {
+    BOOK_ALIASES[name.toLowerCase()] ??= code;
+  }
+}
+
 const LANGUAGE_MODIFIERS: Record<string, string> = {
   "/en": "catholic_org",
   "/eng": "catholic_org",
@@ -197,7 +204,7 @@ const LANGUAGE_MODIFIERS: Record<string, string> = {
   "/vulgate": "vulgate"
 };
 
-function extractLanguageModifiers(input: string) {
+export function extractLanguageModifiers(input: string) {
   const aliases = Object.keys(LANGUAGE_MODIFIERS).map((alias) => alias.slice(1)).join("|");
   const match = input.match(new RegExp(`\\s*\\/(${aliases})(?:\\s+\\/?(${aliases}))?$`, "i"));
   return {
@@ -229,7 +236,7 @@ export function parseReference(input: string): ParsedReference | null {
   const { reference, translationId, rightTranslationId } = extractLanguageModifiers(normalized);
 
   const match = reference.match(
-    /^((?:\d\s*)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)(?::(\d+))?$/i
+    /^([\p{L}\p{N}\s]+?)\s*(\d+)(?::(\d+))?$/iu
   );
 
   if (!match) {
@@ -266,7 +273,7 @@ export function parseSearchQuery(input: string): SearchResult[] {
     for (const part of reference.split(/\s*,\s*/)) {
       if (!part) continue;
       const full = part.match(
-        /^((?:\d\s*)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/i
+        /^([\p{L}\p{N}\s]+?)\s*(\d+)(?::(\d+)(?:-(\d+))?)?$/iu
       );
       const chapterVerse = part.match(/^(\d+):(\d+)(?:-(\d+))?$/);
       const verseOnly = part.match(/^(\d+)(?:-(\d+))?$/);
@@ -275,7 +282,7 @@ export function parseSearchQuery(input: string): SearchResult[] {
       let verse: number | undefined;
       let verseEnd: number | undefined;
 
-      if (full) {
+      if (full && /\p{L}/u.test(full[1])) {
         bookCode = BOOK_ALIASES[full[1].toLowerCase().replace(/\s+/g, " ").trim()];
         chapter = Number(full[2]);
         verse = full[3] ? Number(full[3]) : undefined;

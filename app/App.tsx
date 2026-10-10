@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Header } from "../components/layout/Header";
 import { ReaderToolbar } from "../components/layout/ReaderToolbar";
 import { AppShell } from "../components/layout/AppShell";
@@ -17,7 +17,9 @@ import type {
   PanelState,
   ReaderState
 } from "../features/reader/readerTypes";
-import { parseSearchQuery, parseReference } from "../features/references/parser";
+import { parseSearchQuery, parseReference, extractLanguageModifiers } from "../features/references/parser";
+import { getBookName, getBookLanguageName } from "../lib/data/book_names";
+import { translations as supportedTranslations } from "../lib/data/translations";
 import { canon } from "../lib/data/canon";
 
 const FONT_SIZE_KEY = "verbumcaro.fontSize";
@@ -108,6 +110,33 @@ export default function App() {
       translationId?: string;
     }>
   >([]);
+  const searchDropdownRef = useRef<HTMLDivElement>(null);
+  const searchRequest = useRef(0);
+
+  function dismissSearch() {
+    searchRequest.current++;
+    setSearchResults([]);
+    setSearchEmpty(false);
+  }
+
+  useEffect(() => {
+    function onPointerDown(event: PointerEvent) {
+      const target = event.target as HTMLElement;
+      if (!searchDropdownRef.current?.contains(target) && !target.closest(".global-search")) {
+        dismissSearch();
+      }
+    }
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") dismissSearch();
+    }
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
+
   const [searchEmpty, setSearchEmpty] = useState(false);
   const [fontSize, setFontSize] = useState(() => {
     const saved = localStorage.getItem(FONT_SIZE_KEY);
@@ -167,7 +196,8 @@ export default function App() {
   async function searchFullText(
     query: string,
     translationId: string,
-    bookCodes: string[]
+    bookCodes: string[],
+    request: number
   ): Promise<
     Array<{
       bookCode: string;
@@ -177,7 +207,7 @@ export default function App() {
       translationId?: string;
     }>
   > {
-    const normalized = query.toLowerCase();
+    const normalized = query.normalize("NFKC").toLowerCase();
     const matches: Array<{
       bookCode: string;
       chapter: number;
@@ -186,7 +216,7 @@ export default function App() {
       translationId?: string;
     }> = [];
 
-    const fetches: Promise<
+    const fetches: Array<() => Promise<
       Array<{
         bookCode: string;
         chapter: number;
@@ -194,7 +224,7 @@ export default function App() {
         text: string;
         translationId?: string;
       }>
-    >[] = [];
+    >> = [];
 
     for (const bookCode of bookCodes) {
       const book = canon.find((item) => item.code === bookCode);
@@ -205,7 +235,7 @@ export default function App() {
 
       for (let chapter = 1; chapter <= book.chapters; chapter++) {
         fetches.push(
-          bibleRepository
+          () => bibleRepository
             .getChapter(translationId, bookCode, chapter)
             .then((data) => {
               if (!data) {
@@ -215,7 +245,7 @@ export default function App() {
               const chapterMatches: typeof matches = [];
 
               for (const verse of data.verses) {
-                if (verse.text.toLowerCase().includes(normalized)) {
+                if (verse.text.normalize("NFKC").toLowerCase().includes(normalized)) {
                   chapterMatches.push({
                     bookCode,
                     chapter,
@@ -236,8 +266,9 @@ export default function App() {
     const BATCH_SIZE = 30;
 
     for (let i = 0; i < fetches.length; i += BATCH_SIZE) {
+      if (request !== searchRequest.current) return [];
       const batch = fetches.slice(i, i + BATCH_SIZE);
-      const results = await Promise.all(batch);
+      const results = await Promise.all(batch.map((fetchChapter) => fetchChapter()));
 
       for (const chapterMatches of results) {
         matches.push(...chapterMatches);
@@ -248,6 +279,9 @@ export default function App() {
   }
 
   async function submitSearch() {
+    const request = ++searchRequest.current;
+    setSearchResults([]);
+    setSearchEmpty(false);
     const trimmed = search.trim();
 
     if (!trimmed) {
@@ -341,15 +375,20 @@ export default function App() {
         setSearchEmpty(false);
         setSearchQuery("");
       } else {
-        const availableBookCodes = getAvailableBooks(
-          reader.left.translationId
-        ).map((book) => book.code);
-
-        const matches = await searchFullText(
-          trimmed,
-          reader.left.translationId,
-          availableBookCodes
-        );
+        const { reference: textQuery, translationId } = extractLanguageModifiers(trimmed);
+        if (!textQuery) return;
+        const searchTranslations = translationId
+          ? supportedTranslations.filter((translation) => translation.id === translationId)
+          : supportedTranslations;
+        const matches: typeof searchResults = [];
+        for (const translation of searchTranslations) {
+          if (request !== searchRequest.current) return;
+          matches.push(...await searchFullText(
+            textQuery, translation.id,
+            getAvailableBooks(translation.id).map((book) => book.code), request
+          ));
+        }
+        if (request !== searchRequest.current) return;
 
         setSearchResults(matches);
         setSearchEmpty(matches.length === 0);
@@ -359,6 +398,7 @@ export default function App() {
   }
 
   function clearSearch() {
+    dismissSearch();
     setSearch("");
     setReader((state) => ({ ...state, search: "" }));
     setSearchQuery("");
@@ -374,6 +414,7 @@ export default function App() {
   }) {
     setReader((state) => ({
       ...state,
+      search,
       left: {
         translationId: result.translationId ?? state.left.translationId,
         bookCode: result.bookCode,
@@ -398,28 +439,21 @@ export default function App() {
         dark={dark}
         onToggleTheme={() => setDark((value) => !value)}
         search={search}
-        onSearchChange={setSearch}
+        onSearchChange={(value) => { dismissSearch(); setSearch(value); }}
         onSearchSubmit={submitSearch}
         onToggleFontModal={() => setFontModalOpen((value) => !value)}
       />
 
       {(searchResults.length > 0 || searchEmpty) && (
-        <div className="search-dropdown">
+        <div ref={searchDropdownRef} className="search-dropdown">
           <div className="search-results">
+            <div className="search-results-header">
+              <div className="search-results-title">Search Results ({searchResults.length})</div>
+              <button className="search-results-clear" onClick={clearSearch} type="button">Clear</button>
+              <button className="search-results-clear" onClick={dismissSearch} type="button" aria-label="Close search results">Close</button>
+            </div>
             {searchResults.length > 0 ? (
               <>
-                <div className="search-results-header">
-                  <div className="search-results-title">
-                    Search Results ({searchResults.length})
-                  </div>
-                  <button
-                    className="search-results-clear"
-                    onClick={clearSearch}
-                    type="button"
-                  >
-                    Clear
-                  </button>
-                </div>
                 <div className="search-results-list">
                   {searchResults.map((result, index) => (
                     <button
@@ -429,7 +463,8 @@ export default function App() {
                       type="button"
                     >
                       <span className="search-result-ref">
-                        {result.bookCode} {result.chapter}:{result.verse}
+                        {getBookName(result.bookCode, getBookLanguageName(supportedTranslations.find((translation) => translation.id === result.translationId)?.language ?? "en"))} {result.chapter}:{result.verse}
+                        {" · "}{supportedTranslations.find((translation) => translation.id === result.translationId)?.name}
                       </span>
                       <span className="search-result-text">{result.text}</span>
                     </button>
