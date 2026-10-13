@@ -3,6 +3,10 @@ import { Header } from "../components/layout/Header";
 import { ReaderToolbar } from "../components/layout/ReaderToolbar";
 import { AppShell } from "../components/layout/AppShell";
 import { ParallelReader } from "../components/reader/ParallelReader";
+import { LandingView } from "../components/landing/LandingView";
+import { FontSettingsModal } from "../components/modals/FontSettingsModal";
+import { SearchGuideModal } from "../components/modals/SearchGuideModal";
+import { HubModal } from "../components/modals/HubModal";
 import { bibleRepository } from "../lib/bible/staticRepository";
 import type {
   Book,
@@ -13,12 +17,16 @@ import { useSearch } from "../features/search/useSearch";
 import { useTheme } from "../features/ui/useTheme";
 import { useFontSize } from "../features/ui/useFontSize";
 import { useAvailability } from "../features/data/useAvailability";
+import { useLandingPage } from "../features/landing/useLandingPage";
 import { canon } from "../lib/data/canon";
 
 export default function App() {
   const [dark, toggleTheme] = useTheme();
   const [fontSize, setFontSize] = useFontSize();
   const [fontModalOpen, setFontModalOpen] = useState(false);
+  const [guideModalOpen, setGuideModalOpen] = useState(false);
+  const [hubModalOpen, setHubModalOpen] = useState(false);
+
   const [reader, setReader] = useReader();
   const availability = useAvailability();
 
@@ -44,6 +52,11 @@ export default function App() {
     getTranslationName
   } = useSearch(reader, setReader, availability, books, translations);
 
+  const { isLanding, setIsLanding, navigateHome } = useLandingPage(
+    Boolean(search.trim()),
+    searchResults.length > 0
+  );
+
   function getAvailableBooks(translationId: string): Book[] {
     const availableCodes = availability[translationId];
     if (!availableCodes || availableCodes.length === 0) {
@@ -53,15 +66,29 @@ export default function App() {
     return books.filter((item) => availableSet.has(item.code));
   }
 
+  function handleSelectResult(result: Parameters<typeof navigateToResult>[0]) {
+    setIsLanding(false);
+    navigateToResult(result);
+  }
+
   return (
     <AppShell>
       <Header
         dark={dark}
         onToggleTheme={toggleTheme}
         search={search}
-        onSearchChange={(value) => { dismissSearch(); setSearch(value); }}
-        onSearchSubmit={submitSearch}
-        onToggleFontModal={() => setFontModalOpen((value) => !value)}
+        onSearchChange={(value) => {
+          dismissSearch();
+          setSearch(value);
+        }}
+        onSearchSubmit={() => {
+          setIsLanding(false);
+          submitSearch();
+        }}
+        onToggleFontModal={() => setFontModalOpen((prev) => !prev)}
+        onOpenGuideModal={() => setGuideModalOpen(true)}
+        onOpenHubModal={() => setHubModalOpen(true)}
+        onNavigateHome={navigateHome}
       />
 
       {(searchResults.length > 0 || searchEmpty) && (
@@ -73,24 +100,22 @@ export default function App() {
               <button className="search-results-clear" onClick={dismissSearch} type="button" aria-label="Close search results">Close</button>
             </div>
             {searchResults.length > 0 ? (
-              <>
-                <div className="search-results-list">
-                  {searchResults.map((result, index) => (
-                    <button
-                      key={`${result.bookCode}-${result.chapter}-${result.verse}-${index}`}
-                      className="search-result-item"
-                      onClick={() => navigateToResult(result)}
-                      type="button"
-                    >
-                      <span className="search-result-ref">
-                        {getBookName(result.bookCode, result.translationId)} {result.chapter}:{result.verse}
-                        {" · "}{getTranslationName(result.translationId)}
-                      </span>
-                      <span className="search-result-text">{result.text}</span>
-                    </button>
-                  ))}
-                </div>
-              </>
+              <div className="search-results-list">
+                {searchResults.map((result, index) => (
+                  <button
+                    key={`${result.bookCode}-${result.chapter}-${result.verse}-${index}`}
+                    className="search-result-item"
+                    onClick={() => handleSelectResult(result)}
+                    type="button"
+                  >
+                    <span className="search-result-ref">
+                      {getBookName(result.bookCode, result.translationId)} {result.chapter}:{result.verse}
+                      {" · "}{getTranslationName(result.translationId)}
+                    </span>
+                    <span className="search-result-text">{result.text}</span>
+                  </button>
+                ))}
+              </div>
             ) : (
               <div className="search-empty">No matches found.</div>
             )}
@@ -98,112 +123,93 @@ export default function App() {
         </div>
       )}
 
-      <main
-        className={`main-content ${reader.sync === "verse" ? "scroll-sync" : ""}`}
-      >
-        <ReaderToolbar
-          sync={reader.sync === "verse"}
-          parallel={reader.parallel}
-          showHeadings={reader.showHeadings}
-          onSync={() =>
-            setReader((state) => ({
-              ...state,
-              sync: state.sync === "off" ? "verse" : "off"
-            }))
-          }
-          onParallel={() =>
-            setReader((state) => ({
-              ...state,
-              parallel: !state.parallel
-            }))
-          }
-          onHeadings={() =>
-            setReader((state) => ({
-              ...state,
-              showHeadings: !state.showHeadings
-            }))
-          }
-        />
-
-        <ParallelReader
-          left={reader.left}
-          right={reader.right}
-          books={books}
-          translations={translations}
-          showHeadings={reader.showHeadings}
-          sync={reader.sync === "verse"}
-          parallel={reader.parallel}
-          searchQuery={searchQuery}
-          leftAvailableBooks={getAvailableBooks(reader.left.translationId)}
-          rightAvailableBooks={getAvailableBooks(reader.right.translationId)}
-          onLeftChange={(panel) =>
-            setReader((state) => ({ ...state, left: panel }))
-          }
-          onRightChange={(panel) =>
-            setReader((state) => ({ ...state, right: panel }))
-          }
-          onSyncVerse={(verse, passageIndex) => {
-            if (reader.sync !== "verse") {
-              return;
-            }
-
-            const target = document.querySelector(
-              `.bible-panel:nth-child(2) [data-passage-index="${passageIndex}"] [data-verse="${verse}"]`
-            );
-
-            target?.scrollIntoView({
-              behavior: "smooth",
-              block: "center"
-            });
-          }}
-          onClose={() =>
-            setReader((state) => ({
-              ...state,
-              parallel: false
-            }))
-          }
-        />
-      </main>
-
-      {fontModalOpen && (
-        <div
-          className="font-modal-backdrop"
-          onClick={() => setFontModalOpen(false)}
+      {isLanding ? (
+        <LandingView />
+      ) : (
+        <main
+          className={`main-content ${reader.sync === "verse" ? "scroll-sync" : ""}`}
         >
-          <div
-            className="font-modal"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="font-modal-header">
-              <div className="font-modal-title">Font Size</div>
-              <button
-                className="font-modal-close"
-                onClick={() => setFontModalOpen(false)}
-                aria-label="Close"
-              >
-                ✕
-              </button>
-            </div>
+          <ReaderToolbar
+            sync={reader.sync === "verse"}
+            parallel={reader.parallel}
+            showHeadings={reader.showHeadings}
+            onSync={() =>
+              setReader((state) => ({
+                ...state,
+                sync: state.sync === "off" ? "verse" : "off"
+              }))
+            }
+            onParallel={() =>
+              setReader((state) => ({
+                ...state,
+                parallel: !state.parallel
+              }))
+            }
+            onHeadings={() =>
+              setReader((state) => ({
+                ...state,
+                showHeadings: !state.showHeadings
+              }))
+            }
+          />
 
-            <div className="font-preview">
-              <span style={{ fontSize: 14 }}>Aa</span>
-              <span style={{ fontSize: 28 }}>Aa</span>
-            </div>
-
-            <input
-              type="range"
-              className="font-slider"
-              min="14"
-              max="28"
-              step="1"
-              value={fontSize}
-              onChange={(event) =>
-                setFontSize(Number(event.target.value))
+          <ParallelReader
+            left={reader.left}
+            right={reader.right}
+            books={books}
+            translations={translations}
+            showHeadings={reader.showHeadings}
+            sync={reader.sync === "verse"}
+            parallel={reader.parallel}
+            searchQuery={searchQuery}
+            leftAvailableBooks={getAvailableBooks(reader.left.translationId)}
+            rightAvailableBooks={getAvailableBooks(reader.right.translationId)}
+            onLeftChange={(panel) =>
+              setReader((state) => ({ ...state, left: panel }))
+            }
+            onRightChange={(panel) =>
+              setReader((state) => ({ ...state, right: panel }))
+            }
+            onSyncVerse={(verse, passageIndex) => {
+              if (reader.sync !== "verse") {
+                return;
               }
-            />
-          </div>
-        </div>
+
+              const target = document.querySelector(
+                `.bible-panel:nth-child(2) [data-passage-index="${passageIndex}"] [data-verse="${verse}"]`
+              );
+
+              target?.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+              });
+            }}
+            onClose={() =>
+              setReader((state) => ({
+                ...state,
+                parallel: false
+              }))
+            }
+          />
+        </main>
       )}
+
+      <FontSettingsModal
+        isOpen={fontModalOpen}
+        fontSize={fontSize}
+        onFontSizeChange={setFontSize}
+        onClose={() => setFontModalOpen(false)}
+      />
+
+      <SearchGuideModal
+        isOpen={guideModalOpen}
+        onClose={() => setGuideModalOpen(false)}
+      />
+
+      <HubModal
+        isOpen={hubModalOpen}
+        onClose={() => setHubModalOpen(false)}
+      />
     </AppShell>
   );
 }

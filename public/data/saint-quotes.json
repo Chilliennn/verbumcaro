@@ -1,10 +1,82 @@
-{
-  "quotes": [
-    { "text": "Pray as though everything depended on God. Work as though everything depended on you.", "author": "St. Augustine of Hippo" },
-    { "text": "Late have I loved you, beauty so ancient and so new: late have I loved you.", "author": "St. Augustine of Hippo" },
-    { "text": "Preach the Gospel at all times and when necessary use words.", "author": "St. Francis of Assisi" },
-    { "text": "To love God is something greater than to know Him.", "author": "St. Thomas Aquinas" },
-    { "text": "Let nothing disturb you, let nothing frighten you. All things are passing; God alone suffices.", "author": "St. Teresa of Ávila" },
-    { "text": "Miss no single opportunity of making some small sacrifice.", "author": "St. Thérèse of Lisieux" }
-  ]
-}
+[
+  {
+    "quote": "Pray as though everything depended on God. Work as though everything depended on you.",
+    "author": "St. Augustine of Hippo"
+  },
+  {
+    "quote": "Late have I loved you, beauty so old and so new: late have I loved you.",
+    "author": "St. Augustine of Hippo"
+  },
+  {
+    "quote": "Our hearts are restless until they rest in You.",
+    "author": "St. Augustine of Hippo"
+  },
+  {
+    "quote": "Preach the Gospel at all times and when necessary use words.",
+    "author": "St. Francis of Assisi"
+  },
+  {
+    "quote": "To love God is something greater than to know Him.",
+    "author": "St. Thomas Aquinas"
+  },
+  {
+    "quote": "The things that we love tell us what we are.",
+    "author": "St. Thomas Aquinas"
+  },
+  {
+    "quote": "Let nothing disturb you, let nothing frighten you. All things are passing; God alone suffices.",
+    "author": "St. Teresa of Ávila"
+  },
+  {
+    "quote": "Miss no single opportunity of making some small sacrifice.",
+    "author": "St. Thérèse of Lisieux"
+  },
+  {
+    "quote": "Do not be afraid. Do not be satisfied with mediocrity. Put out into the deep and let down your nets.",
+    "author": "St. John Paul II"
+  },
+  {
+    "quote": "Be who God meant you to be and you will set the world on fire.",
+    "author": "St. Catherine of Siena"
+  },
+  {
+    "quote": "Not all of us can do great things. But we can do small things with great love.",
+    "author": "St. Teresa of Calcutta"
+  },
+  {
+    "quote": "He who possesses God lacks nothing: God alone suffices.",
+    "author": "St. Teresa of Ávila"
+  },
+  {
+    "quote": "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
+    "author": "St. Francis of Assisi"
+  },
+  {
+    "quote": "Christ has no body now on earth but yours, no hands but yours, no feet but yours.",
+    "author": "St. Teresa of Ávila"
+  },
+  {
+    "quote": "Love is shown more in deeds than in words.",
+    "author": "St. Ignatius of Loyola"
+  },
+  {
+    "quote": "Act as if every day were the last of your life.",
+    "author": "St. Anthony of Padua"
+  },
+  {
+    "quote": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
+    "author": "St. Teresa of Calcutta"
+  },
+  {
+    "quote": "Sanctify yourself and you will sanctify society.",
+    "author": "St. Francis of Assisi"
+  },
+  {
+    "quote": "Patience is the companion of wisdom.",
+    "author": "St. Augustine of Hippo"
+  },
+  {
+    "quote": "The truth is like a lion; you don't have to defend it. Let it loose; it will defend itself.",
+    "author": "St. Augustine of Hippo"
+  }
+]

@@ -5,6 +5,9 @@ interface HeaderProps {
   onSearchChange: (value: string) => void;
   onSearchSubmit: () => void;
   onToggleFontModal?: () => void;
+  onOpenGuideModal?: () => void;
+  onOpenHubModal?: () => void;
+  onNavigateHome?: () => void;
 }
 
 export function Header({
@@ -13,11 +16,19 @@ export function Header({
   search,
   onSearchChange,
   onSearchSubmit,
-  onToggleFontModal
+  onToggleFontModal,
+  onOpenGuideModal,
+  onOpenHubModal,
+  onNavigateHome
 }: HeaderProps) {
   return (
     <header className="site-header">
-      <button className="brand" title="VerbumCaro" type="button">
+      <button
+        className="brand"
+        title="Return to VerbumCaro Home"
+        type="button"
+        onClick={onNavigateHome}
+      >
         <span className="brand-mark">
           <svg viewBox="0 0 100 100" width="38" height="38" fill="none" stroke="currentColor" strokeLinecap="square" strokeLinejoin="miter" aria-hidden="true">
             <circle cx="50" cy="50" r="44" strokeWidth="6.5" />
@@ -60,6 +71,21 @@ export function Header({
       </div>
 
       <div className="header-actions">
+        {onOpenGuideModal && (
+          <button
+            className="header-icon"
+            title="Search guide"
+            type="button"
+            onClick={onOpenGuideModal}
+            aria-label="Search syntax guide"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 16v-4M12 8h.01" />
+            </svg>
+          </button>
+        )}
+
         <button
           className="header-icon aa"
           title="Text settings"
@@ -88,7 +114,13 @@ export function Header({
           )}
         </button>
 
-        <button className="header-icon" title="Account" aria-label="Account" type="button">
+        <button
+          className="header-icon"
+          title="Account, Sponsors & API Settings"
+          aria-label="Account"
+          type="button"
+          onClick={onOpenHubModal}
+        >
           <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="8" r="3" />
             <path d="M5 20a7 7 0 0 1 14 0" />
