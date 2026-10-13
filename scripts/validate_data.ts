@@ -4,17 +4,17 @@ import { join } from "node:path";
 const root = "public/data/translations";
 
 async function main() {
-  const translations = await readdir(root);
+  const translations = (await readdir(root)).filter(name => !name.startsWith("."));
 
   let errors = 0;
 
   for (const translation of translations) {
     const translationPath = join(root, translation);
 
-    for (const book of await readdir(translationPath)) {
+    for (const book of (await readdir(translationPath)).filter(name => !name.startsWith("."))) {
       const bookPath = join(translationPath, book);
 
-      for (const file of await readdir(bookPath)) {
+      for (const file of (await readdir(bookPath)).filter(name => !name.startsWith("."))) {
         if (!file.endsWith(".json")) {
           continue;
         }

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "../components/layout/Header";
 import { ReaderToolbar } from "../components/layout/ReaderToolbar";
 import { AppShell } from "../components/layout/AppShell";
@@ -8,436 +8,56 @@ import type {
   Book,
   Translation
 } from "../lib/bible/repository";
-import {
-  DEFAULT_READER_STATE,
-  loadReaderState,
-  saveReaderState
-} from "../features/reader/readerStore";
-import type {
-  PanelState,
-  ReaderState
-} from "../features/reader/readerTypes";
-import { parseSearchQuery, parseReference, extractLanguageModifiers } from "../features/references/parser";
-import { getBookName, getBookLanguageName } from "../lib/data/book_names";
-import { translations as supportedTranslations } from "../lib/data/translations";
+import { useReader } from "../features/reader/useReader";
+import { useSearch } from "../features/search/useSearch";
+import { useTheme } from "../features/ui/useTheme";
+import { useFontSize } from "../features/ui/useFontSize";
+import { useAvailability } from "../features/data/useAvailability";
 import { canon } from "../lib/data/canon";
 
-const FONT_SIZE_KEY = "verbumcaro.fontSize";
-const DEFAULT_FONT_SIZE = 18;
-
-function getUrlState(): Partial<ReaderState> {
-  const params = new URLSearchParams(window.location.search);
-
-  function parsePanel(value: string | null): PanelState | null {
-    if (!value) {
-      return null;
-    }
-
-    try {
-      if (value.startsWith("{")) return JSON.parse(value) as PanelState;
-    } catch {
-      return null;
-    }
-
-    const [translationId, bookCode, chapter] = value.split(":");
-
-    if (!translationId || !bookCode || !chapter) {
-      return null;
-    }
-
-    return {
-      translationId,
-      bookCode,
-      chapter: Number(chapter)
-    };
-  }
-
-  const left = parsePanel(params.get("left"));
-  const right = parsePanel(params.get("right"));
-
-  return {
-    ...(left ? { left } : {}),
-    ...(right ? { right } : {}),
-    ...(params.has("q") ? { search: params.get("q") ?? "" } : {})
-  };
-}
-
-function updateUrl(state: ReaderState) {
-  const params = new URLSearchParams();
-
-  params.set(
-    "left",
-    JSON.stringify(state.left)
-  );
-
-  params.set(
-    "right",
-    JSON.stringify(state.right)
-  );
-
-  if (state.search) params.set("q", state.search);
-
-  window.history.replaceState(
-    null,
-    "",
-    `${window.location.pathname}?${params.toString()}`
-  );
-}
-
-type AvailabilityMap = Record<string, string[]>;
-
 export default function App() {
-  const [dark, setDark] = useState(
-    localStorage.getItem("verbumcaro.theme") === "dark"
-  );
-
-  const [reader, setReader] = useState<ReaderState>(() => ({
-    ...DEFAULT_READER_STATE,
-    ...loadReaderState(),
-    ...getUrlState()
-  }));
+  const [dark, toggleTheme] = useTheme();
+  const [fontSize, setFontSize] = useFontSize();
+  const [fontModalOpen, setFontModalOpen] = useState(false);
+  const [reader, setReader] = useReader();
+  const availability = useAvailability();
 
   const [translations, setTranslations] = useState<Translation[]>([]);
-  const [books, setBooks] = useState<Book[]>(canon);
-  const [search, setSearch] = useState(reader.search ?? "");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<
-    Array<{
-      bookCode: string;
-      chapter: number;
-      verse: number;
-      text: string;
-      translationId?: string;
-    }>
-  >([]);
-  const searchDropdownRef = useRef<HTMLDivElement>(null);
-  const searchRequest = useRef(0);
-
-  function dismissSearch() {
-    searchRequest.current++;
-    setSearchResults([]);
-    setSearchEmpty(false);
-  }
-
-  useEffect(() => {
-    function onPointerDown(event: PointerEvent) {
-      const target = event.target as HTMLElement;
-      if (!searchDropdownRef.current?.contains(target) && !target.closest(".global-search")) {
-        dismissSearch();
-      }
-    }
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") dismissSearch();
-    }
-    document.addEventListener("pointerdown", onPointerDown);
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("pointerdown", onPointerDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, []);
-
-  const [searchEmpty, setSearchEmpty] = useState(false);
-  const [fontSize, setFontSize] = useState(() => {
-    const saved = localStorage.getItem(FONT_SIZE_KEY);
-    return saved ? Number(saved) : DEFAULT_FONT_SIZE;
-  });
-  const [fontModalOpen, setFontModalOpen] = useState(false);
-  const [availability, setAvailability] = useState<AvailabilityMap>({});
-
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--reader-font-size",
-      `${fontSize}px`
-    );
-    localStorage.setItem(FONT_SIZE_KEY, String(fontSize));
-  }, [fontSize]);
+  const [books] = useState<Book[]>(canon);
 
   useEffect(() => {
     bibleRepository.getTranslations().then(setTranslations);
-    bibleRepository.getBooks("catholic_org").then(setBooks);
-
-    fetch("/data/availability.json")
-      .then(async (response) => {
-        if (!response.ok) {
-          return {};
-        }
-
-        return (await response.json()) as AvailabilityMap;
-      })
-      .then(setAvailability)
-      .catch(() => {
-        setAvailability({});
-      });
   }, []);
 
-  useEffect(() => {
-    document.documentElement.dataset.theme = dark ? "dark" : "light";
-    localStorage.setItem("verbumcaro.theme", dark ? "dark" : "light");
-  }, [dark]);
-
-  useEffect(() => {
-    saveReaderState(reader);
-    updateUrl(reader);
-  }, [reader]);
+  const {
+    search,
+    setSearch,
+    searchQuery,
+    searchResults,
+    searchEmpty,
+    searchDropdownRef,
+    dismissSearch,
+    submitSearch,
+    clearSearch,
+    navigateToResult,
+    getBookName,
+    getTranslationName
+  } = useSearch(reader, setReader, availability, books, translations);
 
   function getAvailableBooks(translationId: string): Book[] {
     const availableCodes = availability[translationId];
-
     if (!availableCodes || availableCodes.length === 0) {
       return books;
     }
-
     const availableSet = new Set(availableCodes);
-
     return books.filter((item) => availableSet.has(item.code));
-  }
-
-  async function searchFullText(
-    query: string,
-    translationId: string,
-    bookCodes: string[],
-    request: number
-  ): Promise<
-    Array<{
-      bookCode: string;
-      chapter: number;
-      verse: number;
-      text: string;
-      translationId?: string;
-    }>
-  > {
-    const normalized = query.normalize("NFKC").toLowerCase();
-    const matches: Array<{
-      bookCode: string;
-      chapter: number;
-      verse: number;
-      text: string;
-      translationId?: string;
-    }> = [];
-
-    const fetches: Array<() => Promise<
-      Array<{
-        bookCode: string;
-        chapter: number;
-        verse: number;
-        text: string;
-        translationId?: string;
-      }>
-    >> = [];
-
-    for (const bookCode of bookCodes) {
-      const book = canon.find((item) => item.code === bookCode);
-
-      if (!book) {
-        continue;
-      }
-
-      for (let chapter = 1; chapter <= book.chapters; chapter++) {
-        fetches.push(
-          () => bibleRepository
-            .getChapter(translationId, bookCode, chapter)
-            .then((data) => {
-              if (!data) {
-                return [];
-              }
-
-              const chapterMatches: typeof matches = [];
-
-              for (const verse of data.verses) {
-                if (verse.text.normalize("NFKC").toLowerCase().includes(normalized)) {
-                  chapterMatches.push({
-                    bookCode,
-                    chapter,
-                    verse: verse.verse,
-                    text: verse.text,
-                    translationId
-                  });
-                }
-              }
-
-              return chapterMatches;
-            })
-            .catch(() => [])
-        );
-      }
-    }
-
-    const BATCH_SIZE = 30;
-
-    for (let i = 0; i < fetches.length; i += BATCH_SIZE) {
-      if (request !== searchRequest.current) return [];
-      const batch = fetches.slice(i, i + BATCH_SIZE);
-      const results = await Promise.all(batch.map((fetchChapter) => fetchChapter()));
-
-      for (const chapterMatches of results) {
-        matches.push(...chapterMatches);
-      }
-    }
-
-    return matches;
-  }
-
-  async function submitSearch() {
-    const request = ++searchRequest.current;
-    setSearchResults([]);
-    setSearchEmpty(false);
-    const trimmed = search.trim();
-
-    if (!trimmed) {
-      setSearchQuery("");
-      setSearchResults([]);
-      return;
-    }
-
-    const results = parseSearchQuery(trimmed);
-
-    if (results.length > 0) {
-      const passages = results.map((result) => ({
-        bookCode: result.panel.bookCode,
-        chapter: result.panel.chapter,
-        verseFilter: result.verse === undefined ? undefined : {
-          start: result.verse,
-          end: result.verseEnd ?? result.verse
-        }
-      }));
-      const explicitTranslationId = results.find((result) => result.translationId)?.translationId;
-      const rightTranslationId = results.find((result) => result.rightTranslationId)?.rightTranslationId;
-
-      setReader((state) => ({
-        ...state,
-        search: trimmed,
-        parallel: rightTranslationId ? true : state.parallel,
-        left: {
-          ...passages[0],
-          translationId: explicitTranslationId ?? state.left.translationId,
-          passages
-        },
-        right: {
-          ...passages[0],
-          translationId: rightTranslationId ?? state.right.translationId,
-          passages
-        }
-      }));
-
-      setSearchResults([]);
-      setSearchEmpty(false);
-      setSearchQuery("");
-    } else {
-      const referenceResult = parseReference(trimmed);
-
-      if (referenceResult) {
-        const verseFilter =
-          referenceResult.verse !== undefined
-            ? { start: referenceResult.verse, end: referenceResult.verse }
-            : undefined;
-
-        setReader((state) => {
-          const baseLeft = referenceResult.translationId
-            ? { ...referenceResult.panel }
-            : {
-                translationId: state.left.translationId,
-                bookCode: referenceResult.panel.bookCode,
-                chapter: referenceResult.panel.chapter
-              };
-
-          const nextLeft = verseFilter
-            ? { ...baseLeft, verseFilter }
-            : { ...baseLeft, verseFilter: undefined };
-
-          const baseRight = referenceResult.translationId
-            ? {
-                ...referenceResult.panel,
-                translationId:
-                  referenceResult.translationId === "catholic_org"
-                    ? "sigao"
-                    : "catholic_org"
-              }
-            : {
-                translationId: state.right.translationId,
-                bookCode: referenceResult.panel.bookCode,
-                chapter: referenceResult.panel.chapter
-              };
-
-          const nextRight = verseFilter
-            ? { ...baseRight, verseFilter }
-            : { ...baseRight, verseFilter: undefined };
-
-          return {
-            ...state,
-            search: trimmed,
-            left: nextLeft,
-            right: nextRight
-          };
-        });
-
-        setSearchResults([]);
-        setSearchEmpty(false);
-        setSearchQuery("");
-      } else {
-        const { reference: textQuery, translationId } = extractLanguageModifiers(trimmed);
-        if (!textQuery) return;
-        const searchTranslations = translationId
-          ? supportedTranslations.filter((translation) => translation.id === translationId)
-          : supportedTranslations;
-        const matches: typeof searchResults = [];
-        for (const translation of searchTranslations) {
-          if (request !== searchRequest.current) return;
-          matches.push(...await searchFullText(
-            textQuery, translation.id,
-            getAvailableBooks(translation.id).map((book) => book.code), request
-          ));
-        }
-        if (request !== searchRequest.current) return;
-
-        setSearchResults(matches);
-        setSearchEmpty(matches.length === 0);
-        setSearchQuery("");
-      }
-    }
-  }
-
-  function clearSearch() {
-    dismissSearch();
-    setSearch("");
-    setReader((state) => ({ ...state, search: "" }));
-    setSearchQuery("");
-    setSearchResults([]);
-    setSearchEmpty(false);
-  }
-
-  function navigateToResult(result: {
-    bookCode: string;
-    chapter: number;
-    verse: number;
-    translationId?: string;
-  }) {
-    setReader((state) => ({
-      ...state,
-      search,
-      left: {
-        translationId: result.translationId ?? state.left.translationId,
-        bookCode: result.bookCode,
-        chapter: result.chapter,
-        verseFilter: { start: result.verse, end: result.verse }
-      },
-      right: {
-        translationId: state.right.translationId,
-        bookCode: result.bookCode,
-        chapter: result.chapter,
-        verseFilter: { start: result.verse, end: result.verse }
-      }
-    }));
-
-    setSearchResults([]);
-    setSearchQuery("");
   }
 
   return (
     <AppShell>
       <Header
         dark={dark}
-        onToggleTheme={() => setDark((value) => !value)}
+        onToggleTheme={toggleTheme}
         search={search}
         onSearchChange={(value) => { dismissSearch(); setSearch(value); }}
         onSearchSubmit={submitSearch}
@@ -463,8 +83,8 @@ export default function App() {
                       type="button"
                     >
                       <span className="search-result-ref">
-                        {getBookName(result.bookCode, getBookLanguageName(supportedTranslations.find((translation) => translation.id === result.translationId)?.language ?? "en"))} {result.chapter}:{result.verse}
-                        {" · "}{supportedTranslations.find((translation) => translation.id === result.translationId)?.name}
+                        {getBookName(result.bookCode, result.translationId)} {result.chapter}:{result.verse}
+                        {" · "}{getTranslationName(result.translationId)}
                       </span>
                       <span className="search-result-text">{result.text}</span>
                     </button>
