@@ -8,6 +8,7 @@ interface HeaderProps {
   onOpenGuideModal?: () => void;
   onOpenHubModal?: () => void;
   onNavigateHome?: () => void;
+  onOpenReader?: () => void;
 }
 
 export function Header({
@@ -19,7 +20,8 @@ export function Header({
   onToggleFontModal,
   onOpenGuideModal,
   onOpenHubModal,
-  onNavigateHome
+  onNavigateHome,
+  onOpenReader
 }: HeaderProps) {
   return (
     <header className="site-header">
@@ -39,6 +41,18 @@ export function Header({
         <span className="brand-name">VerbumCaro</span>
       </button>
 
+      {onOpenReader && (
+        <button
+          type="button"
+          onClick={onOpenReader}
+          className="header-icon"
+          title="Open Bible Reader"
+          style={{ width: "auto", padding: "0 0.75rem", fontSize: "0.875rem", fontWeight: 500 }}
+        >
+          Bible
+        </button>
+      )}
+
       <div className="header-divider" />
 
       <div className="search-wrap">
@@ -55,7 +69,6 @@ export function Header({
             placeholder="Search Scripture, passages, or words..."
             aria-label="Search Bible"
           />
-
           <button
             type="submit"
             className="search-btn"
@@ -79,9 +92,10 @@ export function Header({
             onClick={onOpenGuideModal}
             aria-label="Search syntax guide"
           >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 16v-4M12 8h.01" />
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
             </svg>
           </button>
         )}

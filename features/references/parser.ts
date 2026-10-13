@@ -99,7 +99,6 @@ const BOOK_REGISTRY: BookAliasMap[] = [
   { code: "JUD", aliases: ["jude", "jud", "犹", "犹达", "犹大", "犹大书", "犹达书", "ユダの手紙"] },
   { code: "REV", aliases: ["revelation", "rev", "re", "启", "默", "启示录", "若望默示录", "ヨハネの黙示録"] }
 ];
-
 interface NormalizedAliasEntry {
   alias: string;
   code: string;
@@ -123,22 +122,16 @@ export function resolveBookCode(input: string): string | null {
   const clean = input.toLowerCase().replace(/[\s\-_.]/g, "");
   if (!clean) return null;
 
-  // Exact match
   const exact = INDEX.find((e) => e.alias === clean);
   if (exact) return exact.code;
 
-  // Prefix match
   const isCjk = /[\u4e00-\u9fa5]/.test(clean);
-  if (!isCjk) {
-    const prefixCandidate = INDEX.find(
-      (e) => !e.isCJK && (e.alias.startsWith(clean) || clean.startsWith(e.alias))
-    );
-    if (prefixCandidate) return prefixCandidate.code;
-  } else {
-    const cjkPrefix = INDEX.find(
-      (e) => e.isCJK && (e.alias.startsWith(clean) || clean.startsWith(e.alias))
-    );
+  if (isCjk) {
+    const cjkPrefix = INDEX.find((e) => e.isCJK && e.alias.startsWith(clean));
     if (cjkPrefix) return cjkPrefix.code;
+  } else if (clean.length >= 3) {
+    const prefixCandidate = INDEX.find((e) => !e.isCJK && e.alias.startsWith(clean));
+    if (prefixCandidate) return prefixCandidate.code;
   }
 
   return null;
@@ -175,9 +168,8 @@ export function parseReference(input: string, defaultBookCode?: string): ParsedR
   const { reference, translationId, rightTranslationId } = extractLanguageModifiers(input);
   if (!reference) return null;
 
-  const explicitPattern = /^([1-3]?\s*[\u3040-\u30ff\u4e00-\u9fa5a-zA-Z\s]+?)\s*(\d+)[\s:：.,章节]*(\d+)?(?:\s*[-–~到至]\s*(\d+))?$/;
+  const explicitPattern = /^([1-3]?\s*[\u3040-\u30ff\u4e00-\u9fa5a-zA-Z\s]+?)\s*(\d+)[\s: ]*(\d+)?(?:\s*[- ]\s*(\d+))?$/;
   const explicitMatch = reference.match(explicitPattern);
-
   if (explicitMatch) {
     const rawBook = explicitMatch[1].trim();
     const chapter = parseInt(explicitMatch[2], 10);
@@ -197,14 +189,12 @@ export function parseReference(input: string, defaultBookCode?: string): ParsedR
   }
 
   if (defaultBookCode) {
-    const nakedPattern = /^(\d+)[\s:：.,章节]*(\d+)?(?:\s*[-–~到至]\s*(\d+))?$/;
+    const nakedPattern = /^(\d+)[\s: ]*(\d+)?(?:\s*[- ]\s*(\d+))?$/;
     const nakedMatch = reference.match(nakedPattern);
-
     if (nakedMatch) {
       const chapter = parseInt(nakedMatch[1], 10);
       const verse = nakedMatch[2] ? parseInt(nakedMatch[2], 10) : undefined;
       const verseEnd = nakedMatch[3] ? parseInt(nakedMatch[3], 10) : undefined;
-
       if (!isNaN(chapter)) {
         return {
           panel: { bookCode: defaultBookCode, chapter },
@@ -217,31 +207,40 @@ export function parseReference(input: string, defaultBookCode?: string): ParsedR
     }
   }
 
-  // Fallback: Book-only query (defaults to chapter 1)
-  const standaloneBookCode = resolveBookCode(reference);
-  if (standaloneBookCode) {
-    return {
-      panel: { bookCode: standaloneBookCode, chapter: 1 },
-      translationId,
-      rightTranslationId
-    };
+  if (!/\s/.test(reference)) {
+    const standaloneBookCode = resolveBookCode(reference);
+    if (standaloneBookCode) {
+      return {
+        panel: { bookCode: standaloneBookCode, chapter: 1 },
+        translationId,
+        rightTranslationId
+      };
+    }
   }
 
   return null;
 }
 
 export function parseSearchQuery(query: string): ParsedReference[] {
-  const parts = query.split(/[,;；，]+/);
+  const trimmed = query.trim();
+  if (!trimmed) return [];
+
+  if (!/\d/.test(trimmed)) {
+    const standalone = parseReference(trimmed);
+    return standalone ? [standalone] : [];
+  }
+
+  const parts = trimmed.split(/[,;]+/);
   const references: ParsedReference[] = [];
   let currentBookCode: string | undefined;
 
   for (const part of parts) {
-    const trimmed = part.trim();
-    if (!trimmed) continue;
+    const item = part.trim();
+    if (!item) continue;
 
-    const ref = parseReference(trimmed, currentBookCode);
+    const ref = parseReference(item, currentBookCode);
     if (ref) {
-      currentBookCode = ref.panel.bookCode; // Carry over the matched book
+      currentBookCode = ref.panel.bookCode;
       references.push(ref);
     }
   }

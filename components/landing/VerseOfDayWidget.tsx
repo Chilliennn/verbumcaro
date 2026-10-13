@@ -19,9 +19,8 @@ export function VerseOfDayWidget() {
           Shuffle
         </button>
       </div>
-
-      <p className="widget-content">"{verse.latin}"</p>
-      <div className="widget-author">— {verse.reference} (Vulgate &amp; 思高)</div>
+      <p className="widget-content">"{verse.english}"</p>
+      <div className="widget-author">{verse.reference}</div>
     </div>
   );
 }
