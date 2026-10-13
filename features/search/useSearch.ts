@@ -42,9 +42,11 @@ export function useSearch(
         dismissSearch();
       }
     }
+
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") dismissSearch();
     }
+
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
     return () => {
@@ -75,6 +77,7 @@ export function useSearch(
     for (const bookCode of bookCodes) {
       const book = canon.find((item) => item.code === bookCode);
       if (!book) continue;
+
       for (let chapter = 1; chapter <= book.chapters; chapter++) {
         fetches.push(
           () => bibleRepository
@@ -134,6 +137,7 @@ export function useSearch(
           end: result.verseEnd ?? result.verse
         }
       }));
+
       const explicitTranslationId = results.find((result) => result.translationId)?.translationId;
       const rightTranslationId = results.find((result) => result.rightTranslationId)?.rightTranslationId;
 
@@ -152,6 +156,7 @@ export function useSearch(
           passages
         }
       }));
+
       setSearchResults([]);
       setSearchEmpty(false);
       setSearchQuery("");
@@ -167,9 +172,10 @@ export function useSearch(
 
       setReader((state) => {
         const leftTranslationId = referenceResult.translationId ?? state.left.translationId;
-        const rightTranslationId = referenceResult.translationId
-          ? (referenceResult.translationId === "catholic_org" ? "sigao" : "catholic_org")
-          : state.right.translationId;
+        const rightTranslationId = referenceResult.rightTranslationId
+          ?? (referenceResult.translationId
+            ? (referenceResult.translationId === "catholic_org" ? "sigao" : "catholic_org")
+            : state.right.translationId);
 
         const baseLeft: PanelState = {
           translationId: leftTranslationId,
@@ -192,10 +198,12 @@ export function useSearch(
         return {
           ...state,
           search: trimmed,
+          parallel: referenceResult.rightTranslationId ? true : state.parallel,
           left: nextLeft,
           right: nextRight
         };
       });
+
       setSearchResults([]);
       setSearchEmpty(false);
       setSearchQuery("");
