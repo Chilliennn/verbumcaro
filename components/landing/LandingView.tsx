@@ -2,13 +2,13 @@ import { HeroSection } from "./HeroSection";
 import { WidgetsSection } from "./WidgetsSection";
 
 interface LandingViewProps {
-  onOpenReader?: () => void;
+  onReadScripture: () => void;
 }
 
-export function LandingView({ onOpenReader }: LandingViewProps) {
+export function LandingView({ onReadScripture }: LandingViewProps) {
   return (
     <div className="landing-view">
-      <HeroSection onOpenReader={onOpenReader} />
+      <HeroSection onReadScripture={onReadScripture} />
       <WidgetsSection />
     </div>
   );

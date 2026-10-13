@@ -63,6 +63,25 @@ export default function App() {
     navigateToResult(result);
   }
 
+  function handleReadScripture() {
+    setReader((state) => ({
+      ...state,
+      left: {
+        translationId: state.left?.translationId ?? "catholic_org",
+        bookCode: "GEN",
+        chapter: 1,
+        verseFilter: undefined
+      },
+      right: {
+        translationId: state.right?.translationId ?? "sigao",
+        bookCode: "GEN",
+        chapter: 1,
+        verseFilter: undefined
+      }
+    }));
+    setIsLanding(false);
+  }
+
   return (
     <AppShell>
       <Header
@@ -73,15 +92,16 @@ export default function App() {
           dismissSearch();
           setSearch(value);
         }}
-        onSearchSubmit={() => {
-          submitSearch();
-          setIsLanding(false);
+        onSearchSubmit={async () => {
+          const directMatch = await submitSearch();
+          if (directMatch) {
+            setIsLanding(false);
+          }
         }}
         onToggleFontModal={() => setFontModalOpen((prev) => !prev)}
         onOpenGuideModal={() => setGuideModalOpen(true)}
         onOpenHubModal={() => setHubModalOpen(true)}
         onNavigateHome={navigateHome}
-        onOpenReader={() => setIsLanding(false)}
       />
 
       {(searchResults.length > 0 || searchEmpty) && (
@@ -119,7 +139,7 @@ export default function App() {
       )}
 
       {isLanding ? (
-        <LandingView onOpenReader={() => setIsLanding(false)} />
+        <LandingView onReadScripture={handleReadScripture} />
       ) : (
         <main className={`main-content ${reader.sync === "verse" ? "scroll-sync" : ""}`}>
           <ReaderToolbar

@@ -8,7 +8,6 @@ interface HeaderProps {
   onOpenGuideModal?: () => void;
   onOpenHubModal?: () => void;
   onNavigateHome?: () => void;
-  onOpenReader?: () => void;
 }
 
 export function Header({
@@ -20,8 +19,7 @@ export function Header({
   onToggleFontModal,
   onOpenGuideModal,
   onOpenHubModal,
-  onNavigateHome,
-  onOpenReader
+  onNavigateHome
 }: HeaderProps) {
   return (
     <header className="site-header">
@@ -40,18 +38,6 @@ export function Header({
         </span>
         <span className="brand-name">VerbumCaro</span>
       </button>
-
-      {onOpenReader && (
-        <button
-          type="button"
-          onClick={onOpenReader}
-          className="header-icon"
-          title="Open Bible Reader"
-          style={{ width: "auto", padding: "0 0.75rem", fontSize: "0.875rem", fontWeight: 500 }}
-        >
-          Bible
-        </button>
-      )}
 
       <div className="header-divider" />
 

@@ -1,108 +1,1123 @@
 {
-  "count": 21,
+  "count": 224,
   "quotes": [
     {
       "index": 1,
-      "quote": "Pray as though everything depended on God. Work as though everything depended on you.",
-      "author": "St. Augustine of Hippo"
+      "quote": "We should not accept in silence the benefactions of God, but return thanks for them.",
+      "author": "St Basil the Great – January 2nd"
     },
     {
       "index": 2,
+      "quote": "O sinner, be not discouraged, but have recourse to Mary in all your necessities. Call her to your assistance, for such is the divine Will that she should help in every kind of necessity.",
+      "author": "St Basil the Great – January 2nd"
+    },
+    {
+      "index": 3,
+      "quote": "The first end I propose in our daily work is to do the will of God; secondly, to do it in the manner he wills it; and thirdly, to do it because it is his will.",
+      "author": "St Elizabeth Ann Seton – January 4th"
+    },
+    {
+      "index": 4,
+      "quote": "The heart preparing to receive the Holy Eucharist should be like a crystal vase.",
+      "author": "St Elizabeth Ann Seton – January 4th"
+    },
+    {
+      "index": 5,
+      "quote": "We must pray without ceasing, in every occurrence and employment of our lives – that prayer which is rather a habit of lifting up the heart to God as in a constant communication with Him.",
+      "author": "St Elizabeth Ann Seton – January 4th"
+    },
+    {
+      "index": 6,
+      "quote": "Little children follow and obey their father. They love their mother. They know nothing of covetousness, ill-will, bad temper, arrogance and lying. This state of mind opens the road to heaven. To imitate our Lord's own humility, we must return to the simplicity of God's little ones.",
+      "author": "St Hilary of Poiters – January 13th"
+    },
+    {
+      "index": 7,
+      "quote": "The more a man uses moderation in his life, the more he is at peace, for he is not full of cares for many things.",
+      "author": "St Anthony the Great – January 17th"
+    },
+    {
+      "index": 8,
+      "quote": "The devil strains every nerve to secure the souls which belong to Christ. We should not grudge our toil in wresting them from Satan and giving them back to God.",
+      "author": "St Sebastian – January 20th"
+    },
+    {
+      "index": 9,
+      "quote": "Christ made my soul beautiful with the jewels of grace and virtue. I belong to Him whom the angels serve.",
+      "author": "St. Agnes of Rome – January 21st"
+    },
+    {
+      "index": 10,
+      "quote": "Let us run to Mary, and, as her little children, cast ourselves into her arms with a perfect confidence.",
+      "author": "St. Francis de Sales – January 24th"
+    },
+    {
+      "index": 11,
+      "quote": "Have patience with all things, but chiefly have patience with yourself. Do not lose courage in considering your own imperfections but instantly set about remedying them — every day begin the task anew.",
+      "author": "St. Francis de Sales – January 24th"
+    },
+    {
+      "index": 12,
+      "quote": "Our entire good consists not only in accepting the truth of God's word, but in persevering in it.",
+      "author": "St. Francis de Sales – January 24th"
+    },
+    {
+      "index": 13,
+      "quote": "Disorder in society is the result of disorder in the family.",
+      "author": "St Angela Merici – January 27th"
+    },
+    {
+      "index": 14,
+      "quote": "Grace is nothing else but a certain beginning of glory within us.",
+      "author": "St Thomas Aquinas – January 28th"
+    },
+    {
+      "index": 15,
+      "quote": "Make frequent visits to Jesus in the Blessed Sacrament and the devil will be powerless against you.",
+      "author": "St John Bosco"
+    },
+    {
+      "index": 16,
+      "quote": "Fly from bad companions as from the bite of a poisonous snake. If you keep good companions, I can assure you that you will one day rejoice with the blessed in Heaven; whereas if you keep with those who are bad, you will become bad yourself, and you will be in danger of losing your soul.",
+      "author": "St John Bosco"
+    },
+    {
+      "index": 17,
+      "quote": "To be a servant of Christ is to be truly free.",
+      "author": "St Agatha – February 5th"
+    },
+    {
+      "index": 18,
+      "quote": "The only reason for my being killed is that I have taught the doctrine of Christ. I thank God it is for this reason that I die.",
+      "author": "St Paul Miki – February 6th"
+    },
+    {
+      "index": 19,
+      "quote": "Be good, love the Lord, pray for those who do not know Him. What a great grace it is to know God!",
+      "author": "St Josephine Bakhita – February 9th"
+    },
+    {
+      "index": 20,
+      "quote": "Viva Cristo Rey!",
+      "author": "Saint Jose Sanchez del Rio – February 10th"
+    },
+    {
+      "index": 21,
+      "quote": "I asked you and you would not listen; so I asked my God and He did listen.",
+      "author": "St Scholastica – February 10th"
+    },
+    {
+      "index": 22,
+      "quote": "It is not sinners, but the wicked who should despair; it is not the magnitude of one's crime, but contempt of God that dashes one's hopes.",
+      "author": "St Peter Damian – February 21st"
+    },
+    {
+      "index": 23,
+      "quote": "Do not bestow your love on the world.",
+      "author": "St Gabriel Possenti – February 27th"
+    },
+    {
+      "index": 24,
+      "quote": "I will attempt day by day to break my will into pieces. I want to do God's Holy Will, not my own!",
+      "author": "St Gabriel Possenti – February 27th"
+    },
+    {
+      "index": 25,
+      "quote": "Ours is the Spirit of the Eucharist, the total Gift of Self.",
+      "author": "St Katherine Drexel – March 3rd"
+    },
+    {
+      "index": 26,
+      "quote": "If there be a true way that leads to the Everlasting Kingdom, it is most certainly that of suffering, patiently endured.",
+      "author": "St Colette – March 6th"
+    },
+    {
+      "index": 27,
+      "quote": "Love the poor tenderly, regarding them as your masters and yourselves as their servants.",
+      "author": "St John of God – March 8th"
+    },
+    {
+      "index": 28,
+      "quote": "Nothing seems tiresome or painful when you are working for a Master who pays well; who rewards even a cup of cold water given for love of Him.",
+      "author": "St Dominic Savio – March 9th"
+    },
+    {
+      "index": 29,
+      "quote": "If it were given to a man to see virtue's reward in the next world, he would occupy his intellect, memory and will in nothing but good works, careless of danger or fatigue.",
+      "author": "St Catherine of Genoa – March 14th"
+    },
+    {
+      "index": 30,
+      "quote": "Christ beside me, Christ before me, Christ behind me, Christ within me, Christ beneath me, Christ above me.",
+      "author": "St Patrick – March 17th"
+    },
+    {
+      "index": 31,
+      "quote": "The Lord opened the understanding of my unbelieving heart, so that I should recall my sins.",
+      "author": "St Patrick – March 17th"
+    },
+    {
+      "index": 32,
+      "quote": "Prayer purifies us, reading instructs us. Both are good when both are possible. Otherwise, prayer is better than reading.",
+      "author": "St Isidore of Seville – April 4th"
+    },
+    {
+      "index": 33,
+      "quote": "In confession there is mercy. Believe it firmly, do not doubt, do not hesitate, never despair of the mercy of God.",
+      "author": "St Isidore of Seville – April 4th"
+    },
+    {
+      "index": 34,
+      "quote": "Do you desire to study to your advantage? Let devotion accompany all your studies, and study less to make yourself learned than to become a saint. Consult God more than your books, and ask him, with humility, to make you understand what you read. Study fatigues and drains the mind and heart. Go from time to time to refresh them at the feet of Jesus Christ under his cross.",
+      "author": "St Vincent Ferrer – April 5th"
+    },
+    {
+      "index": 35,
+      "quote": "If you truly want to help the soul of your neighbor, you should approach God first with all your heart. Ask him simply to fill you with charity, the greatest of all virtues; with it you can accomplish what you desire.",
+      "author": "St Vincent Ferrer – April 5th"
+    },
+    {
+      "index": 36,
+      "quote": "Pride makes us forgetful of our eternal interests. It causes us to neglect totally the care of our soul.",
+      "author": "St John Baptist de La Salle – April 7th"
+    },
+    {
+      "index": 37,
+      "quote": "I shall love You, I shall love You always; when day breaks, when evening turns into night, at every hour, at every moment; I shall love You always, always, always.",
+      "author": "St Gemma Galgani – April 11th"
+    },
+    {
+      "index": 38,
+      "quote": "Nothing is anything more to me; everything is nothing to me, but Jesus: neither things nor persons, neither ideas nor emotions, neither honor nor sufferings. Jesus is for me honor, delight, heart and soul.",
+      "author": "St Bernadette – April 18th"
+    },
+    {
+      "index": 39,
+      "quote": "A servant is not holy if she is not busy.",
+      "author": "St Zita – April 27th"
+    },
+    {
+      "index": 40,
+      "quote": "When the Holy Rosary is said well, it gives Jesus and Mary more glory and is more meritorious than any other prayer.",
+      "author": "St Louis de Montfort – April 28th"
+    },
+    {
+      "index": 41,
+      "quote": "If you are what you should be, you will set the whole world on fire. Let the truth be your delight – proclaim it, but with a certain congeniality.",
+      "author": "St Catherine of Siena"
+    },
+    {
+      "index": 42,
+      "quote": "Three things can lead us close to God. They are painful physical suffering, being in exile in a foreign land, and being poor by choice because of love for God.",
+      "author": "St Judith of Prussia – May 5th"
+    },
+    {
+      "index": 43,
+      "quote": "Want to inspire your children to give their all in everything they do? Teach them about St. Bernadine",
+      "author": "St Bernadine of Siena"
+    },
+    {
+      "index": 44,
+      "quote": "You must know that when you 'hail' Mary, she immediately greets you! Don't think that she is one of those rude women of whom there are so many — on the contrary, she is utterly courteous and pleasant. If you greet her, she will answer you right away and converse with you!",
+      "author": "St Bernadine of Siena"
+    },
+    {
+      "index": 45,
+      "quote": "A man without prayer is an animal without the use of reason.",
+      "author": "St Philip Neri – May 26th"
+    },
+    {
+      "index": 46,
+      "quote": "If we wish to keep peace with our neighbor, we should never remind anyone of his natural defects.",
+      "author": "St Philip Neri – May 26th"
+    },
+    {
+      "index": 47,
+      "quote": "Bear the cross and do not make the cross bear you.",
+      "author": "St Philip Neri – May 26th"
+    },
+    {
+      "index": 48,
+      "quote": "You must never ask Jesus to wait.",
+      "author": "St Ursula Ledochowska – May 29th"
+    },
+    {
+      "index": 49,
+      "quote": "I place trust in God, my creator, in all things; I love Him with all my heart.",
+      "author": "St. Joan of Arc – May 30th"
+    },
+    {
+      "index": 50,
+      "quote": "Help yourself and God will help you.",
+      "author": "St. Joan of Arc – May 30th"
+    },
+    {
+      "index": 51,
+      "quote": "I am not afraid. I was born to do this.",
+      "author": "St. Joan of Arc – May 30th"
+    },
+    {
+      "index": 52,
+      "quote": "A great means to preserve continual peace and tranquillity of soul is to receive everything from the hands of God, both great and small, and in whatever way it comes.",
+      "author": "St Dorotheus – June 5th"
+    },
+    {
+      "index": 53,
+      "quote": "Virtues are formed by prayer. Prayer preserves temperance. Prayer suppresses anger. Prayer prevents emotions of pride and envy. Prayer draws into the soul the Holy Spirit, and raises man to Heaven.",
+      "author": "St Ephrem – June 9th"
+    },
+    {
+      "index": 54,
+      "quote": "Our Lord wills that you cling to Him alone! If your faith were greater how much more peaceful you would be even when great trials surround and oppress you.",
+      "author": "St Paula Frassinetti – June 11th"
+    },
+    {
+      "index": 55,
+      "quote": "Christ acts like a loving mother. To induce us to follow Him, He gives us Himself as an example and promises us a reward in His kingdom.",
+      "author": "St Anthony of Padua – June 13th"
+    },
+    {
+      "index": 56,
+      "quote": "Christians must lean on the Cross of Christ just as travelers lean on a staff when they begin a long journey.",
+      "author": "St Anthony of Padua – June 13th"
+    },
+    {
+      "index": 57,
+      "quote": "Earthly riches are like the reed. Its roots are sunk in the swamp, and its exterior is fair to behold; but inside it is hollow. If a man leans on such a reed, it will snap off and pierce his soul.",
+      "author": "St Anthony of Padua – June 13th"
+    },
+    {
+      "index": 58,
+      "quote": "Attribute to God every good that you have received. If you take credit for something that does not belong to you, you will be guilty of theft.",
+      "author": "St Anthony of Padua – June 13th"
+    },
+    {
+      "index": 59,
+      "quote": "Since God does so much for me, what could I not do for him?",
+      "author": "St Emily de Vialar – June 17th"
+    },
+    {
+      "index": 60,
+      "quote": "It is better to be the child of God than king of the whole world",
+      "author": "St Aloysius Gonzaga – June 21st"
+    },
+    {
+      "index": 61,
+      "quote": "Occupy your minds with good thoughts, or the enemy will fill them with bad ones. Unoccupied, they cannot be.",
+      "author": "St Thomas More – June 22nd"
+    },
+    {
+      "index": 62,
+      "quote": "He must increase, I must decrease.",
+      "author": "St John the Baptist – June 24th"
+    },
+    {
+      "index": 63,
+      "quote": "Temptation is necessary to make us realize that we are nothing in ourselves.",
+      "author": "St Josemaria Escriva – June 26th"
+    },
+    {
+      "index": 64,
+      "quote": "When you approach the tabernacle remember that he has been waiting for you for twenty centuries.",
+      "author": "St Josemaria Escriva – June 26th"
+    },
+    {
+      "index": 65,
+      "quote": "When you see the storm coming, if you seek safety in that firm refuge which is Mary, there will be no danger of your wavering or going down.",
+      "author": "St Josemaria Escriva – June 26th"
+    },
+    {
+      "index": 66,
+      "quote": "You go to pray; to become a bonfire, a living flame, giving light and heat.",
+      "author": "St Josemaria Escriva – June 26th"
+    },
+    {
+      "index": 67,
+      "quote": "All my life I have wanted to be a missionary. I have wanted to carry the gospel message to those who have never heard of God and the kingdom he has prepared for them.",
+      "author": "St Junipero Serra – July 1st"
+    },
+    {
+      "index": 68,
+      "quote": "The faith given to me in baptism suggests to me surely: by yourself you will do nothing, but if you have God as the center of all your action, then you will reach the goal.",
+      "author": "Bl Pier Giorgio – July 4th"
+    },
+    {
+      "index": 69,
+      "quote": "That which God commands seems difficult and a burden. The way is rough; you draw back; you have no desire to follow it. Yet do so and you will attain glory.",
+      "author": "St Anthony Mary Zaccaria – July 5th"
+    },
+    {
+      "index": 70,
+      "quote": "He who labors as he prays lifts his heart to God with his hands.",
+      "author": "St. Benedict of Nursia – July 11th"
+    },
+    {
+      "index": 71,
+      "quote": "Whenever you begin any good work you should first of all make a most pressing appeal to Christ our Lord to bring it to perfection.",
+      "author": "St. Benedict of Nursia – July 11th"
+    },
+    {
+      "index": 72,
+      "quote": "There is no sinner in the world, however much at enmity with God,who cannot recover God's grace by recourse to Mary, and by asking her assistance.",
+      "author": "St Bridget of Sweden – July 23rd"
+    },
+    {
+      "index": 73,
+      "quote": "If God causes you to suffer much, it is a sign that He has great designs for you, and that He certainly intends to make you a saint.",
+      "author": "St Ignatius of Loyola – July 31st"
+    },
+    {
+      "index": 74,
+      "quote": "Few souls understand what God would accomplish in them if they were to abandon themselves unreservedly to Him and if they were to allow His grace to mold them accordingly.",
+      "author": "St Ignatius of Loyola – July 31st"
+    },
+    {
+      "index": 75,
+      "quote": "Lord, teach me to be generous. Teach me to serve you as you deserve; to give and not to count the cost, to fight and not to heed the wounds, to toil and not to seek for rest, to labor and not to ask for reward, save that of knowing that I do your will.",
+      "author": "St Ignatius of Loyola – July 31st"
+    },
+    {
+      "index": 76,
+      "quote": "It is not hard to obey when we love the one whom we obey.",
+      "author": "St Ignatius of Loyola – July 31st"
+    },
+    {
+      "index": 77,
+      "quote": "Your God is ever beside you — indeed, He is even within you.",
+      "author": "St Alphonsus Ligouri – August 1st"
+    },
+    {
+      "index": 78,
+      "quote": "You cannot please both God and the world at the same time, They are utterly opposed to each other in their thoughts, their desires, and their actions.",
+      "author": "St John Vianney – August 4th"
+    },
+    {
+      "index": 79,
+      "quote": "A man who governs his passions is master of his world. We must either command them or be enslaved by them. It is better to be a hammer than an anvil.",
+      "author": "St Dominic – August 8th"
+    },
+    {
+      "index": 80,
+      "quote": "Arm yourself with prayer rather than a sword; wear humility rather than fine clothes.",
+      "author": "St Dominic – August 8th"
+    },
+    {
+      "index": 81,
+      "quote": "In the trials, annoyances and anxieties we daily experience, may we ever recognize that loving Fatherly Hand that only seeks to draw us closer to himself by giving us opportunities to suffer something for him.",
+      "author": "St Mary MacKillop – August 8th"
+    },
+    {
+      "index": 82,
+      "quote": "One cannot desire freedom from the Cross when one is especially chosen for the Cross.",
+      "author": "St Edith Stein"
+    },
+    {
+      "index": 83,
+      "quote": "The nation doesn't simply need what we have. It needs what we are.",
+      "author": "St Edith Stein"
+    },
+    {
+      "index": 84,
+      "quote": "Go forth in peace, for you have followed the good road. Go forth without fear, for he who created you has made you holy, has always protected you, and loves you as a mother. Blessed be you, my God, for having created me.",
+      "author": "St Clare of Assisi – August 11th"
+    },
+    {
+      "index": 85,
+      "quote": "There is no danger if our prayer is without words or reflection because the good success of prayer depends neither on words nor on study. It depends upon the simple raising of our minds to God, and the more simple and stripped of feeling it is, the surer it is.",
+      "author": "St Jane Frances de Chantal – August 12th"
+    },
+    {
+      "index": 86,
+      "quote": "Hold your eyes on God and leave the doing to Him. That is all the doing you have to worry about.",
+      "author": "St Jane Frances de Chantal – August 12th"
+    },
+    {
+      "index": 87,
+      "quote": "The most deadly poison of our times is indifference. And this happens, although the praise of God should know no limits. Let us strive, therefore, to praise Him to the greatest extent of our powers.",
+      "author": "St Maximilian Kolbe – August 14th"
+    },
+    {
+      "index": 88,
+      "quote": "I believe though I do not comprehend, and I hold by faith what I cannot grasp with the mind.",
+      "author": "St Bernard of Clairvaux – August 20th"
+    },
+    {
+      "index": 89,
+      "quote": "Prayer is a wine that makes glad the heart of men",
+      "author": "St Bernard of Clairvaux – August 20th"
+    },
+    {
+      "index": 90,
+      "quote": "The tears of the penitents are wine for the angels.",
+      "author": "St Bernard of Clairvaux – August 20th"
+    },
+    {
+      "index": 91,
+      "quote": "In dangers, in doubts, in difficulties, think of Mary, call upon Mary. Let not her name depart from your lips, never suffer it to leave your heart. And that you may obtain the assistance of her prayer, neglect not to walk in her footsteps. With her for guide, you shall never go astray; while invoking her, you shall never lose heart; so long as she is in your mind, you are safe from deception; while she holds your hand, you cannot fall; under her protection you have nothing to fear; if she walks before you, you shall not grow weary; if she shows you favor, you shall reach the goal.",
+      "author": "St Bernard of Clairvaux – August 20th"
+    },
+    {
+      "index": 92,
+      "quote": "Holy Communion is the shortest and safest way to Heaven.",
+      "author": "Pope St. Pius X – August 21st"
+    },
+    {
+      "index": 93,
+      "quote": "Apart from the cross, there is no other ladder by which we may get to heaven.",
+      "author": "St Rose of Lima – August 23rd"
+    },
+    {
+      "index": 94,
+      "quote": "Be kindhearted to the poor, the unfortunate and the afflicted. Give them as much help and consolation as you can. Thank God for all the benefits he has bestowed upon you, that you may be worthy to receive greater.",
+      "author": "St Louis IX – August 25th"
+    },
+    {
+      "index": 95,
+      "quote": "Nothing is far from God.",
+      "author": "St Monica – August 27th"
+    },
+    {
+      "index": 96,
+      "quote": "You aspire to great things? Begin with little ones.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 97,
+      "quote": "This is the very perfection of a man, to find out his own imperfections.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 98,
+      "quote": "Our hearts were made for You, O Lord, and they are restless until they rest in you.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 99,
+      "quote": "Complete abstinence is easier than perfect moderation.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 100,
+      "quote": "Pray as though everything depended on God. Work as though everything depended on you.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 101,
+      "quote": "And He departed from our sight that we might return to our heart, and there find Him. For He departed, and behold, He is here.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 102,
+      "quote": "If you believe what you like in the gospels, and reject what you don't like, it is not the gospel you believe, but yourself",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 103,
+      "quote": "Miracles are not contrary to nature, but only contrary to what we know about nature.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 104,
+      "quote": "The confession of evil works is the first beginning of good works.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 105,
+      "quote": "Patience is the companion of wisdom.",
+      "author": "St Augustine of Hippo – August 28th"
+    },
+    {
+      "index": 106,
+      "quote": "Prayer reveals to souls the vanity of earthly goods and pleasures.It fills them with light, strength and consolation, and gives them a foretaste of the calm bliss of our heavenly home.",
+      "author": "St Rose of Viterbo – September 4th"
+    },
+    {
+      "index": 107,
+      "quote": "All of us must be saints in this world. Holiness is a duty for you and me. So let's be saints and so give glory to the Father.",
+      "author": "St Teresa of Calcutta – September 5th"
+    },
+    {
+      "index": 108,
+      "quote": "The woman is at the heart of the home. Let us pray that we women realize the reason for our existence: to love and be loved and through this love become instruments of peace in the world.",
+      "author": "St Teresa of Calcutta – September 5th"
+    },
+    {
+      "index": 109,
+      "quote": "Unless we believe and see Jesus in the appearance of bread on the altar, we will not be able to see him in the distressing disguise of the poor.",
+      "author": "St Teresa of Calcutta – September 5th"
+    },
+    {
+      "index": 110,
+      "quote": "When you look at the crucifix, you understand how much Jesus loved you then. When you look at the Sacred Host, you understand how much Jesus loves you now.",
+      "author": "St Teresa of Calcutta – September 5th"
+    },
+    {
+      "index": 111,
+      "quote": "Try to put in the hearts of your children a love for home. Make them long to be with their families. So much sin could be avoided if our people really loved their homes.",
+      "author": "St Teresa of Calcutta – September 5th"
+    },
+    {
+      "index": 112,
+      "quote": "Joy is a net of love by which we catch souls.",
+      "author": "St Teresa of Calcutta – September 5th"
+    },
+    {
+      "index": 113,
+      "quote": "To love God as He ought to be loved, we must be detached from all temporal love. We must love nothing but Him, or if we love anything else, we must love it only for His sake.",
+      "author": "St Peter Claver – September 9th"
+    },
+    {
+      "index": 114,
+      "quote": "What the soul is in the body, let Christians be in the world.",
+      "author": "St John Chrystom – September 13th"
+    },
+    {
+      "index": 115,
+      "quote": "Charity is that with which no man is lost, and without which no man is saved.",
+      "author": "St Robert Bellarmine – September 17th"
+    },
+    {
+      "index": 116,
+      "quote": "Clearly, what God wants above all is our will which we received as a free gift from God in creation and possess as though our own. When a man trains himself to acts of virtue, it is with the help of grace from God from whom all good things come that he does this. The will is what man has as his unique possession.",
+      "author": "St Joseph of Cupertino – September 18th"
+    },
+    {
+      "index": 117,
+      "quote": "Satan fears and trembles before humble souls.",
+      "author": "St Pio of Pietrelcino – September 23rd"
+    },
+    {
+      "index": 118,
+      "quote": "Do good everywhere, so that everyone can say:'this is a son of Christ.'",
+      "author": "St Pio of Pietrelcino – September 23rd"
+    },
+    {
+      "index": 119,
+      "quote": "Our Lord loves you and loves you tenderly; and if He does not let you feel the sweetness of His love, it is to make you more humble and abject in your own eyes.",
+      "author": "St Pio of Pietrelcino – September 23rd"
+    },
+    {
+      "index": 120,
+      "quote": "Yes, I love the cross, the cross alone, because I always see it behind Jesus' shoulders.",
+      "author": "St Pio of Pietrelcino – September 23rd"
+    },
+    {
+      "index": 121,
+      "quote": "Prayer is the oxygen of the soul.",
+      "author": "St Pio of Pietrelcino – September 23rd"
+    },
+    {
+      "index": 122,
+      "quote": "Every mother is like Moses. She does not enter the promised land. She prepares a world she will not see.",
+      "author": "Pope Paul VI (Blessed) – September 26th"
+    },
+    {
+      "index": 123,
+      "quote": "You must ask God to give you power to fight against the sin of pride which is your greatest enemy – the root of all that is evil, and the failure of all that is good. For God resists the proud.",
+      "author": "St Vincent de Paul – September 27th"
+    },
+    {
+      "index": 124,
+      "quote": "Read some chapter of a devout book….It is very easy and most necessary, for just as you speak to God when at prayer, God speaks to you when you read.",
+      "author": "St Vincent de Paul – September 27th"
+    },
+    {
+      "index": 125,
+      "quote": "The world would have peace if only men of politics would follow the Gospels.",
+      "author": "St Vincent de Paul – September 27th"
+    },
+    {
+      "index": 126,
+      "quote": "Marriage is good for those who are afraid to sleep alone at night.",
+      "author": "St Jerome – September 30th"
+    },
+    {
+      "index": 127,
+      "quote": "Ignorance of Scripture is ignorance of Christ.",
+      "author": "St Jerome – September 30th"
+    },
+    {
+      "index": 128,
+      "quote": "Be ever engaged, so that whenever the devil calls he may find you occupied.",
+      "author": "St Jerome – September 30th"
+    },
+    {
+      "index": 129,
+      "quote": "He is rich enough who is poor with Christ.",
+      "author": "St Jerome – September 30th"
+    },
+    {
+      "index": 130,
+      "quote": "You cannot be half a saint; you must be a whole saint or no saint at all.",
+      "author": "St Therese of Lisieux – October 1st"
+    },
+    {
+      "index": 131,
+      "quote": "Without love, deeds, even the most brilliant, count as nothing.",
+      "author": "St Therese of Lisieux – October 1st"
+    },
+    {
+      "index": 132,
+      "quote": "True progress quietly and persistently moves along without notice.",
+      "author": "St Francis of Assisi – October 4th"
+    },
+    {
+      "index": 133,
+      "quote": "It is not fitting, when one is in God's service, to have a gloomy face or a chilling look.",
+      "author": "St Francis of Assisi – October 4th"
+    },
+    {
+      "index": 134,
+      "quote": "Start by doing what is necessary; then do what's possible; and suddenly you are doing the impossible.",
+      "author": "St Francis of Assisi – October 4th"
+    },
+    {
+      "index": 135,
+      "quote": "It is in pardoning that we are pardoned.",
+      "author": "St Francis of Assisi – October 4th"
+    },
+    {
+      "index": 136,
+      "quote": "I have been all things unholy. If God can work through me, he can work through anyone.",
+      "author": "St Francis of Assisi – October 4th"
+    },
+    {
+      "index": 137,
+      "quote": "O my Lord. Inflame my heart with love for You, that my spirit may not grow weary amidst the storms, the sufferings and the trials.",
+      "author": "St. Faustina Kowalska – October 5th"
+    },
+    {
+      "index": 138,
+      "quote": "Be gentle to all and stern with yourself.",
+      "author": "St Teresa of Avila – October 15th"
+    },
+    {
+      "index": 139,
+      "quote": "We always find that those who walked closest to Christ were those who had to bear the greatest trials.",
+      "author": "St Teresa of Avila – October 15th"
+    },
+    {
+      "index": 140,
+      "quote": "One who makes no mistakes, makes nothing.",
+      "author": "St Teresa of Avila – October 15th"
+    },
+    {
+      "index": 141,
+      "quote": "Pain is never permanent.",
+      "author": "St Teresa of Avila – October 15th"
+    },
+    {
+      "index": 142,
+      "quote": "Know that even when you are in the kitchen, our Lord moves amidst the pots and pans.",
+      "author": "St Teresa of Avila – October 15th"
+    },
+    {
+      "index": 143,
+      "quote": "Who except God can give you peace? Has the world ever been able to satisfy the heart?",
+      "author": "St Gerard – October 16th"
+    },
+    {
+      "index": 144,
+      "quote": "Conform yourself as closely as possible to His humility and gentleness in dealing with your neighbor. . . Love those who humble and contradict you, for they are more useful to your perfection than those who flatter you.",
+      "author": "St Margaret Mary Alcoque – October 17th"
+    },
+    {
+      "index": 145,
+      "quote": "When you feel the assaults of passion and anger, then is the time to be silent as Jesus was silent in the midst of His ignominies and sufferings.",
+      "author": "St Paul of the Cross – October 20th"
+    },
+    {
+      "index": 146,
+      "quote": "In the newborn child is realized the common good of the family",
+      "author": "St Pope John Paul II – October 22nd"
+    },
+    {
+      "index": 147,
+      "quote": "As the family goes, so goes the nation and so goes the whole world in which we live.",
+      "author": "St Pope John Paul II – October 22nd"
+    },
+    {
+      "index": 148,
+      "quote": "The saints have always been the source and origin of renewal in the most difficult moments in the Church's history.",
+      "author": "St Pope John Paul II – October 22nd"
+    },
+    {
+      "index": 149,
+      "quote": "If a tiny spark of God's love already burns within you, do not expose it to the wind, for it may get blown out. Keep the stove tightly shut so that it will not lose its heat and grow cold. In other words, avoid distractions as well as you can. Stay quiet with God. Do not spend your time in useless chatter.",
+      "author": "St Charles Borromeo – November 4th"
+    },
+    {
+      "index": 150,
+      "quote": "Most blessed are you among women, and blessed is the fruit of your womb.",
+      "author": "St Elizabeth – November 5th"
+    },
+    {
+      "index": 151,
+      "quote": "Virtue is nothing without the trial of temptation, for there is no conflict without an enemy, no victory without strife.",
+      "author": "Pope St. Leo the Great – November 10th"
+    },
+    {
+      "index": 152,
+      "quote": "Lord, if your people need me, I will not refuse the work. Your will be done.",
+      "author": "St Martin of Tours – November 11th"
+    },
+    {
+      "index": 153,
+      "quote": "We must pray without tiring, for the salvation of mankind does not depend upon material success, nor on sciences that cloud the intellect. Neither does it depend on arms and human industries, but on Jesus alone.",
+      "author": "St Frances Xavier Cabrini – November 13th"
+    },
+    {
+      "index": 154,
+      "quote": "Everything I own really belongs to the poor.",
+      "author": "St Elizabeth of Hungary – November 17th"
+    },
+    {
+      "index": 155,
+      "quote": "We cultivate a very small field for Christ, but we love it, knowing that God does not require great achievements but a heart that holds back nothing for self.",
+      "author": "St Rose Phillipine Duchesne – November 18th"
+    },
+    {
+      "index": 156,
+      "quote": "We ought to speak, shout out against injustices, with confidence and without fear. We proclaim the principles of the Church, the reign of love, without forgetting that it is also a reign of justice.",
+      "author": "Blessed Miguel Pro – November 23rd"
+    },
+    {
+      "index": 157,
+      "quote": "Be merry, really merry. The life of a true Christian should be a perpetual jubilee, a prelude to the festivals of eternity.",
+      "author": "St Theophane Venard – November 24th"
+    },
+    {
+      "index": 158,
+      "quote": "It is not the actual physical exertion that counts towards a one's progress, nor the nature of the task, but by the spirit of faith with which it is undertaken.",
+      "author": "St Francis Xavier – December 3rd"
+    },
+    {
+      "index": 159,
+      "quote": "It is impossible to find a saint who did not take the \"two P's\" seriously: prayer and penance.",
+      "author": "St Francis Xavier – December 3rd"
+    },
+    {
+      "index": 160,
+      "quote": "Speak to them of the great mercy of God&#8230; Sometimes people are helped by your telling of your own lamentable past.",
+      "author": "St Francis Xavier – December 3rd"
+    },
+    {
+      "index": 161,
+      "quote": "The giver of every good and perfect gift has called upon us to mimic Gods giving, by grace, through faith, and this is not of ourselves.",
+      "author": "St Nicholas – December 6th"
+    },
+    {
+      "index": 162,
+      "quote": "No one heals himself by wounding another.",
+      "author": "St Ambrose of Milan – December 7th"
+    },
+    {
+      "index": 163,
+      "quote": "Those whose hearts are pure are temples of the Holy Spirit.",
+      "author": "St Lucy – December 13th"
+    },
+    {
+      "index": 164,
+      "quote": "To be taken with love for a soul, God does not look on its greatness, but the greatness of its humility.",
+      "author": "St John of the Cross – December 14th"
+    },
+    {
+      "index": 165,
+      "quote": "Remember the sufferings of Christ, the storms that were weathered&#8230;the crown that came from those sufferings which gave new radiance to the faith&#8230;All saints give testimony to the truth that without real effort, no one ever wins the crown.",
+      "author": "St Thomas Becket – December 29th"
+    },
+    {
+      "index": 166,
+      "quote": "\"Pray, hope, and don't worry.\"",
+      "author": "Padre Pio"
+    },
+    {
+      "index": 167,
+      "quote": "\"The important thing is to do charity, not to talk about charity. We must understand the work with very poor people as a God's chosen mission.\"",
+      "author": "Irmã Dulce Lopes Pontes"
+    },
+    {
+      "index": 168,
+      "quote": "\"The reason for our existence is to quench the thirst of Jesus. When he asked for water, the soldier gave him vinegar to drink—but his thirst was for love, for souls, for you and me.\"",
+      "author": "Mother Teresa of Calcutta"
+    },
+    {
+      "index": 169,
+      "quote": "\"God will give eternal life to those who convert sinners and bring them to the right path.\"",
+      "author": "Mariam Thresia Chiramel Mankidiyan"
+    },
+    {
+      "index": 170,
+      "quote": "\"Jesus loves hidden souls. A hidden flower is the most fragrant. I must strive to make the interior of my soul a resting place for the Heart of Jesus.\"",
+      "author": "Maria Faustina Kowalska"
+    },
+    {
+      "index": 171,
+      "quote": "\"This morning my soul is greater than the world since it possesses you, you whom heaven and earth do not contain.\"",
+      "author": "Margaret of Cortona"
+    },
+    {
+      "index": 172,
+      "quote": "\"Take heart! First of all it is God who sends things forward and not me. And then from paradise I can do more than I do in this world. When I will no longer be, believe also that it will be better than it is done now.\" (Her deathbed words)",
+      "author": "Giuseppina Vannini"
+    },
+    {
+      "index": 173,
+      "quote": "\"He loves, he hopes, he waits. Our Lord prefers to wait Himself for the sinner for years rather than keep us waiting an instant.\"",
+      "author": "Maria Goretti"
+    },
+    {
+      "index": 174,
+      "quote": "\"Our Lady…told us she would come and take Francisco to heaven, and she asked me if I still wanted to convert more sinners. I said I did.\"",
+      "author": "Jacinta Marto"
+    },
+    {
+      "index": 175,
+      "quote": "\"Receive every trial, every annoyance, every lack of courtesy in the light that springs from the Cross; that is how we please God, how we advance in the ways of love.\"",
+      "author": "Elizabeth of the Trinity"
+    },
+    {
+      "index": 176,
+      "quote": "\"I pray God may preserve your health and life many years.\"",
+      "author": "Junipero Serra"
+    },
+    {
+      "index": 177,
+      "quote": "\"How could I bear a crown of gold when the Lord bears a crown of thorns? And bears it for me!\"",
+      "author": "Elizabeth of Hungary"
+    },
+    {
+      "index": 178,
+      "quote": "\"Charity enters heaven when humility opens the door.\"",
+      "author": "María Natividad Venegas de la Torre"
+    },
+    {
+      "index": 179,
+      "quote": "\"The Lord has called us from different nations, but we must be united with one heart and one soul.\"",
+      "author": "Maria Elizabeth Hesselblad"
+    },
+    {
+      "index": 180,
+      "quote": "\"My joy is in leading a hidden life unknown to others.\"",
+      "author": "Euphrasia of the Sacred Heart"
+    },
+    {
+      "index": 181,
+      "quote": "\"This is a serious warning cry: Surrender without reservation to the Lord who has called us. This is required of us so that the face of the earth may be renewed.\"",
+      "author": "Edith Stein"
+    },
+    {
+      "index": 182,
+      "quote": "\"Do not abandon yourselves to despair. We are the Easter people and hallelujah is our song.\"",
+      "author": "John Paul II"
+    },
+    {
+      "index": 183,
+      "quote": "\"I can have no other spouse but Jesus Christ. I have considered myself content to live in poverty and misery for his love.\"",
+      "author": "Kateri Tekakwitha"
+    },
+    {
+      "index": 184,
+      "quote": "\"Let us make best use of the fleeting moments. They will not return.\"",
+      "author": "Marianne Cope"
+    },
+    {
+      "index": 185,
+      "quote": "\"As I hope in thee, O Lord, inspire me with that confidence, which brings me to thy holy mountain.\"",
+      "author": "Agnes of Assisi"
+    },
+    {
+      "index": 186,
+      "quote": "\"The most deadly poison of our times is indifference. And this happens, although the praise of God should know no limits. Let us strive, therefore, to praise him to the greatest extent of our powers.\"",
+      "author": "Maximilian Kolbe"
+    },
+    {
+      "index": 187,
+      "quote": "\"Whatever troubles may be before you, accept them cheerfully, remembering whom you are trying to follow. Do not be afraid.\"",
+      "author": "Mary MacKillop"
+    },
+    {
+      "index": 188,
+      "quote": "\"Born poor, but of honored and humble people, I am particularly proud to die poor.\"",
+      "author": "Pope John XXIII"
+    },
+    {
+      "index": 189,
+      "quote": "\"I am prepared to suffer more. I know the Lord is with me. He has some plan for me. How can I requite his kindness?\"",
+      "author": "Alphonsa Muttathupadathu"
+    },
+    {
+      "index": 190,
+      "quote": "\"He needed bold, brave, inflamed women in the love of God, who could assimilate his life to that of the poor inhabitants of the jungle, to raise them to God.\"",
+      "author": "Laura Montoya Upegui"
+    },
+    {
+      "index": 191,
+      "quote": "\"We should ever be grateful for and love the vocation to which God has called us. This applies to every vocation because, after all, what a privilege it is to serve God, even in the least capacity!\"",
+      "author": "Solanus Casey"
+    },
+    {
+      "index": 192,
+      "quote": "\"Since happiness is nothing else than the enjoyment of the supreme good, and the supreme good is above us, no one can enjoy happiness unless he rises above himself.\"",
+      "author": "Bonaventure"
+    },
+    {
+      "index": 193,
+      "quote": "\"All blessings come to us through our Lord. He will teach us, for in beholding his life we find that he is the best example.\"",
+      "author": "Teresa of Avila"
+    },
+    {
+      "index": 194,
+      "quote": "\"Actions speak louder than words. Let your words teach and your actions speak.\"",
+      "author": "Anthony of Padua"
+    },
+    {
+      "index": 195,
+      "quote": "\"'With my mouth,' God says, 'I kiss my own chosen creation. I uniquely, lovingly, embrace every image I have made out of the earth's clay. With a fiery spirit I transform it into a body to serve all the world.'\"",
+      "author": "Hildegard of Bingen"
+    },
+    {
+      "index": 196,
+      "quote": "\"Our earthly and eternal happiness depend on following our vocation without faltering.\"",
+      "author": "Gianna Beretta Molla"
+    },
+    {
+      "index": 197,
+      "quote": "\"In losing all, the soul has risen To the pinnacle of the measureless; Because it has renounced all That is not divine, It now holds in its grasp The unimaginable Good In all its abundance, A loss and a gain impossible to describe.\"",
+      "author": "Jacopone of Todi"
+    },
+    {
+      "index": 198,
+      "quote": "\"Even if I must suffer greatly, thanks be to God's mercy, I will not lack courage.\"",
+      "author": "Genoveva Torres Morales"
+    },
+    {
+      "index": 199,
+      "quote": "\"Praise and bless my Lord, and give him thanks and serve him with great humility.\"",
+      "author": "Francis of Assisi"
+    },
+    {
+      "index": 200,
+      "quote": "\"Faith lifts the soul. Hope supports it. Experience says it must. And Love says let it be!\"",
+      "author": "Elizabeth Ann Seton"
+    },
+    {
+      "index": 201,
+      "quote": "\"If we wish to serve God and love our neighbor well, we must manifest our joy in the service we render to Him and them. Let us open wide our hearts. It is joy which invites us. Press forward and fear nothing.\"",
+      "author": "Katharine Drexel"
+    },
+    {
+      "index": 202,
+      "quote": "\"Whatever God wants, as God wills, when God wills.\"",
+      "author": "Maria de las Maravillas de Jesús"
+    },
+    {
+      "index": 203,
+      "quote": "\"How easy it is to die with Jesus on the cross—if one has lived with Jesus on the cross!\"",
+      "author": "Anna Schäffer"
+    },
+    {
+      "index": 204,
+      "quote": "\"We become what we love and who we love shapes what we become.\"",
+      "author": "Clare of Assisi"
+    },
+    {
+      "index": 205,
+      "quote": "\"In God's will, there is great peace.\"",
+      "author": "Josephine Bakhita"
+    },
+    {
+      "index": 206,
+      "quote": "\"Our goal must be infinite, not the finite. The infinite is our homeland. Heaven has been waiting for us forever.\"",
+      "author": "Carlo Acutis"
+    },
+    {
+      "index": 207,
       "quote": "Late have I loved you, beauty so old and so new: late have I loved you.",
       "author": "St. Augustine of Hippo"
     },
     {
-      "index": 3,
+      "index": 208,
       "quote": "Our hearts are restless until they rest in You.",
       "author": "St. Augustine of Hippo"
     },
     {
-      "index": 4,
+      "index": 209,
       "quote": "Preach the Gospel at all times and when necessary use words.",
       "author": "St. Francis of Assisi"
     },
     {
-      "index": 5,
+      "index": 210,
       "quote": "To love God is something greater than to know Him.",
       "author": "St. Thomas Aquinas"
     },
     {
-      "index": 6,
+      "index": 211,
       "quote": "The things that we love tell us what we are.",
       "author": "St. Thomas Aquinas"
     },
     {
-      "index": 7,
+      "index": 212,
       "quote": "Let nothing disturb you, let nothing frighten you. All things are passing; God alone suffices.",
       "author": "St. Teresa of Ávila"
     },
     {
-      "index": 8,
+      "index": 213,
       "quote": "Miss no single opportunity of making some small sacrifice.",
       "author": "St. Thérèse of Lisieux"
     },
     {
-      "index": 9,
+      "index": 214,
       "quote": "Do not be afraid. Do not be satisfied with mediocrity. Put out into the deep and let down your nets.",
       "author": "St. John Paul II"
     },
     {
-      "index": 10,
+      "index": 215,
       "quote": "Be who God meant you to be and you will set the world on fire.",
       "author": "St. Catherine of Siena"
     },
     {
-      "index": 11,
+      "index": 216,
       "quote": "Not all of us can do great things. But we can do small things with great love.",
       "author": "St. Teresa of Calcutta"
     },
     {
-      "index": 12,
+      "index": 217,
       "quote": "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
       "author": "St. Francis of Assisi"
     },
     {
-      "index": 13,
+      "index": 218,
       "quote": "Christ has no body now on earth but yours, no hands but yours, no feet but yours.",
       "author": "St. Teresa of Ávila"
     },
     {
-      "index": 14,
+      "index": 219,
       "quote": "Love is shown more in deeds than in words.",
       "author": "St. Ignatius of Loyola"
     },
     {
-      "index": 15,
+      "index": 220,
       "quote": "Act as if every day were the last of your life.",
       "author": "St. Anthony of Padua"
     },
     {
-      "index": 16,
+      "index": 221,
       "quote": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
       "author": "St. Teresa of Calcutta"
     },
     {
-      "index": 17,
+      "index": 222,
       "quote": "Sanctify yourself and you will sanctify society.",
       "author": "St. Francis of Assisi"
     },
     {
-      "index": 18,
-      "quote": "Patience is the companion of wisdom.",
-      "author": "St. Augustine of Hippo"
-    },
-    {
-      "index": 19,
+      "index": 223,
       "quote": "The truth is like a lion; you don't have to defend it. Let it loose; it will defend itself.",
       "author": "St. Augustine of Hippo"
     },
     {
-      "index": 20,
-      "quote": "We should not accept in silence the benefactions of God, but return thanks for them.",
-      "author": "St. Basil the Great"
-    },
-    {
-      "index": 21,
+      "index": 224,
       "quote": "Pray, hope, and don't worry.",
       "author": "St. Padre Pio"
     }

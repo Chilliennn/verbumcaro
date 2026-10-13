@@ -1,8 +1,8 @@
 interface HeroSectionProps {
-  onOpenReader?: () => void;
+  onReadScripture: () => void;
 }
 
-export function HeroSection({ onOpenReader }: HeroSectionProps) {
+export function HeroSection({ onReadScripture }: HeroSectionProps) {
   return (
     <section className="hero-banner">
       <div className="hero-pretitle">The Adoration of the Shepherds by Caravaggio</div>
@@ -17,23 +17,22 @@ export function HeroSection({ onOpenReader }: HeroSectionProps) {
       <div className="hero-cjk">
         聖言成了血肉，寄居在我們中間 — 若望福音 1:14
       </div>
-      {onOpenReader && (
-        <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
-          <button
-            type="button"
-            onClick={onOpenReader}
-            className="save-btn"
-            style={{
-              padding: "0.75rem 1.75rem",
-              fontSize: "1rem",
-              letterSpacing: "0.05em",
-              cursor: "pointer"
-            }}
-          >
-            Read Scripture
-          </button>
-        </div>
-      )}
+      <div style={{ marginTop: "2rem" }}>
+        <button
+          type="button"
+          onClick={onReadScripture}
+          className="save-btn"
+          style={{
+            width: "auto",
+            padding: "0.75rem 2rem",
+            fontSize: "0.95rem",
+            letterSpacing: "0.04em",
+            borderRadius: "9999px"
+          }}
+        >
+          Read Scripture
+        </button>
+      </div>
     </section>
   );
 }

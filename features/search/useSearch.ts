@@ -7,7 +7,7 @@ import { canon } from "../../lib/data/canon";
 import { bibleRepository } from "../../lib/bible/staticRepository";
 import type { Book, Translation } from "../../lib/bible/repository";
 
-interface SearchResultItem {
+export interface SearchResultItem {
   bookCode: string;
   chapter: number;
   verse: number;
@@ -70,13 +70,11 @@ export function useSearch(
   ): Promise<SearchResultItem[]> {
     const normalized = query.normalize("NFKC").toLowerCase();
     const matches: SearchResultItem[] = [];
-
     const fetches: Array<() => Promise<SearchResultItem[]>> = [];
 
     for (const bookCode of bookCodes) {
       const book = canon.find((item) => item.code === bookCode);
       if (!book) continue;
-
       for (let chapter = 1; chapter <= book.chapters; chapter++) {
         fetches.push(
           () => bibleRepository
@@ -103,34 +101,30 @@ export function useSearch(
     }
 
     const BATCH_SIZE = 30;
-
     for (let i = 0; i < fetches.length; i += BATCH_SIZE) {
       if (request !== searchRequest.current) return [];
       const batch = fetches.slice(i, i + BATCH_SIZE);
       const results = await Promise.all(batch.map((fetchChapter) => fetchChapter()));
-
       for (const chapterMatches of results) {
         matches.push(...chapterMatches);
       }
     }
-
     return matches;
   }
 
-  const submitSearch = useCallback(async () => {
+  const submitSearch = useCallback(async (): Promise<boolean> => {
     const request = ++searchRequest.current;
     setSearchResults([]);
     setSearchEmpty(false);
-    const trimmed = search.trim();
 
+    const trimmed = search.trim();
     if (!trimmed) {
       setSearchQuery("");
       setSearchResults([]);
-      return;
+      return false;
     }
 
     const results = parseSearchQuery(trimmed);
-
     if (results.length > 0) {
       const passages = results.map((result) => ({
         bookCode: result.panel.bookCode,
@@ -158,77 +152,77 @@ export function useSearch(
           passages
         }
       }));
-
       setSearchResults([]);
       setSearchEmpty(false);
       setSearchQuery("");
-    } else {
-      const referenceResult = parseReference(trimmed);
-
-      if (referenceResult) {
-        const verseFilter =
-          referenceResult.verse !== undefined
-            ? { start: referenceResult.verse, end: referenceResult.verse }
-            : undefined;
-
-        setReader((state) => {
-          const leftTranslationId = referenceResult.translationId ?? state.left.translationId;
-          const rightTranslationId = referenceResult.translationId
-            ? (referenceResult.translationId === "catholic_org" ? "sigao" : "catholic_org")
-            : state.right.translationId;
-
-          const baseLeft: PanelState = {
-            translationId: leftTranslationId,
-            bookCode: referenceResult.panel.bookCode,
-            chapter: referenceResult.panel.chapter
-          };
-
-          const nextLeft = verseFilter
-            ? { ...baseLeft, verseFilter }
-            : { ...baseLeft, verseFilter: undefined };
-
-          const baseRight: PanelState = {
-            translationId: rightTranslationId,
-            bookCode: referenceResult.panel.bookCode,
-            chapter: referenceResult.panel.chapter
-          };
-
-          const nextRight = verseFilter
-            ? { ...baseRight, verseFilter }
-            : { ...baseRight, verseFilter: undefined };
-
-          return {
-            ...state,
-            search: trimmed,
-            left: nextLeft,
-            right: nextRight
-          };
-        });
-
-        setSearchResults([]);
-        setSearchEmpty(false);
-        setSearchQuery("");
-      } else {
-        const { reference: textQuery, translationId } = extractLanguageModifiers(trimmed);
-        if (!textQuery) return;
-        const searchTranslations = translationId
-          ? supportedTranslations.filter((translation) => translation.id === translationId)
-          : supportedTranslations;
-        const matches: SearchResultItem[] = [];
-        for (const translation of searchTranslations) {
-          if (request !== searchRequest.current) return;
-          matches.push(...await searchFullText(
-            textQuery, translation.id,
-            getAvailableBooks(translation.id).map((book) => book.code), request
-          ));
-        }
-        if (request !== searchRequest.current) return;
-
-        setSearchResults(matches);
-        setSearchEmpty(matches.length === 0);
-        setSearchQuery("");
-      }
+      return true;
     }
+
+    const referenceResult = parseReference(trimmed);
+    if (referenceResult) {
+      const verseFilter =
+        referenceResult.verse !== undefined
+          ? { start: referenceResult.verse, end: referenceResult.verse }
+          : undefined;
+
+      setReader((state) => {
+        const leftTranslationId = referenceResult.translationId ?? state.left.translationId;
+        const rightTranslationId = referenceResult.translationId
+          ? (referenceResult.translationId === "catholic_org" ? "sigao" : "catholic_org")
+          : state.right.translationId;
+
+        const baseLeft: PanelState = {
+          translationId: leftTranslationId,
+          bookCode: referenceResult.panel.bookCode,
+          chapter: referenceResult.panel.chapter
+        };
+        const nextLeft = verseFilter
+          ? { ...baseLeft, verseFilter }
+          : { ...baseLeft, verseFilter: undefined };
+
+        const baseRight: PanelState = {
+          translationId: rightTranslationId,
+          bookCode: referenceResult.panel.bookCode,
+          chapter: referenceResult.panel.chapter
+        };
+        const nextRight = verseFilter
+          ? { ...baseRight, verseFilter }
+          : { ...baseRight, verseFilter: undefined };
+
+        return {
+          ...state,
+          search: trimmed,
+          left: nextLeft,
+          right: nextRight
+        };
+      });
+      setSearchResults([]);
+      setSearchEmpty(false);
+      setSearchQuery("");
+      return true;
+    }
+
+    const { reference: textQuery, translationId } = extractLanguageModifiers(trimmed);
+    if (!textQuery) return false;
+
+    const searchTranslations = translationId
+      ? supportedTranslations.filter((translation) => translation.id === translationId)
+      : supportedTranslations;
+
+    const matches: SearchResultItem[] = [];
+    for (const translation of searchTranslations) {
+      if (request !== searchRequest.current) return false;
+      matches.push(...await searchFullText(
+        textQuery, translation.id,
+        getAvailableBooks(translation.id).map((book) => book.code), request
+      ));
+    }
+
+    if (request !== searchRequest.current) return false;
+    setSearchResults(matches);
+    setSearchEmpty(matches.length === 0);
+    setSearchQuery("");
+    return false;
   }, [search, setReader, availability, books, translations]);
 
   function clearSearch() {
@@ -257,7 +251,6 @@ export function useSearch(
         verseFilter: { start: result.verse, end: result.verse }
       }
     }));
-
     setSearchResults([]);
     setSearchQuery("");
   }
