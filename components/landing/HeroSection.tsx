@@ -15,19 +15,26 @@ export function HeroSection({ onReadScripture }: HeroSectionProps) {
         "And the Word was made flesh, and dwelt among us" — John 1:14
       </div>
       <div className="hero-cjk">
-        聖言成了血肉，寄居在我們中間 — 若望福音 1:14
+        聖言成了血肉，寄居在我們中間。 — 若望福音 1:14
       </div>
-      <div style={{ marginTop: "2rem" }}>
+      <div style={{ marginTop: "1.75rem" }}>
         <button
           type="button"
           onClick={onReadScripture}
-          className="save-btn"
+          className="save-btn read-scripture-btn"
           style={{
             width: "auto",
-            padding: "0.75rem 2rem",
+            height: "auto",
+            minHeight: "42px",
+            padding: "0.7rem 2.25rem",
             fontSize: "0.95rem",
+            fontWeight: 600,
             letterSpacing: "0.04em",
-            borderRadius: "9999px"
+            borderRadius: "9999px",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            lineHeight: 1.2
           }}
         >
           Read Scripture

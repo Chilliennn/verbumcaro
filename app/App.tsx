@@ -8,10 +8,7 @@ import { FontSettingsModal } from "../components/modals/FontSettingsModal";
 import { SearchGuideModal } from "../components/modals/SearchGuideModal";
 import { HubModal } from "../components/modals/HubModal";
 import { bibleRepository } from "../lib/bible/staticRepository";
-import type {
-  Book,
-  Translation
-} from "../lib/bible/repository";
+import type { Book, Translation } from "../lib/bible/repository";
 import { useReader } from "../features/reader/useReader";
 import { useSearch } from "../features/search/useSearch";
 import { useTheme } from "../features/ui/useTheme";
@@ -26,10 +23,8 @@ export default function App() {
   const [fontModalOpen, setFontModalOpen] = useState(false);
   const [guideModalOpen, setGuideModalOpen] = useState(false);
   const [hubModalOpen, setHubModalOpen] = useState(false);
-
   const [reader, setReader] = useReader();
   const availability = useAvailability();
-
   const [translations, setTranslations] = useState<Translation[]>([]);
   const [books] = useState<Book[]>(canon);
 
@@ -52,10 +47,7 @@ export default function App() {
     getTranslationName
   } = useSearch(reader, setReader, availability, books, translations);
 
-  const { isLanding, setIsLanding, navigateHome } = useLandingPage(
-    Boolean(search.trim()),
-    searchResults.length > 0
-  );
+  const { isLanding, setIsLanding, navigateHome } = useLandingPage();
 
   function getAvailableBooks(translationId: string): Book[] {
     const availableCodes = availability[translationId];
@@ -71,6 +63,26 @@ export default function App() {
     navigateToResult(result);
   }
 
+  function handleReadScripture() {
+    setReader((state) => ({
+      ...state,
+      parallel: true,
+      left: {
+        translationId: "catholic_org",
+        bookCode: "GEN",
+        chapter: 1,
+        verseFilter: undefined
+      },
+      right: {
+        translationId: "sigao",
+        bookCode: "GEN",
+        chapter: 1,
+        verseFilter: undefined
+      }
+    }));
+    setIsLanding(false);
+  }
+
   return (
     <AppShell>
       <Header
@@ -81,9 +93,11 @@ export default function App() {
           dismissSearch();
           setSearch(value);
         }}
-        onSearchSubmit={() => {
-          setIsLanding(false);
-          submitSearch();
+        onSearchSubmit={async () => {
+          const directMatch = await submitSearch();
+          if (directMatch) {
+            setIsLanding(false);
+          }
         }}
         onToggleFontModal={() => setFontModalOpen((prev) => !prev)}
         onOpenGuideModal={() => setGuideModalOpen(true)}
@@ -96,8 +110,10 @@ export default function App() {
           <div className="search-results">
             <div className="search-results-header">
               <div className="search-results-title">Search Results ({searchResults.length})</div>
-              <button className="search-results-clear" onClick={clearSearch} type="button">Clear</button>
-              <button className="search-results-clear" onClick={dismissSearch} type="button" aria-label="Close search results">Close</button>
+              <div className="search-results-actions">
+                <button className="search-results-clear" onClick={clearSearch} type="button">Clear</button>
+                <button className="search-results-clear" onClick={dismissSearch} type="button" aria-label="Close search results">Close</button>
+              </div>
             </div>
             {searchResults.length > 0 ? (
               <div className="search-results-list">
@@ -110,7 +126,7 @@ export default function App() {
                   >
                     <span className="search-result-ref">
                       {getBookName(result.bookCode, result.translationId)} {result.chapter}:{result.verse}
-                      {" · "}{getTranslationName(result.translationId)}
+                      {"   "}{getTranslationName(result.translationId)}
                     </span>
                     <span className="search-result-text">{result.text}</span>
                   </button>
@@ -124,11 +140,9 @@ export default function App() {
       )}
 
       {isLanding ? (
-        <LandingView />
+        <LandingView onReadScripture={handleReadScripture} />
       ) : (
-        <main
-          className={`main-content ${reader.sync === "verse" ? "scroll-sync" : ""}`}
-        >
+        <main className={`main-content ${reader.sync === "verse" ? "scroll-sync" : ""}`}>
           <ReaderToolbar
             sync={reader.sync === "verse"}
             parallel={reader.parallel}
@@ -152,7 +166,6 @@ export default function App() {
               }))
             }
           />
-
           <ParallelReader
             left={reader.left}
             right={reader.right}
@@ -171,14 +184,10 @@ export default function App() {
               setReader((state) => ({ ...state, right: panel }))
             }
             onSyncVerse={(verse, passageIndex) => {
-              if (reader.sync !== "verse") {
-                return;
-              }
-
+              if (reader.sync !== "verse") return;
               const target = document.querySelector(
                 `.bible-panel:nth-child(2) [data-passage-index="${passageIndex}"] [data-verse="${verse}"]`
               );
-
               target?.scrollIntoView({
                 behavior: "smooth",
                 block: "center"
@@ -200,12 +209,10 @@ export default function App() {
         onFontSizeChange={setFontSize}
         onClose={() => setFontModalOpen(false)}
       />
-
       <SearchGuideModal
         isOpen={guideModalOpen}
         onClose={() => setGuideModalOpen(false)}
       />
-
       <HubModal
         isOpen={hubModalOpen}
         onClose={() => setHubModalOpen(false)}
