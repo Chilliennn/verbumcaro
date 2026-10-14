@@ -1,0 +1,337 @@
+{
+  "translationId": "vulgate",
+  "book": "LEV",
+  "chapter": 25,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Locutusque est Dominus ad Moysen in monte Sinai, dicens:",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Loquere filiis Israël, et dices ad eos: Quando ingressi fueritis terram quam ego dabo vobis, sabbatizes sabbatum Domino.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Sex annis seres agrum tuum, et sex annis putabis vineam tuam, colligesque fructus ejus:",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "septimo autem anno sabbatum erit terræ, requietionis Domini: agrum non seres, et vineam non putabis.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Quæ sponte gignet humus, non metes: et uvas primitiarum tuarum non colliges quasi vindemiam: annus enim requietionis terræ est:",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "sed erunt vobis in cibum, tibi et servo tuo, ancillæ et mercenario tuo, et advenæ qui peregrinantur apud te:",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "jumentis tuis et pecoribus, omnia quæ nascuntur præbebunt cibum.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Numerabis quoque tibi septem hebdomadas annorum, id est, septies septem, quæ simul faciunt annos quadraginta novem:",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "et clanges buccina mense septimo, decima die mensis, propitiationis tempore, in universa terra vestra.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Sanctificabisque annum quinquagesimum, et vocabis remissionem cunctis habitatoribus terræ tuæ: ipse est enim jubilæus. Revertetur homo ad possessionem suam, et unusquisque rediet ad familiam pristinam:",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "quia jubilæus est, et quinquagesimus annus. Non seretis neque metetis sponte in agro nascentia, et primitias vindemiæ non colligetis,",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "ob sanctificationem jubilæi: sed statim oblata comedetis.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Anno jubilæi, redient omnes ad possessiones suas.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Quando vendes quippiam civi tuo, vel emes ab eo, ne contristes fratrem tuum, sed juxta numerum annorum jubilæi emes ab eo,",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "et juxta supputationem frugum vendet tibi.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Quanto plures anni remanserint post jubilæum, tanto crescet et pretium: et quanto minus temporis numeraveris, tanto minoris et emptio constabit: tempus enim frugum vendet tibi.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Nolite affligere contribules vestros, sed timeat unusquisque Deum suum, quia ego Dominus Deus vester.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Facite præcepta mea, et judicia custodite, et implete ea: ut habitare possitis in terra absque ullo pavore,",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "et gignat vobis humus fructus suos, quibus vescamini usque ad saturitatem, nullius impetum formidantes.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Quod si dixeritis: Quid comedemus anno septimo, si non severimus, neque collegerimus fruges nostras?",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "dabo benedictionem meam vobis anno sexto, et faciet fructus trium annorum:",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "seretisque anno octavo, et comedetis veteres fruges usque ad nonum annum: donec nova nascantur, edetis vetera.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Terra quoque non vendetur in perpetuum, quia mea est, et vos advenæ et coloni mei estis:",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "unde cuncta regio possessionis vestræ sub redemptionis conditione vendetur.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Si attenuatus frater tuus vendiderit possessiunculam suam, et voluerit propinquus ejus, potest redimere quod ille vendiderat.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Sin autem non habuerit proximum, et ipse pretium ad redimendum potuerit invenire,",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "computabuntur fructus ex eo tempore quo vendidit: et quod reliquum est, reddet emptori, sicque recipiet possessionem suam.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Quod si non invenerit manus ejus ut reddat pretium, habebit emptor quod emerat, usque ad annum jubilæum. In ipso enim omnis venditio redibit ad dominum et ad possessorem pristinum.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Qui vendiderit domum intra urbis muros, habebit licentiam redimendi, donec unus impleatur annus.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Si non redemerit, et anni circulus fuerit evolutus, emptor possidebit eam, et posteri ejus in perpetuum, et redimi non poterit, etiam in jubilæo.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Sin autem in villa domus, quæ muros non habet, agrorum jure vendetur: si ante redempta non fuerit, in jubilæo revertetur ad dominum.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Ædes Levitarum quæ in urbibus sunt, semper possunt redimi:",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "si redemptæ non fuerint, in jubilæo revertentur ad dominos, quia domus urbium Levitarum pro possessionibus sunt inter filios Israël.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Suburbana autem eorum non veneant, quia possessio sempiterna est.",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Si attenuatus fuerit frater tuus, et infirmus manu, et susceperis eum quasi advenam et peregrinum, et vixerit tecum,",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "ne accipias usuras ab eo, nec amplius quam dedisti: time Deum tuum, ut vivere possit frater tuus apud te.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Pecuniam tuam non dabis ei ad usuram, et frugum superabundantiam non exiges.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Ego Dominus Deus vester, qui eduxi vos de terra Ægypti, ut darem vobis terram Chanaan, et essem vester Deus.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Si paupertate compulsus vendiderit se tibi frater tuus, non eum opprimes servitute famulorum,",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "sed quasi mercenarius et colonus erit: usque ad annum jubilæum operabitur apud te,",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "et postea egredietur cum liberis suis, et revertetur ad cognationem, ad possessionem patrum suorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Mei enim servi sunt, et ego eduxi eos de terra Ægypti: non veneant conditione servorum:",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "ne affligas eum per potentiam, sed metuito Deum tuum.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Servus et ancilla sint vobis de nationibus quæ in circuitu vestro sunt:",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "et de advenis qui peregrinantur apud vos, vel qui ex his nati fuerint in terra vestra, hos habebitis famulos:",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "et hæreditario jure transmittetis ad posteros, ac possidebitis in æternum: fratres autem vestros filios Israël ne opprimatis per potentiam.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Si invaluerit apud vos manus advenæ atque peregrini, et attenuatus frater tuus vendiderit se ei, aut cuiquam de stirpe ejus:",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "post venditionem potest redimi. Qui voluerit ex fratribus suis, redimet eum,",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "et patruus, et patruelis, et consanguineus, et affinis. Sin autem et ipse potuerit, redimet se,",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "supputatis dumtaxat annis a tempore venditionis suæ usque ad annum jubilæum: et pecunia, qua venditus fuerat, juxta annorum numerum, et rationem mercenarii supputata.",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "Si plures fuerint anni qui remanent usque ad jubilæum, secundum hos reddet et pretium:",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "si pauci, ponet rationem cum eo juxta annorum numerum, et reddet emptori quod reliquum est annorum,",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "quibus ante servivit mercedibus imputatis: non affliget eum violenter in conspectu tuo.",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "Quod si per hæc redimi non potuerit, anno jubilæo egredietur cum liberis suis.",
+      "footnotes": []
+    },
+    {
+      "verse": 55,
+      "heading": null,
+      "text": "Mei enim sunt servi filii Israël, quos eduxi de terra Ægypti.",
+      "footnotes": []
+    }
+  ]
+}

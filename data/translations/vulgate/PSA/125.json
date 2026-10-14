@@ -1,0 +1,43 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 125,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Canticum graduum. [In convertendo Dominus captivitatem Sion, facti sumus sicut consolati.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Tunc repletum est gaudio os nostrum, et lingua nostra exsultatione. Tunc dicent inter gentes: Magnificavit Dominus facere cum eis.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Magnificavit Dominus facere nobiscum; facti sumus lætantes.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Converte, Domine, captivitatem nostram, sicut torrens in austro.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Qui seminant in lacrimis, in exsultatione metent.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Euntes ibant et flebant, mittentes semina sua. Venientes autem venient cum exsultatione, portantes manipulos suos.]",
+      "footnotes": []
+    }
+  ]
+}

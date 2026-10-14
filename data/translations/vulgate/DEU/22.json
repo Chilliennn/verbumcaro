@@ -1,0 +1,187 @@
+{
+  "translationId": "vulgate",
+  "book": "DEU",
+  "chapter": 22,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Non videbis bovem fratris tui, aut ovem errantem, et præteribis: sed reduces fratri tuo,",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "etiamsi non est propinquus frater tuus, nec nosti eum: duces in domum tuam, et erunt apud te quamdiu quærat ea frater tuus, et recipiat.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Similiter facies de asino, et de vestimento, et de omni re fratris tui, quæ perierit: si inveneris eam, ne negligas quasi alienam.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Si videris asinum fratris tui aut bovem cecidisse in via, non despicies, sed sublevabis cum eo.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Non induetur mulier veste virili, nec vir utetur veste feminea: abominabilis enim apud Deum est qui facit hæc.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Si ambulans per viam, in arbore vel in terra nidum avis inveneris, et matrem pullis vel ovis desuper incubantem: non tenebis eam cum filiis,",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "sed abire patieris, captos tenens filios: ut bene sit tibi, et longo vivas tempore.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Cum ædificaveris domum novam, facies murum tecti per circuitum: ne effundatur sanguis in domo tua, et sis reus labente alio, et in præceps ruente.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Non seres vineam tuam altero semine: ne et sementis quam sevisti, et quæ nascuntur ex vinea, pariter sanctificentur.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Non arabis in bove simul et asino.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Non indueris vestimento, quod ex lana linoque contextum est.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Funiculos in fimbriis facies per quatuor angulos pallii tui, quo operieris.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Si duxerit vir uxorem, et postea odio habuerit eam,",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "quæsieritque occasiones quibus dimittat eam, objiciens ei nomen pessimum, et dixerit: Uxorem hanc accepi, et ingressus ad eam non inveni virginem:",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "tollent eam pater et mater ejus, et ferent secum signa virginitatis ejus ad seniores urbis qui in porta sunt:",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "et dicet pater: Filiam meam dedi huic uxorem: quam quia odit,",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "imponit ei nomen pessimum, ut dicat: Non inveni filiam tuam virginem: et ecce hæc sunt signa virginitatis filiæ meæ. Expandent vestimentum coram senioribus civitatis:",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "apprehendentque senes urbis illius virum, et verberabunt illum,",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "condemnantes insuper centum siclis argenti, quos dabit patri puellæ, quoniam diffamavit nomen pessimum super virginem Israël: habebitque eam uxorem, et non poterit dimittere eam omnibus diebus vitæ suæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Quod si verum est quod objicit, et non est in puella inventa virginitas,",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "ejicient eam extra fores domus patris sui, et lapidibus obruent viri civitatis illius, et morietur: quoniam fecit nefas in Israël, ut fornicaretur in domo patris sui: et auferes malum de medio tui.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Si dormierit vir cum uxore alterius, uterque morietur, id est, adulter et adultera: et auferes malum de Israël.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Si puellam virginem desponderit vir, et invenerit eam aliquis in civitate, et concubuerit cum ea,",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "educes utrumque ad portam civitatis illius, et lapidibus obruentur: puella, quia non clamavit, cum esset in civitate: vir, quia humiliavit uxorem proximi sui: et auferes malum de medio tui.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Sin autem in agro repererit vir puellam, quæ desponsata est, et apprehendens concubuerit cum ea, ipse morietur solus:",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "puella nihil patietur, nec est rea mortis: quoniam sicut latro consurgit contra fratrem suum, et occidit animam ejus, ita et puella perpessa est.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Sola erat in agro: clamavit, et nullus affuit qui liberaret eam.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Si invenerit vir puellam virginem, quæ non habet sponsum, et apprehendens concubuerit cum illa, et res ad judicium venerit:",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "dabit qui dormivit cum ea, patri puellæ quinquaginta siclos argenti, et habebit eam uxorem, quia humiliavit illam: non poterit dimittere eam cunctis diebus vitæ suæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Non accipiet homo uxorem patris sui, nec revelabit operimentum ejus.",
+      "footnotes": []
+    }
+  ]
+}

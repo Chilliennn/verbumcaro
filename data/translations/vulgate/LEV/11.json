@@ -1,0 +1,289 @@
+{
+  "translationId": "vulgate",
+  "book": "LEV",
+  "chapter": 11,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Locutusque est Dominus ad Moysen et Aaron, dicens:",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Dicite filiis Israël: Hæc sunt animalia quæ comedere debetis de cunctis animantibus terræ:",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "omne quod habet divisam ungulam, et ruminat in pecoribus, comedetis.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Quidquid autem ruminat quidem, et habet ungulam, sed non dividit eam, sicut camelus et cetera, non comedetis illud, et inter immunda reputabitis.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Chœrogryllus qui ruminat, ungulamque non dividit, immundus est.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Lepus quoque: nam et ipse ruminat, sed ungulam non dividit.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Et sus: qui cum ungulam dividat, non ruminat.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Horum carnibus non vescemini, nec cadavera contingetis, quia immunda sunt vobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Hæc sunt quæ gignuntur in aquis, et vesci licitum est: omne quod habet pinnulas et squamas, tam in mari quam in fluminibus et stagnis, comedetis.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Quidquid autem pinnulas et squamas non habet, eorum quæ in aquis moventur et vivunt, abominabile vobis,",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "execrandumque erit: carnes eorum non comedetis, et morticina vitabitis.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Cuncta quæ non habent pinnulas et squamas in aquis, polluta erunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Hæc sunt quæ de avibus comedere non debetis, et vitanda sunt vobis: aquilam, et gryphem, et haliæetum,",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "et milvum ac vulturem juxta genus suum,",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "et omne corvini generis in similitudinem suam,",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "struthionem, et noctuam, et larum, et accipitrem juxta genus suum:",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "bubonem, et mergulum, et ibin,",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "et cygnum, et onocrotalum, et porphyrionem,",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "herodionem, et charadrion juxta genus suum, upupam quoque, et vespertilionem.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Omne de volucribus quod graditur super quatuor pedes, abominabile erit vobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Quidquid autem ambulat quidem super quatuor pedes, sed habet longiora retro crura, per quæ salit super terram,",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "comedere debetis, ut est bruchus in genere suo, et attacus atque ophiomachus, ac locusta, singula juxta genus suum.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Quidquid autem ex volucribus quatuor tantum habet pedes, execrabile erit vobis:",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "et quicumque morticina eorum tetigerit, polluetur, et erit immundus usque ad vesperum:",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "et si necesse fuerit ut portet quippiam horum mortuum, lavabit vestimenta sua, et immundus erit usque ad occasum solis.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Omne animal quod habet quidem ungulam, sed non dividit eam, nec ruminat, immundum erit: et qui tetigerit illud, contaminabitur.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Quod ambulat super manus ex cunctis animantibus, quæ incedunt quadrupedia, immundum erit: qui tetigerit morticina eorum, polluetur usque ad vesperum.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Et qui portaverit hujuscemodi cadavera, lavabit vestimenta sua, et immundus erit usque ad vesperum: quia omnia hæc immunda sunt vobis.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Hæc quoque inter polluta reputabuntur de his quæ moventur in terra, mustela et mus et crocodilus, singula juxta genus suum,",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "mygale, et chamæleon, et stellio, et lacerta, et talpa.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Omnia hæc immunda sunt. Qui tetigerit morticina eorum, immundus erit usque ad vesperum:",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "et super quod ceciderit quidquam de morticinis eorum, polluetur, tam vas ligneum et vestimentum, quam pelles et cilicia: et in quocumque fit opus, tingentur aqua, et polluta erunt usque ad vesperum, et sic postea mundabuntur.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Vas autem fictile, in quod horum quidquam intro cecidit, polluetur, et idcirco frangendum est.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Omnis cibus, quem comedetis, si fusa fuerit super eum aqua, immundus erit: et omne liquens quod bibitur de universo vase, immundum erit.",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Et quidquid de morticinis hujuscemodi ceciderit super illud, immundum erit: sive clibani, sive chytropodes, destruentur, et immundi erunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Fontes vero et cisternæ, et omnis aquarum congregatio munda erit. Qui morticinum eorum tetigerit, polluetur.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Si ceciderit super sementem, non polluet eam.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Si autem quispiam aqua sementem perfuderit, et postea morticinis tacta fuerit, illico polluetur.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Si mortuum fuerit animal, quod licet vobis comedere, qui cadaver ejus tetigerit, immundus erit usque ad vesperum:",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "et qui comederit ex eo quippiam, sive portaverit, lavabit vestimenta sua, et immundus erit usque ad vesperum.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Omne quod reptat super terram, abominabile erit, nec assumetur in cibum.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Quidquid super pectus quadrupes graditur, et multos habet pedes, sive per humum trahitur, non comedetis, quia abominabile est.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Nolite contaminare animas vestras, nec tangatis quidquam eorum, ne immundi sitis.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Ego enim sum Dominus Deus vester: sancti estote, quia ego sanctus sum. Ne polluatis animas vestras in omni reptili quod movetur super terram.",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Ego enim sum Dominus, qui eduxi vos de terra Ægypti, ut essem vobis in Deum. Sancti eritis, quia ego sanctus sum.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Ista est lex animantium ac volucrum, et omnis animæ viventis, quæ movetur in aqua, et reptat in terra,",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "ut differentias noveritis mundi et immundi, et sciatis quid comedere et quid respuere debeatis.",
+      "footnotes": []
+    }
+  ]
+}

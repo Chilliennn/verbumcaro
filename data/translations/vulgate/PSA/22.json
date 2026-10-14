@@ -1,0 +1,43 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 22,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Psalmus David. [Dominus regit me, et nihil mihi deerit:",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "in loco pascuæ, ibi me collocavit. Super aquam refectionis educavit me;",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "animam meam convertit. Deduxit me super semitas justitiæ propter nomen suum.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Nam etsi ambulavero in medio umbræ mortis, non timebo mala, quoniam tu mecum es. Virga tua, et baculus tuus, ipsa me consolata sunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Parasti in conspectu meo mensam adversus eos qui tribulant me; impinguasti in oleo caput meum: et calix meus inebrians, quam præclarus est!",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Et misericordia tua subsequetur me omnibus diebus vitæ meæ; et ut inhabitem in domo Domini in longitudinem dierum.]",
+      "footnotes": []
+    }
+  ]
+}

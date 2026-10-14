@@ -1,0 +1,19 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 116,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Alleluja. [Laudate Dominum, omnes gentes; laudate eum, omnes populi.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Quoniam confirmata est super nos misericordia ejus, et veritas Domini manet in æternum.]",
+      "footnotes": []
+    }
+  ]
+}
