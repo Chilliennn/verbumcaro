@@ -80,8 +80,20 @@ export function HubModal({ isOpen, onClose }: HubModalProps) {
             <div className="tab-pane">
               <h3 className="section-title">Why VerbumCaro?</h3>
               <p className="tab-desc">
-                VerbumCaro is an ad-free, high-performance parallel reader designed to unite Catholic Latin Vulgate, Chinese Sigao (思高), and Catholic Public Domain translations side-by-side.
+                VerbumCaro was born out of a desire for an accessible, flexible Catholic Scripture study tool. While platforms like BibleGateway offer powerful syntax searching, their Chinese selections are exclusively Protestant versions that differ in biblical book canons and character names. Reading Catholic translations meant juggling disjointed websites one language at a time.
               </p>
+              <p className="tab-desc">
+                VerbumCaro provides an agile, side-by-side reading experience for catechists, RCIA teachers, and anyone seeking deeper scripture comprehension. Comparing passages across translations like the Latin Vulgate alongside modern translations unlocks nuances and theological richness that a single language cannot convey alone. It is also designed for language learners exploring Scripture in Japanese or Latin, with future plans for on-device AI research and interactive pronunciation and glossing tools.
+              </p>
+
+              <div className="tech-stack-card">
+                <div>
+                  <strong>Tech Stack:</strong> React 19, TypeScript, Vite 7, Vitest
+                </div>
+                <div>
+                  <strong>Architecture:</strong> Static JSON Bible data, IndexedDB persistence, two-panel parallel reader with URL-synced state, responsive CSS (no UI framework).
+                </div>
+              </div>
 
               <div className="sponsor-box">
                 <strong className="sponsor-title">Domain &amp; Hosting Sponsorship</strong>
@@ -92,11 +104,58 @@ export function HubModal({ isOpen, onClose }: HubModalProps) {
 
               <h3 className="section-title">Feedback &amp; Socials</h3>
               <div className="social-links">
-                <a href="https://github.com" target="_blank" rel="noreferrer">
-                  GitHub Discussions
+                {/* Instagram */}
+                <a
+                  href="https://instagram.com/chilliennn_/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-icon-btn"
+                  title="Instagram"
+                  aria-label="Instagram"
+                >
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
                 </a>
-                <span>•</span>
-                <a href="mailto:support@verbumcaro.org">Email Feedback</a>
+
+                {/* Gmail */}
+                <a
+                  href="mailto:chillien0815@gmail.com"
+                  onClick={(e) => {
+                    if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                      e.preventDefault();
+                      window.open(
+                        "https://mail.google.com/mail/?view=cm&fs=1&to=chillien0815@gmail.com",
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
+                    }
+                  }}
+                  className="social-icon-btn"
+                  title="Gmail"
+                  aria-label="Gmail"
+                >
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href="https://wa.me/@chilliennn"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-icon-btn"
+                  title="WhatsApp"
+                  aria-label="WhatsApp"
+                >
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+                </a>
               </div>
             </div>
           )}

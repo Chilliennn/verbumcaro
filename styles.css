@@ -1418,3 +1418,52 @@ button {
   height: auto;
   line-height: 1.2;
 }
+
+/* Tech Stack callout inside About modal */
+.tech-stack-card {
+  background: var(--stone-100);
+  border: 1px solid var(--stone-200);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--stone-800);
+  margin: 14px 0 16px;
+}
+
+:root[data-theme="dark"] .tech-stack-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--stone-200);
+}
+
+/* Social icon buttons */
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--stone-200);
+  background: var(--stone-50);
+  color: var(--stone-500);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.social-icon-btn:hover {
+  color: var(--brand-800);
+  background: var(--brand-50);
+  border-color: var(--brand-100);
+}
+
+:root[data-theme="dark"] .social-icon-btn {
+  background: var(--stone-100);
+  border-color: var(--stone-200);
+  color: var(--stone-400);
+}
+
+:root[data-theme="dark"] .social-icon-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
