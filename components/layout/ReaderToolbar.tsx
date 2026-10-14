@@ -21,22 +21,26 @@ export function ReaderToolbar({
         <button
           className={`toolbar-button ${showHeadings ? "active" : ""}`}
           onClick={onHeadings}
+          type="button"
         >
-          ¶ Headings
+          <span className="dot" />
+          Headings
         </button>
-
         <button
           className={`toolbar-button ${sync ? "active" : ""}`}
           onClick={onSync}
+          type="button"
         >
-          ⇆ Sync
+          <span className="dot" />
+          Sync
         </button>
-
         <button
           className={`toolbar-button ${parallel ? "active" : ""}`}
           onClick={onParallel}
+          type="button"
         >
-          ◫ Parallel
+          <span className="dot" />
+          Parallel
         </button>
       </div>
     </div>

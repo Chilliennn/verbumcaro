@@ -8,6 +8,7 @@ interface HeaderProps {
   onOpenGuideModal?: () => void;
   onOpenHubModal?: () => void;
   onNavigateHome?: () => void;
+  onOpenDrawer?: () => void;
 }
 
 export function Header({
@@ -19,7 +20,8 @@ export function Header({
   onToggleFontModal,
   onOpenGuideModal,
   onOpenHubModal,
-  onNavigateHome
+  onNavigateHome,
+  onOpenDrawer
 }: HeaderProps) {
   return (
     <header className="site-header">
@@ -30,17 +32,27 @@ export function Header({
         onClick={onNavigateHome}
       >
         <span className="brand-mark">
-          <svg viewBox="0 0 100 100" width="38" height="38" fill="none" stroke="currentColor" strokeLinecap="square" strokeLinejoin="miter" aria-hidden="true">
+          <svg
+            viewBox="0 0 100 100"
+            width="38"
+            height="38"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+            aria-hidden="true"
+          >
             <circle cx="50" cy="50" r="44" strokeWidth="6.5" />
             <path d="M50 29.5 V70.5 M29.5 50 H70.5" strokeWidth="4.5" />
-            <path d="M42.5 29.5 H57.5 M42.5 70.5 H57.5 M29.5 42.5 V57.5 M70.5 42.5 V57.5" strokeWidth="4.5" />
+            <path
+              d="M42.5 29.5 H57.5 M42.5 70.5 H57.5 M29.5 42.5 V57.5 M70.5 42.5 V57.5"
+              strokeWidth="4.5"
+            />
           </svg>
         </span>
         <span className="brand-name">VerbumCaro</span>
       </button>
-
       <div className="header-divider" />
-
       <div className="search-wrap">
         <form
           className="global-search"
@@ -61,14 +73,20 @@ export function Header({
             title="Search"
             aria-label="Search"
           >
-            <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              width="19"
+              height="19"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <circle cx="11" cy="11" r="7" />
               <path d="m20 20-3.5-3.5" />
             </svg>
           </button>
         </form>
       </div>
-
       <div className="header-actions">
         {onOpenGuideModal && (
           <button
@@ -78,14 +96,22 @@ export function Header({
             onClick={onOpenGuideModal}
             aria-label="Search syntax guide"
           >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <circle cx="12" cy="12" r="10" />
               <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
               <line x1="12" y1="17" x2="12.01" y2="17" />
             </svg>
           </button>
         )}
-
         <button
           className="header-icon aa"
           title="Text settings"
@@ -94,7 +120,6 @@ export function Header({
         >
           Aa
         </button>
-
         <button
           className="header-icon"
           title={dark ? "Switch to light mode" : "Switch to dark mode"}
@@ -103,17 +128,30 @@ export function Header({
           aria-label="Toggle light/dark mode"
         >
           {dark ? (
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <circle cx="12" cy="12" r="4" />
               <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
             </svg>
           ) : (
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8z" />
             </svg>
           )}
         </button>
-
         <button
           className="header-icon"
           title="Account, Sponsors & API Settings"
@@ -121,12 +159,40 @@ export function Header({
           type="button"
           onClick={onOpenHubModal}
         >
-          <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            viewBox="0 0 24 24"
+            width="21"
+            height="21"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <circle cx="12" cy="8" r="3" />
             <path d="M5 20a7 7 0 0 1 14 0" />
           </svg>
         </button>
       </div>
+      <button
+        className="header-icon hamburger-btn"
+        title="Open navigation menu"
+        aria-label="Open navigation menu"
+        type="button"
+        onClick={onOpenDrawer}
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        >
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+      </button>
     </header>
   );
 }

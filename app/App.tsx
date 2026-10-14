@@ -7,6 +7,8 @@ import { LandingView } from "../components/landing/LandingView";
 import { FontSettingsModal } from "../components/modals/FontSettingsModal";
 import { SearchGuideModal } from "../components/modals/SearchGuideModal";
 import { HubModal } from "../components/modals/HubModal";
+import { MobileDrawer } from "../components/layout/MobileDrawer";
+import { useMobileDrawer } from "../hooks/useMobileDrawer";
 import { bibleRepository } from "../lib/bible/staticRepository";
 import type { Book, Translation } from "../lib/bible/repository";
 import { useReader } from "../features/reader/useReader";
@@ -27,6 +29,12 @@ export default function App() {
   const availability = useAvailability();
   const [translations, setTranslations] = useState<Translation[]>([]);
   const [books] = useState<Book[]>(canon);
+
+  const {
+    isOpen: isDrawerOpen,
+    open: openDrawer,
+    close: closeDrawer
+  } = useMobileDrawer(false);
 
   useEffect(() => {
     bibleRepository.getTranslations().then(setTranslations);
@@ -103,6 +111,7 @@ export default function App() {
         onOpenGuideModal={() => setGuideModalOpen(true)}
         onOpenHubModal={() => setHubModalOpen(true)}
         onNavigateHome={navigateHome}
+        onOpenDrawer={openDrawer}
       />
 
       {(searchResults.length > 0 || searchEmpty) && (
@@ -202,6 +211,16 @@ export default function App() {
           />
         </main>
       )}
+
+      <MobileDrawer
+        isOpen={isDrawerOpen}
+        onClose={closeDrawer}
+        dark={dark}
+        onToggleTheme={toggleTheme}
+        onOpenFontModal={() => setFontModalOpen(true)}
+        onOpenGuideModal={() => setGuideModalOpen(true)}
+        onOpenHubModal={() => setHubModalOpen(true)}
+      />
 
       <FontSettingsModal
         isOpen={fontModalOpen}

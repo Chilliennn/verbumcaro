@@ -20,7 +20,6 @@ export function TranslationSelector({
     if (!open) {
       return;
     }
-
     function handleClickOutside(event: MouseEvent) {
       if (
         wrapperRef.current &&
@@ -29,10 +28,17 @@ export function TranslationSelector({
         setOpen(false);
       }
     }
-
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
     document.addEventListener("mousedown", handleClickOutside);
-    return () =>
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, [open]);
 
   return (
@@ -41,6 +47,8 @@ export function TranslationSelector({
         className="version-selector"
         onClick={() => setOpen((value) => !value)}
         type="button"
+        aria-expanded={open}
+        aria-label={`Select translation, currently ${selected?.name ?? "Select translation"}`}
       >
         <span>{selected?.name ?? "Select translation"}</span>
         <svg
@@ -55,13 +63,24 @@ export function TranslationSelector({
           <path d="m6 9 6 6 6-6" />
         </svg>
       </button>
-
       {open && (
         <div className="passage-menu">
-          <div className="picker-grid">
+          <div className="picker-mobile-header">
+            <span className="picker-mobile-title">Select Translation</span>
+            <button
+              type="button"
+              className="picker-mobile-close"
+              onClick={() => setOpen(false)}
+              aria-label="Close translation selector"
+            >
+              &times;
+            </button>
+          </div>
+          <div className="picker-grid translation-picker-grid">
             {translations.map((translation) => (
               <button
                 key={translation.id}
+                type="button"
                 className={`book-item ${translation.id === value ? "selected" : ""}`}
                 onClick={() => {
                   onChange(translation.id);
