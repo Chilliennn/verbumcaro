@@ -7,5 +7,5 @@ export default defineConfig({
     port: 5173,
     host: "localhost"
   },
-  base: "/verbumcaro/",
+  base: "/",
 });
