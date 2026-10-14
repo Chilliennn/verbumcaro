@@ -53,7 +53,7 @@ export function BiblePanel({
     Promise.all((panel.passages ?? [panel]).map(async (passage) => {
       try {
         const response = await fetch(
-          `/data/translations/${panel.translationId}/${passage.bookCode}/${passage.chapter}.json`
+          `${import.meta.env.BASE_URL}data/translations/${panel.translationId}/${passage.bookCode}/${passage.chapter}.json`
         );
         return response.ok ? await response.json() as Chapter : null;
       } catch {
