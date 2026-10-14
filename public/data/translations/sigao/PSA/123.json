@@ -1,0 +1,31 @@
+{
+  "translationId": "sigao",
+  "book": "PSA",
+  "chapter": 123,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "登圣殿歌。居住在诸天上的大主，我向你仰起我的眼目。",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "看，仆人的眼目，怎样仰望主人的手，看，婢女的眼目，怎样注视主妇的手；我们的眼目也就怎样注视着上主，我们的天主，直到他怜悯我们才止。",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "上主，求你矜怜，矜怜我们，因为我们已尝尽了欺凌；",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "我们的心灵已经饱受得太多了：即骄傲人的欺凌，富贵人的耻笑。",
+      "footnotes": []
+    }
+  ]
+}

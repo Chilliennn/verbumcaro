@@ -1,0 +1,39 @@
+[
+  {
+    "id": "catholic_org",
+    "name": "New Jerusalem Bible (English)",
+    "language": "en",
+    "languageName": "English",
+    "direction": "ltr",
+    "hasHeadings": false,
+    "hasFootnotes": false
+  },
+  {
+    "id": "sigao",
+    "name": "思高圣经 (Studium Biblicum)",
+    "language": "zh-Hans",
+    "languageName": "中文 (简体)",
+    "direction": "ltr",
+    "hasHeadings": true,
+    "hasFootnotes": false
+  },
+  {
+    "id": "shinkyo",
+    "name": "新共同訳 (Shinkyōdōyaku)",
+    "language": "ja",
+    "languageName": "日本語",
+    "direction": "ltr",
+    "hasHeadings": false,
+    "hasFootnotes": false
+  },
+  {
+    "id": "vulgate",
+    "name": "Biblia Sacra Vulgata",
+    "language": "la",
+    "languageName": "Latin",
+    "direction": "ltr",
+    "hasHeadings": false,
+    "hasFootnotes": false,
+    "copyright": "Public Domain"
+  }
+]

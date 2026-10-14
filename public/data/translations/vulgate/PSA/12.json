@@ -1,0 +1,43 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 12,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "In finem. Psalmus David. [Usquequo, Domine, oblivisceris me in finem? usquequo avertis faciem tuam a me?",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "quamdiu ponam consilia in anima mea; dolorem in corde meo per diem?",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "usquequo exaltabitur inimicus meus super me?",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Respice, et exaudi me, Domine Deus meus. Illumina oculos meos, ne umquam obdormiam in morte;",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "nequando dicat inimicus meus: Prævalui adversus eum. Qui tribulant me exsultabunt si motus fuero;",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "ego autem in misericordia tua speravi. Exsultabit cor meum in salutari tuo. Cantabo Domino qui bona tribuit mihi; et psallam nomini Domini altissimi.]",
+      "footnotes": []
+    }
+  ]
+}

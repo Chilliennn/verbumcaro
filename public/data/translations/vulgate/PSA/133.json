@@ -1,0 +1,25 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 133,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Canticum graduum. [Ecce nunc benedicite Dominum, omnes servi Domini: qui statis in domo Domini, in atriis domus Dei nostri.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "In noctibus extollite manus vestras in sancta, et benedicite Dominum.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Benedicat te Dominus ex Sion, qui fecit cælum et terram.]",
+      "footnotes": []
+    }
+  ]
+}

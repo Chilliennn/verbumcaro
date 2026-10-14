@@ -1,0 +1,331 @@
+{
+  "translationId": "vulgate",
+  "book": "JHN",
+  "chapter": 4,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Ut ergo cognovit Jesus quia audierunt pharisæi quod Jesus plures discipulos facit, et baptizat, quam Joannes",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "(quamquam Jesus non baptizaret, sed discipuli ejus),",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "reliquit Judæam, et abiit iterum in Galilæam.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Oportebat autem eum transire per Samariam.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Venit ergo in civitatem Samariæ, quæ dicitur Sichar, juxta prædium quod dedit Jacob Joseph filio suo.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Erat autem ibi fons Jacob. Jesus ergo fatigatus ex itinere, sedebat sic supra fontem. Hora erat quasi sexta.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Venit mulier de Samaria haurire aquam. Dicit ei Jesus: Da mihi bibere.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "(Discipuli enim ejus abierant in civitatem ut cibos emerent.)",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Dicit ergo ei mulier illa Samaritana: Quomodo tu, Judæus cum sis, bibere a me poscis, quæ sum mulier Samaritana? non enim coutuntur Judæi Samaritanis.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Respondit Jesus, et dixit ei: Si scires donum Dei, et quis est qui dicit tibi: Da mihi bibere, tu forsitan petisses ab eo, et dedisset tibi aquam vivam.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Dicit ei mulier: Domine, neque in quo haurias habes, et puteus altus est: unde ergo habes aquam vivam?",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Numquid tu major es patre nostro Jacob, qui dedit nobis puteum, et ipse ex eo bibit, et filii ejus, et pecora ejus?",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Respondit Jesus, et dixit ei: Omnis qui bibit ex aqua hac, sitiet iterum; qui autem biberit ex aqua quam ego dabo ei, non sitiet in æternum:",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "sed aqua quam ego dabo ei, fiet in eo fons aquæ salientis in vitam æternam.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Dicit ad eum mulier: Domine, da mihi hanc aquam, ut non sitiam, neque veniam huc haurire.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Dicit ei Jesus: Vade, voca virum tuum, et veni huc.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Respondit mulier, et dixit: Non habeo virum. Dicit ei Jesus: Bene dixisti, quia non habeo virum;",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "quinque enim viros habuisti, et nunc, quem habes, non est tuus vir: hoc vere dixisti.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Dicit ei mulier: Domine, video quia propheta es tu.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Patres nostri in monte hoc adoraverunt, et vos dicitis, quia Jerosolymis est locus ubi adorare oportet.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Dicit ei Jesus: Mulier, crede mihi, quia venit hora, quando neque in monte hoc, neque in Jerosolymis adorabitis Patrem.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Vos adoratis quod nescitis: nos adoramus quod scimus, quia salus ex Judæis est.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Sed venit hora, et nunc est, quando veri adoratores adorabunt Patrem in spiritu et veritate. Nam et Pater tales quærit, qui adorent eum.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Spiritus est Deus: et eos qui adorant eum, in spiritu et veritate oportet adorare.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Dicit ei mulier: Scio quia Messias venit (qui dicitur Christus): cum ergo venerit ille, nobis annuntiabit omnia.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Dicit ei Jesus: Ego sum, qui loquor te.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Et continuo venerunt discipuli ejus, et mirabantur quia cum muliere loquebatur. Nemo tamen dixit: Quid quæris? aut, Quid loqueris cum ea?",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Reliquit ergo hydriam suam mulier, et abiit in civitatem, et dicit illis hominibus:",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Venite, et videte hominem qui dixit mihi omnia quæcumque feci: numquid ipse est Christus?",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Exierunt ergo de civitate et veniebant ad eum.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Interea rogabant eum discipuli, dicentes: Rabbi, manduca.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Ille autem dicit eis: Ego cibum habeo manducare, quem vos nescitis.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Dicebant ergo discipuli ad invicem: Numquid aliquis attulit ei manducare?",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Dicit eis Jesus: Meus cibus est ut faciam voluntatem ejus qui misit me, ut perficiam opus ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Nonne vos dicitis quod adhuc quatuor menses sunt, et messis venit? Ecce dico vobis: levate oculos vestros, et videte regiones, quia albæ sunt jam ad messem.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Et qui metit, mercedem accipit, et congregat fructum in vitam æternam: ut et qui seminat, simul gaudeat, et qui metit.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "In hoc enim est verbum verum: quia alius est qui seminat, et alius est qui metit.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Ego misi vos metere quod vos non laborastis: alii laboraverunt, et vos in labores eorum introistis.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Ex civitate autem illa multi crediderunt in eum Samaritanorum, propter verbum mulieris testimonium perhibentis: Quia dixit mihi omnia quæcumque feci.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Cum venissent ergo ad illum Samaritani, rogaverunt eum ut ibi maneret. Et mansit ibi duos dies.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Et multo plures crediderunt in eum propter sermonem ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Et mulieri dicebant: Quia jam non propter tuam loquelam credimus: ipsi enim audivimus, et scimus quia hic est vere Salvator mundi.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Post duos autem dies exiit inde, et abiit in Galilæam.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Ipse enim Jesus testimonium perhibuit, quia propheta in sua patria honorem non habet.",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Cum ergo venisset in Galilæam, exceperunt eum Galilæi, cum omnia vidissent quæ fecerat Jerosolymis in die festo: et ipsi enim venerant ad diem festum.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Venit ergo iterum in Cana Galilææ, ubi fecit aquam vinum. Et erat quidam regulus, cujus filius infirmabatur Capharnaum.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Hic cum audisset quia Jesus adveniret a Judæa in Galilæam, abiit ad eum, et rogabat eum ut descenderet, et sanaret filium ejus: incipiebat enim mori.",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "Dixit ergo Jesus ad eum: Nisi signa et prodigia videritis, non creditis.",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "Dicit ad eum regulus: Domine, descende priusquam moriatur filius meus.",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "Dicit ei Jesus: Vade, filius tuus vivit. Credidit homo sermoni quem dixit ei Jesus, et ibat.",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "Jam autem eo descendente, servi occurrerunt ei, et nuntiaverunt dicentes, quia filius ejus viveret.",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "Interrogabat ergo horam ab eis in qua melius habuerit. Et dixerunt ei: Quia heri hora septima reliquit eum febris.",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "Cognovit ergo pater, quia illa hora erat in qua dixit ei Jesus: Filius tuus vivit; et credidit ipse et domus ejus tota.",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "Hoc iterum secundum signum fecit Jesus, cum venisset a Judæa in Galilæam.",
+      "footnotes": []
+    }
+  ]
+}

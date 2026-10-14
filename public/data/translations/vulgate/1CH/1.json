@@ -1,0 +1,331 @@
+{
+  "translationId": "vulgate",
+  "book": "1CH",
+  "chapter": 1,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Adam, Seth, Enos,",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Cainan, Malaleel, Jared,",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Henoch, Mathusale, Lamech,",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Noë, Sem, Cham, et Japtheth.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Filii Japheth: Gomer, et Magog, et Madai, et Javan, Thubal, Mosoch, Thiras.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Porro filii Gomer: Ascenez, et Riphath, et Thogorma.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Filii autem Javan: Elisa et Tharsis, Cethim et Dodanim.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Filii Cham: Chus, et Mesraim, et Phut, et Chanaan.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Filii autem Chus: Saba, et Hevila, Sabatha, et Regma, et Sabathacha. Porro filii Regma: Saba, et Dadan.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Chus autem genuit Nemrod: iste cœpit esse potens in terra.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Mesraim vero genuit Ludim, et Anamim, et Laabim, et Nephtuim,",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Phetrusim quoque, et Casluim: de quibus egressi sunt Philisthiim, et Caphtorim.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Chanaan vero genuit Sidonem primogenitum suum, Hethæum quoque,",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "et Jebusæum, et Amorrhæum, et Gergesæum,",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Hevæumque et Aracæum, et Sinæum.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Aradium quoque, et Samaræum, et Hamathæum.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Filii Sem: Ælam, et Assur, et Arphaxad, et Lud, et Aram, et Hus, et Hul, et Gether, et Mosoch.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Arphaxad autem genuit Sale, qui et ipse genuit Heber.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Porro Heber nati sunt duo filii: nomen uni Phaleg, quia in diebus ejus divisa est terra; et nomen fratris ejus Jectan.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Jectan autem genuit Elmodad, et Saleph, et Asarmoth, et Jare,",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Adoram quoque, et Huzal, et Decla,",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Hebal etiam, et Abimaël, et Saba, necnon",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "et Ophir, et Hevila, et Jobab: omnes isti filii Jectan.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Sem, Arphaxad, Sale,",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Heber, Phaleg, Ragau,",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Serug, Nachor, Thare,",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Abram: iste est Abraham.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Filii autem Abraham, Isaac et Ismahel.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Et hæ generationes eorum. Primogenitus Ismahelis, Nabaioth, et Cedar, et Adbeel, et Mabsam,",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "et Masma, et Duma, Massa, Hadad, et Thema,",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Jetur, Naphis, Cedma: hi sunt filii Ismahelis.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Filii autem Ceturæ concubinæ Abraham, quos genuit: Zamran, Jecsan, Madan, Madian, Jesboc, et Sue. Porro filii Jecsan: Saba, et Dadan. Filii autem Dadan: Assurim, et Latussim, et Laomim.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Filii autem Madian: Epha, et Epher, et Henoch, et Abida, et Eldaa: omnes hi filii Ceturæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Genuit autem Abraham Isaac: cujus fuerunt filii Esau, et Israël.",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "Filii Esau: Eliphaz, Rahuel, Jehus, Ihelom, et Core.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Filii Eliphaz: Theman, Omar, Sephi, Gathan, Cenez, Thamna, Amalec.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Filii Rahuel: Nahath, Zara, Samma, Meza.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Filii Seir: Lotan, Sobal, Sebeon, Ana, Dison, Eser, Disan.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Filii Lotan: Hori, Homam. Soror autem Lotan fuit Thamna.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Filii Sobal: Alian, et Manahath, et Ebal, Sephi et Onam. Filii Sebeon: Aja et Ana. Filii Ana: Dison.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Filii Dison: Hamram, et Heseban, et Jethran, et Charan.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Filii Eser: Balaan, et Zavan, et Jacan. Filii Disan: Hus et Aran.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Isti sunt reges qui imperaverunt in terra Edom, antequam esset rex super filios Israël. Bale filius Beor: et nomen civitatis ejus, Denaba.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Mortuus est autem Bale, et regnavit pro eo Jobab filius Zare de Bosra.",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Cumque et Jobab fuisset mortuus, regnavit pro eo Husam de terra Themanorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Obiit quoque et Husam, et regnavit pro eo Adad filius Badad, qui percussit Madian in terra Moab: et nomen civitatis ejus Avith.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Cumque et Adad fuisset mortuus, regnavit pro eo Semla de Masreca.",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "Sed et Semla mortuus est, et regnavit pro eo Saul de Rohoboth, quæ juxta amnem sita est.",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "Mortuo quoque Saul, regnavit pro eo Balanan filius Achobor.",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "Sed et hic mortuus est, et regnavit pro eo Adad: cujus urbis nomen fuit Phau, et appellata est uxor ejus Meetabel filia Matred filiæ Mezaab.",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "Adad autem mortuo, duces pro regibus in Edom esse cœperunt: dux Thamna, dux Alva, dux Jetheth,",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "dux Oolibama, dux Ela, dux Phinon,",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "dux Cenez, dux Theman, dux Mabsar,",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "dux Magdiel, dux Hiram: hi duces Edom.",
+      "footnotes": []
+    }
+  ]
+}

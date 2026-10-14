@@ -1,0 +1,313 @@
+{
+  "translationId": "vulgate",
+  "book": "2SA",
+  "chapter": 22,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Locutus est autem David Domino verba carminis hujus in die qua liberavit eum Dominus de manu omnium inimicorum suorum, et de manu Saul.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Et ait: [Dominus petra mea, et robur meum, et salvator meus.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Deus fortis meus: sperabo in eum; scutum meum, et cornu salutis meæ: elevator meus, et refugium meum; salvator meus: de iniquitate liberabis me.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Laudabilem invocabo Dominum, et ab inimicis meis salvus ero.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Quia circumdederunt me contritiones mortis: torrentes Belial terruerunt me.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Funes inferni circumdederunt me: prævenerunt me laquei mortis.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "In tribulatione mea invocabo Dominum, et ad Deum meum clamabo: et exaudiet de templo suo vocem meam, et clamor meus veniet ad aures ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Commota est et contremuit terra; fundamenta montium concussa sunt, et conquassata: quoniam iratus est eis.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Ascendit fumus de naribus ejus, et ignis de ore ejus vorabit: carbones succensi sunt ab eo.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Inclinavit cælos, et descendit: et caligo sub pedibus ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Et ascendit super cherubim, et volavit: et lapsus est super pennas venti.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Posuit tenebras in circuitu suo latibulum, cribrans aquas de nubibus cælorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Præ fulgore in conspectu ejus, succensi sunt carbones ignis.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Tonabit de cælo Dominus, et excelsus dabit vocem suam.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Misit sagittas et dissipavit eos; fulgur, et consumpsit eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Et apparuerunt effusiones maris, et revelata sunt fundamenta orbis ab increpatione Domini, ab inspiratione spiritus furoris ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Misit de excelso, et assumpsit me, et extraxit me de aquis multis.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Liberavit me ab inimico meo potentissimo, et ab his qui oderant me: quoniam robustiores me erant.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Prævenit me in die afflictionis meæ, et factus est Dominus firmamentum meum.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Et eduxit me in latitudinem: liberavit me, quia complacui ei.",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "Retribuet mihi Dominus secundum justitiam meam: et secundum munditiam manuum mearum reddet mihi.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Quia custodivi vias Domini, et non egi impie a Deo meo.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Omnia enim judicia ejus in conspectu meo, et præcepta ejus non amovi a me.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Et ero perfectus cum eo, et custodiam me ab iniquitate mea.",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "Et restituet mihi Dominus secundum justitiam meam, et secundum munditiam manuum mearum in conspectu oculorum suorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Cum sancto sanctus eris, et cum robusto perfectus.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Cum electo electus eris, et cum perverso perverteris.",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Et populum pauperem salvum facies: oculisque tuis excelsos humiliabis.",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Quia tu lucerna mea, Domine, et tu, Domine, illuminabis tenebras meas.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "In te enim curram accinctus: in Deo meo transiliam murum.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Deus, immaculata via ejus; eloquium Domini igne examinatum: scutum est omnium sperantium in se.",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "Quis est Deus præter Dominum, et quis fortis præter Deum nostrum?",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Deus qui accinxit me fortitudine, et complanavit perfectam viam meam.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Coæquans pedes meos cervis, et super excelsa mea statuens me;",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "docens manus meas ad prælium, et componens quasi arcum æreum brachia mea.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Dedisti mihi clypeum salutis tuæ, et mansuetudo tua multiplicavit me.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Dilatabis gressus meos subtus me, et non deficient tali mei.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Persequar inimicos meos, et conteram, et non convertar donec consumam eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Consumam eos et confringam, ut non consurgant: cadent sub pedibus meis.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Accinxisti me fortitudine ad prælium: incurvasti resistentes mihi subtus me.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Inimicos meos dedisti mihi dorsum; odientes me, et disperdam eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "Clamabunt, et non erit qui salvet; ad Dominum, et non exaudiet eos.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Delebo eos ut pulverem terræ; quasi lutum platearum comminuam eos atque confringam.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Salvabis me a contradictionibus populi mei; custodies me in caput gentium: populus quem ignoro serviet mihi.",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Filii alieni resistent mihi; auditu auris obedient mihi.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Filii alieni defluxerunt, et contrahentur in angustiis suis.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Vivit Dominus, et benedictus Deus meus, et exaltabitur Deus fortis salutis meæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "Deus qui das vindictas mihi, et dejicis populos sub me.",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "Qui educis me ab inimicis meis, et a resistentibus mihi elevas me: a viro iniquo liberabis me.",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "Propterea confitebor tibi, Domine, in gentibus, et nomini tuo cantabo:",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "magnificans salutes regis sui, et faciens misericordiam christo suo David, et semini ejus in sempiternum.]",
+      "footnotes": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 3,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Psalmus David, cum fugeret a facie Absalom filii sui.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "[Domine, quid multiplicati sunt qui tribulant me? Multi insurgunt adversum me;",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "multi dicunt animæ meæ: Non est salus ipsi in Deo ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Tu autem Domine, susceptor meus es, gloria mea, et exaltans caput meum.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Voce mea ad Dominum clamavi; et exaudivit me de monte sancto suo.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Ego dormivi, et soporatus sum; et exsurrexi, quia Dominus suscepit me.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Non timebo millia populi circumdantis me. Exsurge, Domine; salvum me fac, Deus meus.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Quoniam tu percussisti omnes adversantes mihi sine causa; dentes peccatorum contrivisti.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Domini est salus; et super populum tuum benedictio tua.]",
+      "footnotes": []
+    }
+  ]
+}

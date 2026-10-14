@@ -1,0 +1,55 @@
+{
+  "translationId": "vulgate",
+  "book": "PSA",
+  "chapter": 100,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Psalmus ipsi David. [Misericordiam et judicium cantabo tibi, Domine; psallam,",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "et intelligam in via immaculata: quando venies ad me? Perambulabam in innocentia cordis mei, in medio domus meæ.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Non proponebam ante oculos meos rem injustam; facientes prævaricationes odivi; non adhæsit mihi",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "cor pravum; declinantem a me malignum non cognoscebam.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Detrahentem secreto proximo suo, hunc persequebar: superbo oculo, et insatiabili corde, cum hoc non edebam.",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "Oculi mei ad fideles terræ, ut sedeant mecum; ambulans in via immaculata, hic mihi ministrabat.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Non habitabit in medio domus meæ qui facit superbiam; qui loquitur iniqua non direxit in conspectu oculorum meorum.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "In matutino interficiebam omnes peccatores terræ, ut disperderem de civitate Domini omnes operantes iniquitatem.]",
+      "footnotes": []
+    }
+  ]
+}

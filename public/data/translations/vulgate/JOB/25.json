@@ -1,0 +1,43 @@
+{
+  "translationId": "vulgate",
+  "book": "JOB",
+  "chapter": 25,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "Respondens autem Baldad Suhites, dixit:",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "[Potestas et terror apud eum est, qui facit concordiam in sublimibus suis.",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "Numquid est numerus militum ejus? et super quem non surget lumen illius?",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Numquid justificari potest homo comparatus Deo? aut apparere mundus natus de muliere?",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Ecce luna etiam non splendet, et stellæ non sunt mundæ in conspectu ejus:",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "quanto magis homo putredo, et filius hominis vermis?]",
+      "footnotes": []
+    }
+  ]
+}

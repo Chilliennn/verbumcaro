@@ -1,0 +1,355 @@
+{
+  "translationId": "vulgate",
+  "book": "MAT",
+  "chapter": 13,
+  "verses": [
+    {
+      "verse": 1,
+      "heading": null,
+      "text": "In illo die exiens Jesus de domo, sedebat secus mare.",
+      "footnotes": []
+    },
+    {
+      "verse": 2,
+      "heading": null,
+      "text": "Et congregatæ sunt ad eum turbæ multæ, ita ut naviculam ascendens sederet: et omnis turba stabat in littore,",
+      "footnotes": []
+    },
+    {
+      "verse": 3,
+      "heading": null,
+      "text": "et locutus est eis multa in parabolis, dicens: Ecce exiit qui seminat, seminare.",
+      "footnotes": []
+    },
+    {
+      "verse": 4,
+      "heading": null,
+      "text": "Et dum seminat, quædam ceciderunt secus viam, et venerunt volucres cæli, et comederunt ea.",
+      "footnotes": []
+    },
+    {
+      "verse": 5,
+      "heading": null,
+      "text": "Alia autem ceciderunt in petrosa, ubi non habebant terram multam: et continuo exorta sunt, quia non habebant altitudinem terræ:",
+      "footnotes": []
+    },
+    {
+      "verse": 6,
+      "heading": null,
+      "text": "sole autem orto æstuaverunt; et quia non habebant radicem, aruerunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 7,
+      "heading": null,
+      "text": "Alia autem ceciderunt in spinas: et creverunt spinæ, et suffocaverunt ea.",
+      "footnotes": []
+    },
+    {
+      "verse": 8,
+      "heading": null,
+      "text": "Alia autem ceciderunt in terram bonam: et dabant fructum, aliud centesimum, aliud sexagesimum, aliud trigesimum.",
+      "footnotes": []
+    },
+    {
+      "verse": 9,
+      "heading": null,
+      "text": "Qui habet aures audiendi, audiat.",
+      "footnotes": []
+    },
+    {
+      "verse": 10,
+      "heading": null,
+      "text": "Et accedentes discipuli dixerunt ei: Quare in parabolis loqueris eis?",
+      "footnotes": []
+    },
+    {
+      "verse": 11,
+      "heading": null,
+      "text": "Qui respondens, ait illis: Quia vobis datum est nosse mysteria regni cælorum: illis autem non est datum.",
+      "footnotes": []
+    },
+    {
+      "verse": 12,
+      "heading": null,
+      "text": "Qui enim habet, dabitur ei, et abundabit: qui autem non habet, et quod habet auferetur ab eo.",
+      "footnotes": []
+    },
+    {
+      "verse": 13,
+      "heading": null,
+      "text": "Ideo in parabolis loquor eis: quia videntes non vident, et audientes non audiunt, neque intelligunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 14,
+      "heading": null,
+      "text": "Et adimpletur in eis prophetia Isaiæ, dicentis: [Auditu audietis, et non intelligetis: et videntes videbitis, et non videbitis.",
+      "footnotes": []
+    },
+    {
+      "verse": 15,
+      "heading": null,
+      "text": "Incrassatum est enim cor populi hujus, et auribus graviter audierunt, et oculos suos clauserunt: nequando videant oculis, et auribus audiant, et corde intelligant, et convertantur, et sanem eos.]",
+      "footnotes": []
+    },
+    {
+      "verse": 16,
+      "heading": null,
+      "text": "Vestri autem beati oculi quia vident, et aures vestræ quia audiunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 17,
+      "heading": null,
+      "text": "Amen quippe dico vobis, quia multi prophetæ et justi cupierunt videre quæ videtis, et non viderunt: et audire quæ auditis, et non audierunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 18,
+      "heading": null,
+      "text": "Vos ergo audite parabolam seminantis.",
+      "footnotes": []
+    },
+    {
+      "verse": 19,
+      "heading": null,
+      "text": "Omnis qui audit verbum regni, et non intelligit, venit malus, et rapit quod seminatum est in corde ejus: hic est qui secus viam seminatus est.",
+      "footnotes": []
+    },
+    {
+      "verse": 20,
+      "heading": null,
+      "text": "Qui autem super petrosa seminatus est, hic est qui verbum audit, et continuo cum gaudio accipit illud:",
+      "footnotes": []
+    },
+    {
+      "verse": 21,
+      "heading": null,
+      "text": "non habet autem in se radicem, sed est temporalis: facta autem tribulatione et persecutione propter verbum, continuo scandalizatur.",
+      "footnotes": []
+    },
+    {
+      "verse": 22,
+      "heading": null,
+      "text": "Qui autem seminatus est in spinis, hic est qui verbum audit, et sollicitudo sæculi istius, et fallacia divitiarum suffocat verbum, et sine fructu efficitur.",
+      "footnotes": []
+    },
+    {
+      "verse": 23,
+      "heading": null,
+      "text": "Qui vero in terram bonam seminatus est, hic est qui audit verbum, et intelligit, et fructum affert, et facit aliud quidem centesimum, aliud autem sexagesimum, aliud vero trigesimum.",
+      "footnotes": []
+    },
+    {
+      "verse": 24,
+      "heading": null,
+      "text": "Aliam parabolam proposuit illis, dicens: Simile factum est regnum cælorum homini, qui seminavit bonum semen in agro suo:",
+      "footnotes": []
+    },
+    {
+      "verse": 25,
+      "heading": null,
+      "text": "cum autem dormirent homines, venit inimicus ejus, et superseminavit zizania in medio tritici, et abiit.",
+      "footnotes": []
+    },
+    {
+      "verse": 26,
+      "heading": null,
+      "text": "Cum autem crevisset herba, et fructum fecisset, tunc apparuerunt et zizania.",
+      "footnotes": []
+    },
+    {
+      "verse": 27,
+      "heading": null,
+      "text": "Accedentes autem servi patrisfamilias, dixerunt ei: Domine, nonne bonum semen seminasti in agro tuo? unde ergo habet zizania?",
+      "footnotes": []
+    },
+    {
+      "verse": 28,
+      "heading": null,
+      "text": "Et ait illis: Inimicus homo hoc fecit. Servi autem dixerunt ei: Vis, imus, et colligimus ea?",
+      "footnotes": []
+    },
+    {
+      "verse": 29,
+      "heading": null,
+      "text": "Et ait: Non: ne forte colligentes zizania, eradicetis simul cum eis et triticum.",
+      "footnotes": []
+    },
+    {
+      "verse": 30,
+      "heading": null,
+      "text": "Sinite utraque crescere usque ad messem, et in tempore messis dicam messoribus: Colligite primum zizania, et alligate ea in fasciculos ad comburendum: triticum autem congregate in horreum meum.",
+      "footnotes": []
+    },
+    {
+      "verse": 31,
+      "heading": null,
+      "text": "Aliam parabolam proposuit eis dicens: Simile est regnum cælorum grano sinapis, quod accipiens homo seminavit in agro suo:",
+      "footnotes": []
+    },
+    {
+      "verse": 32,
+      "heading": null,
+      "text": "quod minimum quidem est omnibus seminibus: cum autem creverit, majus est omnibus oleribus, et fit arbor, ita ut volucres cæli veniant, et habitent in ramis ejus.",
+      "footnotes": []
+    },
+    {
+      "verse": 33,
+      "heading": null,
+      "text": "Aliam parabolam locutus est eis: Simile est regnum cælorum fermento, quod acceptum mulier abscondit in farinæ satis tribus, donec fermentatum est totum.",
+      "footnotes": []
+    },
+    {
+      "verse": 34,
+      "heading": null,
+      "text": "Hæc omnia locutus est Jesus in parabolis ad turbas: et sine parabolis non loquebatur eis:",
+      "footnotes": []
+    },
+    {
+      "verse": 35,
+      "heading": null,
+      "text": "ut impleretur quod dictum erat per prophetam dicentem: Aperiam in parabolis os meum; eructabo abscondita a constitutione mundi.",
+      "footnotes": []
+    },
+    {
+      "verse": 36,
+      "heading": null,
+      "text": "Tunc, dimissis turbis, venit in domum: et accesserunt ad eum discipuli ejus, dicentes: Edissere nobis parabolam zizaniorum agri.",
+      "footnotes": []
+    },
+    {
+      "verse": 37,
+      "heading": null,
+      "text": "Qui respondens ait illis: Qui seminat bonum semen, est Filius hominis.",
+      "footnotes": []
+    },
+    {
+      "verse": 38,
+      "heading": null,
+      "text": "Ager autem est mundus. Bonum vero semen, hi sunt filii regnum. Zizania autem, filii sunt nequam.",
+      "footnotes": []
+    },
+    {
+      "verse": 39,
+      "heading": null,
+      "text": "Inimicus autem, qui seminavit ea, est diabolus. Messis vero, consummatio sæculi est. Messores autem, angeli sunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 40,
+      "heading": null,
+      "text": "Sicut ergo colliguntur zizania, et igni comburuntur: sic erit in consummatione sæculi.",
+      "footnotes": []
+    },
+    {
+      "verse": 41,
+      "heading": null,
+      "text": "Mittet Filius hominis angelos suos, et colligent de regno ejus omnia scandala, et eos qui faciunt iniquitatem:",
+      "footnotes": []
+    },
+    {
+      "verse": 42,
+      "heading": null,
+      "text": "et mittent eos in caminum ignis. Ibi erit fletus et stridor dentium.",
+      "footnotes": []
+    },
+    {
+      "verse": 43,
+      "heading": null,
+      "text": "Tunc justi fulgebunt sicut sol in regno Patris eorum. Qui habet aures audiendi, audiat.",
+      "footnotes": []
+    },
+    {
+      "verse": 44,
+      "heading": null,
+      "text": "Simile est regnum cælorum thesauro abscondito in agro: quem qui invenit homo, abscondit, et præ gaudio illius vadit, et vendit universa quæ habet, et emit agrum illum.",
+      "footnotes": []
+    },
+    {
+      "verse": 45,
+      "heading": null,
+      "text": "Iterum simile est regnum cælorum homini negotiatori, quærenti bonas margaritas.",
+      "footnotes": []
+    },
+    {
+      "verse": 46,
+      "heading": null,
+      "text": "Inventa autem una pretiosa margarita, abiit, et vendidit omnia quæ habuit, et emit eam.",
+      "footnotes": []
+    },
+    {
+      "verse": 47,
+      "heading": null,
+      "text": "Iterum simile est regnum cælorum sagenæ missæ in mare, et ex omni genere piscium congreganti.",
+      "footnotes": []
+    },
+    {
+      "verse": 48,
+      "heading": null,
+      "text": "Quam, cum impleta esset, educentes, et secus littus sedentes, elegerunt bonis in vasa, malos autem foras miserunt.",
+      "footnotes": []
+    },
+    {
+      "verse": 49,
+      "heading": null,
+      "text": "Sic erit in consummatione sæculi: exibunt angeli, et separabunt malos de medio justorum,",
+      "footnotes": []
+    },
+    {
+      "verse": 50,
+      "heading": null,
+      "text": "et mittent eos in caminum ignis: ibi erit fletus, et stridor dentium.",
+      "footnotes": []
+    },
+    {
+      "verse": 51,
+      "heading": null,
+      "text": "Intellexistis hæc omnia? Dicunt ei: Etiam.",
+      "footnotes": []
+    },
+    {
+      "verse": 52,
+      "heading": null,
+      "text": "Ait illis: Ideo omnis scriba doctus in regno cælorum, similis est homini patrifamilias, qui profert de thesauro suo nova et vetera.",
+      "footnotes": []
+    },
+    {
+      "verse": 53,
+      "heading": null,
+      "text": "Et factum est, cum consummasset Jesus parabolas istas, transiit inde.",
+      "footnotes": []
+    },
+    {
+      "verse": 54,
+      "heading": null,
+      "text": "Et veniens in patriam suam, docebat eos in synagogis eorum, ita ut mirarentur, et dicerent: Unde huic sapientia hæc, et virtutes?",
+      "footnotes": []
+    },
+    {
+      "verse": 55,
+      "heading": null,
+      "text": "Nonne hic est fabri filius? nonne mater ejus dicitur Maria, et fratres ejus, Jacobus, et Joseph, et Simon, et Judas?",
+      "footnotes": []
+    },
+    {
+      "verse": 56,
+      "heading": null,
+      "text": "et sorores ejus, nonne omnes apud nos sunt? unde ergo huic omnia ista?",
+      "footnotes": []
+    },
+    {
+      "verse": 57,
+      "heading": null,
+      "text": "Et scandalizabantur in eo. Jesus autem dixit eis: Non est propheta sine honore, nisi in patria sua, et in domo sua.",
+      "footnotes": []
+    },
+    {
+      "verse": 58,
+      "heading": null,
+      "text": "Et non fecit ibi virtutes multas propter incredulitatem illorum.",
+      "footnotes": []
+    }
+  ]
+}
