@@ -30,4 +30,6 @@ build/
 .DS_Store
 Thumbs.db
 
+kilo/
 .kilo/
+.vite/
