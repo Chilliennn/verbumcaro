@@ -22,7 +22,7 @@ export function useSaintQuotes() {
   const [currentQuote, setCurrentQuote] = useState<SaintQuote>(FALLBACK_QUOTE);
 
   useEffect(() => {
-    fetch("/data/saint-quotes.json")
+      fetch(`${import.meta.env.BASE_URL}data/saint-quotes.json`)
       .then((res) => (res.ok ? res.json() : null))
       .then((data: SaintQuotesPayload | SaintQuote[] | null) => {
         if (!data) return;

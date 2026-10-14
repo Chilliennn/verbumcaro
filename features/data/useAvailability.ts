@@ -6,7 +6,7 @@ export function useAvailability(): AvailabilityMap {
   const [availability, setAvailability] = useState<AvailabilityMap>({});
 
   useEffect(() => {
-    fetch("/data/availability.json")
+    fetch(`${import.meta.env.BASE_URL}data/availability.json`)
       .then(async (response) => {
         if (!response.ok) {
           return {};

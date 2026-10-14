@@ -23,7 +23,7 @@ class StaticBibleRepository implements BibleRepository {
   ): Promise<Chapter | null> {
     try {
       const response = await fetch(
-        `/data/translations/${translationId}/${bookCode}/${chapter}.json`
+  `${import.meta.env.BASE_URL}data/translations/${translationId}/${bookCode}/${chapter}.json`
       );
 
       if (!response.ok) {
