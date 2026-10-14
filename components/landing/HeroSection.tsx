@@ -15,7 +15,7 @@ export function HeroSection({ onReadScripture }: HeroSectionProps) {
         "And the Word was made flesh, and dwelt among us" — John 1:14
       </div>
       <div className="hero-cjk">
-        聖言成了血肉，寄居在我們中間。 — 若望福音 1:14
+        「圣言成了血肉，寄居在我们中间」 — 若望福音 1:14
       </div>
       <div style={{ marginTop: "1.75rem" }}>
         <button

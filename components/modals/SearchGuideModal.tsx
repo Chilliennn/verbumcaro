@@ -38,9 +38,15 @@ export function SearchGuideModal({ isOpen, onClose }: SearchGuideModalProps) {
           </div>
 
           <div className="guide-card">
-            <strong>Manuscript Target Flags</strong>
-            <p>Filter translation via modifiers:</p>
-            <code>@sigao</code> or <code>@catholic</code>
+            <strong>Manuscript Target Flags &amp; Dual-Panel Display</strong>
+            <p>Open single translations or display two side-by-side using <code>/[language1] [language2]</code> (or <code>@[language]</code>):</p>
+            <p><code>John 3:16 /eng chi</code> &rarr; English (left) and Chinese (right)</p>
+            <p><code>John 3:16 /lat jap</code> &rarr; Vulgate Latin (left) and Shinkyo Japanese (right)</p>
+            <p><strong>Supported Language Modifiers:</strong></p>
+            <p>&bull; English: <code>eng</code>, <code>en</code>, <code>catholic</code>, <code>catholic_org</code>, <code>english</code></p>
+            <p>&bull; Chinese (思高): <code>chi</code>, <code>zh</code>, <code>sigao</code>, <code>chinese</code>, <code>思高</code></p>
+            <p>&bull; Japanese (新共同訳): <code>jap</code>, <code>jpn</code>, <code>ja</code>, <code>shinkyo</code>, <code>japanese</code>, <code>新共同訳</code></p>
+            <p>&bull; Latin (Vulgate): <code>lat</code>, <code>la</code>, <code>vulgate</code>, <code>latin</code></p>
           </div>
         </div>
       </div>
