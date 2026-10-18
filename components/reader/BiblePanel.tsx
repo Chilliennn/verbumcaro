@@ -39,16 +39,13 @@ export function BiblePanel({
   const passages = panel.passages ?? [panel];
   const [footnote, setFootnote] = useState<string | null>(null);
   const readerRef = useRef<HTMLDivElement>(null);
-
   const translation = translations.find((t) => t.id === panel.translationId);
   const bookLanguage = translation
     ? getBookLanguageName(translation.language)
     : "en";
 
-
   useEffect(() => {
     let cancelled = false;
-
     setChapters([]);
     Promise.all((panel.passages ?? [panel]).map(async (passage) => {
       try {
@@ -62,7 +59,6 @@ export function BiblePanel({
     })).then((data) => {
       if (!cancelled) setChapters(data);
     });
-
     return () => {
       cancelled = true;
     };
@@ -72,26 +68,20 @@ export function BiblePanel({
     if (!sync || !readerRef.current || !onVerseVisible) {
       return;
     }
-
     const scrollContainer = readerRef.current.closest(".main-content");
-
     if (!scrollContainer) {
       return;
     }
-
     const elements = readerRef.current.querySelectorAll("[data-verse]");
-
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
         if (visible) {
           const verse = Number(
             (visible.target as HTMLElement).dataset.verse
           );
-
           const passageIndex = Number((visible.target as HTMLElement).closest("[data-passage-index]")?.getAttribute("data-passage-index") ?? 0);
           onVerseVisible(verse, passageIndex);
         }
@@ -101,9 +91,7 @@ export function BiblePanel({
         threshold: [0.4, 0.7, 1]
       }
     );
-
     elements.forEach((element) => observer.observe(element));
-
     return () => observer.disconnect();
   }, [chapters, sync, onVerseVisible]);
 
@@ -133,29 +121,43 @@ export function BiblePanel({
                       <strong>{displayBookName} {passage.chapter}</strong>
                     )}
                   </div>
-                  {parallel && index === 0 && (
-                    <button className="panel-close" title="Close panel" aria-label="Close panel"
-                      type="button" onClick={onClose}>×</button>
+                  {parallel && onClose && (
+                    <button
+                      className="panel-close"
+                      title="Close panel"
+                      aria-label="Close panel"
+                      type="button"
+                      onClick={onClose}
+                    >
+                      &times;
+                    </button>
                   )}
                 </div>
                 <div className="version-row">
-                  <TranslationSelector value={panel.translationId} translations={translations}
-                    onChange={(translationId) => onChange({ ...panel, translationId })} />
+                  <TranslationSelector
+                    value={panel.translationId}
+                    translations={translations}
+                    onChange={(translationId) => onChange({ ...panel, translationId })}
+                  />
                 </div>
               </div>
               <div className="passage-content">
                 {chapters.length === 0 ? (
-                  <div className="empty-chapter">Loading passage…</div>
+                  <div className="empty-chapter">Loading passage</div>
                 ) : (
-                  <ChapterReader chapter={chapters[index] ?? null} showHeadings={showHeadings}
-                    searchQuery={searchQuery} onFootnote={setFootnote} verseFilter={passage.verseFilter} />
+                  <ChapterReader
+                    chapter={chapters[index] ?? null}
+                    showHeadings={showHeadings}
+                    searchQuery={searchQuery}
+                    onFootnote={setFootnote}
+                    verseFilter={passage.verseFilter}
+                  />
                 )}
               </div>
             </section>
           );
         })}
       </div>
-
       {footnote && (
         <div
           className="footnote-overlay"
@@ -168,10 +170,10 @@ export function BiblePanel({
             <button
               className="footnote-close"
               onClick={() => setFootnote(null)}
+              aria-label="Close footnote"
             >
-              ×
+              &times;
             </button>
-
             <strong>Footnote</strong>
             <p>{footnote}</p>
           </div>
