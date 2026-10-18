@@ -436,6 +436,7 @@ button {
 .main-content {
   max-width: 1480px;
   width: 100%;
+  min-width: 0;
   margin: 0 auto;
   padding: 16px 20px 20px;
   display: flex;
@@ -445,7 +446,8 @@ button {
 }
 
 .main-content.scroll-sync {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: auto;
   min-height: calc(100vh - var(--header-height) - var(--toolbar-height));
 }
@@ -453,6 +455,8 @@ button {
 .reader-grid {
   flex: 1;
   min-height: 0;
+  min-width: 0;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
@@ -466,6 +470,8 @@ button {
 .reader-grid.parallel-mode {
   flex: 1;
   min-height: 0;
+  min-width: 0;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
@@ -1207,6 +1213,13 @@ button {
 
 .passage-section + .passage-section {
   border-top: 8px solid var(--stone-200);
+}
+
+.passage-section,
+.passage-content,
+.chapter-reader {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .passage-content {
