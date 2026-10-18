@@ -24,6 +24,10 @@ export function PassageSelector({
   const selectedBook = books.find((item) => item.code === book.code) ?? book;
   const language = getBookLanguageName(translationLanguage ?? "en");
   const displayName = getBookName(selectedBook.code, language);
+  const testamentTabs: Array<{ value: "OT" | "NT"; label: string }> = [
+    { value: "OT", label: "Old Testament" },
+    { value: "NT", label: "New Testament" }
+  ];
 
   const [activeTestament, setActiveTestament] = useState<"OT" | "NT">(
     selectedBook.testament === "NT" ? "NT" : "OT"
@@ -92,32 +96,22 @@ export function PassageSelector({
         <div className="passage-menu">
           <div className="picker-header">
             <div className="testament-tabs">
-              <button
-                type="button"
-                className={`tab-btn ${activeTestament === "OT" ? "active" : ""}`}
-                onClick={() => {
-                  setActiveTestament("OT");
-                  const firstOt = books.find((item) => item.testament === "OT");
-                  if (firstOt && selectedBook.testament !== "OT") {
-                    setExpandedBookCode(firstOt.code);
-                  }
-                }}
-              >
-                Old Testament
-              </button>
-              <button
-                type="button"
-                className={`tab-btn ${activeTestament === "NT" ? "active" : ""}`}
-                onClick={() => {
-                  setActiveTestament("NT");
-                  const firstNt = books.find((item) => item.testament === "NT");
-                  if (firstNt && selectedBook.testament !== "NT") {
-                    setExpandedBookCode(firstNt.code);
-                  }
-                }}
-              >
-                New Testament
-              </button>
+              {testamentTabs.map(({ value, label }) => (
+                <button
+                  key={value}
+                  type="button"
+                  className={`tab-btn ${activeTestament === value ? "active" : ""}`}
+                  onClick={() => {
+                    setActiveTestament(value);
+                    const firstBook = books.find((item) => item.testament === value);
+                    if (firstBook && selectedBook.testament !== value) {
+                      setExpandedBookCode(firstBook.code);
+                    }
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
             <button
               type="button"

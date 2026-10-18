@@ -693,19 +693,23 @@ button {
 .testament-tabs {
   display: flex;
   flex: 1;
+  min-width: 0;
 }
 
 .testament-tabs .tab-btn {
   flex: 1;
+  min-width: 0;
   text-align: center;
   padding: 13px 8px;
   font-size: 14.5px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--stone-500);
   border: 0;
   border-bottom: 2px solid transparent;
   background: none;
   cursor: pointer;
+  font-family: Georgia, serif;
+  overflow-wrap: anywhere;
 }
 
 .testament-tabs .tab-btn.active {
@@ -1824,21 +1828,13 @@ button {
   }
 
   .passage-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh;
-    max-height: 100dvh;
-    border-radius: 0;
-    border: none;
-    z-index: 999;
+    position: absolute;
+    width: auto;
+    max-width: 100%;
+    max-height: min(560px, calc(100dvh - 120px));
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    overflow-x: hidden;
+    z-index: 20;
     padding: 0 0 24px;
   }
 
@@ -1909,5 +1905,39 @@ button {
 
   .modal-body {
     padding: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .passage-menu {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100dvh - var(--header-height));
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    border: 0;
+    z-index: 999;
+  }
+
+  .panel-header:has(.passage-picker-open) .passage-menu {
+    top: var(--header-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: none;
+    max-height: none;
+  }
+
+  .picker-header {
+    padding-left: 12px;
+  }
+
+  .picker-close {
+    flex: 0 0 44px;
   }
 }
