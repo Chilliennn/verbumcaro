@@ -646,9 +646,9 @@ button {
 }
 
 .picker-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
   align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid var(--stone-200);
   background: var(--white);
   position: sticky;
@@ -679,7 +679,7 @@ button {
   display: grid;
   place-items: center;
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 0;
 }
 
 .picker-close:hover {
@@ -692,12 +692,11 @@ button {
 
 .testament-tabs {
   display: flex;
-  flex: 1;
   min-width: 0;
 }
 
 .testament-tabs .tab-btn {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
   text-align: center;
   padding: 13px 8px;
@@ -710,6 +709,10 @@ button {
   cursor: pointer;
   font-family: Georgia, serif;
   overflow-wrap: anywhere;
+}
+
+.tab-label-short {
+  display: none;
 }
 
 .testament-tabs .tab-btn.active {
@@ -1828,14 +1831,30 @@ button {
   }
 
   .passage-menu {
-    position: absolute;
-    width: auto;
-    max-width: 100%;
-    max-height: min(560px, calc(100dvh - 120px));
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100dvh - var(--header-height));
+    max-width: none;
+    max-height: none;
     overflow-y: auto;
     overflow-x: hidden;
-    z-index: 20;
+    z-index: 999;
+    border-radius: 0;
+    border: 0;
     padding: 0 0 24px;
+  }
+
+  .panel-header:has(.passage-picker-open) .passage-menu {
+    top: var(--header-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: none;
+    max-height: none;
   }
 
   .picker-grid {
@@ -1909,32 +1928,20 @@ button {
 }
 
 @media (max-width: 420px) {
-  .passage-menu {
-    position: fixed;
-    top: var(--header-height);
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: calc(100dvh - var(--header-height));
-    max-width: none;
-    max-height: none;
-    border-radius: 0;
-    border: 0;
-    z-index: 999;
-  }
-
-  .panel-header:has(.passage-picker-open) .passage-menu {
-    top: var(--header-height);
-    right: 0;
-    bottom: 0;
-    left: 0;
-    max-width: none;
-    max-height: none;
-  }
-
   .picker-header {
     padding-left: 12px;
+  }
+
+  .testament-tabs .tab-btn {
+    padding: 13px 4px;
+  }
+
+  .tab-label-long {
+    display: none;
+  }
+
+  .tab-label-short {
+    display: inline;
   }
 
   .picker-close {

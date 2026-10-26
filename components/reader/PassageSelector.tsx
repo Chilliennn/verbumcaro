@@ -101,6 +101,7 @@ export function PassageSelector({
                   key={value}
                   type="button"
                   className={`tab-btn ${activeTestament === value ? "active" : ""}`}
+                  aria-label={label}
                   onClick={() => {
                     setActiveTestament(value);
                     const firstBook = books.find((item) => item.testament === value);
@@ -109,7 +110,8 @@ export function PassageSelector({
                     }
                   }}
                 >
-                  {label}
+                  <span className="tab-label-long">{label}</span>
+                  <span className="tab-label-short">{value}</span>
                 </button>
               ))}
             </div>
