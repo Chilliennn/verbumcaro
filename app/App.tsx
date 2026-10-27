@@ -197,10 +197,19 @@ export default function App() {
               const target = document.querySelector(
                 `.bible-panel:nth-child(2) [data-passage-index="${passageIndex}"] [data-verse="${verse}"]`
               );
-              target?.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-              });
+              const scrollContainer = target?.closest(
+                ".chapter-scroll"
+              ) as HTMLElement | null;
+              if (!target || !scrollContainer) return;
+
+              const targetRect = target.getBoundingClientRect();
+              const containerRect = scrollContainer.getBoundingClientRect();
+              const offset =
+                targetRect.top -
+                containerRect.top -
+                (scrollContainer.clientHeight - targetRect.height) / 2;
+
+              scrollContainer.scrollBy({ top: offset, behavior: "smooth" });
             }}
             onClose={() =>
               setReader((state) => ({

@@ -65,11 +65,11 @@ export function TranslationSelector({
       </button>
       {open && (
         <div className="passage-menu">
-          <div className="picker-mobile-header">
-            <span className="picker-mobile-title">Select Translation</span>
+          <div className="picker-header">
+            <span className="picker-title">Select Translation</span>
             <button
               type="button"
-              className="picker-mobile-close"
+              className="picker-close"
               onClick={() => setOpen(false)}
               aria-label="Close translation selector"
             >

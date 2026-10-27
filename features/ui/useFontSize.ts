@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const FONT_SIZE_KEY = "verbumcaro.fontSize";
+const FONT_SIZE_KEY = "verbumnobis.fontSize";
 const DEFAULT_FONT_SIZE = 18;
 
 export function useFontSize(): [number, (size: number) => void] {

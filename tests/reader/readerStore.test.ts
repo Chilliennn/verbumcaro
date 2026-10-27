@@ -15,7 +15,7 @@ const mockLocalStorage = {
   clear: vi.fn(() => { mockLocalStorage.store = {}; })
 };
 
-Object.defineProperty(global, "localStorage", {
+Object.defineProperty(globalThis, "localStorage", {
   value: mockLocalStorage,
   writable: true
 });
@@ -47,7 +47,7 @@ describe("readerStore", () => {
     });
 
     it("returns default state when localStorage is corrupted", () => {
-      mockLocalStorage.store["verbumcaro.reader"] = "invalid json";
+      mockLocalStorage.store["verbumnobis.reader"] = "invalid json";
       const state = loadReaderState();
       expect(state).toEqual(DEFAULT_READER_STATE);
     });
@@ -57,7 +57,7 @@ describe("readerStore", () => {
         left: { translationId: "vulgate", bookCode: "GEN", chapter: 1 },
         sync: "verse"
       };
-      mockLocalStorage.store["verbumcaro.reader"] = JSON.stringify(savedState);
+      mockLocalStorage.store["verbumnobis.reader"] = JSON.stringify(savedState);
 
       const state = loadReaderState();
       expect(state.left.translationId).toBe("vulgate");
@@ -69,7 +69,7 @@ describe("readerStore", () => {
     });
 
     it("handles missing fields in saved state (shallow merge behavior)", () => {
-      mockLocalStorage.store["verbumcaro.reader"] = JSON.stringify({ left: { bookCode: "MAT" } });
+      mockLocalStorage.store["verbumnobis.reader"] = JSON.stringify({ left: { bookCode: "MAT" } });
       const state = loadReaderState();
       expect(state.left.bookCode).toBe("MAT");
       // Shallow merge replaces entire left object, so translationId/chapter from saved state are used
@@ -87,7 +87,7 @@ describe("readerStore", () => {
       };
       saveReaderState(state);
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-        "verbumcaro.reader",
+        "verbumnobis.reader",
         JSON.stringify(state)
       );
     });

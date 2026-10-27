@@ -8,11 +8,21 @@ from pipeline.validators.canon_validator import validate_vulgate
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="VerbumCaro Vulgate ingestion pipeline")
-    parser.add_argument("--stage", choices=["crawl", "parse", "normalize", "validate", "export", "all"], default="all")
+    parser = argparse.ArgumentParser(
+        description="VerbumNobis Vulgate ingestion pipeline"
+    )
+    parser.add_argument(
+        "--stage",
+        choices=["crawl", "parse", "normalize", "validate", "export", "all"],
+        default="all",
+    )
     args = parser.parse_args()
 
-    stages = ["crawl", "parse", "normalize", "validate", "export"] if args.stage == "all" else [args.stage]
+    stages = (
+        ["crawl", "parse", "normalize", "validate", "export"]
+        if args.stage == "all"
+        else [args.stage]
+    )
     if "crawl" in stages:
         VulgateCrawler().crawl()
     if "parse" in stages:

@@ -24,6 +24,22 @@ export function PassageSelector({
   const selectedBook = books.find((item) => item.code === book.code) ?? book;
   const language = getBookLanguageName(translationLanguage ?? "en");
   const displayName = getBookName(selectedBook.code, language);
+  const testamentTabs: Array<{ value: "OT" | "NT"; label: string }> = [
+    { value: "OT", label: "Old Testament" },
+    { value: "NT", label: "New Testament" }
+  ];
+
+  const [activeTestament, setActiveTestament] = useState<"OT" | "NT">(
+    selectedBook.testament === "NT" ? "NT" : "OT"
+  );
+  const [expandedBookCode, setExpandedBookCode] = useState<string>(selectedBook.code);
+
+  useEffect(() => {
+    if (open) {
+      setActiveTestament(selectedBook.testament === "NT" ? "NT" : "OT");
+      setExpandedBookCode(selectedBook.code);
+    }
+  }, [open, selectedBook.code, selectedBook.testament]);
 
   useEffect(() => {
     if (!open) {
@@ -78,86 +94,76 @@ export function PassageSelector({
       </button>
       {open && (
         <div className="passage-menu">
-          <div className="picker-mobile-header">
-            <span className="picker-mobile-title">Select Passage</span>
+          <div className="picker-header">
+            <div className="testament-tabs">
+              {testamentTabs.map(({ value, label }) => (
+                <button
+                  key={value}
+                  type="button"
+                  className={`tab-btn ${activeTestament === value ? "active" : ""}`}
+                  aria-label={label}
+                  onClick={() => {
+                    setActiveTestament(value);
+                    const firstBook = books.find((item) => item.testament === value);
+                    if (firstBook && selectedBook.testament !== value) {
+                      setExpandedBookCode(firstBook.code);
+                    }
+                  }}
+                >
+                  <span className="tab-label-long">{label}</span>
+                  <span className="tab-label-short">{value}</span>
+                </button>
+              ))}
+            </div>
             <button
               type="button"
-              className="picker-mobile-close"
+              className="picker-close"
               onClick={() => setOpen(false)}
               aria-label="Close passage selector"
             >
               &times;
             </button>
           </div>
-          <div className="picker-grid">
-            <section>
-              <h3>Old Testament</h3>
-              <div className="book-list">
-                {books
-                  .filter((item) => item.testament === "OT")
-                  .map((item) => {
-                    const name = getBookName(item.code, language);
-                    return (
-                      <button
-                        key={item.code}
-                        type="button"
-                        className={`book-item ${item.code === book.code ? "selected" : ""}`}
-                        onClick={() => {
-                          onChange(item.code, 1);
-                          setOpen(false);
-                        }}
-                      >
-                        {name}
-                      </button>
-                    );
-                  })}
-              </div>
-            </section>
-            <section>
-              <h3>New Testament</h3>
-              <div className="book-list">
-                {books
-                  .filter((item) => item.testament === "NT")
-                  .map((item) => {
-                    const name = getBookName(item.code, language);
-                    return (
-                      <button
-                        key={item.code}
-                        type="button"
-                        className={`book-item ${item.code === book.code ? "selected" : ""}`}
-                        onClick={() => {
-                          onChange(item.code, 1);
-                          setOpen(false);
-                        }}
-                      >
-                        {name}
-                      </button>
-                    );
-                  })}
-              </div>
-            </section>
-            <section>
-              <h3>{displayName}</h3>
-              <div className="chapter-list">
-                {Array.from(
-                  { length: selectedBook.chapters },
-                  (_, index) => index + 1
-                ).map((number) => (
-                  <button
-                    key={number}
-                    type="button"
-                    className={`chapter-item ${number === chapter ? "active" : ""}`}
-                    onClick={() => {
-                      onChange(book.code, number);
-                      setOpen(false);
-                    }}
-                  >
-                    <span className="chapter-num">{number}</span>
-                    <span className="chapter-title" />
-                  </button>
-                ))}
-              </div>
-            </section>
+          <div className="passage-mobile-list">
+            {books
+              .filter((item) => item.testament === activeTestament)
+              .map((item) => {
+                const name = getBookName(item.code, language);
+                const isExpanded = item.code === expandedBookCode;
+                return (
+                  <div key={item.code} className="passage-book-group">
+                    <button
+                      type="button"
+                      className={`book-accordion-btn ${isExpanded ? "expanded" : ""}`}
+                      onClick={() =>
+                        setExpandedBookCode(isExpanded ? "" : item.code)
+                      }
+                    >
+                      <span>{name}</span>
+                    </button>
+                    {isExpanded && (
+                      <div className="passage-chapter-grid">
+                        {Array.from(
+                          { length: item.chapters },
+                          (_, index) => index + 1
+                        ).map((number) => (
+                          <button
+                            key={number}
+                            type="button"
+                            className={`passage-chapter-cell ${item.code === book.code && number === chapter ? "selected" : ""}`}
+                            onClick={() => {
+                              onChange(item.code, number);
+                              setOpen(false);
+                            }}
+                          >
+                            {number}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
           </div>
         </div>
       )}

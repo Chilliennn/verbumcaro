@@ -6,13 +6,19 @@ from rich.console import Console
 
 console = Console()
 
+
 def main():
-    parser = argparse.ArgumentParser(description="VerbumCaro Bible Ingestion Pipeline")
+    parser = argparse.ArgumentParser(description="VerbumNobis Bible Ingestion Pipeline")
     parser.add_argument("--stage", choices=["crawl", "parse", "all"], required=True)
-    parser.add_argument("--book", help="3-letter OSIS book code (e.g., GEN, JAS). Omit for all 73 books.")
+    parser.add_argument(
+        "--book",
+        help="3-letter OSIS book code (e.g., GEN, JAS). Omit for all 73 books.",
+    )
     args = parser.parse_args()
 
-    books_to_run = [b["code"] for b in CANON_73] if not args.book else [args.book.upper()]
+    books_to_run = (
+        [b["code"] for b in CANON_73] if not args.book else [args.book.upper()]
+    )
     crawler = CatholicOrgCrawler()
     dom_parser = CatholicOrgParser()
 
@@ -22,13 +28,16 @@ def main():
             crawler.crawl_book(b_code)
 
     if args.stage in ["parse", "all"]:
-        console.print("[bold green]Stage 2: Parsing DOM & structuring verses...[/bold green]")
+        console.print(
+            "[bold green]Stage 2: Parsing DOM & structuring verses...[/bold green]"
+        )
         for b in CANON_73:
             if b["code"] in books_to_run:
                 for ch in range(1, b["chapters"] + 1):
                     dom_parser.parse_chapter_file(f"{b['code']}_{ch:03d}.html")
 
     console.print("[bold cyan]Task completed successfully.[/bold cyan]")
+
 
 if __name__ == "__main__":
     main()

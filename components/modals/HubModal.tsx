@@ -8,13 +8,13 @@ interface HubModalProps {
 export function HubModal({ isOpen, onClose }: HubModalProps) {
   const [activeTab, setActiveTab] = useState<"api" | "about">("api");
   const [provider, setProvider] = useState("openai");
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem("verbumcaro.ai_key") ?? "");
+  const [apiKey, setApiKey] = useState(() => localStorage.getItem("verbumnobis.ai_key") ?? "");
 
   if (!isOpen) return null;
 
   function handleSaveKey() {
-    localStorage.setItem("verbumcaro.ai_key", apiKey.trim());
-    localStorage.setItem("verbumcaro.ai_provider", provider);
+    localStorage.setItem("verbumnobis.ai_key", apiKey.trim());
+    localStorage.setItem("verbumnobis.ai_provider", provider);
     alert("AI settings saved locally in your browser.");
     onClose();
   }
@@ -78,12 +78,12 @@ export function HubModal({ isOpen, onClose }: HubModalProps) {
             </div>
           ) : (
             <div className="tab-pane">
-              <h3 className="section-title">Why VerbumCaro?</h3>
+              <h3 className="section-title">Why verbumnobis?</h3>
               <p className="tab-desc">
-                VerbumCaro was born out of a desire for an accessible, flexible Catholic Scripture study tool. While platforms like BibleGateway offer powerful syntax searching, their Chinese selections are exclusively Protestant versions that differ in biblical book canons and character names. Reading Catholic translations meant juggling disjointed websites one language at a time.
+                verbumnobis was born out of a desire for an accessible, flexible Catholic Scripture study tool. While platforms like BibleGateway offer powerful syntax searching, their Chinese selections are exclusively Protestant versions that differ in biblical book canons and character names. Reading Catholic translations meant juggling disjointed websites one language at a time.
               </p>
               <p className="tab-desc">
-                VerbumCaro provides an agile, side-by-side reading experience for catechists, RCIA teachers, and anyone seeking deeper scripture comprehension. Comparing passages across translations like the Latin Vulgate alongside modern translations unlocks nuances and theological richness that a single language cannot convey alone. It is also designed for language learners exploring Scripture in Japanese or Latin, with future plans for on-device AI research and interactive pronunciation and glossing tools.
+                verbumnobis provides an agile, side-by-side reading experience for catechists, RCIA teachers, and anyone seeking deeper scripture comprehension. Comparing passages across translations like the Latin Vulgate alongside modern translations unlocks nuances and theological richness that a single language cannot convey alone. It is also designed for language learners exploring Scripture in Japanese or Latin, with future plans for on-device AI research and interactive pronunciation and glossing tools.
               </p>
 
               <div className="tech-stack-card">

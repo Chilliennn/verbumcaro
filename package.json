@@ -1,11 +1,11 @@
 {
-  "name": "verbumcaro",
+  "name": "verbumnobis",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsx scripts/build_search_index.ts && tsc -b && vite build",
     "preview": "vite preview",
     "validate:data": "tsx scripts/validate_data.ts",
     "test": "vitest run",
