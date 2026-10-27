@@ -1,6 +1,4 @@
-# VerbumCaro
-
-> **Verbum Caro** — "The Word made flesh" (John 1:14)
+# VerbumNobis
 
 A modern, responsive Catholic Bible reader built for parallel study across multiple translations. Designed for both personal devotion and scholarly comparison.
 
@@ -51,8 +49,8 @@ All translations include the complete **73-book Catholic canon** (including deut
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/chilliennn/verbumcaro.git
-cd verbumcaro
+git clone https://github.com/chilliennn/verbumnobis.git
+cd verbumnobis
 
 # Install frontend dependencies
 npm install
@@ -92,7 +90,7 @@ npm run preview
 ## 🏗 Project Structure
 
 ```
-verbumcaro/
+verbumnobis/
 ├── app/                    # Application entry & routing
 ├── components/             # React components
 │   ├── layout/             # ReaderToolbar, Panel, etc.
@@ -185,7 +183,7 @@ npm run deploy
 
 The `deploy` script runs `npm run build` then pushes `dist/` to the `gh-pages` branch.
 
-**Live demo**: https://chilliennn.github.io/verbumcaro/
+**Live demo**: https://chilliennn.github.io/verbumnobis/
 
 ---
 
@@ -225,8 +223,8 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 
 ## 📞 Support
 
-- **Issues** — [GitHub Issues](https://github.com/chilliennn/verbumcaro/issues)
-- **Discussions** — [GitHub Discussions](https://github.com/chilliennn/verbumcaro/discussions)
+- **Issues** — [GitHub Issues](https://github.com/chilliennn/verbumnobis/issues)
+- **Discussions** — [GitHub Discussions](https://github.com/chilliennn/verbumnobis/discussions)
 
 ---
 

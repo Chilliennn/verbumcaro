@@ -16,7 +16,7 @@ export const DEFAULT_READER_STATE: ReaderState = {
   parallel: true
 };
 
-const STORAGE_KEY = "verbumcaro.reader";
+const STORAGE_KEY = "verbumnobis.reader";
 
 export function loadReaderState(): ReaderState {
   try {

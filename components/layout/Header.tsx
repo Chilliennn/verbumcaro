@@ -27,7 +27,7 @@ export function Header({
     <header className="site-header">
       <button
         className="brand"
-        title="Return to VerbumCaro Home"
+        title="Return to VerbumNobis Home"
         type="button"
         onClick={onNavigateHome}
       >
@@ -50,7 +50,7 @@ export function Header({
             />
           </svg>
         </span>
-        <span className="brand-name">VerbumCaro</span>
+        <span className="brand-name">VerbumNobis</span>
       </button>
       <div className="header-divider" />
       <div className="search-wrap">
