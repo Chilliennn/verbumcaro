@@ -3,8 +3,6 @@ import type { ReaderState, PanelState } from "../../features/reader/readerTypes"
 import { parseSearchQuery, parseReference, extractLanguageModifiers } from "../../features/references/parser";
 import { getBookName, getBookLanguageName } from "../../lib/data/book_names";
 import { translations as supportedTranslations } from "../../lib/data/translations";
-import { canon } from "../../lib/data/canon";
-import { bibleRepository } from "../../lib/bible/staticRepository";
 import type { Book, Translation } from "../../lib/bible/repository";
 
 export interface SearchResultItem {
@@ -13,6 +11,43 @@ export interface SearchResultItem {
   verse: number;
   text: string;
   translationId?: string;
+}
+
+interface SearchIndexVerse extends SearchResultItem {
+  translationId: string;
+}
+
+interface SearchIndex {
+  version: number;
+  translationId: string;
+  verses: SearchIndexVerse[];
+  postings: Record<string, number[]>;
+}
+
+const searchIndexCache = new Map<string, Promise<SearchIndex | null>>();
+
+function loadSearchIndex(translationId: string): Promise<SearchIndex | null> {
+  const cached = searchIndexCache.get(translationId);
+  if (cached) return cached;
+
+  const request = fetch(
+    `${import.meta.env.BASE_URL}data/search/${translationId}.json`
+  )
+    .then(async (response) => {
+      if (!response.ok) return null;
+      return await response.json() as SearchIndex;
+    })
+    .catch(() => null);
+  searchIndexCache.set(translationId, request);
+  return request;
+}
+
+function normalizeSearchText(text: string): string {
+  return text.normalize("NFKC").toLowerCase();
+}
+
+function getSearchTokens(text: string): string[] {
+  return [...new Set(normalizeSearchText(text).match(/[\p{L}\p{N}]+/gu) ?? [])];
 }
 
 export function useSearch(
@@ -70,49 +105,41 @@ export function useSearch(
     bookCodes: string[],
     request: number
   ): Promise<SearchResultItem[]> {
-    const normalized = query.normalize("NFKC").toLowerCase();
-    const matches: SearchResultItem[] = [];
-    const fetches: Array<() => Promise<SearchResultItem[]>> = [];
+    if (request !== searchRequest.current) return [];
 
-    for (const bookCode of bookCodes) {
-      const book = canon.find((item) => item.code === bookCode);
-      if (!book) continue;
+    const index = await loadSearchIndex(translationId);
+    if (!index || request !== searchRequest.current) return [];
 
-      for (let chapter = 1; chapter <= book.chapters; chapter++) {
-        fetches.push(
-          () => bibleRepository
-            .getChapter(translationId, bookCode, chapter)
-            .then((data) => {
-              if (!data) return [];
-              const chapterMatches: SearchResultItem[] = [];
-              for (const verse of data.verses) {
-                if (verse.text.normalize("NFKC").toLowerCase().includes(normalized)) {
-                  chapterMatches.push({
-                    bookCode,
-                    chapter,
-                    verse: verse.verse,
-                    text: verse.text,
-                    translationId
-                  });
-                }
-              }
-              return chapterMatches;
-            })
-            .catch(() => [])
+    const normalized = normalizeSearchText(query);
+    const availableBooks = new Set(bookCodes);
+    let candidateIds: Set<number> | undefined;
+    const queryTokens = getSearchTokens(normalized);
+
+    for (const queryToken of queryTokens) {
+      const tokenMatches = Object.entries(index.postings)
+        .filter(([token]) => token.includes(queryToken))
+        .flatMap(([, ids]) => ids);
+      const tokenIds = new Set(tokenMatches);
+
+      if (!candidateIds) {
+        candidateIds = tokenIds;
+      } else {
+        candidateIds = new Set(
+          [...candidateIds].filter((id) => tokenIds.has(id))
         );
       }
+
+      if (candidateIds.size === 0) return [];
     }
 
-    const BATCH_SIZE = 30;
-    for (let i = 0; i < fetches.length; i += BATCH_SIZE) {
-      if (request !== searchRequest.current) return [];
-      const batch = fetches.slice(i, i + BATCH_SIZE);
-      const results = await Promise.all(batch.map((fetchChapter) => fetchChapter()));
-      for (const chapterMatches of results) {
-        matches.push(...chapterMatches);
-      }
-    }
-    return matches;
+    return [...(candidateIds ?? [])]
+      .sort((left, right) => left - right)
+      .map((id) => index.verses[id])
+      .filter((verse) =>
+        availableBooks.has(verse.bookCode) &&
+        normalizeSearchText(verse.text).includes(normalized)
+      )
+      .slice(0, 200);
   }
 
   const submitSearch = useCallback(async (): Promise<boolean> => {
