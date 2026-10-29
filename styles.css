@@ -1161,13 +1161,22 @@ button {
   z-index: 210;
   width: min(360px, calc(100vw - 24px));
   max-height: min(520px, calc(100vh - 24px));
+  box-sizing: border-box;
   overflow: auto;
-  padding: 18px;
+  padding: 18px 18px 28px;
   background: var(--white);
   color: var(--stone-800);
   border: 1px solid var(--stone-200);
   border-radius: 10px;
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 600px) {
+  .japanese-lookup {
+    top: 12px !important;
+    bottom: 12px;
+    max-height: none;
+  }
 }
 
 .japanese-lookup-close {

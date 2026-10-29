@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   analyzeJapanese,
   loadJapaneseExamples,
@@ -17,10 +17,14 @@ export function JapaneseLookupPopover({ text, anchor, onClose }: JapaneseLookupP
   const [loading, setLoading] = useState(true);
   const [expandedWord, setExpandedWord] = useState<string | null>(null);
   const [exampleLoading, setExampleLoading] = useState(false);
+  const preloadedText = useRef<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
+    setLookup(null);
+    setExpandedWord(null);
+    setExampleLoading(false);
     analyzeJapanese(text)
       .then((result) => {
         if (!cancelled) setLookup(result);
@@ -36,6 +40,26 @@ export function JapaneseLookupPopover({ text, anchor, onClose }: JapaneseLookupP
     };
   }, [text]);
 
+  useEffect(() => {
+    if (!lookup || preloadedText.current === lookup.text) return;
+
+    preloadedText.current = lookup.text;
+    let cancelled = false;
+    setExampleLoading(true);
+    Promise.all(lookup.words.map((word) => loadJapaneseExamples(word)))
+      .then((words) => {
+        if (cancelled) return;
+        setLookup((current) => current?.text === lookup.text ? { ...current, words } : current);
+      })
+      .finally(() => {
+        if (!cancelled) setExampleLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [lookup]);
+
   async function toggleExamples(word: JapaneseWord) {
     if (!lookup) return;
     if (expandedWord === word.surface) {
@@ -43,14 +67,6 @@ export function JapaneseLookupPopover({ text, anchor, onClose }: JapaneseLookupP
       return;
     }
     setExpandedWord(word.surface);
-    if (word.examples.length > 0) return;
-    setExampleLoading(true);
-    const updated = await loadJapaneseExamples(word);
-    setLookup({
-      ...lookup,
-      words: lookup.words.map((item) => item.surface === word.surface ? updated : item)
-    });
-    setExampleLoading(false);
   }
 
   return (
