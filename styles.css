@@ -1156,6 +1156,101 @@ button {
   place-items: center;
 }
 
+.japanese-lookup {
+  position: fixed;
+  z-index: 210;
+  width: min(360px, calc(100vw - 24px));
+  max-height: min(520px, calc(100vh - 24px));
+  overflow: auto;
+  padding: 18px;
+  background: var(--white);
+  color: var(--stone-800);
+  border: 1px solid var(--stone-200);
+  border-radius: 10px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+}
+
+.japanese-lookup-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: var(--stone-500);
+  font-size: 22px;
+}
+
+.japanese-lookup-selection {
+  padding-right: 28px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.japanese-lookup-romaji {
+  margin: 4px 0 14px;
+  color: var(--brand-800);
+  font-size: 14px;
+}
+
+.japanese-word {
+  padding: 11px 0;
+  border-top: 1px solid var(--stone-200);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.japanese-word-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 17px;
+}
+
+.japanese-word-heading span,
+.japanese-word-reading,
+.japanese-lookup-status,
+.japanese-lookup-attribution {
+  color: var(--stone-500);
+}
+
+.japanese-word-reading {
+  margin: 2px 0 5px;
+  font-size: 12px;
+}
+
+.japanese-example-toggle {
+  margin-top: 7px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand-800);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.japanese-examples {
+  margin-top: 7px;
+  padding-left: 10px;
+  border-left: 2px solid var(--brand-100);
+  font-size: 13px;
+}
+
+.japanese-examples p {
+  margin: 6px 0;
+}
+
+.japanese-examples span {
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+}
+
+.japanese-lookup-attribution {
+  display: block;
+  margin-top: 12px;
+  font-size: 10px;
+}
+
 .font-modal-backdrop {
   position: fixed;
   inset: 0;

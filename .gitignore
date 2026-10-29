@@ -33,3 +33,7 @@ Thumbs.db
 kilo/
 .kilo/
 .vite/
+
+# Local test and TypeScript build output
+coverage/
+*.tsbuildinfo
