@@ -5,6 +5,7 @@ import { MobileDrawer } from "../components/layout/MobileDrawer";
 import { PassageSelector } from "../components/reader/PassageSelector";
 import { TranslationSelector } from "../components/reader/TranslationSelector";
 import { ParallelReader } from "../components/reader/ParallelReader";
+import { HubModal } from "../components/modals/HubModal";
 import type { Book, Translation } from "../lib/bible/repository";
 
 const mockBooks: Book[] = [
@@ -147,5 +148,40 @@ describe("Responsive UI Architecture", () => {
 
     const panels = container.querySelectorAll(".bible-panel");
     expect(panels.length).toBe(2);
+  });
+
+  it("renders HubModal with all legal, takedown, and sponsorship tabs", () => {
+    const onClose = vi.fn();
+    render(<HubModal isOpen={true} onClose={onClose} />);
+
+    expect(screen.getByText("Preferences & Community")).toBeDefined();
+    expect(screen.getByRole("tab", { name: /about/i })).toBeDefined();
+    expect(screen.getByRole("tab", { name: /copyright & sources/i })).toBeDefined();
+    expect(screen.getByRole("tab", { name: /takedown policy/i })).toBeDefined();
+    expect(screen.getByRole("tab", { name: /sponsorship & mission/i })).toBeDefined();
+    expect(screen.getByRole("tab", { name: /chatbot api/i })).toBeDefined();
+
+    // Verify default tab is About
+    expect(screen.getByText(/Why verbumnobis\?/i)).toBeDefined();
+
+    // Switch to Copyright & Sources
+    fireEvent.click(screen.getByRole("tab", { name: /copyright & sources/i }));
+    expect(screen.getByText(/Biblia Sacra Vulgata/i)).toBeDefined();
+    expect(screen.getByText(/New Jerusalem Bible/i)).toBeDefined();
+
+    // Switch to Takedown Policy
+    fireEvent.click(screen.getByRole("tab", { name: /takedown policy/i }));
+    expect(screen.getByText(/Designated Copyright Agent Notice/i)).toBeDefined();
+    expect(screen.getByText(/chillien0815@gmail.com/i)).toBeDefined();
+
+    // Switch to Sponsorship & Mission
+    fireEvent.click(screen.getByRole("tab", { name: /sponsorship & mission/i }));
+    expect(screen.getByText(/Domain & Infrastructure Sponsorship/i)).toBeDefined();
+    expect(screen.getByText(/Zero-Monetization Commitment/i)).toBeDefined();
+
+    // Close button
+    const closeBtn = screen.getByRole("button", { name: /close dialog/i });
+    fireEvent.click(closeBtn);
+    expect(onClose).toHaveBeenCalledTimes(1);
   });
 });

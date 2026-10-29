@@ -1807,6 +1807,140 @@ button {
   border-color: var(--stone-200);
 }
 
+.card-notice {
+  background: var(--stone-100);
+  border: 1px solid var(--stone-200);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.card-notice strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--stone-900);
+}
+
+:root[data-theme="dark"] .card-notice {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--stone-200);
+}
+
+.legal-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--stone-200);
+}
+
+.legal-item:last-child {
+  border-bottom: 0;
+}
+
+.legal-item-title {
+  font-size: 13.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.legal-badge {
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge-pd {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-cr {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-cc {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+:root[data-theme="dark"] .badge-pd {
+  background: rgba(34, 197, 94, 0.16);
+  color: #86efac;
+}
+
+:root[data-theme="dark"] .badge-cr {
+  background: rgba(239, 68, 68, 0.16);
+  color: #fca5a5;
+}
+
+:root[data-theme="dark"] .badge-cc {
+  background: rgba(14, 165, 233, 0.16);
+  color: #7dd3fc;
+}
+
+.takedown-box {
+  background: #fefce8;
+  border: 1px solid #fef08a;
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #713f12;
+  margin: 14px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+:root[data-theme="dark"] .takedown-box {
+  background: rgba(234, 179, 8, 0.08);
+  border-color: rgba(234, 179, 8, 0.25);
+  color: #fef08a;
+}
+
+.action-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-800);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 12px;
+  transition: background 0.15s ease;
+  box-sizing: border-box;
+}
+
+.action-email-btn:hover {
+  background: var(--brand-900);
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .modal-tabs {
+    padding: 0 8px;
+  }
+
+  .tab-btn {
+    padding: 10px 10px;
+    font-size: 12.5px;
+    flex-shrink: 0;
+  }
+
+  .action-email-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 @media (max-width: 1024px) {
   .header-actions {
     display: none;
