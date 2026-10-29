@@ -13,6 +13,11 @@ interface JapaneseLookupPopoverProps {
 }
 
 export function JapaneseLookupPopover({ text, anchor, onClose }: JapaneseLookupPopoverProps) {
+  const maxDialogHeight = Math.min(520, Math.max(0, window.innerHeight - 24));
+  const dialogTop = Math.max(
+    12,
+    Math.min(anchor.top + 10, window.innerHeight - maxDialogHeight - 12)
+  );
   const [lookup, setLookup] = useState<JapaneseLookup | null>(null);
   const [loading, setLoading] = useState(true);
   const [expandedWord, setExpandedWord] = useState<string | null>(null);
@@ -72,7 +77,7 @@ export function JapaneseLookupPopover({ text, anchor, onClose }: JapaneseLookupP
   return (
     <aside
       className="japanese-lookup"
-      style={{ top: Math.min(anchor.top + 10, window.innerHeight - 420), left: Math.max(12, Math.min(anchor.left, window.innerWidth - 372)) }}
+      style={{ top: dialogTop, left: Math.max(12, Math.min(anchor.left, window.innerWidth - 372)) }}
       role="dialog"
       aria-label="Japanese text lookup"
     >
@@ -95,7 +100,14 @@ export function JapaneseLookupPopover({ text, anchor, onClose }: JapaneseLookupP
                 </button>
                 {expandedWord === word.surface && word.examples.length > 0 && (
                   <div className="japanese-examples">
-                    {word.examples.map((example) => <p key={`${example.japanese}-${example.english ?? ""}`}><span>{example.japanese}</span>{example.english && <><br />{example.english}</>}</p>)}
+                    {word.examples.map((example) => (
+                      <p key={`${example.japanese}-${example.english ?? ""}`}>
+                        <span>{example.japanese}</span>
+                        {example.transcription && <><br /><small>{example.transcription}</small></>}
+                        {example.romaji && <><br /><small>{example.romaji}</small></>}
+                        {example.english && <><br />{example.english}</>}
+                      </p>
+                    ))}
                   </div>
                 )}
               </section>

@@ -35,12 +35,18 @@ export default defineConfig({
             return;
           }
 
-          const target = new URL("https://api.tatoeba.org/unstable/sentences");
+          const target = new URL("https://api.tatoeba.org/v1/sentences");
           target.searchParams.set("lang", "jpn");
           target.searchParams.set("q", word);
+          target.searchParams.set("trans:lang", "eng");
+          target.searchParams.set("showtrans:lang", "eng");
+          target.searchParams.set("trans:is_direct", "yes");
+          target.searchParams.set("trans:is_orphan", "no");
+          target.searchParams.set("is_unapproved", "no");
+          target.searchParams.set("trans:is_unapproved", "no");
           target.searchParams.set("sort", "relevance");
           target.searchParams.set("limit", "3");
-          target.searchParams.set("trans:lang", "eng");
+          target.searchParams.set("include", "transcriptions");
           const proxyReq = https.get(target, { family: 4, headers: { "User-Agent": "VerbumNobis/0.1" } }, (proxyRes) => {
             response.statusCode = proxyRes.statusCode ?? 200;
             response.setHeader("Content-Type", "application/json");

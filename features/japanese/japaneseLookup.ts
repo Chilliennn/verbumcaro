@@ -9,7 +9,7 @@ export interface JapaneseWord {
   romaji: string;
   partOfSpeech: string;
   definitions: string[];
-  examples: Array<{ japanese: string; english?: string }>;
+  examples: Array<{ japanese: string; english?: string; transcription?: string; romaji?: string }>;
 }
 
 export interface JapaneseLookup {
@@ -30,6 +30,11 @@ interface JishoResponse {
 interface TatoebaSentence {
   id?: number;
   text?: string;
+  transcriptions?: Array<{
+    script?: string;
+    text?: string;
+    type?: string;
+  }>;
   translations?: Array<{
     id?: number;
     text?: string;
@@ -98,7 +103,7 @@ async function fetchJishoData(word: string): Promise<JishoResponse | null> {
   // 2. Try allorigins CORS proxy fallback (useful for preview / production / direct testing)
   try {
     const target = `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(word)}`;
-    const alloriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(target)}`;
+    const alloriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(target.toString())}`;
     const res = await fetchWithTimeout(alloriginsUrl, 4000);
     if (res.ok) {
       const data = (await res.json()) as { contents?: string };
@@ -151,30 +156,50 @@ async function findExamples(word: string) {
     const response = await fetchWithTimeout(localUrl, 30000);
     if (response.ok) {
       const data = await response.json() as TatoebaResponse;
-      return mapExamples(data);
+      return await mapExamples(data);
     }
   } catch {
     // Local proxy is unavailable outside the development server.
   }
 
   try {
-    const target = `https://api.tatoeba.org/unstable/sentences?lang=jpn&q=${encodeURIComponent(word)}&sort=relevance&limit=3&trans:lang=eng`;
-    const alloriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(target)}`;
+    const target = new URL("https://api.tatoeba.org/v1/sentences");
+    target.searchParams.set("lang", "jpn");
+    target.searchParams.set("q", word);
+    target.searchParams.set("trans:lang", "eng");
+    target.searchParams.set("showtrans:lang", "eng");
+    target.searchParams.set("trans:is_direct", "yes");
+    target.searchParams.set("trans:is_orphan", "no");
+    target.searchParams.set("is_unapproved", "no");
+    target.searchParams.set("trans:is_unapproved", "no");
+    target.searchParams.set("sort", "relevance");
+    target.searchParams.set("limit", "3");
+    target.searchParams.set("include", "transcriptions");
+    const alloriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(target.toString())}`;
     const response = await fetchWithTimeout(alloriginsUrl, 4000);
     if (!response.ok) return [];
     const data = await response.json() as { contents?: string };
-    return data.contents ? mapExamples(JSON.parse(data.contents) as TatoebaResponse) : [];
+    return data.contents ? await mapExamples(JSON.parse(data.contents) as TatoebaResponse) : [];
   } catch {
     return [];
   }
 }
 
-function mapExamples(data: TatoebaResponse) {
-  return (data.data ?? []).flatMap((item) =>
-    item.text
-      ? [{ japanese: item.text, english: item.translations?.[0]?.text }]
-      : []
-  );
+async function mapExamples(data: TatoebaResponse) {
+  const { kuroshiro } = await getAnalyzer();
+  return Promise.all((data.data ?? []).filter((item): item is TatoebaSentence & { text: string } => Boolean(item.text)).map(async (item) => {
+    const transcription = item.transcriptions?.find((entry) => entry.text)?.text;
+    return {
+      japanese: item.text,
+      english: item.translations?.[0]?.text,
+      transcription,
+      romaji: await kuroshiro.convert(item.text, {
+        to: "romaji",
+        mode: "spaced",
+        romajiSystem: "hepburn"
+      })
+    };
+  }));
 }
 
 function getReading(token: Token): string {

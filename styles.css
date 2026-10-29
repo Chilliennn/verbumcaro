@@ -1163,6 +1163,7 @@ button {
   max-height: min(520px, calc(100vh - 24px));
   box-sizing: border-box;
   overflow: auto;
+  scroll-padding-bottom: 28px;
   padding: 18px 18px 28px;
   background: var(--white);
   color: var(--stone-800);
