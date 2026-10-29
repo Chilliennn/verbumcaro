@@ -203,42 +203,69 @@ The `deploy` script runs `npm run build` then pushes `dist/` to the `gh-pages` b
 
 ---
 
-## 📄 License
+## 📄 License & Legal Notice
 
-This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
+### Application Source Code
+The web application interface, search index algorithms, and reader code are open source and licensed under the [MIT License](LICENSE).
 
-**Bible texts** are sourced from public domain or permitted ecclesiastical editions. Each translation's copyright status is noted in `translations.json`.
-
----
-
-## 🙏 Acknowledgments
-
-- **Vulgate** — Clementine edition (public domain)
-- **New Jerusalem Bible** — Catholic.org digital edition
-- **思高圣经** — Studium Biblicum Franciscanum Hong Kong
-- **新共同訳** — Japan Bible Society / United Church of Christ in Japan
-- **OSIS** — Open Scripture Information Standard for verse referencing
+### Third-Party Content & Intellectual Property
+The MIT License **strictly applies only to the software application code**. It does **not** cover, transfer, or license third-party Scripture translations, dictionary datasets, or linguistic resources:
+- Scripture texts and linguistic databases remain the intellectual property of their respective copyright holders, Bible societies, and research groups.
+- This platform operates strictly as an independent, non-commercial, non-profit academic and devotional study tool. It hosts no advertising, charges no fees, and collects no commercial revenue.
 
 ---
 
-## 📞 Support
+## 🙏 Acknowledgments & Copyright Notices
 
-- **Issues** — [GitHub Issues](https://github.com/chilliennn/verbumnobis/issues)
+### Scripture Translations
+- **Biblia Sacra Vulgata (Latin)**: Clementine Vulgate (1592 edition). Sourced via Sacred-Texts. Public Domain.
+- **New Jerusalem Bible (English)**: Text © 1985 by Darton, Longman & Todd Ltd and Doubleday, a division of Penguin Random House LLC. Displayed for comparative theological analysis and personal devotion.
+- **思高圣经 (Studium Biblicum Chinese)**: 中文译本版权归属于 **香港方济会思高圣经学会** (Studium Biblicum Franciscanum, Hong Kong, 1968). 供天主教教友、慕道班及学者研读比对之用。
+- **新共同訳 (Shinkyōdōyaku Japanese)**: 日本語訳聖書 © **日本聖書協会** (Japan Bible Society), 1987, 1988. Ecumenical edition displayed for cross-language study.
+
+### Linguistic & Lexical Resources
+- **JMdict (Japanese Dictionary)**: Property of the **Electronic Dictionary Research and Development Group (EDRDG)**, used in accordance with the [EDRDG Licence](http://www.edrdg.org/edrdg/licence.html) (Creative Commons Attribution-ShareAlike 3.0 / 4.0).
+- **Tatoeba Project (Example Sentences)**: Example sentences provided by contributors at [Tatoeba.org](https://tatoeba.org/) under [Creative Commons Attribution 2.0 (CC BY 2.0 FR)](https://creativecommons.org/licenses/by/2.0/fr/).
+- **Kuroshiro & Kuromoji**: Morphological analysis and furigana generator libraries under MIT and Apache 2.0 licenses.
+- **OSIS Standards**: Open Scripture Information Standard for canonical Bible book abbreviations and verse references.
+
+---
+
+## ⚖️ DMCA & Notice-and-Takedown Policy
+
+VerbumNobis respects intellectual property rights and adheres to the principles of fair dealing and copyright stewardship. 
+
+If you are a copyright owner, Bible society, publisher, or authorized legal representative and believe that any text, translation, or content available on this service infringes upon your copyright:
+
+1. Please submit a notification to our designated contact:
+   - **Contact**: `chillien0815@gmail.com`
+   - **Subject**: `[Copyright Notice] VerbumNobis Content Review`
+2. Please identify the specific translation or passage and evidence of ownership or representation.
+3. Upon receipt and validation, the disputed material will be promptly restricted or removed within **7 business days**.
+
+---
+
+## 🌐 Sponsorship & Mission Transparency
+
+VerbumNobis was created out of personal passion to bridge Catholic translations for multilingual study and comparative reading. 
+
+**Why Sponsorship is Mentioned:**
+- **Credibility & Trust**: Moving from a temporary `github.io` subdomain to a recognized custom domain (e.g. `verbumnobis.org`) makes the resource look professional, legitimate, and safe for catechists, parish study groups, and university students.
+- **Search Engine Discovery (SEO)**: A dedicated top-level domain allows Catholic Scripture students searching for parallel multilingual texts to discover the platform organically on search engines.
+- **Infrastructure**: Covering domain registration renewals and CDN bandwidth.
+
+> **Zero Monetization Statement**: The author does not seek personal profit, financial compensation, or fame from this project. Any potential sponsorship is allocated 100% directly to domain registry costs and CDN infrastructure.
+
+---
+
+## 📞 Support & Community
+
+- **Issues & Suggestions** — [GitHub Issues](https://github.com/chilliennn/verbumnobis/issues)
 - **Discussions** — [GitHub Discussions](https://github.com/chilliennn/verbumnobis/discussions)
+- **Contact** — [chillien0815@gmail.com](mailto:chillien0815@gmail.com)
 
 ---
 
 *Verbum Caro factum est et habitavit in nobis* — **And the Word became flesh and dwelt among us** (John 1:14)
 
----
 
-**Key improvements made:**
-- **Dual audience**: Clear sections for laypeople (Features for Readers) and devs (Features for Developers, Project Structure, Data Pipeline)
-- **Translation table**: Shows all 4 translations with language, coverage, and notes
-- **Complete setup guide**: Prerequisites, install, dev, build, test commands
-- **Pipeline documentation**: Explains the Python data pipeline (scrape → parse → normalize → validate → export)
-- **Project structure tree**: Visual directory layout
-- **Deployment instructions**: GitHub Pages via `npm run deploy`
-- **Contributing guidelines**: Standard PR workflow + code style notes
-- **License & acknowledgments**: Proper attribution for Bible texts
-- **Professional formatting**: Badges-ready, emoji-enhanced, scannable sections
