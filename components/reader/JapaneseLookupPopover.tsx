@@ -82,40 +82,42 @@ export function JapaneseLookupPopover({ text, anchor, onClose }: JapaneseLookupP
       aria-label="Japanese text lookup"
     >
       <button className="japanese-lookup-close" type="button" onClick={onClose} aria-label="Close Japanese lookup">&times;</button>
-      {loading ? <p className="japanese-lookup-status">Reading selected text...</p> : lookup ? (
-        <>
-          <div className="japanese-lookup-selection">{lookup.text}</div>
-          <div className="japanese-lookup-romaji">{lookup.romaji}</div>
-          <div className="japanese-lookup-words">
-            {lookup.words.map((word, index) => (
-              <section className="japanese-word" key={`${word.surface}-${index}`}>
-                <div className="japanese-word-heading">
-                  <strong>{word.surface}</strong>
-                  <span>{word.romaji}</span>
-                </div>
-                <div className="japanese-word-reading">{word.reading} · {word.partOfSpeech}</div>
-                <div>{word.definitions.length > 0 ? word.definitions.join("; ") : "No definition found"}</div>
-                <button className="japanese-example-toggle" type="button" onClick={() => toggleExamples(word)}>
-                  {exampleLoading && expandedWord === word.surface ? "Loading examples..." : expandedWord === word.surface ? "Hide examples" : "Show examples"}
-                </button>
-                {expandedWord === word.surface && word.examples.length > 0 && (
-                  <div className="japanese-examples">
-                    {word.examples.map((example) => (
-                      <p key={`${example.japanese}-${example.english ?? ""}`}>
-                        <span>{example.japanese}</span>
-                        {example.transcription && <><br /><small>{example.transcription}</small></>}
-                        {example.romaji && <><br /><small>{example.romaji}</small></>}
-                        {example.english && <><br />{example.english}</>}
-                      </p>
-                    ))}
+      <div className="japanese-lookup-content">
+        {loading ? <p className="japanese-lookup-status">Reading selected text...</p> : lookup ? (
+          <>
+            <div className="japanese-lookup-selection">{lookup.text}</div>
+            <div className="japanese-lookup-romaji">{lookup.romaji}</div>
+            <div className="japanese-lookup-words">
+              {lookup.words.map((word, index) => (
+                <section className="japanese-word" key={`${word.surface}-${index}`}>
+                  <div className="japanese-word-heading">
+                    <strong>{word.surface}</strong>
+                    <span>{word.romaji}</span>
                   </div>
-                )}
-              </section>
-            ))}
-          </div>
-        </>
-      ) : <p className="japanese-lookup-status">Lookup unavailable. Romaji could not be generated.</p>}
-      <small className="japanese-lookup-attribution">Definitions: Jisho.org / JMdict. Examples: Tatoeba.</small>
+                  <div className="japanese-word-reading">{word.reading} · {word.partOfSpeech}</div>
+                  <div>{word.definitions.length > 0 ? word.definitions.join("; ") : "No definition found"}</div>
+                  <button className="japanese-example-toggle" type="button" onClick={() => toggleExamples(word)}>
+                    {exampleLoading && expandedWord === word.surface ? "Loading examples..." : expandedWord === word.surface ? "Hide examples" : "Show examples"}
+                  </button>
+                  {expandedWord === word.surface && word.examples.length > 0 && (
+                    <div className="japanese-examples">
+                      {word.examples.map((example) => (
+                        <p key={`${example.japanese}-${example.english ?? ""}`}>
+                          <span>{example.japanese}</span>
+                          {example.transcription && <><br /><small>{example.transcription}</small></>}
+                          {example.romaji && <><br /><small>{example.romaji}</small></>}
+                          {example.english && <><br />{example.english}</>}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                </section>
+              ))}
+            </div>
+          </>
+        ) : <p className="japanese-lookup-status">Lookup unavailable. Romaji could not be generated.</p>}
+        <small className="japanese-lookup-attribution">Definitions: Jisho.org / JMdict. Examples: Tatoeba.</small>
+      </div>
     </aside>
   );
 }

@@ -1162,9 +1162,9 @@ button {
   width: min(360px, calc(100vw - 24px));
   max-height: min(520px, calc(100vh - 24px));
   box-sizing: border-box;
-  overflow: auto;
-  scroll-padding-bottom: 28px;
-  padding: 18px 18px 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   background: var(--white);
   color: var(--stone-800);
   border: 1px solid var(--stone-200);
@@ -1180,16 +1180,47 @@ button {
   }
 }
 
+.japanese-lookup-content {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding-bottom: 28px;
+  padding: 18px 18px 28px;
+  flex: 1;
+  min-height: 0;
+}
+
 .japanese-lookup-close {
   position: absolute;
   top: 4px;
   right: 4px;
+  z-index: 2;
   width: 36px;
   height: 36px;
   border: 0;
-  background: transparent;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   color: var(--stone-500);
   font-size: 22px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.japanese-lookup-close:hover {
+  color: var(--brand-800);
+  background: var(--brand-50);
+}
+
+:root[data-theme="dark"] .japanese-lookup-close {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+:root[data-theme="dark"] .japanese-lookup-close:hover {
+  color: #fff;
+  background: var(--stone-100);
 }
 
 .japanese-lookup-selection {
