@@ -27,11 +27,21 @@ interface JishoResponse {
   data?: JishoResult[];
 }
 
-interface TatoebaResponse {
-  data?: Array<{
+interface TatoebaSentence {
+  id?: number;
+  text?: string;
+  translations?: Array<{
+    id?: number;
     text?: string;
+    lang?: string;
   }>;
 }
+
+interface TatoebaResponse {
+  data?: TatoebaSentence[];
+}
+
+const definitionCache = new Map<string, string[]>();
 
 let analyzerPromise: Promise<{ analyzer: InstanceType<typeof KuromojiAnalyzer>; kuroshiro: InstanceType<typeof Kuroshiro> }> | null = null;
 
@@ -60,23 +70,75 @@ function unique(values: string[]): string[] {
   return [...new Set(values.filter(Boolean))];
 }
 
-async function findDefinitions(word: string, reading: string) {
+async function fetchWithTimeout(url: string, timeoutMs = 4000): Promise<Response> {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(id);
+    return res;
+  } catch (e) {
+    clearTimeout(id);
+    throw e;
+  }
+}
+
+async function fetchJishoData(word: string): Promise<JishoResponse | null> {
+  // 1. Try local dev server proxy first
+  try {
+    const localUrl = `${import.meta.env.BASE_URL}__jisho?keyword=${encodeURIComponent(word)}`;
+    const res = await fetchWithTimeout(localUrl, 10000);
+    if (res.ok) {
+      return (await res.json()) as JishoResponse;
+    }
+  } catch {
+    // Local proxy not available or timed out, fallback to CORS proxy
+  }
+
+  // 2. Try allorigins CORS proxy fallback (useful for preview / production / direct testing)
+  try {
+    const target = `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(word)}`;
+    const alloriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(target)}`;
+    const res = await fetchWithTimeout(alloriginsUrl, 4000);
+    if (res.ok) {
+      const data = (await res.json()) as { contents?: string };
+      if (data.contents) {
+        return JSON.parse(data.contents) as JishoResponse;
+      }
+    }
+  } catch {
+    // Both failed
+  }
+
+  return null;
+}
+
+async function findDefinitions(word: string, reading: string): Promise<{ definitions: string[] }> {
+  const cacheKey = `${word}:${reading}`;
+  if (definitionCache.has(cacheKey)) {
+    return { definitions: definitionCache.get(cacheKey)! };
+  }
+
   try {
     japaneseDebug("Definitions request", { word, reading });
-    const response = await fetch(
-      `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(word)}`
-    );
-    if (!response.ok) {
-      japaneseDebug("Definitions response failed", { word, status: response.status });
+    const data = await fetchJishoData(word);
+    if (!data) {
+      japaneseDebug("Definitions empty", { word });
       return { definitions: [] };
     }
 
-    const data = await response.json() as JishoResponse;
-    const result = data.data?.find((item) =>
+    if (!data.data?.length) {
+      definitionCache.set(cacheKey, []);
+      return { definitions: [] };
+    }
+
+    const result = data.data.find((item) =>
       item.japanese?.some((entry) => entry.word === word || entry.reading === reading)
-    ) ?? data.data?.[0];
+    ) ?? data.data[0];
+
     const definitions = unique(result?.senses?.flatMap((sense) => sense.english_definitions ?? []) ?? []).slice(0, 5);
     japaneseDebug("Definitions response", { word, count: definitions.length });
+    definitionCache.set(cacheKey, definitions);
     return { definitions };
   } catch {
     return { definitions: [] };
@@ -84,13 +146,35 @@ async function findDefinitions(word: string, reading: string) {
 }
 
 async function findExamples(word: string) {
-  const response = await fetch(
-    `https://api.tatoeba.org/unstable/sentences?lang=jpn&q=${encodeURIComponent(word)}&sort=relevance&limit=3`
-  );
-  if (!response.ok) return [];
+  const localUrl = `${import.meta.env.BASE_URL}__tatoeba?word=${encodeURIComponent(word)}`;
+  try {
+    const response = await fetchWithTimeout(localUrl, 30000);
+    if (response.ok) {
+      const data = await response.json() as TatoebaResponse;
+      return mapExamples(data);
+    }
+  } catch {
+    // Local proxy is unavailable outside the development server.
+  }
 
-  const data = await response.json() as TatoebaResponse;
-  return (data.data ?? []).flatMap((item) => item.text ? [{ japanese: item.text }] : []);
+  try {
+    const target = `https://api.tatoeba.org/unstable/sentences?lang=jpn&q=${encodeURIComponent(word)}&sort=relevance&limit=3&trans:lang=eng`;
+    const alloriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(target)}`;
+    const response = await fetchWithTimeout(alloriginsUrl, 4000);
+    if (!response.ok) return [];
+    const data = await response.json() as { contents?: string };
+    return data.contents ? mapExamples(JSON.parse(data.contents) as TatoebaResponse) : [];
+  } catch {
+    return [];
+  }
+}
+
+function mapExamples(data: TatoebaResponse) {
+  return (data.data ?? []).flatMap((item) =>
+    item.text
+      ? [{ japanese: item.text, english: item.translations?.[0]?.text }]
+      : []
+  );
 }
 
 function getReading(token: Token): string {
@@ -102,27 +186,41 @@ export async function analyzeJapanese(text: string): Promise<JapaneseLookup> {
   const { analyzer, kuroshiro } = await getAnalyzer();
   const tokens = await analyzer.parse(text);
   japaneseDebug("Tokenization complete", { text, count: tokens.length });
-  const romaji = await kuroshiro.convert(text, {
-    to: "romaji",
-    mode: "spaced",
-    romajiSystem: "hepburn"
-  });
-  const words: JapaneseWord[] = [];
 
-  for (const token of tokens) {
-    if (!token.surface_form.trim() || token.pos === "記号") continue;
-    const reading = getReading(token);
-    const { definitions } = await findDefinitions(token.basic_form, reading);
-    words.push({
-      surface: token.surface_form,
-      base: token.basic_form,
-      reading,
-      romaji: await kuroshiro.convert(reading, { to: "romaji", romajiSystem: "hepburn" }),
-      partOfSpeech: token.pos_detail_1 === "*" ? token.pos : `${token.pos}・${token.pos_detail_1}`,
-      definitions,
-      examples: []
-    });
-  }
+  // Generate romaji for the full selected text and process tokens concurrently
+  const [romaji, words] = await Promise.all([
+    kuroshiro.convert(text, {
+      to: "romaji",
+      mode: "spaced",
+      romajiSystem: "hepburn"
+    }),
+    Promise.all(
+      tokens
+        .filter((token) => token.surface_form.trim() && token.pos !== "記号")
+        .map(async (token) => {
+          const reading = getReading(token);
+          const isParticle = token.pos === "助詞" || token.pos === "助動詞";
+          const defPromise = isParticle
+            ? Promise.resolve({ definitions: [] })
+            : findDefinitions(token.basic_form, reading);
+
+          const [tokenRomaji, { definitions }] = await Promise.all([
+            kuroshiro.convert(reading, { to: "romaji", romajiSystem: "hepburn" }),
+            defPromise
+          ]);
+
+          return {
+            surface: token.surface_form,
+            base: token.basic_form,
+            reading,
+            romaji: tokenRomaji,
+            partOfSpeech: token.pos_detail_1 === "*" ? token.pos : `${token.pos}・${token.pos_detail_1}`,
+            definitions,
+            examples: []
+          };
+        })
+    )
+  ]);
 
   japaneseDebug("Analysis complete", { text, wordCount: words.length });
   return { text, romaji, words };
@@ -132,7 +230,8 @@ export async function loadJapaneseExamples(word: JapaneseWord): Promise<Japanese
   if (word.examples.length > 0) return word;
   try {
     japaneseDebug("Example request", { word: word.surface });
-    return { ...word, examples: await findExamples(word.surface) };
+    const examples = await findExamples(word.base || word.surface);
+    return { ...word, examples };
   } catch {
     japaneseDebug("Example request failed", { word: word.surface });
     return word;

@@ -55,28 +55,35 @@ export function BiblePanel({
       return;
     }
 
-    function handleSelectionChange() {
-      const selection = window.getSelection();
-      const text = selection?.toString().trim() ?? "";
-      const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
-      japaneseDebug("Selection event", {
-        isJapanese,
-        text,
-        insideReader: Boolean(range && readerRef.current?.contains(range.commonAncestorContainer)),
-        commonAncestor: range?.commonAncestorContainer.nodeName ?? null
-      });
-      if (!selection || !range || !text || !readerRef.current?.contains(range.commonAncestorContainer)) {
-        japaneseDebug("Selection ignored", { reason: "empty or outside Japanese reader" });
-        return;
-      }
+    function handleMouseUp(event: MouseEvent) {
+      // Only care about left-button releases.
+      if (event.button !== 0) return;
 
-      const rect = range.getBoundingClientRect();
-      japaneseDebug("Selection accepted", { text, top: rect.bottom, left: rect.left });
-      setSelectedText({ text, top: rect.bottom, left: rect.left });
+      // Defer one tick so the browser finishes committing the selection.
+      setTimeout(() => {
+        const reader = readerRef.current;
+        if (!reader) return;
+
+        const selection = window.getSelection();
+        const text = selection?.toString().trim() ?? "";
+        const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
+        japaneseDebug("Mouse up event", {
+          text,
+          insideReader: Boolean(range && reader.contains(range.commonAncestorContainer)),
+          commonAncestor: range?.commonAncestorContainer.nodeName ?? null
+        });
+        if (!text || !range || !reader.contains(range.commonAncestorContainer)) {
+          japaneseDebug("Selection ignored", { reason: "empty or outside Japanese reader" });
+          return;
+        }
+        const rect = range.getBoundingClientRect();
+        japaneseDebug("Selection accepted", { text, top: rect.bottom, left: rect.left });
+        setSelectedText({ text, top: rect.bottom, left: rect.left });
+      }, 0);
     }
 
-    document.addEventListener("selectionchange", handleSelectionChange);
-    return () => document.removeEventListener("selectionchange", handleSelectionChange);
+    document.addEventListener("mouseup", handleMouseUp);
+    return () => document.removeEventListener("mouseup", handleMouseUp);
   }, [isJapanese]);
 
   useEffect(() => {

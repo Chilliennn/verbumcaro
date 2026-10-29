@@ -175,9 +175,8 @@ export function extractLanguageModifiers(query: string): {
       if (tag2) {
         const trans2 = resolveTranslationId(tag2);
         if (trans2) {
-          if (!rightTranslationId) {
-            rightTranslationId = trans2;
-          }
+          rightTranslationId = translationId;
+          translationId = trans2;
           return "";
         }
         return ` ${tag2}`;

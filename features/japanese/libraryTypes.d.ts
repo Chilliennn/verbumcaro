@@ -41,3 +41,37 @@ declare module "kuroshiro-analyzer-kuromoji/dist/kuroshiro-analyzer-kuromoji.js"
   import KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji";
   export default KuromojiAnalyzer;
 }
+
+declare module "kuromoji/src/dict/DynamicDictionaries" {
+  const DynamicDictionaries: new () => {
+    loadTrie(base: Int32Array, check: Int32Array): void;
+    loadTokenInfoDictionaries(token_info_buffer: Uint8Array, pos_buffer: Uint8Array, target_map_buffer: Uint8Array): void;
+    loadConnectionCosts(connection_costs_buffer: Int16Array): void;
+    loadUnknownDictionaries(
+      unk_buffer: Uint8Array,
+      unk_pos_buffer: Uint8Array,
+      unk_map_buffer: Uint8Array,
+      cat_map_buffer: Uint8Array,
+      compat_cat_map_buffer: Uint32Array,
+      invoke_def_buffer: Uint8Array
+    ): void;
+  };
+  export default DynamicDictionaries;
+}
+
+declare module "zlibjs/bin/gunzip.min.js" {
+  export namespace Zlib {
+    class Gunzip {
+      constructor(data: Uint8Array);
+      decompress(): Uint8Array;
+    }
+  }
+  const zlib: {
+    Zlib: {
+      Gunzip: new (data: Uint8Array) => {
+        decompress(): Uint8Array;
+      };
+    };
+  };
+  export default zlib;
+}
