@@ -1334,6 +1334,32 @@ button {
   font-size: 13px;
 }
 
+.latin-inflection-info {
+  margin: 1px 0 3px;
+  font-size: 12px;
+  color: var(--brand-800);
+}
+
+.latin-word-form em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.latin-word-inflection {
+  color: var(--stone-500);
+}
+
+.latin-word-grammar {
+  margin: 2px 0 5px;
+  font-size: 12px;
+  color: var(--stone-500);
+}
+
+.latin-word-parts {
+  color: var(--stone-600);
+  font-style: italic;
+}
+
 .latin-word-no-def {
   color: var(--stone-500);
   margin: 4px 0;

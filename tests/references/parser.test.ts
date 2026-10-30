@@ -212,6 +212,43 @@ describe("parseSearchQuery", () => {
     expect(results).toHaveLength(2);
   });
 
+  it("parses John 6:35, 38 into John 6:35 and John 6:38", () => {
+    const results = parseSearchQuery("John 6:35, 38");
+    expect(results).toHaveLength(2);
+    expect(results[0]).toEqual({
+      panel: { bookCode: "JHN", chapter: 6 },
+      verse: 35,
+      verseEnd: undefined,
+      translationId: undefined,
+      rightTranslationId: undefined
+    });
+    expect(results[1]).toEqual({
+      panel: { bookCode: "JHN", chapter: 6 },
+      verse: 38,
+      verseEnd: undefined,
+      translationId: undefined,
+      rightTranslationId: undefined
+    });
+  });
+
+  it("only renders a chapter if the number ends with ':'", () => {
+    const results = parseSearchQuery("John 6:35, 7:");
+    expect(results).toHaveLength(2);
+    expect(results[0].panel.chapter).toBe(6);
+    expect(results[0].verse).toBe(35);
+    expect(results[1].panel.chapter).toBe(7);
+    expect(results[1].verse).toBeUndefined();
+  });
+
+  it("handles verse ranges following a chapter:verse reference", () => {
+    const results = parseSearchQuery("John 6:35, 38-40");
+    expect(results).toHaveLength(2);
+    expect(results[0].verse).toBe(35);
+    expect(results[1].panel.chapter).toBe(6);
+    expect(results[1].verse).toBe(38);
+    expect(results[1].verseEnd).toBe(40);
+  });
+
   it("handles parallel translation query preserving left and right panel translations", () => {
     const results = parseSearchQuery("gen 1 /eng lat");
     expect(results).toHaveLength(1);

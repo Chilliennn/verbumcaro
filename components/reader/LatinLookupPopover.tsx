@@ -92,17 +92,26 @@ export function LatinLookupPopover({ text, anchor, onClose }: LatinLookupPopover
               {lookup.words.map((word, index) => (
                 <section className="latin-word" key={`${word.surface}-${index}`}>
                   <div className="latin-word-heading">
-                    <strong>{word.surface}</strong>
+                    <strong>{word.isInflected && word.lemma ? word.lemma : word.surface}</strong>
                     {word.pronunciation && (
                       <span className="latin-word-pronunciation">[{word.pronunciation}]</span>
                     )}
                   </div>
                   <div className="latin-word-reading">
-                    {word.lemma && word.lemma.toLowerCase() !== word.surface.toLowerCase() ? (
-                      <span className="latin-word-lemma"><em>{word.lemma}</em> · </span>
-                    ) : null}
-                    <span>{word.partOfSpeech}</span>
-                    {word.forms && word.forms.length > 0 ? <span> · {word.forms.join(", ")}</span> : null}
+                    {word.isInflected && (
+                      <div className="latin-inflection-info">
+                        <span className="latin-word-form">Form: <em>{word.surface}</em></span>
+                        {word.inflection && <span className="latin-word-inflection"> ({word.inflection})</span>}
+                      </div>
+                    )}
+                    <div className="latin-word-grammar">
+                      <span className="latin-word-pos">{word.partOfSpeech}</span>
+                      {word.principalParts && word.principalParts.length > 0 ? (
+                        <span className="latin-word-parts"> · {word.principalParts.join(", ")}</span>
+                      ) : word.forms && word.forms.length > 0 ? (
+                        <span className="latin-word-parts"> · {word.forms.join(", ")}</span>
+                      ) : null}
+                    </div>
                   </div>
                   <div className="latin-word-definitions">
                     {word.definitions.length > 0 ? (

@@ -156,8 +156,9 @@ export default defineConfig({
             return;
           }
 
+          const isSynsets = url.searchParams.get("endpoint") !== "lemma";
           const proxyReq = https.get(
-            `https://latinwordnet.exeter.ac.uk/api/lemmas/${encodeURIComponent(lemma)}/`,
+            `https://latinwordnet.exeter.ac.uk/api/lemmas/${encodeURIComponent(lemma)}/${isSynsets ? "synsets/" : ""}`,
             {
               family: 4,
               headers: {

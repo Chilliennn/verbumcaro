@@ -194,7 +194,11 @@ export function extractLanguageModifiers(query: string): {
   };
 }
 
-export function parseReference(input: string, defaultBookCode?: string): ParsedReference | null {
+export function parseReference(
+  input: string,
+  defaultBookCode?: string,
+  defaultChapter?: number
+): ParsedReference | null {
   const { reference, translationId, rightTranslationId } = extractLanguageModifiers(input);
   if (!reference) return null;
 
@@ -219,17 +223,77 @@ export function parseReference(input: string, defaultBookCode?: string): ParsedR
   }
 
   if (defaultBookCode) {
-    const nakedPattern = /^(\d+)[\s: ]*(\d+)?(?:\s*[- ]\s*(\d+))?$/;
-    const nakedMatch = reference.match(nakedPattern);
-    if (nakedMatch) {
-      const chapter = parseInt(nakedMatch[1], 10);
-      const verse = nakedMatch[2] ? parseInt(nakedMatch[2], 10) : undefined;
-      const verseEnd = nakedMatch[3] ? parseInt(nakedMatch[3], 10) : undefined;
+    // 1. Colon followed by verse: e.g. ":38" or ":38-40"
+    const colonVersePattern = /^[:：]\s*(\d+)(?:\s*[-–~到至 ]\s*(\d+))?$/;
+    const colonVerseMatch = reference.match(colonVersePattern);
+    if (colonVerseMatch) {
+      const verse = parseInt(colonVerseMatch[1], 10);
+      const verseEnd = colonVerseMatch[2] ? parseInt(colonVerseMatch[2], 10) : undefined;
+      return {
+        panel: { bookCode: defaultBookCode, chapter: defaultChapter ?? 1 },
+        verse,
+        verseEnd,
+        translationId,
+        rightTranslationId
+      };
+    }
+
+    // 2. Both chapter and verse: e.g. "4:5" or "4:5-8"
+    const cvPattern = /^(\d+)[\s:：]+(\d+)(?:\s*[-–~到至 ]\s*(\d+))?$/;
+    const cvMatch = reference.match(cvPattern);
+    if (cvMatch) {
+      const chapter = parseInt(cvMatch[1], 10);
+      const verse = parseInt(cvMatch[2], 10);
+      const verseEnd = cvMatch[3] ? parseInt(cvMatch[3], 10) : undefined;
       if (!isNaN(chapter)) {
         return {
           panel: { bookCode: defaultBookCode, chapter },
           verse,
           verseEnd,
+          translationId,
+          rightTranslationId
+        };
+      }
+    }
+
+    // 3. Number ending with a colon: e.g. "7:" or "7：" -> explicit chapter request
+    const chapterOnlyPattern = /^(\d+)[\s:：]+$/;
+    const chapterOnlyMatch = reference.match(chapterOnlyPattern);
+    if (chapterOnlyMatch) {
+      const chapter = parseInt(chapterOnlyMatch[1], 10);
+      if (!isNaN(chapter)) {
+        return {
+          panel: { bookCode: defaultBookCode, chapter },
+          verse: undefined,
+          verseEnd: undefined,
+          translationId,
+          rightTranslationId
+        };
+      }
+    }
+
+    // 4. Naked number or range without colon: e.g. "38" or "38-40"
+    // When a chapter is already established (e.g. from John 6:35), naked numbers are verses.
+    // Chapters are only rendered if the number ends with ":".
+    const nakedPattern = /^(\d+)(?:\s*[-–~到至 ]\s*(\d+))?$/;
+    const nakedMatch = reference.match(nakedPattern);
+    if (nakedMatch) {
+      const num1 = parseInt(nakedMatch[1], 10);
+      const num2 = nakedMatch[2] ? parseInt(nakedMatch[2], 10) : undefined;
+      if (!isNaN(num1)) {
+        if (defaultChapter !== undefined) {
+          return {
+            panel: { bookCode: defaultBookCode, chapter: defaultChapter },
+            verse: num1,
+            verseEnd: num2,
+            translationId,
+            rightTranslationId
+          };
+        }
+        return {
+          panel: { bookCode: defaultBookCode, chapter: num1 },
+          verse: undefined,
+          verseEnd: undefined,
           translationId,
           rightTranslationId
         };
@@ -269,16 +333,18 @@ export function parseSearchQuery(query: string): ParsedReference[] {
   const parts = trimmed.split(/[,;]+/);
   const references: ParsedReference[] = [];
   let currentBookCode: string | undefined;
+  let currentChapter: number | undefined;
 
   for (const part of parts) {
     const item = part.trim();
     if (!item) continue;
 
-    const ref = parseReference(item, currentBookCode);
+    const ref = parseReference(item, currentBookCode, currentChapter);
     if (ref) {
       if (!ref.translationId && globalTrans) ref.translationId = globalTrans;
       if (!ref.rightTranslationId && globalRightTrans) ref.rightTranslationId = globalRightTrans;
       currentBookCode = ref.panel.bookCode;
+      currentChapter = ref.panel.chapter;
       references.push(ref);
     }
   }

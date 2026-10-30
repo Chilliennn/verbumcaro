@@ -13,8 +13,11 @@ describe("LatinLookupPopover", () => {
         {
           surface: "principio",
           lemma: "principium",
+          isInflected: true,
+          inflection: "dative/ablative singular",
           pronunciation: "priːnˈkɪ.pi.oː",
           partOfSpeech: "noun",
+          principalParts: ["principium", "principiī"],
           forms: ["ablative singular", "dative singular"],
           definitions: ["in the beginning, at first", "a beginning, origin"],
           examples: [
@@ -56,9 +59,14 @@ describe("LatinLookupPopover", () => {
     expect(onClose).toHaveBeenCalledTimes(1);
 
     await waitFor(() => {
-      expect(screen.getAllByText("principio").length).toBeGreaterThan(0);
+      // Header shows original word principium
+      expect(screen.getByText("principium")).toBeDefined();
       expect(screen.getByText(/priːnˈkɪ.pi.oː/)).toBeDefined();
+      // Form displays surface form principio and inflection details
+      expect(screen.getAllByText("principio").length).toBeGreaterThan(0);
+      expect(screen.getByText(/dative\/ablative singular/i)).toBeDefined();
       expect(screen.getByText(/in the beginning, at first/i)).toBeDefined();
+      expect(screen.getByText(/principium, principiī/i)).toBeDefined();
       expect(screen.getByText(/FreeDictionaryAPI \(Wiktionary\) \/ Latin WordNet/i)).toBeDefined();
     });
 

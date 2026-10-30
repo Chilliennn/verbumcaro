@@ -6,7 +6,8 @@ import { DEFAULT_READER_STATE } from "../../features/reader/readerStore";
 import type { Book, Translation } from "../../lib/bible/repository";
 
 const mockBooks: Book[] = [
-  { code: "GEN", name: "Genesis", testament: "OT", chapters: 50 }
+  { code: "GEN", name: "Genesis", testament: "OT", chapters: 50 },
+  { code: "JHN", name: "John", testament: "NT", chapters: 21 }
 ];
 
 const mockTranslations: Translation[] = [
@@ -31,8 +32,8 @@ const mockTranslations: Translation[] = [
 ];
 
 const mockAvailability: Record<string, string[]> = {
-  catholic_org: ["GEN"],
-  vulgate: ["GEN"]
+  catholic_org: ["GEN", "JHN"],
+  vulgate: ["GEN", "JHN"]
 };
 
 describe("useSearch panel rendering logic", () => {
@@ -88,6 +89,74 @@ describe("useSearch panel rendering logic", () => {
     expect(currentState.parallel).toBe(true);
     expect(currentState.left.translationId).toBe("vulgate"); // Left is lat
     expect(currentState.right.translationId).toBe("catholic_org"); // Right is eng
+  });
+
+  it("renders John 6:35 and John 6:38 passages for search 'John 6:35, 38'", async () => {
+    let currentState: ReaderState = { ...DEFAULT_READER_STATE };
+    const setReader = (action: React.SetStateAction<ReaderState>) => {
+      currentState = typeof action === "function" ? action(currentState) : action;
+    };
+
+    const { result } = renderHook(() =>
+      useSearch(currentState, setReader, mockAvailability, mockBooks, mockTranslations)
+    );
+
+    act(() => {
+      result.current.setSearch("John 6:35, 38");
+    });
+
+    let handled = false;
+    await act(async () => {
+      handled = await result.current.submitSearch();
+    });
+
+    expect(handled).toBe(true);
+    expect(currentState.left.passages).toBeDefined();
+    expect(currentState.left.passages).toHaveLength(2);
+    expect(currentState.left.passages![0]).toEqual({
+      bookCode: "JHN",
+      chapter: 6,
+      verseFilter: { start: 35, end: 35 }
+    });
+    expect(currentState.left.passages![1]).toEqual({
+      bookCode: "JHN",
+      chapter: 6,
+      verseFilter: { start: 38, end: 38 }
+    });
+  });
+
+  it("renders whole chapter when number ends with ':' in 'John 6:35, 7:'", async () => {
+    let currentState: ReaderState = { ...DEFAULT_READER_STATE };
+    const setReader = (action: React.SetStateAction<ReaderState>) => {
+      currentState = typeof action === "function" ? action(currentState) : action;
+    };
+
+    const { result } = renderHook(() =>
+      useSearch(currentState, setReader, mockAvailability, mockBooks, mockTranslations)
+    );
+
+    act(() => {
+      result.current.setSearch("John 6:35, 7:");
+    });
+
+    let handled = false;
+    await act(async () => {
+      handled = await result.current.submitSearch();
+    });
+
+    expect(handled).toBe(true);
+    expect(currentState.left.passages).toBeDefined();
+    expect(currentState.left.passages).toHaveLength(2);
+    expect(currentState.left.passages![0]).toEqual({
+      bookCode: "JHN",
+      chapter: 6,
+      verseFilter: { start: 35, end: 35 }
+    });
+    expect(currentState.left.passages![1]).toEqual({
+      bookCode: "JHN",
+      chapter: 7,
+      verseFilter: undefined
+    });
   });
 });
 
