@@ -113,6 +113,126 @@ export default defineConfig({
             response.end(JSON.stringify({ error: String(err) }));
           });
         });
+
+        server.middlewares.use("/verbumnobis/__freedictionary", (request, response) => {
+          const url = new URL(request.url ?? "", "http://localhost");
+          const word = url.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const proxyReq = https.get(
+            `https://freedictionaryapi.com/api/v1/entries/la/${encodeURIComponent(word)}`,
+            {
+              family: 4,
+              headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+              }
+            },
+            (proxyRes) => {
+              response.statusCode = proxyRes.statusCode ?? 200;
+              response.setHeader("Content-Type", "application/json");
+              response.setHeader("Access-Control-Allow-Origin", "*");
+              proxyRes.pipe(response);
+            }
+          );
+
+          proxyReq.on("error", (err) => {
+            console.error("[LatinLookup] FreeDictionary proxy error:", err);
+            response.statusCode = 502;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ error: String(err) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__latinwordnet", (request, response) => {
+          const url = new URL(request.url ?? "", "http://localhost");
+          const lemma = url.searchParams.get("lemma") ?? "";
+          if (!lemma) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing lemma" }));
+            return;
+          }
+
+          const proxyReq = https.get(
+            `https://latinwordnet.exeter.ac.uk/api/lemmas/${encodeURIComponent(lemma)}/`,
+            {
+              family: 4,
+              headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+              }
+            },
+            (proxyRes) => {
+              response.statusCode = proxyRes.statusCode ?? 200;
+              response.setHeader("Content-Type", "application/json");
+              response.setHeader("Access-Control-Allow-Origin", "*");
+              proxyRes.pipe(response);
+            }
+          );
+
+          proxyReq.on("error", (err) => {
+            console.error("[LatinLookup] LatinWordNet proxy error:", err);
+            response.statusCode = 502;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ error: String(err) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__tatoeba_lat", (request, response) => {
+          const requestUrl = new URL(request.url ?? "", "http://localhost");
+          const word = requestUrl.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const target = new URL("https://api.tatoeba.org/v1/sentences");
+          target.searchParams.set("lang", "lat");
+          target.searchParams.set("q", word);
+          target.searchParams.set("trans:lang", "eng");
+          target.searchParams.set("showtrans:lang", "eng");
+          target.searchParams.set("trans:is_direct", "yes");
+          target.searchParams.set("trans:is_orphan", "no");
+          target.searchParams.set("sort", "relevance");
+          target.searchParams.set("limit", "3");
+
+          const proxyReq = https.get(target, { family: 4, headers: { "User-Agent": "VerbumNobis/0.1" } }, (proxyRes) => {
+            response.statusCode = proxyRes.statusCode ?? 200;
+            response.setHeader("Content-Type", "application/json");
+            response.setHeader("Access-Control-Allow-Origin", "*");
+            proxyRes.pipe(response);
+          });
+          proxyReq.on("error", (error) => {
+            console.error("[LatinLookup] Tatoeba Latin proxy error:", error);
+            response.statusCode = 502;
+            response.end(JSON.stringify({ error: String(error) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__latin-debug", (request, response, next) => {
+          if (request.method !== "POST") {
+            next();
+            return;
+          }
+
+          let body = "";
+          request.on("data", (chunk) => {
+            body += chunk;
+          });
+          request.on("end", () => {
+            try {
+              const event = JSON.parse(body) as { message?: string; details?: unknown; timestamp?: string };
+              console.log(`[LatinLookup ${event.timestamp ?? ""}] ${event.message ?? "event"}`, event.details ?? "");
+            } catch {
+              console.log("[LatinLookup] Received malformed debug event", body);
+            }
+            response.statusCode = 204;
+            response.end();
+          });
+        });
       }
     }
   ],

@@ -1156,7 +1156,8 @@ button {
   place-items: center;
 }
 
-.japanese-lookup {
+.japanese-lookup,
+.latin-lookup {
   position: fixed;
   z-index: 210;
   width: min(360px, calc(100vw - 24px));
@@ -1173,14 +1174,16 @@ button {
 }
 
 @media (max-width: 600px) {
-  .japanese-lookup {
+  .japanese-lookup,
+  .latin-lookup {
     top: 12px !important;
     bottom: 12px;
     max-height: none;
   }
 }
 
-.japanese-lookup-content {
+.japanese-lookup-content,
+.latin-lookup-content {
   overflow-y: auto;
   overscroll-behavior: contain;
   scroll-padding-bottom: 28px;
@@ -1189,7 +1192,8 @@ button {
   min-height: 0;
 }
 
-.japanese-lookup-close {
+.japanese-lookup-close,
+.latin-lookup-close {
   position: absolute;
   top: 4px;
   right: 4px;
@@ -1209,21 +1213,25 @@ button {
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.japanese-lookup-close:hover {
+.japanese-lookup-close:hover,
+.latin-lookup-close:hover {
   color: var(--brand-800);
   background: var(--brand-50);
 }
 
-:root[data-theme="dark"] .japanese-lookup-close {
+:root[data-theme="dark"] .japanese-lookup-close,
+:root[data-theme="dark"] .latin-lookup-close {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-:root[data-theme="dark"] .japanese-lookup-close:hover {
+:root[data-theme="dark"] .japanese-lookup-close:hover,
+:root[data-theme="dark"] .latin-lookup-close:hover {
   color: #fff;
   background: var(--stone-100);
 }
 
-.japanese-lookup-selection {
+.japanese-lookup-selection,
+.latin-lookup-selection {
   padding-right: 28px;
   font-size: 20px;
   font-weight: 700;
@@ -1235,14 +1243,16 @@ button {
   font-size: 14px;
 }
 
-.japanese-word {
+.japanese-word,
+.latin-word {
   padding: 11px 0;
   border-top: 1px solid var(--stone-200);
   font-size: 14px;
   line-height: 1.45;
 }
 
-.japanese-word-heading {
+.japanese-word-heading,
+.latin-word-heading {
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -1252,16 +1262,22 @@ button {
 .japanese-word-heading span,
 .japanese-word-reading,
 .japanese-lookup-status,
-.japanese-lookup-attribution {
+.japanese-lookup-attribution,
+.latin-word-heading span,
+.latin-word-reading,
+.latin-lookup-status,
+.latin-lookup-attribution {
   color: var(--stone-500);
 }
 
-.japanese-word-reading {
+.japanese-word-reading,
+.latin-word-reading {
   margin: 2px 0 5px;
   font-size: 12px;
 }
 
-.japanese-example-toggle {
+.japanese-example-toggle,
+.latin-example-toggle {
   margin-top: 7px;
   padding: 0;
   border: 0;
@@ -1269,27 +1285,72 @@ button {
   color: var(--brand-800);
   font-size: 12px;
   font-weight: 700;
+  cursor: pointer;
 }
 
-.japanese-examples {
+.japanese-examples,
+.latin-examples {
   margin-top: 7px;
   padding-left: 10px;
   border-left: 2px solid var(--brand-100);
   font-size: 13px;
 }
 
-.japanese-examples p {
+.japanese-examples p,
+.latin-examples p {
   margin: 6px 0;
 }
 
-.japanese-examples span {
+.japanese-examples span,
+.latin-examples span {
   font-family: Georgia, Cambria, "Times New Roman", serif;
 }
 
-.japanese-lookup-attribution {
+.japanese-lookup-attribution,
+.latin-lookup-attribution {
   display: block;
   margin-top: 12px;
   font-size: 10px;
+}
+
+.latin-definition-list {
+  margin: 4px 0 6px;
+  padding-left: 18px;
+}
+
+.latin-definition-list li {
+  margin-bottom: 2px;
+}
+
+.latin-word-pronunciation {
+  color: var(--stone-500);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.latin-word-lemma {
+  color: var(--brand-800);
+  font-size: 13px;
+}
+
+.latin-word-no-def {
+  color: var(--stone-500);
+  margin: 4px 0;
+}
+
+.latin-example-quote {
+  font-style: italic;
+}
+
+.latin-example-ref {
+  color: var(--stone-500);
+  font-size: 11px;
+}
+
+.latin-example-trans {
+  color: var(--stone-600);
+  font-size: 12px;
 }
 
 .font-modal-backdrop {

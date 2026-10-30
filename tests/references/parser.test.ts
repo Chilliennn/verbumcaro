@@ -79,7 +79,22 @@ describe("extractLanguageModifiers", () => {
 
   it("handles multiple tags", () => {
     const result = extractLanguageModifiers("John 3:16 @sigao @catholic");
+    expect(result.translationId).toBe("sigao");
+    expect(result.rightTranslationId).toBe("catholic_org");
+  });
+
+  it("extracts parallel translations in correct left-to-right order with slash syntax", () => {
+    const result = extractLanguageModifiers("gen 1 /eng lat");
+    expect(result.reference).toBe("gen 1");
     expect(result.translationId).toBe("catholic_org");
+    expect(result.rightTranslationId).toBe("vulgate");
+  });
+
+  it("extracts parallel translations when order is reversed", () => {
+    const result = extractLanguageModifiers("gen 1 /lat eng");
+    expect(result.reference).toBe("gen 1");
+    expect(result.translationId).toBe("vulgate");
+    expect(result.rightTranslationId).toBe("catholic_org");
   });
 });
 
@@ -143,6 +158,14 @@ describe("parseReference", () => {
     expect(result?.translationId).toBe("sigao");
   });
 
+  it("handles parallel translation tags with correct panel mapping", () => {
+    const result = parseReference("gen 1 /eng lat");
+    expect(result?.panel.bookCode).toBe("GEN");
+    expect(result?.panel.chapter).toBe(1);
+    expect(result?.translationId).toBe("catholic_org");
+    expect(result?.rightTranslationId).toBe("vulgate");
+  });
+
   it("defaults to chapter 1 for book-only queries", () => {
     const result = parseReference("John");
     expect(result?.panel.chapter).toBe(1);
@@ -187,5 +210,14 @@ describe("parseSearchQuery", () => {
   it("handles empty parts gracefully", () => {
     const results = parseSearchQuery("John 3:16, , Romans 8:28");
     expect(results).toHaveLength(2);
+  });
+
+  it("handles parallel translation query preserving left and right panel translations", () => {
+    const results = parseSearchQuery("gen 1 /eng lat");
+    expect(results).toHaveLength(1);
+    expect(results[0].panel.bookCode).toBe("GEN");
+    expect(results[0].panel.chapter).toBe(1);
+    expect(results[0].translationId).toBe("catholic_org");
+    expect(results[0].rightTranslationId).toBe("vulgate");
   });
 });

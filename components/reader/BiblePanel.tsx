@@ -10,7 +10,9 @@ import { PassageSelector } from "./PassageSelector";
 import { TranslationSelector } from "./TranslationSelector";
 import { ChapterReader } from "./ChapterReader";
 import { JapaneseLookupPopover } from "./JapaneseLookupPopover";
+import { LatinLookupPopover } from "./LatinLookupPopover";
 import { japaneseDebug } from "../../features/japanese/debug";
+import { latinDebug } from "../../features/latin/debug";
 
 interface BiblePanelProps {
   panel: PanelState;
@@ -47,10 +49,12 @@ export function BiblePanel({
     ? getBookLanguageName(translation.language)
     : "en";
   const isJapanese = translation?.language === "ja";
+  const isLatin = translation?.language === "la";
 
   useEffect(() => {
     japaneseDebug("BiblePanel gate evaluated", { isJapanese, translation: translation?.id });
-    if (!isJapanese) {
+    latinDebug("BiblePanel gate evaluated", { isLatin, translation: translation?.id });
+    if (!isJapanese && !isLatin) {
       setSelectedText(null);
       return;
     }
@@ -67,24 +71,43 @@ export function BiblePanel({
         const selection = window.getSelection();
         const text = selection?.toString().trim() ?? "";
         const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
-        japaneseDebug("Mouse up event", {
-          text,
-          insideReader: Boolean(range && reader.contains(range.commonAncestorContainer)),
-          commonAncestor: range?.commonAncestorContainer.nodeName ?? null
-        });
+        if (isJapanese) {
+          japaneseDebug("Mouse up event", {
+            text,
+            insideReader: Boolean(range && reader.contains(range.commonAncestorContainer)),
+            commonAncestor: range?.commonAncestorContainer.nodeName ?? null
+          });
+        }
+        if (isLatin) {
+          latinDebug("Mouse up event", {
+            text,
+            insideReader: Boolean(range && reader.contains(range.commonAncestorContainer)),
+            commonAncestor: range?.commonAncestorContainer.nodeName ?? null
+          });
+        }
         if (!text || !range || !reader.contains(range.commonAncestorContainer)) {
-          japaneseDebug("Selection ignored", { reason: "empty or outside Japanese reader" });
+          if (isJapanese) {
+            japaneseDebug("Selection ignored", { reason: "empty or outside Japanese reader" });
+          }
+          if (isLatin) {
+            latinDebug("Selection ignored", { reason: "empty or outside Latin reader" });
+          }
           return;
         }
         const rect = range.getBoundingClientRect();
-        japaneseDebug("Selection accepted", { text, top: rect.bottom, left: rect.left });
+        if (isJapanese) {
+          japaneseDebug("Selection accepted", { text, top: rect.bottom, left: rect.left });
+        }
+        if (isLatin) {
+          latinDebug("Selection accepted", { text, top: rect.bottom, left: rect.left });
+        }
         setSelectedText({ text, top: rect.bottom, left: rect.left });
       }, 0);
     }
 
     document.addEventListener("mouseup", handleMouseUp);
     return () => document.removeEventListener("mouseup", handleMouseUp);
-  }, [isJapanese]);
+  }, [isJapanese, isLatin]);
 
   useEffect(() => {
     let cancelled = false;
@@ -223,6 +246,16 @@ export function BiblePanel({
       )}
       {isJapanese && selectedText && (
         <JapaneseLookupPopover
+          text={selectedText.text}
+          anchor={selectedText}
+          onClose={() => {
+            setSelectedText(null);
+            window.getSelection()?.removeAllRanges();
+          }}
+        />
+      )}
+      {isLatin && selectedText && (
+        <LatinLookupPopover
           text={selectedText.text}
           anchor={selectedText}
           onClose={() => {
