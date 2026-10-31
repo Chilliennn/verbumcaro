@@ -1,0 +1,174 @@
+{
+  "count": 12,
+  "questions": [
+    {
+      "id": "c1",
+      "category": "Sacraments & Dogma",
+      "question": "What is the dogmatic term for the change of the entire substance of bread and wine into the Body and Blood of Christ at the Consecration?",
+      "options": [
+        "Consubstantiation",
+        "Transubstantiation",
+        "Hypostatic Union",
+        "Symbolic Representation"
+      ],
+      "correctIndex": 1,
+      "citation": "Catechism of the Catholic Church (CCC 1376)",
+      "explanation": "Transubstantiation affirms that the entire substance of bread and wine becomes the Body, Blood, Soul, and Divinity of Christ, while the accidents (sensory appearances) remain."
+    },
+    {
+      "id": "c2",
+      "category": "Liturgical Seasons",
+      "question": "What liturgical color is worn by priests during the penitential seasons of Advent and Lent?",
+      "options": [
+        "Red (Rubens)",
+        "Green (Viridis)",
+        "Violet / Purple (Violaceus)",
+        "Rose (Rosaceus)"
+      ],
+      "correctIndex": 2,
+      "citation": "General Instruction of the Roman Missal (GIRM 346d)",
+      "explanation": "Violet symbolizes repentance, preparation, and spiritual expectation during Advent and Lent. Rose is reserved solely for Gaudete and Laetare Sundays."
+    },
+    {
+      "id": "c3",
+      "category": "Marian Dogmas",
+      "question": "Which Pope solemnly proclaimed the dogma of the Immaculate Conception in 1854 with the Apostolic Constitution 'Ineffabilis Deus'?",
+      "options": [
+        "Pope Leo XIII",
+        "Pope Pius IX",
+        "Pope Pius XII",
+        "Pope Gregory XVI"
+      ],
+      "correctIndex": 1,
+      "citation": "Ineffabilis Deus (1854) / CCC 491",
+      "explanation": "Blessed Pope Pius IX defined that the Blessed Virgin Mary was preserved exempt from all stain of original sin from the first instant of her conception."
+    },
+    {
+      "id": "c4",
+      "category": "Church Authority",
+      "question": "What term denotes the living teaching office and authority of the Catholic Church, held by the Pope and bishops in communion with him?",
+      "options": [
+        "The Roman Curia",
+        "The Magisterium",
+        "The College of Cardinals",
+        "The Sacred Synod"
+      ],
+      "correctIndex": 1,
+      "citation": "Dei Verbum 10 / CCC 85-87",
+      "explanation": "The Magisterium is charged with authentically interpreting the Word of God, whether written in Sacred Scripture or handed on through Sacred Tradition."
+    },
+    {
+      "id": "c5",
+      "category": "Theological Virtues",
+      "question": "According to Catholic moral theology and St. Paul (1 Cor 13:13), what are the three Theological Virtues infused by divine grace?",
+      "options": [
+        "Prudence, Justice, and Fortitude",
+        "Faith, Hope, and Charity (Love)",
+        "Humility, Chastity, and Obedience",
+        "Patience, Kindness, and Temperance"
+      ],
+      "correctIndex": 1,
+      "citation": "1 Corinthians 13:13 / CCC 1812-1813",
+      "explanation": "Theological virtues are infused directly by God into the soul: Faith, Hope, and Charity. The four cardinal virtues are Prudence, Justice, Fortitude, and Temperance."
+    },
+    {
+      "id": "c6",
+      "category": "Saints & Devotions",
+      "question": "Which Franciscan Doctor of the Church is traditionally invoked as the patron saint for the recovery of lost articles?",
+      "options": [
+        "St. Anthony of Padua",
+        "St. Jude Thaddaeus",
+        "St. Francis of Assisi",
+        "St. Padre Pio of Pietrelcina"
+      ],
+      "correctIndex": 0,
+      "citation": "Catholic Devotional Tradition",
+      "explanation": "St. Anthony of Padua is the patron saint of lost things. St. Jude Thaddaeus is invoked for desperate and impossible causes."
+    },
+    {
+      "id": "c7",
+      "category": "Holy Orders & Hierarchy",
+      "question": "What are the three degrees of the Sacrament of Holy Orders instituted by Christ in the Church?",
+      "options": [
+        "Subdeacon, Deacon, Priest",
+        "Deacon, Priest (Presbyter), Bishop (Episcopate)",
+        "Monk, Abbot, Bishop",
+        "Acolyte, Priest, Cardinal"
+      ],
+      "correctIndex": 1,
+      "citation": "CCC 1554 / Lumen Gentium 28",
+      "explanation": "Catholic doctrine teaches that the three degrees of ordained ministry established by Christ are the episcopate (bishops), presbyterate (priests), and diaconate (deacons)."
+    },
+    {
+      "id": "c8",
+      "category": "Ecumenical Councils",
+      "question": "Which 16th-century Ecumenical Council was convened to respond to the Protestant Reformation and reaffirm Catholic doctrine and the Latin Vulgate?",
+      "options": [
+        "Council of Nicaea",
+        "Council of Trent",
+        "First Vatican Council",
+        "Council of Constance"
+      ],
+      "correctIndex": 1,
+      "citation": "Council of Trent (1545–1563)",
+      "explanation": "The Council of Trent definitively reaffirmed the 73-book Catholic biblical canon, the seven sacraments, and the authoritative standing of the Latin Vulgate."
+    },
+    {
+      "id": "c9",
+      "category": "Sacraments of Initiation",
+      "question": "Which three sacraments together constitute the Sacraments of Christian Initiation in the Catholic Church?",
+      "options": [
+        "Baptism, Confirmation, Holy Eucharist",
+        "Baptism, Penance, Holy Eucharist",
+        "Baptism, Confirmation, Matrimony",
+        "Confirmation, Holy Eucharist, Holy Orders"
+      ],
+      "correctIndex": 0,
+      "citation": "Catechism of the Catholic Church (CCC 1212)",
+      "explanation": "Christian initiation is accomplished through Baptism (new birth in Christ), Confirmation (strengthening with the Holy Spirit), and Holy Eucharist (spiritual food of eternal life)."
+    },
+    {
+      "id": "c10",
+      "category": "Liturgy & Mass",
+      "question": "What ancient Greek prayer of petition remains untranslated in the Ordinary of the Roman Rite Mass?",
+      "options": [
+        "Agnus Dei",
+        "Sanctus",
+        "Kyrie eleison",
+        "Gloria in excelsis Deo"
+      ],
+      "correctIndex": 2,
+      "citation": "General Instruction of the Roman Missal (GIRM 52)",
+      "explanation": "'Kyrie eleison, Christe eleison' ('Lord, have mercy, Christ, have mercy') preserves the ancient Greek linguistic heritage of the early Church in the Roman Rite."
+    },
+    {
+      "id": "c11",
+      "category": "Creeds of Faith",
+      "question": "Which Ecumenical Council in 325 AD formulated the first portion of the Nicene Creed, affirming Christ as 'consubstantial' with the Father?",
+      "options": [
+        "Council of Nicaea I",
+        "Council of Constantinople I",
+        "Council of Ephesus",
+        "Council of Chalcedon"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 242, 465",
+      "explanation": "The First Council of Nicaea (325 AD) defended the full divinity of the Son against the Arian heresy using the Greek term 'homoousios' (Latin: consubstantialem)."
+    },
+    {
+      "id": "c12",
+      "category": "Marks of the Church",
+      "question": "Recited in the Nicene Creed, what are the Four Marks (essential characteristics) of the Catholic Church?",
+      "options": [
+        "Ancient, Apostolic, Traditional, Holy",
+        "One, Holy, Catholic, and Apostolic",
+        "Roman, Universal, Apostolic, Eternal",
+        "Faithful, Sacramental, One, True"
+      ],
+      "correctIndex": 1,
+      "citation": "Nicene Creed / CCC 811",
+      "explanation": "'Credo in unam, sanctam, catholicam et apostolicam Ecclesiam' — One, Holy, Catholic, and Apostolic."
+    }
+  ]
+}
+

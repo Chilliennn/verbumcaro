@@ -1,0 +1,174 @@
+{
+  "count": 12,
+  "questions": [
+    {
+      "id": "b1",
+      "category": "Gospels & Logos",
+      "question": "Which Gospel opens with the foundational declaration: 'In the beginning was the Word, and the Word was with God, and the Word was God'?",
+      "options": [
+        "Gospel according to Matthew",
+        "Gospel according to Mark",
+        "Gospel according to Luke",
+        "Gospel according to John"
+      ],
+      "correctIndex": 3,
+      "citation": "John 1:1 (Vulgate: In principio erat Verbum)",
+      "explanation": "St. John's prologue presents Christ as the eternal Logos ('Verbum') through whom all creation was made, inspiring the name Verbum Caro."
+    },
+    {
+      "id": "b2",
+      "category": "Canon & Deuterocanon",
+      "question": "How many canonical books are included in the Catholic Old Testament, including the deuterocanonical books?",
+      "options": [
+        "39 books",
+        "46 books",
+        "66 books",
+        "73 books"
+      ],
+      "correctIndex": 1,
+      "citation": "Council of Trent (1546), CCC 120",
+      "explanation": "The Catholic Old Testament contains 46 books, preserving the 7 deuterocanonical books (Tobit, Judith, 1 & 2 Maccabees, Wisdom, Sirach, Baruch) from the ancient Septuagint."
+    },
+    {
+      "id": "b3",
+      "category": "New Testament Epistles",
+      "question": "Which Epistle emphasizes the unity of faith and action with the verse: 'So faith also, if it have not works, is dead in itself'?",
+      "options": [
+        "Epistle of St. James",
+        "Epistle to the Galatians",
+        "First Epistle to the Corinthians",
+        "Epistle to the Hebrews"
+      ],
+      "correctIndex": 0,
+      "citation": "James 2:17 (Vulgate: sic et fides, si non habeat opera, mortua est in semetipsa)",
+      "explanation": "St. James teaches that genuine Christian faith is not merely intellectual assent, but actively lives out charity through righteous works."
+    },
+    {
+      "id": "b4",
+      "category": "Infancy Narratives",
+      "question": "Who was the devout elder in Jerusalem who took the infant Christ into his arms in the Temple and praised God with the 'Nunc Dimittis'?",
+      "options": [
+        "Nicodemus",
+        "Simeon",
+        "Zechariah",
+        "Joseph of Arimathea"
+      ],
+      "correctIndex": 1,
+      "citation": "Luke 2:25-32",
+      "explanation": "Simeon had been promised by the Holy Spirit that he would not see death before he had seen the Lord's Messiah: 'Now dismiss thy servant, O Lord, according to thy word in peace.'"
+    },
+    {
+      "id": "b5",
+      "category": "Messianic Prophecy",
+      "question": "Which prophet spoke the famous oracle: 'Behold, a virgin shall conceive, and bear a son, and his name shall be called Emmanuel'?",
+      "options": [
+        "Jeremiah",
+        "Ezekiel",
+        "Isaiah",
+        "Micah"
+      ],
+      "correctIndex": 2,
+      "citation": "Isaiah 7:14 / Matthew 1:23",
+      "explanation": "The prophet Isaiah delivered this sign to the House of David, fulfilled in the Virgin Mary and the Incarnation of Jesus Christ."
+    },
+    {
+      "id": "b6",
+      "category": "Pentateuch & Covenant",
+      "question": "On which holy mountain did Moses receive the Tablets of the Ten Commandments from God?",
+      "options": [
+        "Mount Tabor",
+        "Mount Sinai (Horeb)",
+        "Mount Carmel",
+        "Mount of Olives"
+      ],
+      "correctIndex": 1,
+      "citation": "Exodus 19-20; 31:18",
+      "explanation": "God made His covenant with the Israelites and handed down the Decalogue to Moses atop Mount Sinai."
+    },
+    {
+      "id": "b7",
+      "category": "The Psalms",
+      "question": "Which Psalm begins with the beloved verse: 'The Lord is my shepherd: and nothing shall be wanting to me'?",
+      "options": [
+        "Psalm 22 (23)",
+        "Psalm 50 (51) - Miserere",
+        "Psalm 90 (91)",
+        "Psalm 129 (130) - De Profundis"
+      ],
+      "correctIndex": 0,
+      "citation": "Psalm 22 in Vulgate / Psalm 23 in Hebrew numbering",
+      "explanation": "The pastoral Psalm of David expresses complete filial trust in God's providential care and guidance."
+    },
+    {
+      "id": "b8",
+      "category": "Passion & Resurrection",
+      "question": "In which garden did Jesus endure His agony in prayer the night before His crucifixion?",
+      "options": [
+        "Garden of Eden",
+        "Garden of Gethsemane",
+        "Pool of Siloam",
+        "Valley of Kidron"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 26:36; Mark 14:32",
+      "explanation": "At Gethsemane on the Mount of Olives, Jesus prayed: 'My Father, if it be possible, let this chalice pass from me. Nevertheless not as I will, but as thou wilt.'"
+    },
+    {
+      "id": "b9",
+      "category": "Acts & Early Church",
+      "question": "On which feast day was the Holy Spirit poured out upon the Apostles in tongues as of fire?",
+      "options": [
+        "Passover",
+        "Pentecost",
+        "Feast of Tabernacles",
+        "Yom Kippur"
+      ],
+      "correctIndex": 1,
+      "citation": "Acts 2:1-4",
+      "explanation": "Fifty days after the Resurrection, on the Jewish feast of Pentecost (Shavuot), the Holy Spirit descended, marking the birth of the Church."
+    },
+    {
+      "id": "b10",
+      "category": "Vulgate & Scripture",
+      "question": "Which early Church Father translated the Hebrew and Greek scriptures into Latin, producing the authoritative Latin Vulgate?",
+      "options": [
+        "St. Augustine of Hippo",
+        "St. Jerome",
+        "St. Ambrose of Milan",
+        "St. Gregory the Great"
+      ],
+      "correctIndex": 1,
+      "citation": "Catholic Church History / Council of Trent",
+      "explanation": "Commissioned by Pope Damasus I in 382 AD, St. Jerome spent decades in Bethlehem translating the Sacred Scriptures into Latin."
+    },
+    {
+      "id": "b11",
+      "category": "Parables of Christ",
+      "question": "In the Parable of the Good Samaritan (Luke 10), who was the first person to pass by the wounded traveler without assisting?",
+      "options": [
+        "A Levite",
+        "A Priest",
+        "A Roman Centurion",
+        "A Pharisee"
+      ],
+      "correctIndex": 1,
+      "citation": "Luke 10:31-32",
+      "explanation": "A priest went down the same way and, seeing him, passed by; then a Levite similarly passed by before the Samaritan showed mercy."
+    },
+    {
+      "id": "b12",
+      "category": "Wisdom Literature",
+      "question": "Which book of Wisdom begins with the famous passage: 'All things have their season, and in their times all things pass under heaven' ('A time to be born, and a time to die')?",
+      "options": [
+        "Proverbs",
+        "Ecclesiastes (Qoheleth)",
+        "Song of Songs",
+        "Book of Wisdom"
+      ],
+      "correctIndex": 1,
+      "citation": "Ecclesiastes 3:1-2 (Vulgate: Omnia tempus habent)",
+      "explanation": "Written by Qoheleth, Ecclesiastes reflects on the seasons of human mortality and the sovereignty of God over time."
+    }
+  ]
+}
+
