@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AppSelect } from "../ui/Select";
 
 interface HubModalProps {
   isOpen: boolean;
@@ -311,11 +312,17 @@ export function HubModal({ isOpen, onClose }: HubModalProps) {
 
               <div className="input-group">
                 <label>MODEL PROVIDER</label>
-                <select value={provider} onChange={(e) => setProvider(e.target.value)}>
-                  <option value="openai">OpenAI (GPT-4o)</option>
-                  <option value="anthropic">Anthropic (Claude 3.5 Sonnet)</option>
-                  <option value="gemini">Google Gemini (Gemini 1.5 Pro)</option>
-                </select>
+                <AppSelect
+                  aria-label="Model Provider"
+                  selectedKey={provider}
+                  onSelectionChange={(key) => setProvider(key)}
+                  options={[
+                    { id: "openai", name: "OpenAI (GPT-4o)" },
+                    { id: "anthropic", name: "Anthropic (Claude 3.5 Sonnet)" },
+                    { id: "gemini", name: "Google Gemini (Gemini 1.5 Pro)" }
+                  ]}
+                  buttonClassName="hub-modal-select-btn"
+                />
               </div>
 
               <div className="input-group">

@@ -124,7 +124,7 @@ describe("Responsive UI Architecture", () => {
     const selector = screen.getByRole("button", { name: /select translation/i });
     fireEvent.click(selector);
 
-    const sigaoOption = screen.getByText("Sigao Chinese");
+    const sigaoOption = screen.getByRole("option", { name: "Sigao Chinese" });
     fireEvent.click(sigaoOption);
     expect(onChange).toHaveBeenCalledWith("sigao");
   });

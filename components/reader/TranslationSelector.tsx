@@ -1,4 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import {
+  Select,
+  Button,
+  SelectValue,
+  Popover,
+  ListBox,
+  ListBoxItem,
+  type Key
+} from "react-aria-components";
 import type { Translation } from "../../lib/bible/repository";
 
 interface TranslationSelectorProps {
@@ -12,87 +20,62 @@ export function TranslationSelector({
   translations,
   onChange
 }: TranslationSelectorProps) {
-  const [open, setOpen] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
   const selected = translations.find((item) => item.id === value);
 
-  useEffect(() => {
-    if (!open) {
-      return;
-    }
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    }
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [open]);
-
   return (
-    <div ref={wrapperRef} className="version-selector-wrap">
-      <button
-        className="version-selector"
-        onClick={() => setOpen((value) => !value)}
-        type="button"
-        aria-expanded={open}
+    <div className="version-selector-wrap">
+      <Select
+        selectedKey={value}
+        onSelectionChange={(key: Key | null) => {
+          if (key !== null) {
+            onChange(String(key));
+          }
+        }}
         aria-label={`Select translation, currently ${selected?.name ?? "Select translation"}`}
+        className="version-aria-select"
       >
-        <span>{selected?.name ?? "Select translation"}</span>
-        <svg
-          className={`chevron ${open ? "open" : ""}`}
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.4"
-        >
-          <path d="m6 9 6 6 6-6" />
-        </svg>
-      </button>
-      {open && (
-        <div className="passage-menu">
-          <div className="picker-header">
-            <span className="picker-title">Select Translation</span>
-            <button
-              type="button"
-              className="picker-close"
-              onClick={() => setOpen(false)}
-              aria-label="Close translation selector"
+        {({ isOpen }) => (
+          <>
+            <Button
+              className="version-selector"
+              aria-label={`Select translation, currently ${selected?.name ?? "Select translation"}`}
             >
-              &times;
-            </button>
-          </div>
-          <div className="picker-grid translation-picker-grid">
-            {translations.map((translation) => (
-              <button
-                key={translation.id}
-                type="button"
-                className={`book-item ${translation.id === value ? "selected" : ""}`}
-                onClick={() => {
-                  onChange(translation.id);
-                  setOpen(false);
-                }}
+              <SelectValue className="version-selector-value">
+                {({ selectedText }) => selectedText || selected?.name || "Select translation"}
+              </SelectValue>
+              <svg
+                className={`chevron ${isOpen ? "open" : ""}`}
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                aria-hidden="true"
               >
-                {translation.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </Button>
+            <Popover className="version-selector-popover passage-menu-popover">
+              <div className="picker-header">
+                <span className="picker-title">Select Translation</span>
+              </div>
+              <ListBox className="picker-grid translation-picker-grid">
+                {translations.map((translation) => (
+                  <ListBoxItem
+                    key={translation.id}
+                    id={translation.id}
+                    textValue={translation.name}
+                    className={`book-item ${translation.id === value ? "selected" : ""}`}
+                  >
+                    {translation.name}
+                  </ListBoxItem>
+                ))}
+              </ListBox>
+            </Popover>
+          </>
+        )}
+      </Select>
     </div>
   );
 }

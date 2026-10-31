@@ -840,23 +840,29 @@ button {
   align-items: center;
 }
 
-.book-item:hover {
+.book-item:hover,
+.book-item[data-hovered="true"],
+.book-item[data-focused="true"] {
   background: var(--brand-50);
   color: var(--brand-800);
 }
 
-:root[data-theme="dark"] .book-item:hover {
+:root[data-theme="dark"] .book-item:hover,
+:root[data-theme="dark"] .book-item[data-hovered="true"],
+:root[data-theme="dark"] .book-item[data-focused="true"] {
   background: rgba(255, 255, 255, 0.05);
   color: #60a5fa;
 }
 
-.book-item.selected {
+.book-item.selected,
+.book-item[data-selected="true"] {
   color: var(--brand-800);
   font-weight: 650;
   background: var(--brand-50);
 }
 
-:root[data-theme="dark"] .book-item.selected {
+:root[data-theme="dark"] .book-item.selected,
+:root[data-theme="dark"] .book-item[data-selected="true"] {
   color: #60a5fa;
   background: rgba(255, 255, 255, 0.08);
 }
@@ -3330,6 +3336,236 @@ button {
 }
 
 /* ========================================================
+   REACT ARIA SELECT COMPONENTS & DROPDOWNS
+   ======================================================== */
+.app-aria-select {
+  position: relative;
+  display: inline-block;
+}
+
+.app-select-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--stone-500);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.app-select-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--stone-100);
+  color: var(--stone-800);
+  border: 1px solid var(--stone-300);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+:root[data-theme="dark"] .app-select-trigger {
+  background: var(--stone-50);
+  border-color: var(--stone-300);
+  color: var(--stone-800);
+}
+
+.app-select-trigger[data-hovered] {
+  border-color: var(--stone-400);
+}
+
+.app-select-trigger[data-focused],
+.app-select-trigger[data-focus-visible] {
+  border-color: var(--brand-700);
+  box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.2);
+}
+
+.app-select-value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  flex: 1;
+}
+
+.app-select-chevron {
+  color: var(--stone-500);
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.app-select-trigger[data-pressed] .app-select-chevron,
+.app-aria-select[data-open] .app-select-chevron {
+  transform: rotate(180deg);
+}
+
+.app-select-popover {
+  background: var(--white);
+  border: 1px solid var(--stone-200);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  min-width: var(--trigger-width, 180px);
+  max-width: min(380px, 92vw);
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 1050;
+  outline: none;
+  padding: 4px;
+  box-sizing: border-box;
+  animation: fadeIn 0.12s ease-out;
+}
+
+:root[data-theme="dark"] .app-select-popover {
+  background: var(--stone-100);
+  border-color: var(--stone-300);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+}
+
+.app-select-listbox {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.app-select-item {
+  padding: 7px 10px;
+  font-size: 13px;
+  color: var(--stone-800);
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: background 0.1s, color 0.1s;
+}
+
+.app-select-item[data-hovered],
+.app-select-item[data-focused] {
+  background: var(--brand-50);
+  color: var(--brand-800);
+}
+
+:root[data-theme="dark"] .app-select-item[data-hovered],
+:root[data-theme="dark"] .app-select-item[data-focused] {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.app-select-item[data-selected] {
+  font-weight: 700;
+  background: var(--brand-50);
+  color: var(--brand-800);
+}
+
+:root[data-theme="dark"] .app-select-item[data-selected] {
+  background: rgba(185, 28, 28, 0.25);
+  color: #fca5a5;
+}
+
+.app-select-item-name {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.app-select-item-secondary {
+  font-size: 11px;
+  color: var(--stone-500);
+}
+
+/* Specific Select variants */
+.popover-translation-select {
+  flex: 1;
+  max-width: 280px;
+}
+
+.popover-translation-select .app-select-trigger {
+  width: 100%;
+}
+
+.popover-parallel-select {
+  min-width: 160px;
+}
+
+.popover-parallel-select .app-select-trigger {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+/* HubModal custom trigger */
+.input-group .app-aria-select {
+  width: 100%;
+  display: block;
+}
+
+.hub-modal-select-btn {
+  width: 100%;
+  height: 40px;
+  background: var(--stone-100);
+  border: 1px solid var(--stone-200);
+  border-radius: 6px;
+  color: var(--stone-800);
+  padding: 0 12px;
+  font-size: 13px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+:root[data-theme="dark"] .hub-modal-select-btn {
+  background: var(--stone-50);
+  border-color: var(--stone-200);
+  color: var(--stone-800);
+}
+
+/* Reader Version Selector using React Aria */
+.version-aria-select {
+  width: 100%;
+  display: block;
+}
+
+.version-selector-popover {
+  background: var(--white);
+  border: 1px solid var(--stone-200);
+  border-radius: 10px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  max-height: min(560px, calc(100vh - 180px));
+  overflow-y: auto;
+  width: var(--trigger-width, 320px);
+  min-width: 280px;
+  outline: none;
+  animation: fadeIn 0.15s ease-out;
+}
+
+:root[data-theme="dark"] .version-selector-popover {
+  background: var(--white);
+  border-color: var(--stone-200);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55);
+}
+
+.version-selector-popover .translation-picker-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px 16px;
+  outline: none;
+}
+
+/* ========================================================
    MOBILE RESPONSIVE ADJUSTMENTS FOR CITATION POPOVER
    ======================================================== */
 @media (max-width: 600px) {
@@ -3375,6 +3611,22 @@ button {
     margin-right: 0;
     padding: 0 10px;
     font-size: 12px;
+  }
+
+  .version-selector-popover {
+    max-width: calc(100vw - 24px);
+    width: calc(100vw - 24px) !important;
+  }
+
+  .popover-translation-select,
+  .popover-parallel-select {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .popover-translation-select .app-select-trigger,
+  .popover-parallel-select .app-select-trigger {
+    width: 100%;
   }
 }
 

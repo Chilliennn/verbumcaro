@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { bibleRepository } from "../../lib/bible/staticRepository";
 import { translations } from "../../lib/data/translations";
 import { getBookName, getBookLanguageName } from "../../lib/data/book_names";
+import { AppSelect } from "../ui/Select";
 import type { Chapter } from "../../lib/bible/repository";
 
 export interface CitationTarget {
@@ -134,26 +135,24 @@ export function VerseCitationPopover({
         <div className="popover-body">
           {/* Translation Switcher */}
           <div className="popover-translation-bar">
-            <label className="translation-select-label" htmlFor="popover-translation-select">
+            <span className="translation-select-label">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="2" y1="12" x2="22" y2="12" />
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
               Translation:
-            </label>
-            <select
-              id="popover-translation-select"
-              className="custom-select"
-              value={selectedTranslation}
-              onChange={(e) => setSelectedTranslation(e.target.value)}
-            >
-              {translations.map((t) => (
-                <option key={t.id} value={t.id}>
-                  {t.name} ({t.languageName})
-                </option>
-              ))}
-            </select>
+            </span>
+            <AppSelect
+              aria-label="Select translation"
+              selectedKey={selectedTranslation}
+              onSelectionChange={(key) => setSelectedTranslation(key)}
+              options={translations.map((t) => ({
+                id: t.id,
+                name: `${t.name} (${t.languageName})`
+              }))}
+              className="popover-translation-select"
+            />
           </div>
 
           {/* Verse Preview */}
@@ -230,20 +229,18 @@ export function VerseCitationPopover({
           {/* Parallel translation selector */}
           <div className="popover-parallel-config">
             <span className="parallel-config-label">Parallel:</span>
-            <select
-              className="custom-select parallel-select"
-              value={rightTranslation}
-              onChange={(e) => setRightTranslation(e.target.value)}
-              aria-label="Parallel translation"
-            >
-              {translations
+            <AppSelect
+              aria-label="Select parallel translation"
+              selectedKey={rightTranslation}
+              onSelectionChange={(key) => setRightTranslation(key)}
+              options={translations
                 .filter((t) => t.id !== selectedTranslation)
-                .map((t) => (
-                  <option key={t.id} value={t.id}>
-                    {t.name}
-                  </option>
-                ))}
-            </select>
+                .map((t) => ({
+                  id: t.id,
+                  name: t.name
+                }))}
+              className="popover-parallel-select"
+            />
           </div>
 
           <div className="popover-action-buttons">
