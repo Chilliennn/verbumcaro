@@ -1,5 +1,5 @@
 {
-  "count": 12,
+  "count": 101,
   "questions": [
     {
       "id": "b1",
@@ -18,7 +18,7 @@
     {
       "id": "b2",
       "category": "Canon & Deuterocanon",
-      "question": "How many canonical books are included in the Catholic Old Testament, including the deuterocanonical books?",
+      "question": "How many canonical books are contained in the Catholic Old Testament, including the deuterocanonical texts?",
       "options": [
         "39 books",
         "46 books",
@@ -27,7 +27,7 @@
       ],
       "correctIndex": 1,
       "citation": "Council of Trent (1546), CCC 120",
-      "explanation": "The Catholic Old Testament contains 46 books, preserving the 7 deuterocanonical books (Tobit, Judith, 1 & 2 Maccabees, Wisdom, Sirach, Baruch) from the ancient Septuagint."
+      "explanation": "The Catholic Old Testament contains 46 books, preserving the 7 deuterocanonical books (Tobit, Judith, 1 & 2 Maccabees, Wisdom, Sirach, Baruch) from the Greek Septuagint."
     },
     {
       "id": "b3",
@@ -168,7 +168,1252 @@
       "correctIndex": 1,
       "citation": "Ecclesiastes 3:1-2 (Vulgate: Omnia tempus habent)",
       "explanation": "Written by Qoheleth, Ecclesiastes reflects on the seasons of human mortality and the sovereignty of God over time."
+    },
+    {
+      "id": "b13",
+      "category": "Creation & Origins",
+      "question": "What is the first book of the Holy Bible?",
+      "options": [
+        "Exodus",
+        "Genesis",
+        "Leviticus",
+        "Psalms"
+      ],
+      "correctIndex": 1,
+      "citation": "Genesis 1:1",
+      "explanation": "Genesis recounts the creation of the heavens and the earth, the fall of man, and the patriarchs of the covenant."
+    },
+    {
+      "id": "b14",
+      "category": "Creation & Origins",
+      "question": "Who were the first man and woman created by God according to the Book of Genesis?",
+      "options": [
+        "Abraham and Sarah",
+        "Moses and Zipporah",
+        "Adam and Eve",
+        "Isaac and Rebekah"
+      ],
+      "correctIndex": 2,
+      "citation": "Genesis 2:7, 21-23",
+      "explanation": "God formed Adam from the dust of the ground and breathed into him the breath of life, and created Eve as his suitable partner."
+    },
+    {
+      "id": "b15",
+      "category": "Patriarchs & Flood",
+      "question": "Whom did God command to build an ark of gopher wood to preserve his household and the living creatures from the deluge?",
+      "options": [
+        "Noah",
+        "Enoch",
+        "Methuselah",
+        "Melchizedek"
+      ],
+      "correctIndex": 0,
+      "citation": "Genesis 6:13-14",
+      "explanation": "Noah was found righteous in his generation and obeyed God in constructing the Ark."
+    },
+    {
+      "id": "b16",
+      "category": "Patriarchs & Flood",
+      "question": "How long did rain pour upon the earth during the great flood in the days of Noah?",
+      "options": [
+        "7 days and nights",
+        "40 days and nights",
+        "100 days and nights",
+        "3 months"
+      ],
+      "correctIndex": 1,
+      "citation": "Genesis 7:12",
+      "explanation": "Rain fell upon the earth forty days and forty nights, inaugurating the great flood."
+    },
+    {
+      "id": "b17",
+      "category": "Covenant Signs",
+      "question": "What celestial sign did God set in the clouds as a perpetual covenant that waters would never again destroy all flesh?",
+      "options": [
+        "A pillar of cloud",
+        "A radiant halo",
+        "The Rainbow",
+        "A shooting star"
+      ],
+      "correctIndex": 2,
+      "citation": "Genesis 9:13-16",
+      "explanation": "God stated: 'I will set my bow in the clouds, and it shall be the sign of a covenant between me, and between the earth.'"
+    },
+    {
+      "id": "b18",
+      "category": "Babel & Dispersion",
+      "question": "What city's inhabitants attempted to construct a tower reaching the heavens, resulting in the confusion of human speech?",
+      "options": [
+        "Babel",
+        "Nineveh",
+        "Ur of the Chaldees",
+        "Sodom"
+      ],
+      "correctIndex": 0,
+      "citation": "Genesis 11:1-9",
+      "explanation": "At the Tower of Babel, human pride sought to make a name for themselves, and the Lord confused their single language."
+    },
+    {
+      "id": "b19",
+      "category": "Patriarchs & Covenant",
+      "question": "Who answered God's call to leave his fatherland of Ur to become the father of a multitude of nations?",
+      "options": [
+        "Lot",
+        "Abraham",
+        "Nahor",
+        "Terah"
+      ],
+      "correctIndex": 1,
+      "citation": "Genesis 12:1-4; 17:5",
+      "explanation": "God promised Abraham that in him and his seed all the families of the earth would be blessed."
+    },
+    {
+      "id": "b20",
+      "category": "Sacrifice of Isaac",
+      "question": "Which beloved son did Abraham bind upon Mount Moriah in faithful obedience to God's testing?",
+      "options": [
+        "Ishmael",
+        "Isaac",
+        "Jacob",
+        "Esau"
+      ],
+      "correctIndex": 1,
+      "citation": "Genesis 22:1-14",
+      "explanation": "The Akedah (binding of Isaac) prefigures God the Father offering His only-begotten Son on Calvary."
+    },
+    {
+      "id": "b21",
+      "category": "Joseph in Egypt",
+      "question": "Which son of Jacob was stripped of his tunic of many colors, sold into Egyptian bondage, and later became viceroy of Egypt?",
+      "options": [
+        "Reuben",
+        "Judah",
+        "Joseph",
+        "Benjamin"
+      ],
+      "correctIndex": 2,
+      "citation": "Genesis 37:28; 41:40",
+      "explanation": "Joseph forgave his brothers, testifying: 'You thought evil against me: but God turned it into good.'"
+    },
+    {
+      "id": "b22",
+      "category": "Moses & Calling",
+      "question": "Out of what miraculous sign did the Lord speak to Moses on Mount Horeb, commanding him to deliver Israel?",
+      "options": [
+        "A cloud of incense",
+        "A burning bush that was not consumed",
+        "A roaring waterfall",
+        "A tablet of sapphire"
+      ],
+      "correctIndex": 1,
+      "citation": "Exodus 3:2-4",
+      "explanation": "The Angel of the Lord appeared in a flame of fire out of the midst of a bush that burned without being consumed."
+    },
+    {
+      "id": "b23",
+      "category": "The Exodus",
+      "question": "How many plagues did God send upon Egypt to compel Pharaoh to release the children of Israel?",
+      "options": [
+        "Seven",
+        "Ten",
+        "Twelve",
+        "Forty"
+      ],
+      "correctIndex": 1,
+      "citation": "Exodus 7–12",
+      "explanation": "The ten plagues culminated in the tenth plague on the firstborn, initiating the Passover."
+    },
+    {
+      "id": "b24",
+      "category": "The Exodus",
+      "question": "Which body of water did Moses part with his rod, allowing the Israelites to walk through on dry seabed?",
+      "options": [
+        "The River Jordan",
+        "The Sea of Galilee",
+        "The Red Sea",
+        "The Dead Sea"
+      ],
+      "correctIndex": 2,
+      "citation": "Exodus 14:21-22",
+      "explanation": "The Lord drove back the sea with a strong east wind all night, creating walls of water on their right and left."
+    },
+    {
+      "id": "b25",
+      "category": "Idolatry in Wilderness",
+      "question": "What molten idol did Aaron fashion at the demand of the Israelites while Moses was atop Sinai?",
+      "options": [
+        "A Golden Calf",
+        "A Bronze Serpent",
+        "A Silver Lion",
+        "A Golden Eagle"
+      ],
+      "correctIndex": 0,
+      "citation": "Exodus 32:4",
+      "explanation": "Aaron fashioned a molten calf, prompting Moses to shatter the stone tablets upon descending the mountain."
+    },
+    {
+      "id": "b26",
+      "category": "Conquest of Canaan",
+      "question": "Who succeeded Moses as commander of Israel and led the twelve tribes across the Jordan into the Promised Land?",
+      "options": [
+        "Caleb",
+        "Joshua",
+        "Phinehas",
+        "Eleazar"
+      ],
+      "correctIndex": 1,
+      "citation": "Joshua 1:1-3",
+      "explanation": "God charged Joshua: 'Be strong and of a good courage; be not afraid, neither be thou dismayed: for the Lord thy God is with thee.'"
+    },
+    {
+      "id": "b27",
+      "category": "Conquest of Canaan",
+      "question": "Which fortified Canaanite city had its walls collapse after the Israelites marched around it for seven days blowing ram's horns?",
+      "options": [
+        "Jericho",
+        "Ai",
+        "Gibeon",
+        "Hazor"
+      ],
+      "correctIndex": 0,
+      "citation": "Joshua 6:20",
+      "explanation": "On the seventh day, after seven circuits, the priests blew trumpets, the people shouted, and the walls fell flat."
+    },
+    {
+      "id": "b28",
+      "category": "Judges of Israel",
+      "question": "Which prophetess and judge of Israel sat under a palm tree in Ephraim and inspired Barak to overthrow Sisera?",
+      "options": [
+        "Ruth",
+        "Deborah",
+        "Jael",
+        "Hannah"
+      ],
+      "correctIndex": 1,
+      "citation": "Judges 4:4-9",
+      "explanation": "Deborah judged Israel at that time and accompanied the army of Mount Tabor to victory."
+    },
+    {
+      "id": "b29",
+      "category": "Judges of Israel",
+      "question": "Which judge of Israel possessed extraordinary supernatural strength bound to his consecrated Nazirite locks?",
+      "options": [
+        "Gideon",
+        "Jephthah",
+        "Samson",
+        "Othniel"
+      ],
+      "correctIndex": 2,
+      "citation": "Judges 13:5; 16:17",
+      "explanation": "Samson was consecrated to God as a Nazirite from the womb; no razor had ever touched his head."
+    },
+    {
+      "id": "b30",
+      "category": "Judges of Israel",
+      "question": "Who enticed Samson into revealing that his strength lay in his uncut hair, delivering him to the Philistines?",
+      "options": [
+        "Delilah",
+        "Jezebel",
+        "Athaliah",
+        "Michal"
+      ],
+      "correctIndex": 0,
+      "citation": "Judges 16:4-19",
+      "explanation": "Delilah coaxed Samson into confiding his secret and called a man to shave off the seven locks of his head."
+    },
+    {
+      "id": "b31",
+      "category": "Old Testament Figures",
+      "question": "Which Moabite widow demonstrated profound devotion to her mother-in-law Naomi, proclaiming: 'Thy people shall be my people, and thy God my God'?",
+      "options": [
+        "Orpah",
+        "Ruth",
+        "Tamar",
+        "Rahab"
+      ],
+      "correctIndex": 1,
+      "citation": "Ruth 1:16",
+      "explanation": "Ruth married Boaz in Bethlehem and became the great-grandmother of King David, included in Christ's genealogy."
+    },
+    {
+      "id": "b32",
+      "category": "Prophets & Samuel",
+      "question": "Which young boy ministering before the High Priest Eli in Shiloh responded to God's nighttime voice: 'Speak, Lord; for thy servant heareth'?",
+      "options": [
+        "Samuel",
+        "Nathan",
+        "David",
+        "Solomon"
+      ],
+      "correctIndex": 0,
+      "citation": "1 Samuel 3:9-10",
+      "explanation": "The Lord revealed Himself to Samuel in Shiloh, establishing him as an accredited prophet to all Israel."
+    },
+    {
+      "id": "b33",
+      "category": "Monarchy of Israel",
+      "question": "Who was anointed by Samuel as the very first earthly king over the united tribes of Israel?",
+      "options": [
+        "Saul of Benjamin",
+        "David of Judah",
+        "Solomon",
+        "Jeroboam"
+      ],
+      "correctIndex": 0,
+      "citation": "1 Samuel 10:1",
+      "explanation": "Samuel took a vial of oil and poured it upon Saul's head, anointing him as captain over the Lord's inheritance."
+    },
+    {
+      "id": "b34",
+      "category": "David & Goliath",
+      "question": "What Philistine giant from Gath did the young shepherd David strike down with a single sling stone?",
+      "options": [
+        "Og",
+        "Sihon",
+        "Goliath",
+        "Ishbibenob"
+      ],
+      "correctIndex": 2,
+      "citation": "1 Samuel 17:49-50",
+      "explanation": "David confronted Goliath in the name of the Lord of Hosts, striking his forehead with a smooth brook stone."
+    },
+    {
+      "id": "b35",
+      "category": "Monarchy of Israel",
+      "question": "Which king of Israel established Jerusalem as his royal capital, composed numerous Psalms, and received God's eternal covenant promise?",
+      "options": [
+        "King Saul",
+        "King David",
+        "King Solomon",
+        "King Hezekiah"
+      ],
+      "correctIndex": 1,
+      "citation": "2 Samuel 7:12-16",
+      "explanation": "God promised David that his royal throne would be established forever, fulfilled eternally in Jesus the Son of David."
+    },
+    {
+      "id": "b36",
+      "category": "Wisdom & Temple",
+      "question": "Which son of David was gifted with unparalleled divine wisdom and erected the first Temple of the Lord in Jerusalem?",
+      "options": [
+        "Solomon",
+        "Absalom",
+        "Adonijah",
+        "Rehoboam"
+      ],
+      "correctIndex": 0,
+      "citation": "1 Kings 3:12; 6:1",
+      "explanation": "King Solomon asked God for an understanding heart to judge the people, and constructed the magnificent Temple on Mount Moriah."
+    },
+    {
+      "id": "b37",
+      "category": "Elijah the Prophet",
+      "question": "Which prophet challenged 450 prophets of Baal to a contest of fire on Mount Carmel, calling down divine fire from heaven?",
+      "options": [
+        "Elisha",
+        "Elijah",
+        "Isaiah",
+        "Jeremiah"
+      ],
+      "correctIndex": 1,
+      "citation": "1 Kings 18:36-38",
+      "explanation": "The fire of the Lord fell, consuming Elijah's sacrifice, wood, stones, and water in the trench."
+    },
+    {
+      "id": "b38",
+      "category": "Elijah the Prophet",
+      "question": "How was the prophet Elijah bodily assumed into the heavens in the presence of his disciple Elisha?",
+      "options": [
+        "In an earthquake",
+        "In a whirlwind with a chariot and horses of fire",
+        "On an eagle's wings",
+        "In a pillar of smoke"
+      ],
+      "correctIndex": 1,
+      "citation": "2 Kings 2:11",
+      "explanation": "A chariot of fire and horses of fire parted them asunder, and Elijah went up by a whirlwind into heaven."
+    },
+    {
+      "id": "b39",
+      "category": "Elisha the Prophet",
+      "question": "Which Syrian military commander was cured of leprosy after Elisha told him to wash seven times in the Jordan River?",
+      "options": [
+        "Hazael",
+        "Naaman",
+        "Benhadad",
+        "Sennacherib"
+      ],
+      "correctIndex": 1,
+      "citation": "2 Kings 5:14",
+      "explanation": "Naaman dipped seven times in the Jordan, and his flesh was restored like that of a little child."
+    },
+    {
+      "id": "b40",
+      "category": "Babylonian Exile",
+      "question": "Which righteous Hebrew youth in Babylon interpreted Nebuchadnezzar's dreams and survived unhurt in a den of hungry lions?",
+      "options": [
+        "Daniel",
+        "Ezekiel",
+        "Ezra",
+        "Nehemiah"
+      ],
+      "correctIndex": 0,
+      "citation": "Daniel 6:22",
+      "explanation": "Daniel testified to King Darius: 'My God hath sent his angel, and hath shut up the mouths of the lions.'"
+    },
+    {
+      "id": "b41",
+      "category": "Babylonian Exile",
+      "question": "What were the Hebrew names of the three youths who were cast into the fiery furnace for refusing to worship the golden colossus?",
+      "options": [
+        "Shadrach, Meshach, and Abednego (Hananiah, Mishael, Azariah)",
+        "Shem, Ham, and Japheth",
+        "Peter, James, and John",
+        "Elihu, Eliphaz, and Zophar"
+      ],
+      "correctIndex": 0,
+      "citation": "Daniel 3:19-25",
+      "explanation": "King Nebuchadnezzar beheld a fourth figure walking with them unbound in the furnace, having the appearance of a son of God."
+    },
+    {
+      "id": "b42",
+      "category": "Minor Prophets",
+      "question": "Which reluctant prophet fled towards Tarshish on a ship, was swallowed by a great sea monster, and preached repentance to Nineveh?",
+      "options": [
+        "Jonah",
+        "Amos",
+        "Hosea",
+        "Micah"
+      ],
+      "correctIndex": 0,
+      "citation": "Jonah 1:17; 3:4",
+      "explanation": "Jesus cited the 'sign of Jonah'—three days and nights in the whale's belly—as a typology for His resurrection."
+    },
+    {
+      "id": "b43",
+      "category": "The Nativity",
+      "question": "In which Judean city of David was Jesus Christ born in a manger, as foretold by the prophet Micah?",
+      "options": [
+        "Nazareth",
+        "Jerusalem",
+        "Bethlehem",
+        "Capernaum"
+      ],
+      "correctIndex": 2,
+      "citation": "Micah 5:2 / Luke 2:4-7",
+      "explanation": "Joseph and Mary journeyed to Bethlehem Ephrathah, the ancestral city of David, where Mary gave birth to Jesus."
+    },
+    {
+      "id": "b44",
+      "category": "The Annunciation",
+      "question": "Which archangel was dispatched by God to Nazareth to announce the Incarnation to the Blessed Virgin Mary?",
+      "options": [
+        "St. Michael",
+        "St. Gabriel",
+        "St. Raphael",
+        "St. Uriel"
+      ],
+      "correctIndex": 1,
+      "citation": "Luke 1:26-28",
+      "explanation": "Gabriel greeted Mary: 'Hail, full of grace, the Lord is with thee: blessed art thou among women.'"
+    },
+    {
+      "id": "b45",
+      "category": "John the Baptist",
+      "question": "Who lived in the wilderness clothed in camel's hair, baptizing with water and heralding: 'Behold the Lamb of God'?",
+      "options": [
+        "Simon Peter",
+        "John the Baptist",
+        "Stephen the Deacon",
+        "Barnabas"
+      ],
+      "correctIndex": 1,
+      "citation": "John 1:29; Matthew 3:1-4",
+      "explanation": "John the Baptist was the voice crying in the wilderness to prepare the way of the Lord."
+    },
+    {
+      "id": "b46",
+      "category": "Miracles of Christ",
+      "question": "At which Galilean wedding feast did Jesus perform His first public miracle at the intercession of His Mother?",
+      "options": [
+        "Cana of Galilee",
+        "Bethsaida",
+        "Nain",
+        "Emmaus"
+      ],
+      "correctIndex": 0,
+      "citation": "John 2:1-11",
+      "explanation": "At Mary's word ('Do whatever he tells you'), Jesus transformed six stone water jars of water into choice wine."
+    },
+    {
+      "id": "b47",
+      "category": "The Apostles",
+      "question": "How many Apostles did Jesus specially choose and commission to be the foundations of His Church?",
+      "options": [
+        "Seven",
+        "Ten",
+        "Twelve",
+        "Seventy"
+      ],
+      "correctIndex": 2,
+      "citation": "Matthew 10:1-4; Luke 6:13",
+      "explanation": "The Twelve Apostles correspond typologically to the twelve patriarchs of the twelve tribes of Israel."
+    },
+    {
+      "id": "b48",
+      "category": "Primacy of Peter",
+      "question": "To which Apostle did Jesus say at Caesarea Philippi: 'Thou art Peter; and upon this rock I will build my church'?",
+      "options": [
+        "Andrew",
+        "Simon Peter",
+        "John",
+        "James"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 16:18-19",
+      "explanation": "Christ gave Peter the Keys of the Kingdom of Heaven and the power to bind and loose on earth."
+    },
+    {
+      "id": "b49",
+      "category": "The Passion",
+      "question": "Which Apostle betrayed Jesus to the chief priests for thirty pieces of silver in the Garden of Gethsemane?",
+      "options": [
+        "Thomas",
+        "Judas Iscariot",
+        "Philip",
+        "Bartholomew"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 26:14-16, 48-49",
+      "explanation": "Judas betrayed the Lord with a kiss in Gethsemane, fulfilling Zechariah's prophecy regarding the thirty pieces of silver."
+    },
+    {
+      "id": "b50",
+      "category": "The Passion",
+      "question": "How many times did Simon Peter deny knowing Jesus in the High Priest's courtyard before the cock crew?",
+      "options": [
+        "Once",
+        "Twice",
+        "Three times",
+        "Seven times"
+      ],
+      "correctIndex": 2,
+      "citation": "Luke 22:60-62",
+      "explanation": "Peter denied Him thrice; immediately the cock crew, the Lord turned and looked at Peter, and Peter wept bitterly."
+    },
+    {
+      "id": "b51",
+      "category": "The Crucifixion",
+      "question": "What Roman procurator of Judea sentenced Jesus to be scourged and crucified after washing his own hands?",
+      "options": [
+        "Pontius Pilate",
+        "Felix",
+        "Festus",
+        "Herod Antipas"
+      ],
+      "correctIndex": 0,
+      "citation": "Matthew 27:24-26",
+      "explanation": "Pilate took water and washed his hands before the crowd, saying: 'I am innocent of the blood of this just person.'"
+    },
+    {
+      "id": "b52",
+      "category": "The Crucifixion",
+      "question": "What is the name of the skull-shaped hill outside Jerusalem where Jesus was crucified between two thieves?",
+      "options": [
+        "Mount of Olives",
+        "Golgotha (Calvary)",
+        "Mount Zion",
+        "Mount Moriah"
+      ],
+      "correctIndex": 1,
+      "citation": "John 19:17; Luke 23:33",
+      "explanation": "Golgotha (Aramaic for 'the place of a skull', Latin: Calvaria) was the site of the holy cross."
+    },
+    {
+      "id": "b53",
+      "category": "The Resurrection",
+      "question": "Who was the first person to encounter the risen Lord outside the empty garden tomb on Easter morning?",
+      "options": [
+        "Mary the mother of James",
+        "Mary Magdalene",
+        "Joanna",
+        "Salome"
+      ],
+      "correctIndex": 1,
+      "citation": "John 20:14-16; Mark 16:9",
+      "explanation": "The Risen Jesus appeared first to Mary Magdalene, commissioning her as the 'apostle to the apostles'."
+    },
+    {
+      "id": "b54",
+      "category": "The Resurrection",
+      "question": "Which Apostle doubted the Resurrection until Jesus invited him to put his finger into His nail-prints and side?",
+      "options": [
+        "Thomas (Didymus)",
+        "Nathanael",
+        "Matthew",
+        "Thaddaeus"
+      ],
+      "correctIndex": 0,
+      "citation": "John 20:27-28",
+      "explanation": "Thomas exclaimed the great confession of divinity: 'My Lord and my God!' (Dominus meus et Deus meus)."
+    },
+    {
+      "id": "b55",
+      "category": "Early Church Martyrs",
+      "question": "Who is honored in the Acts of the Apostles as the first Christian martyr (protomartyr), stoned while praying for his killers?",
+      "options": [
+        "St. Stephen",
+        "St. James the Greater",
+        "St. Barnabas",
+        "St. Timothy"
+      ],
+      "correctIndex": 0,
+      "citation": "Acts 7:58-60",
+      "explanation": "Stephen, filled with the Holy Spirit, looked steadfastly into heaven, saw the glory of God, and prayed: 'Lord, lay not this sin to their charge.'"
+    },
+    {
+      "id": "b56",
+      "category": "Apostle to the Gentiles",
+      "question": "On the road to which Syrian city was the persecutor Saul blinded by a blazing light from heaven and converted by the Risen Christ?",
+      "options": [
+        "Antioch",
+        "Damascus",
+        "Tarsus",
+        "Jericho"
+      ],
+      "correctIndex": 1,
+      "citation": "Acts 9:3-6",
+      "explanation": "Jesus called out: 'Saul, Saul, why persecutest thou me?' He was baptized by Ananias in Damascus and became St. Paul."
+    },
+    {
+      "id": "b57",
+      "category": "New Testament Canon",
+      "question": "How many total books are in the canonical New Testament accepted by the Church?",
+      "options": [
+        "24 books",
+        "27 books",
+        "39 books",
+        "46 books"
+      ],
+      "correctIndex": 1,
+      "citation": "Council of Rome (382), Council of Trent (1546), CCC 120",
+      "explanation": "The New Testament canon comprises 27 books: four Gospels, Acts, fourteen Pauline Epistles (with Hebrews), seven Catholic Epistles, and Revelation."
+    },
+    {
+      "id": "b58",
+      "category": "Apocalypse / Revelation",
+      "question": "Which Apostle authored the Book of Revelation (Apocalypse) while exiled on the Greek island of Patmos?",
+      "options": [
+        "St. Peter",
+        "St. Paul",
+        "St. John the Evangelist",
+        "St. Jude"
+      ],
+      "correctIndex": 2,
+      "citation": "Revelation 1:1, 9",
+      "explanation": "St. John was in the island called Patmos for the word of God, where he received the prophetic visions of the heavenly liturgy and New Jerusalem."
+    },
+    {
+      "id": "b59",
+      "category": "Gospel Authors",
+      "question": "Which two Evangelists were members of the original Twelve Apostles chosen by Jesus?",
+      "options": [
+        "Mark and Luke",
+        "Matthew and John",
+        "Peter and Paul",
+        "James and Jude"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 9:9; John 21:24",
+      "explanation": "St. Matthew (Levi the tax collector) and St. John (the beloved disciple) were eyewitness Apostles."
+    },
+    {
+      "id": "b60",
+      "category": "Sermon on the Mount",
+      "question": "Which famous Gospel discourse (Matthew 5–7) opens with the Eight Beatitudes: 'Blessed are the poor in spirit'?",
+      "options": [
+        "The Sermon on the Plain",
+        "The Sermon on the Mount",
+        "The Olivet Discourse",
+        "The Upper Room Discourse"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 5:1-12",
+      "explanation": "In the Sermon on the Mount, Christ promulgates the New Law of interior righteousness and divine beatitude."
+    },
+    {
+      "id": "b61",
+      "category": "The Golden Rule",
+      "question": "What did Jesus declare in Matthew 7:12: 'All things therefore whatsoever you would that men should do to you, do you also to them'?",
+      "options": [
+        "The Lex Talionis",
+        "The Golden Rule",
+        "The Deuteronomic Blessing",
+        "The Priestly Benediction"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 7:12",
+      "explanation": "Jesus designated this ethical precept as the summation of the Law and the Prophets."
+    },
+    {
+      "id": "b62",
+      "category": "Greatest Commandment",
+      "question": "When asked which is the great commandment in the Law, what did Jesus cite first?",
+      "options": [
+        "Thou shalt honor thy father and mother",
+        "Thou shalt love the Lord thy God with thy whole heart, soul, and mind",
+        "Thou shalt keep the Sabbath holy",
+        "Thou shalt not kill"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 22:37-38 / Deuteronomy 6:5",
+      "explanation": "Jesus answered with the Shema from Deuteronomy: to love God with all one's heart, soul, and mind; the second is like it: to love one's neighbor as oneself."
+    },
+    {
+      "id": "b63",
+      "category": "Armor of God",
+      "question": "In Ephesians 6, St. Paul describes the spiritual Armor of God. What is identified as the 'Sword of the Spirit'?",
+      "options": [
+        "The Virtue of Charity",
+        "The Word of God",
+        "The Rosary",
+        "The Cross"
+      ],
+      "correctIndex": 1,
+      "citation": "Ephesians 6:17",
+      "explanation": "St. Paul writes: 'And take unto you the helmet of salvation, and the sword of the Spirit (which is the word of God).'"
+    },
+    {
+      "id": "b64",
+      "category": "Theological Virtues in Scripture",
+      "question": "In 1 Corinthians 13:13, which three virtues remain, and which one does St. Paul declare is the greatest?",
+      "options": [
+        "Faith, Hope, and Charity; the greatest is Charity (Love)",
+        "Justice, Wisdom, and Peace; the greatest is Peace",
+        "Humility, Patience, and Faith; the greatest is Faith",
+        "Prudence, Fortitude, and Temperance; the greatest is Fortitude"
+      ],
+      "correctIndex": 0,
+      "citation": "1 Corinthians 13:13",
+      "explanation": "'And now there remain faith, hope, and charity, these three: but the greatest of these is charity.' Faith and hope pass away in heaven, but love endures eternally."
+    },
+    {
+      "id": "b65",
+      "category": "Fruits of the Spirit",
+      "question": "In Galatians 5:22-23, what are listed as fruits of the Holy Spirit?",
+      "options": [
+        "Love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control",
+        "Wealth, honor, longevity, power, victory",
+        "Prophecy, tongues, miracles, interpretation",
+        "Law, judgment, vengeance, retribution"
+      ],
+      "correctIndex": 0,
+      "citation": "Galatians 5:22-23; CCC 1832",
+      "explanation": "The fruits of the Spirit are perfections that the Holy Spirit forms in us as the first fruits of eternal glory."
+    },
+    {
+      "id": "b66",
+      "category": "Feeding the Multitude",
+      "question": "With what meager provision did Jesus miraculously feed the five thousand men beside the Sea of Galilee?",
+      "options": [
+        "Seven loaves and a few small fish",
+        "Five barley loaves and two fish",
+        "Three loaves of wheat and oil",
+        "A bowl of lentils and figs"
+      ],
+      "correctIndex": 1,
+      "citation": "John 6:9; Matthew 14:17-21",
+      "explanation": "A young boy had five barley loaves and two fishes; Jesus blessed them, broke them, and twelve baskets of fragments were gathered."
+    },
+    {
+      "id": "b67",
+      "category": "The Transfiguration",
+      "question": "Which two Old Testament figures appeared in radiant glory conversing with Jesus on the Mount of Transfiguration?",
+      "options": [
+        "Abraham and David",
+        "Moses and Elijah",
+        "Enoch and Noah",
+        "Isaiah and Jeremiah"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 17:3; Luke 9:30-31",
+      "explanation": "Moses (representing the Law) and Elijah (representing the Prophets) appeared speaking of His departure (exodus) in Jerusalem."
+    },
+    {
+      "id": "b68",
+      "category": "The Good Shepherd",
+      "question": "In John 10, what title does Jesus bestow upon Himself, contrasting with the hireling who flees when the wolf attacks?",
+      "options": [
+        "The True Vine",
+        "The Good Shepherd",
+        "The Light of the World",
+        "The Door of the Sheep"
+      ],
+      "correctIndex": 1,
+      "citation": "John 10:11",
+      "explanation": "'I am the good shepherd. The good shepherd giveth his life for his sheep.'"
+    },
+    {
+      "id": "b69",
+      "category": "Eucharistic Discourse",
+      "question": "In the Bread of Life discourse (John 6), what solemn declaration does Christ make regarding His flesh?",
+      "options": [
+        "My flesh is meat indeed: and my blood is drink indeed",
+        "My flesh is merely a symbol of brotherhood",
+        "My flesh shall be remembered in spirit only",
+        "My flesh is like manna that perished in the desert"
+      ],
+      "correctIndex": 0,
+      "citation": "John 6:55-56",
+      "explanation": "'He that eateth my flesh, and drinketh my blood, abideth in me, and I in him.'"
+    },
+    {
+      "id": "b70",
+      "category": "The Lord's Prayer",
+      "question": "In which Gospel does Jesus teach His disciples the 'Our Father' (Pater Noster) during the Sermon on the Mount?",
+      "options": [
+        "Gospel of Matthew",
+        "Gospel of Mark",
+        "Gospel of John",
+        "Book of Acts"
+      ],
+      "correctIndex": 0,
+      "citation": "Matthew 6:9-13; Luke 11:2-4",
+      "explanation": "The Lord's Prayer is the quintessential Christian prayer taught by the Master Himself."
+    },
+    {
+      "id": "b71",
+      "category": "Holy Thursday",
+      "question": "What humble act of servanthood did Jesus perform for His disciples before instituting the Eucharist at the Last Supper?",
+      "options": [
+        "He crowned them with olive wreaths",
+        "He washed their feet",
+        "He anointed their heads with nard",
+        "He bestowed golden garments upon them"
+      ],
+      "correctIndex": 1,
+      "citation": "John 13:4-15",
+      "explanation": "Jesus poured water into a basin and washed the disciples' feet, commanding them to do as He had done."
+    },
+    {
+      "id": "b72",
+      "category": "The Ascension",
+      "question": "From which mount near Jerusalem did the Risen Lord ascend into heaven forty days after His resurrection?",
+      "options": [
+        "Mount of Olives",
+        "Mount Carmel",
+        "Mount Tabor",
+        "Mount Hermon"
+      ],
+      "correctIndex": 0,
+      "citation": "Acts 1:9-12",
+      "explanation": "He was taken up in a cloud from the Mount of Olives while the Apostles watched, and two angels promised His return in like manner."
+    },
+    {
+      "id": "b73",
+      "category": "Zacchaeus the Tax Collector",
+      "question": "What kind of tree did the short tax collector Zacchaeus climb in Jericho in order to see Jesus pass by?",
+      "options": [
+        "A Cedar of Lebanon",
+        "A Sycamore-fig tree",
+        "An Olive tree",
+        "A Date palm"
+      ],
+      "correctIndex": 1,
+      "citation": "Luke 19:4",
+      "explanation": "Zacchaeus ran before and climbed up into a sycamore tree to see Him, and Jesus lodged at his home that day."
+    },
+    {
+      "id": "b74",
+      "category": "Raising of Lazarus",
+      "question": "For how many days had Lazarus of Bethany been buried in the tomb before Jesus cried out: 'Lazarus, come forth'?",
+      "options": [
+        "One day",
+        "Two days",
+        "Four days",
+        "Seven days"
+      ],
+      "correctIndex": 2,
+      "citation": "John 11:17, 39, 43",
+      "explanation": "Martha noted that he had been in the tomb four days, yet Jesus commanded the stone rolled away and raised him to life."
+    },
+    {
+      "id": "b75",
+      "category": "Prodigal Son",
+      "question": "In the Parable of the Prodigal Son (Luke 15), what did the compassionate father order his servants to bring for the returning younger son?",
+      "options": [
+        "A whip for chastisement",
+        "The best robe, a ring on his hand, and shoes on his feet",
+        "A bag of coins to repay the debt",
+        "A beggar's tunic"
+      ],
+      "correctIndex": 1,
+      "citation": "Luke 15:22-23",
+      "explanation": "The father welcomed his repentant son with the best robe, a signet ring, sandals, and killed the fatted calf for celebration."
+    },
+    {
+      "id": "b76",
+      "category": "The Lost Sheep",
+      "question": "In the Parable of the Lost Sheep, how many sheep did the shepherd leave in the wilderness to search for the single one that went astray?",
+      "options": [
+        "Twelve",
+        "Fifty",
+        "Ninety-nine",
+        "Four hundred"
+      ],
+      "correctIndex": 2,
+      "citation": "Luke 15:4",
+      "explanation": "The shepherd leaves the ninety-nine in the desert and goes after the one that was lost until he finds it."
+    },
+    {
+      "id": "b77",
+      "category": "Nicodemus by Night",
+      "question": "To which Pharisee and ruler of the Jews did Jesus say: 'Amen, amen I say to thee, unless a man be born again of water and the Holy Ghost, he cannot enter into the kingdom of God'?",
+      "options": [
+        "Gamaliel",
+        "Nicodemus",
+        "Caiaphas",
+        "Jairus"
+      ],
+      "correctIndex": 1,
+      "citation": "John 3:1-5",
+      "explanation": "Nicodemus came to Jesus by night, and Jesus revealed the necessity of spiritual regeneration through Baptism."
+    },
+    {
+      "id": "b78",
+      "category": "The Great Commission",
+      "question": "In the Great Commission (Matthew 28:19), in whose Name did the Risen Christ command His Apostles to baptize all nations?",
+      "options": [
+        "In the name of Jesus only",
+        "In the name of the Father, and of the Son, and of the Holy Ghost",
+        "In the name of Abraham and Moses",
+        "In the name of the Holy Catholic Church"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 28:19",
+      "explanation": "'Going therefore, teach ye all nations; baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.'"
+    },
+    {
+      "id": "b79",
+      "category": "Samaritan Woman at the Well",
+      "question": "At whose ancestral well in Sychar did Jesus converse with the Samaritan woman, offering her 'living water'?",
+      "options": [
+        "Abraham's Well",
+        "Jacob's Well",
+        "Isaac's Well",
+        "Moses' Well"
+      ],
+      "correctIndex": 1,
+      "citation": "John 4:5-14",
+      "explanation": "Jacob's well was there; Jesus, tired from his journey, sat by the well and revealed Himself as the Messiah."
+    },
+    {
+      "id": "b80",
+      "category": "Walking on Water",
+      "question": "Which Apostle climbed out of the fishing boat to walk on the stormy waves of the Sea of Galilee toward Jesus?",
+      "options": [
+        "John",
+        "Simon Peter",
+        "Andrew",
+        "James"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 14:28-31",
+      "explanation": "Peter walked on the water, but seeing the wind strong, became afraid and began to sink, crying: 'Lord, save me!'"
+    },
+    {
+      "id": "b81",
+      "category": "The Transfiguration Witnesses",
+      "question": "Which three Apostles accompanied Jesus to witness His Transfiguration and later His Agony in Gethsemane?",
+      "options": [
+        "Peter, James, and John",
+        "Andrew, Philip, and Bartholomew",
+        "Matthew, Thomas, and Simon",
+        "Jude, James the Less, and Matthias"
+      ],
+      "correctIndex": 0,
+      "citation": "Matthew 17:1; Mark 14:33",
+      "explanation": "Peter, James, and John formed the intimate inner circle of the Apostles chosen to witness Christ's greatest glories and trials."
+    },
+    {
+      "id": "b82",
+      "category": "Paul's Shipwreck",
+      "question": "On which Mediterranean island was St. Paul shipwrecked while being transported under Roman guard to appeal to Caesar?",
+      "options": [
+        "Crete",
+        "Cyprus",
+        "Malta (Melita)",
+        "Sicily"
+      ],
+      "correctIndex": 2,
+      "citation": "Acts 28:1",
+      "explanation": "All 276 passengers escaped safely to shore on Malta, where Paul shook off a venomous viper without harm."
+    },
+    {
+      "id": "b83",
+      "category": "Old Testament Judges",
+      "question": "Which judge of Israel reduced his army from thirty-two thousand men down to three hundred who lapped water with their tongues?",
+      "options": [
+        "Gideon",
+        "Barak",
+        "Jephthah",
+        "Ehud"
+      ],
+      "correctIndex": 0,
+      "citation": "Judges 7:4-7",
+      "explanation": "The Lord told Gideon that with the three hundred men who lapped water he would deliver Midian, proving that salvation belongs to God."
+    },
+    {
+      "id": "b84",
+      "category": "Queen Esther",
+      "question": "Which Jewish queen risked her life before Persian King Ahasuerus to thwart Haman's plot to exterminate her people?",
+      "options": [
+        "Queen Esther (Hadassah)",
+        "Queen Vashti",
+        "Queen Jezebel",
+        "Queen of Sheba"
+      ],
+      "correctIndex": 0,
+      "citation": "Esther 4:16; 7:3",
+      "explanation": "Esther fasted three days and approached the king, declaring: 'If I perish, I perish', rescuing her people and establishing Purim."
+    },
+    {
+      "id": "b85",
+      "category": "The Prophet Isaiah",
+      "question": "Which major prophet beheld the Lord high and lifted up, while Seraphim cried 'Holy, Holy, Holy' (Sanctus)?",
+      "options": [
+        "Isaiah",
+        "Jeremiah",
+        "Ezekiel",
+        "Daniel"
+      ],
+      "correctIndex": 0,
+      "citation": "Isaiah 6:1-3",
+      "explanation": "Isaiah saw the Lord seated upon a throne, and a Seraph touched his mouth with a live coal, purging his iniquity."
+    },
+    {
+      "id": "b86",
+      "category": "Suffering Servant",
+      "question": "In which chapter of Isaiah is the Messiah foretold as the Suffering Servant who 'was wounded for our iniquities, bruised for our sins'?",
+      "options": [
+        "Isaiah 7",
+        "Isaiah 9",
+        "Isaiah 40",
+        "Isaiah 53"
+      ],
+      "correctIndex": 3,
+      "citation": "Isaiah 53:5",
+      "explanation": "Isaiah 53 provides the profound prophecy of the Passion of Christ, led like a lamb to the slaughter."
+    },
+    {
+      "id": "b87",
+      "category": "Book of Job",
+      "question": "Which righteous man from the land of Uz endured the loss of his children, wealth, and health yet declared: 'The Lord gave, and the Lord hath taken away; blessed be the name of the Lord'?",
+      "options": [
+        "Job",
+        "Tobit",
+        "Enoch",
+        "Lot"
+      ],
+      "correctIndex": 0,
+      "citation": "Job 1:21",
+      "explanation": "Job maintained his integrity and faith in the Redeemer: 'I know that my Redeemer liveth, and in the last day I shall rise out of the earth.'"
+    },
+    {
+      "id": "b88",
+      "category": "Deuterocanonical Books",
+      "question": "Which deuterocanonical book describes the young man Tobias guided on his perilous journey by the Archangel Raphael?",
+      "options": [
+        "Book of Judith",
+        "Book of Tobit",
+        "First Maccabees",
+        "Book of Wisdom"
+      ],
+      "correctIndex": 1,
+      "citation": "Tobit 5:4; 12:15",
+      "explanation": "The Archangel Raphael revealed himself: 'I am the angel Raphael, one of the seven, who stand before the Lord.'"
+    },
+    {
+      "id": "b89",
+      "category": "Maccabees & Hanukkah",
+      "question": "Which books of the Catholic Old Testament recount the heroic revolt led by Judas Maccabeus against Antiochus IV Epiphanes to rededicate the Temple?",
+      "options": [
+        "First and Second Maccabees",
+        "First and Second Chronicles",
+        "First and Second Kings",
+        "Ezra and Nehemiah"
+      ],
+      "correctIndex": 0,
+      "citation": "1 Maccabees 4:36-59",
+      "explanation": "The Maccabees cleansed the sanctuary and instituted the eight-day Feast of the Dedication of the Altar."
+    },
+    {
+      "id": "b90",
+      "category": "Prayer for the Dead",
+      "question": "In 2 Maccabees 12:46, what salutary practice is affirmed as holy and wholesome?",
+      "options": [
+        "Praying and making atonement for the dead that they may be loosed from their sins",
+        "Building monuments for fallen generals",
+        "Offering sacrifices to foreign deities",
+        "Fasting during military campaigns"
+      ],
+      "correctIndex": 0,
+      "citation": "2 Maccabees 12:46; CCC 1032",
+      "explanation": "'It is therefore a holy and wholesome thought to pray for the dead, that they may be loosed from sins'—a foundational scriptural support for Purgatory."
+    },
+    {
+      "id": "b91",
+      "category": "Judith & Holofernes",
+      "question": "Which courageous Jewish widow decapitated the Assyrian general Holofernes in his tent, delivering Bethulia and all Israel?",
+      "options": [
+        "Judith",
+        "Esther",
+        "Jael",
+        "Deborah"
+      ],
+      "correctIndex": 0,
+      "citation": "Judith 13:6-10",
+      "explanation": "Judith prayed for divine strength, struck Holofernes twice on his neck, and carried his head back to Bethulia."
+    },
+    {
+      "id": "b92",
+      "category": "The Synoptic Gospels",
+      "question": "Which three Gospels are known as the 'Synoptic Gospels' due to their shared perspective and common outline of Christ's ministry?",
+      "options": [
+        "Matthew, Mark, and Luke",
+        "Matthew, Luke, and John",
+        "Mark, Luke, and John",
+        "Matthew, Mark, and John"
+      ],
+      "correctIndex": 0,
+      "citation": "Biblical Studies / Dei Verbum 18",
+      "explanation": "Matthew, Mark, and Luke can be viewed 'with one eye' (synoptic) because of their chronological and narrative parallels."
+    },
+    {
+      "id": "b93",
+      "category": "St. Luke the Physician",
+      "question": "Which Evangelist, companion of St. Paul and physician by trade, also authored the Book of the Acts of the Apostles?",
+      "options": [
+        "St. Matthew",
+        "St. Mark",
+        "St. Luke",
+        "St. Barnabas"
+      ],
+      "correctIndex": 2,
+      "citation": "Colossians 4:14; Acts 1:1",
+      "explanation": "St. Luke ('the beloved physician') addressed both his Gospel and the Acts of the Apostles to the honorable Theophilus."
+    },
+    {
+      "id": "b94",
+      "category": "The Good Thief",
+      "question": "What did the penitent thief (St. Dismas) say to Jesus on the cross, receiving the promise: 'This day thou shalt be with me in paradise'?",
+      "options": [
+        "Lord, remember me when thou shalt come into thy kingdom",
+        "If thou be the Christ, save thyself and us",
+        "Master, tell my brother to divide the inheritance",
+        "Have mercy on me, a poor sinner from Galilee"
+      ],
+      "correctIndex": 0,
+      "citation": "Luke 23:42-43",
+      "explanation": "Dismas rebuked the other criminal, confessed Jesus' innocence, and asked to be remembered in His Kingdom."
+    },
+    {
+      "id": "b95",
+      "category": "St. Joseph",
+      "question": "From which royal lineage and house was St. Joseph, the chaste spouse of the Blessed Virgin Mary and foster father of Jesus?",
+      "options": [
+        "The House of Levi",
+        "The House of David",
+        "The House of Benjamin",
+        "The House of Ephraim"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 1:20; Luke 1:27",
+      "explanation": "The angel of the Lord appeared to Joseph in a dream, saying: 'Joseph, son of David, fear not to take unto thee Mary thy wife.'"
+    },
+    {
+      "id": "b96",
+      "category": "The Visitation",
+      "question": "Who leaped with joy in the womb of St. Elizabeth when the pregnant Virgin Mary greeted her at the Visitation?",
+      "options": [
+        "John the Baptist",
+        "James the Greater",
+        "Simon of Cyrene",
+        "Timothy"
+      ],
+      "correctIndex": 0,
+      "citation": "Luke 1:41",
+      "explanation": "Elizabeth exclaimed: 'For behold as soon as the voice of thy salutation sounded in my ears, the infant in my womb leaped for joy.'"
+    },
+    {
+      "id": "b97",
+      "category": "The Magnificat",
+      "question": "Which majestic canticle did the Virgin Mary proclaim at the home of Elizabeth, opening: 'My soul doth magnify the Lord'?",
+      "options": [
+        "The Benedictus",
+        "The Magnificat",
+        "The Nunc Dimittis",
+        "The Te Deum"
+      ],
+      "correctIndex": 1,
+      "citation": "Luke 1:46-55 (Vulgate: Magnificat anima mea Dominum)",
+      "explanation": "The Magnificat is Mary's song of thanksgiving praising God for exalting the humble and scattering the proud."
+    },
+    {
+      "id": "b98",
+      "category": "The Benedictus",
+      "question": "Which elder priest and father of John the Baptist had his speech restored and proclaimed the 'Benedictus' canticle?",
+      "options": [
+        "Zechariah",
+        "Simeon",
+        "Caiaphas",
+        "Annas"
+      ],
+      "correctIndex": 0,
+      "citation": "Luke 1:67-79",
+      "explanation": "Zechariah wrote 'John is his name', his tongue was loosed, and he prophesied: 'Blessed be the Lord God of Israel; because he hath visited and wrought the redemption of his people.'"
+    },
+    {
+      "id": "b99",
+      "category": "St. Paul's Epistles",
+      "question": "In which Epistle did St. Paul write the celebrated Christological hymn describing Christ emptying Himself ('Kenosis') and taking the form of a servant?",
+      "options": [
+        "Epistle to the Romans",
+        "Epistle to the Philippians",
+        "First Epistle to Timothy",
+        "Epistle to Titus"
+      ],
+      "correctIndex": 1,
+      "citation": "Philippians 2:5-11",
+      "explanation": "Christ 'emptied himself, taking the form of a servant... wherefore God also hath exalted him, and given him a name which is above all names.'"
+    },
+    {
+      "id": "b100",
+      "category": "New Testament Terms",
+      "question": "What is the Hebrew/Aramaic word meaning 'Amen, Come Lord Jesus' used by early Christians and St. Paul in 1 Cor 16:22?",
+      "options": [
+        "Maranatha",
+        "Hosanna",
+        "Hallelujah",
+        "Ephphatha"
+      ],
+      "correctIndex": 0,
+      "citation": "1 Corinthians 16:22; Revelation 22:20",
+      "explanation": "'Maranatha' is the ancient liturgical invocation meaning 'Our Lord, come!' expressing fervent longing for the Parousia."
+    },
+    {
+      "id": "b101",
+      "category": "Final Words of Scripture",
+      "question": "With what benediction does the entire Sacred Scripture conclude in Revelation 22:21?",
+      "options": [
+        "The grace of our Lord Jesus Christ be with you all. Amen",
+        "Woe to the inhabitants of the earth",
+        "Holy, Holy, Holy is the Lord God of hosts",
+        "Glory be to the Father, and to the Son, and to the Holy Ghost"
+      ],
+      "correctIndex": 0,
+      "citation": "Revelation 22:21",
+      "explanation": "The Bible closes with St. John's loving benediction of the grace of Jesus Christ upon all the faithful."
     }
   ]
 }
-

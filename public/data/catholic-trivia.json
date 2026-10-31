@@ -1,5 +1,5 @@
 {
-  "count": 12,
+  "count": 106,
   "questions": [
     {
       "id": "c1",
@@ -168,7 +168,1322 @@
       "correctIndex": 1,
       "citation": "Nicene Creed / CCC 811",
       "explanation": "'Credo in unam, sanctam, catholicam et apostolicam Ecclesiam' — One, Holy, Catholic, and Apostolic."
+    },
+    {
+      "id": "c13",
+      "category": "Pillars of the Catechism",
+      "question": "What are the four foundational 'Pillars' upon which the Catechism of the Catholic Church (CCC) is structured?",
+      "options": [
+        "Scripture, Tradition, Magisterium, and Papacy",
+        "Creed, Sacraments, Commandments/Morality, and Prayer",
+        "Faith, Hope, Charity, and Prudence",
+        "Baptism, Eucharist, Confirmation, and Penance"
+      ],
+      "correctIndex": 1,
+      "citation": "CCC 13",
+      "explanation": "The Catechism is divided into four parts: The Profession of Faith (Creed), Celebration of the Christian Mystery (Sacraments), Life in Christ (Commandments), and Christian Prayer."
+    },
+    {
+      "id": "c14",
+      "category": "Marian Dogmas",
+      "question": "Which Pope dogmatically defined the bodily Assumption of the Blessed Virgin Mary into heaven in 1950 via 'Munificentissimus Deus'?",
+      "options": [
+        "Pope Pius IX",
+        "Pope Leo XIII",
+        "Pope Pius XII",
+        "Pope John XXIII"
+      ],
+      "correctIndex": 2,
+      "citation": "Munificentissimus Deus (1950) / CCC 966",
+      "explanation": "Venerable Pope Pius XII defined that the Immaculate Mother of God, having completed the course of her earthly life, was assumed body and soul into heavenly glory."
+    },
+    {
+      "id": "c15",
+      "category": "Marian Dogmas",
+      "question": "Which ancient Ecumenical Council in 431 AD proclaimed the Virgin Mary as 'Theotokos' (Mother of God / God-bearer)?",
+      "options": [
+        "Council of Ephesus",
+        "Council of Nicaea",
+        "Council of Chalcedon",
+        "Second Council of Constantinople"
+      ],
+      "correctIndex": 0,
+      "citation": "Council of Ephesus (431 AD) / CCC 495",
+      "explanation": "Against Nestorius, the Council of Ephesus affirmed that Christ's human and divine natures are united in one Divine Person, making Mary truly the Mother of God."
+    },
+    {
+      "id": "c16",
+      "category": "Marian Dogmas",
+      "question": "What does the Catholic dogma of the Perpetual Virginity of Mary (Semper Virgo) affirm?",
+      "options": [
+        "Mary was a virgin only until Jesus was born",
+        "Mary remained a virgin before, during, and perpetually after the birth of Christ",
+        "Mary was an allegorical figure",
+        "Mary took monastic vows in Rome"
+      ],
+      "correctIndex": 1,
+      "citation": "Lateran Synod (649 AD) / CCC 499",
+      "explanation": "The Church professes Mary's real and perpetual virginity: ante partum, in partu, and post partum."
+    },
+    {
+      "id": "c17",
+      "category": "The Holy Trinity",
+      "question": "In the Nicene Creed, from whom does the Holy Spirit proceed according to Western Catholic theology (the Filioque)?",
+      "options": [
+        "From the Father alone",
+        "From the Son alone",
+        "From the Father and the Son (Filioque)",
+        "From the created cosmos"
+      ],
+      "correctIndex": 2,
+      "citation": "CCC 246-248",
+      "explanation": "The Latin Church confesses: 'Qui ex Patre Filioque procedit' ('Who proceeds from the Father and the Son'), affirming the eternal consubstantial communion of the Trinity."
+    },
+    {
+      "id": "c18",
+      "category": "The Papacy",
+      "question": "Which Ecumenical Council promulgated the dogmatic constitution 'Pastor Aeternus', defining Papal Infallibility in matters of faith and morals?",
+      "options": [
+        "Council of Trent",
+        "First Vatican Council (1870)",
+        "Second Vatican Council",
+        "Council of Constance"
+      ],
+      "correctIndex": 1,
+      "citation": "Vatican I (1870) / CCC 891",
+      "explanation": "Vatican I declared that the Roman Pontiff speaks infallibly when, ex cathedra, he defines a doctrine concerning faith or morals to be held by the whole Church."
+    },
+    {
+      "id": "c19",
+      "category": "The Papacy",
+      "question": "Who is historically recognized as the First Pope, having received the Keys of the Kingdom from Christ?",
+      "options": [
+        "St. Paul",
+        "St. Peter (Simon Bar-Jona)",
+        "St. Linus",
+        "St. Clement of Rome"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 16:18-19 / CCC 881",
+      "explanation": "St. Peter served as Bishop of Rome and suffered martyrdom on Vatican Hill under Emperor Nero, establishing the Roman Petrine succession."
+    },
+    {
+      "id": "c20",
+      "category": "The Papacy",
+      "question": "Who succeeded St. Peter as the second Bishop of Rome (second Pope)?",
+      "options": [
+        "St. Cletus",
+        "St. Linus",
+        "St. Clement I",
+        "St. Sixtus I"
+      ],
+      "correctIndex": 1,
+      "citation": "Roman Canon / Liber Pontificalis",
+      "explanation": "St. Linus (mentioned by St. Paul in 2 Timothy 4:21) governed the Roman See immediately after St. Peter's martyrdom."
+    },
+    {
+      "id": "c21",
+      "category": "The Sacraments",
+      "question": "How many total Sacraments were instituted by Jesus Christ and are celebrated in the Catholic Church?",
+      "options": [
+        "Two",
+        "Three",
+        "Seven",
+        "Twelve"
+      ],
+      "correctIndex": 2,
+      "citation": "Council of Trent / CCC 1113",
+      "explanation": "The seven sacraments are Baptism, Confirmation, Eucharist, Penance/Reconciliation, Anointing of the Sick, Holy Orders, and Matrimony."
+    },
+    {
+      "id": "c22",
+      "category": "Sacrament of Baptism",
+      "question": "What essential grace is conferred by the Sacrament of Baptism regarding Original Sin and personal sins?",
+      "options": [
+        "It reduces future temptations but does not remove guilt",
+        "It washes away Original Sin and all personal sins prior to baptism, imparting sanctifying grace",
+        "It serves solely as an outward public demonstration of personal dedication",
+        "It is only an administrative entry into the parish register"
+      ],
+      "correctIndex": 1,
+      "citation": "CCC 1262-1266",
+      "explanation": "By Baptism all sins are forgiven, Original Sin and all personal sins, as well as all punishment for sin; the baptized becomes an adopted child of God."
+    },
+    {
+      "id": "c23",
+      "category": "Sacrament of Baptism",
+      "question": "What is the essential matter and form required for a valid Catholic baptism?",
+      "options": [
+        "Immersion or pouring of true water, and the Trinitarian formula ('I baptize you in the name of the Father, and of the Son, and of the Holy Spirit')",
+        "Rose water and the Lord's Prayer",
+        "Holy Chrism and laying on of hands only",
+        "Salt and wine with the Apostles' Creed"
+      ],
+      "correctIndex": 0,
+      "citation": "Canon 849 / CCC 1239-1240",
+      "explanation": "Anyone, even a non-Christian in danger of death, can validly baptize using natural water and the Trinitarian formula with the Church's intention."
+    },
+    {
+      "id": "c24",
+      "category": "Sacrament of Confirmation",
+      "question": "What sacred perfumed oil consecrated by the Bishop on Holy Thursday is used to anoint the forehead in Confirmation?",
+      "options": [
+        "Oil of Catechumens (Oleum Catechumenorum)",
+        "Oil of the Sick (Oleum Infirmorum)",
+        "Sacred Chrism (Sanctum Chrisma)",
+        "Oil of Nard"
+      ],
+      "correctIndex": 2,
+      "citation": "CCC 1293-1296",
+      "explanation": "Sacred Chrism, a mixture of olive oil and balsam, signifies the indelible seal and consecration of the Holy Spirit."
+    },
+    {
+      "id": "c25",
+      "category": "Sacrament of Confession",
+      "question": "What are the three essential acts required of the penitent for the valid reception of the Sacrament of Penance?",
+      "options": [
+        "Contrition, Confession of sins, and Satisfaction (Penance)",
+        "Tithing, Fasting, and Pilgrimage",
+        "Memorization of the Creed, Almsgiving, and Silence",
+        "Public apology, Ritual bath, and Meditation"
+      ],
+      "correctIndex": 0,
+      "citation": "Council of Trent / CCC 1450-1460",
+      "explanation": "The penitent must have sorrow of soul (contrition), confess all remembered mortal sins to a priest, and resolve to fulfill satisfaction."
+    },
+    {
+      "id": "c26",
+      "category": "Sacrament of Confession",
+      "question": "What is the absolute obligation binding every priest under pain of automatic excommunication never to reveal sins heard in Confession?",
+      "options": [
+        "The Pontifical Secret",
+        "The Seal of the Confessional (Sigillum Confessionis)",
+        "The Clerical Immunity",
+        "The Vow of Discretion"
+      ],
+      "correctIndex": 1,
+      "citation": "Canon 983 / CCC 1467",
+      "explanation": "The sacramental seal is inviolable; a confessor may not by word or in any other manner or for any reason ever betray a penitent."
+    },
+    {
+      "id": "c27",
+      "category": "Sacrament of the Sick",
+      "question": "Which New Testament epistle explicitly commands: 'Is any man sick among you? Let him bring in the priests of the church, and let them pray over him, anointing him with oil'?",
+      "options": [
+        "Epistle of St. James",
+        "First Epistle of St. Peter",
+        "Epistle to the Hebrews",
+        "First Epistle of St. John"
+      ],
+      "correctIndex": 0,
+      "citation": "James 5:14-15 / CCC 1510",
+      "explanation": "St. James explicitly documents the apostolic practice of the Anointing of the Sick for bodily healing and forgiveness of sins."
+    },
+    {
+      "id": "c28",
+      "category": "Sacrament of Matrimony",
+      "question": "In the Latin Rite of the Catholic Church, who are the ordinary ministers of the Sacrament of Holy Matrimony?",
+      "options": [
+        "The Priest or Deacon",
+        "The Bishop exclusively",
+        "The Spouses themselves (the bride and groom conferring mutual consent)",
+        "The Maid of Honor and Best Man"
+      ],
+      "correctIndex": 2,
+      "citation": "CCC 1623",
+      "explanation": "In the Latin tradition, the spouses as ministers of Christ's grace mutually confer the sacrament by expressing their consent before the Church's witness."
+    },
+    {
+      "id": "c29",
+      "category": "Sacrament of Holy Orders",
+      "question": "Who alone possesses the power to validly confer the Sacrament of Holy Orders upon deacons, priests, and bishops?",
+      "options": [
+        "Any validly ordained Priest",
+        "A validly consecrated Catholic Bishop",
+        "The Abbot of a monastery",
+        "The Papal Nuncio only"
+      ],
+      "correctIndex": 1,
+      "citation": "CCC 1576 / Canon 1012",
+      "explanation": "As successors of the Apostles, validly consecrated bishops alone are the ministers of sacred ordination."
+    },
+    {
+      "id": "c30",
+      "category": "The Liturgical Year",
+      "question": "Which Sunday marks the official commencement of the Catholic Church's liturgical year?",
+      "options": [
+        "First Sunday of Lent",
+        "First Sunday of Advent",
+        "Easter Sunday",
+        "Feast of Christ the King"
+      ],
+      "correctIndex": 1,
+      "citation": "General Norms for the Liturgical Year 39",
+      "explanation": "Advent begins four Sundays before Christmas, opening the new liturgical cycle and preparing for the Nativity and Second Coming."
+    },
+    {
+      "id": "c31",
+      "category": "Liturgical Vestments",
+      "question": "What color vestment is prescribed for martyrs' feast days, Pentecost, Good Friday, and Palm Sunday?",
+      "options": [
+        "White",
+        "Green",
+        "Red",
+        "Rose"
+      ],
+      "correctIndex": 2,
+      "citation": "GIRM 346b",
+      "explanation": "Red symbolizes the fire of the Holy Spirit on Pentecost and the blood of Christ and His martyrs."
+    },
+    {
+      "id": "c32",
+      "category": "Liturgical Vestments",
+      "question": "What color vestments are worn during Ordinary Time, symbolizing spiritual growth, vitality, and hope?",
+      "options": [
+        "Red",
+        "Green",
+        "Violet",
+        "Black"
+      ],
+      "correctIndex": 1,
+      "citation": "GIRM 346c",
+      "explanation": "Green is worn during Ordinary Time to represent the living hope and spiritual growth of the Church."
+    },
+    {
+      "id": "c33",
+      "category": "Liturgical Days",
+      "question": "What is the holiest season of the Church year, spanning Holy Thursday evening, Good Friday, Holy Saturday, and Easter Sunday?",
+      "options": [
+        "The Paschal Triduum",
+        "The Octave of Christmas",
+        "The Rogation Days",
+        "Quinquagesima"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 1168 / GIRM 19",
+      "explanation": "The Paschal Triduum of the Passion and Resurrection of the Lord is the culmination of the entire liturgical year."
+    },
+    {
+      "id": "c34",
+      "category": "Eucharistic Adoration",
+      "question": "What is the sacred vessel, usually shaped like a golden sunburst, used to expose the consecrated Blessed Sacrament for public adoration?",
+      "options": [
+        "Ciborium",
+        "Monstrance (Ostensorium)",
+        "Chalice",
+        "Pyx"
+      ],
+      "correctIndex": 1,
+      "citation": "Holy Communion and Worship of the Eucharist Outside Mass",
+      "explanation": "The monstrance contains a circular transparent glass receptacle (the luna) holding the consecrated Host for veneration."
+    },
+    {
+      "id": "c35",
+      "category": "The Holy Rosary",
+      "question": "How many total decades are in the traditional Rosary, including the Joyful, Sorrowful, Glorious, and Luminous Mysteries?",
+      "options": [
+        "15 decades",
+        "20 decades",
+        "10 decades",
+        "25 decades"
+      ],
+      "correctIndex": 1,
+      "citation": "Rosarium Virginis Mariae (St. John Paul II, 2002)",
+      "explanation": "With the addition of the 5 Luminous Mysteries (Mysteries of Light) by Pope St. John Paul II, the complete Rosary comprises 20 decades."
+    },
+    {
+      "id": "c36",
+      "category": "The Holy Rosary",
+      "question": "Which of the following is NOT one of the five Sorrowful Mysteries of the Holy Rosary?",
+      "options": [
+        "The Agony in the Garden",
+        "The Scourging at the Pillar",
+        "The Transfiguration of the Lord",
+        "The Crowning with Thorns"
+      ],
+      "correctIndex": 2,
+      "citation": "Apostolic Letter Rosarium Virginis Mariae",
+      "explanation": "The five Sorrowful Mysteries are the Agony in the Garden, Scourging at the Pillar, Crowning with Thorns, Carrying of the Cross, and Crucifixion. The Transfiguration is a Luminous Mystery."
+    },
+    {
+      "id": "c37",
+      "category": "Doctors of the Church",
+      "question": "Which Italian Dominican theologian and philosopher is known as the 'Angelic Doctor' (Doctor Angelicus) and authored the 'Summa Theologiae'?",
+      "options": [
+        "St. Bonaventure",
+        "St. Thomas Aquinas",
+        "St. Albert the Great",
+        "St. Anselm of Canterbury"
+      ],
+      "correctIndex": 1,
+      "citation": "Enchiridion / CCC 18",
+      "explanation": "St. Thomas Aquinas synthesized Christian revelation with Aristotelian philosophy, forming the cornerstone of Scholastic theology."
+    },
+    {
+      "id": "c38",
+      "category": "Doctors of the Church",
+      "question": "Who was the Bishop of Hippo in North Africa who wrote the 'Confessions' and 'The City of God'?",
+      "options": [
+        "St. Augustine",
+        "St. Athanasius",
+        "St. Cyprian",
+        "St. John Chrysostom"
+      ],
+      "correctIndex": 0,
+      "citation": "Patristic Theology / CCC 27",
+      "explanation": "St. Augustine of Hippo (Doctor Gratiae) is one of the greatest Latin Church Fathers, renowned for his theological works on grace and the Trinity."
+    },
+    {
+      "id": "c39",
+      "category": "Doctors of the Church",
+      "question": "Who was the first woman declared a Doctor of the Church by Pope St. Paul VI in 1970, alongside St. Catherine of Siena?",
+      "options": [
+        "St. Teresa of Ávila",
+        "St. Thérèse of Lisieux",
+        "St. Hildegard of Bingen",
+        "St. Joan of Arc"
+      ],
+      "correctIndex": 0,
+      "citation": "Papal Declaration (1970)",
+      "explanation": "St. Teresa of Jesus (of Ávila), Spanish Carmelite reformer and mystic, author of 'The Interior Castle', was declared Doctor of the Church in 1970."
+    },
+    {
+      "id": "c40",
+      "category": "Eschatology & Four Last Things",
+      "question": "What are the traditional 'Four Last Things' taught in Catholic eschatology?",
+      "options": [
+        "Death, Judgment, Heaven, and Hell",
+        "Sin, Penance, Grace, and Glory",
+        "Baptism, Mass, Viaticum, and Burial",
+        "Creation, Fall, Redemption, and Consummation"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 1020-1060",
+      "explanation": "The Four Last Things (Quattuor Novissima) describe the ultimate destiny of every human soul: Death, Judgment (Particular & Final), Heaven, and Hell."
+    },
+    {
+      "id": "c41",
+      "category": "Purgatory & Indulgences",
+      "question": "What is Purgatory according to the Catechism of the Catholic Church?",
+      "options": [
+        "A second chance for unrepentant mortal sinners",
+        "The final purification of all who die in God's grace and friendship, but still imperfectly purified",
+        "A physical holding prison beneath the earth",
+        "An ancient mythological invention abandoned by the Church"
+      ],
+      "correctIndex": 1,
+      "citation": "CCC 1030-1032",
+      "explanation": "Purgatory is the state of cleansing after death wherein souls assured of their eternal salvation undergo purification to achieve the holiness necessary for the beatific vision."
+    },
+    {
+      "id": "c42",
+      "category": "The Beatific Vision",
+      "question": "What is the ultimate supernatural contemplation and immediate knowledge of God face-to-face in Heaven called?",
+      "options": [
+        "The Beatific Vision (Visio Beatifica)",
+        "The Cosmic Consciousness",
+        "The Nirvana",
+        "The Astral Ascension"
+      ],
+      "correctIndex": 0,
+      "citation": "1 Corinthians 13:12 / CCC 1023",
+      "explanation": "The Beatific Vision is the direct contemplation of God in His heavenly glory, where the blessed see Him 'face to face' and partake in perfect eternal happiness."
+    },
+    {
+      "id": "c43",
+      "category": "Cardinal Virtues",
+      "question": "What are the four Cardinal (Moral) Virtues, known since antiquity and reinforced by Christian revelation?",
+      "options": [
+        "Prudence, Justice, Fortitude, and Temperance",
+        "Faith, Hope, Charity, and Humility",
+        "Poverty, Chastity, Obedience, and Silence",
+        "Kindness, Patience, Peace, and Joy"
+      ],
+      "correctIndex": 0,
+      "citation": "Wisdom 8:7 / CCC 1805",
+      "explanation": "The cardinal virtues (from Latin 'cardo', hinge) are the primary moral virtues upon which all other good habits pivot."
+    },
+    {
+      "id": "c44",
+      "category": "The Ten Commandments",
+      "question": "According to the Catholic numbering of the Decalogue (St. Augustine's tradition), what is the First Commandment?",
+      "options": [
+        "I am the Lord thy God: thou shalt not have strange gods before me",
+        "Thou shalt not take the name of the Lord thy God in vain",
+        "Remember that thou keep holy the Sabbath day",
+        "Honor thy father and thy mother"
+      ],
+      "correctIndex": 0,
+      "citation": "Exodus 20:2-5 / CCC 2084",
+      "explanation": "The First Commandment summons man to believe in God, to hope in Him, and to love Him above all other things."
+    },
+    {
+      "id": "c45",
+      "category": "The Seven Capital Sins",
+      "question": "Which of the following represents the traditional Seven Capital Sins (Seven Deadly Sins)?",
+      "options": [
+        "Pride, Greed (Avarice), Lust, Anger (Wrath), Gluttony, Envy, and Sloth (Acedia)",
+        "Theft, Murder, Adultery, Lying, Blasphemy, Idolatry, and Treason",
+        "Ignorance, Weakness, Malice, Fear, Cowardice, Doubt, and Despair",
+        "Despair, Presumption, Obstinacy, Impenitence, Envy, Sloth, and Rage"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 1866 / St. Gregory the Great",
+      "explanation": "They are called 'capital' sins (from caput, head) because they engender other sins and vices."
+    },
+    {
+      "id": "c46",
+      "category": "Corporal Works of Mercy",
+      "question": "Which of the following is one of the seven traditional Corporal Works of Mercy based on Matthew 25?",
+      "options": [
+        "To counsel the doubtful",
+        "To feed the hungry",
+        "To instruct the ignorant",
+        "To pray for the living and the dead"
+      ],
+      "correctIndex": 1,
+      "citation": "Matthew 25:35-40 / CCC 2447",
+      "explanation": "The Corporal Works of Mercy are: feed the hungry, give drink to the thirsty, clothe the naked, shelter the homeless, visit the sick, visit the imprisoned, and bury the dead."
+    },
+    {
+      "id": "c47",
+      "category": "Spiritual Works of Mercy",
+      "question": "Which of the following is one of the seven Spiritual Works of Mercy?",
+      "options": [
+        "To clothe the naked",
+        "To counsel the doubtful",
+        "To shelter the homeless",
+        "To bury the dead"
+      ],
+      "correctIndex": 1,
+      "citation": "CCC 2447",
+      "explanation": "The Spiritual Works of Mercy address spiritual poverty: counsel the doubtful, instruct the ignorant, admonish the sinner, comfort the sorrowful, forgive injuries, bear wrongs patiently, and pray for living and dead."
+    },
+    {
+      "id": "c48",
+      "category": "Precepts of the Church",
+      "question": "How often is a Catholic obligated to confess serious (mortal) sins according to the Precepts of the Church?",
+      "options": [
+        "At least once a month",
+        "At least once a year",
+        "Every Sunday before communion",
+        "Only when requested by the bishop"
+      ],
+      "correctIndex": 1,
+      "citation": "Canon 989 / CCC 2042",
+      "explanation": "The second precept of the Church mandates that every faithful person who has reached the age of discretion must confess grave sins at least once a year."
+    },
+    {
+      "id": "c49",
+      "category": "Precepts of the Church",
+      "question": "What is the minimum obligation for receiving Holy Communion according to the Precepts of the Church?",
+      "options": [
+        "At least once a year, during the Easter season",
+        "At every single Mass attended",
+        "Only on Christmas Day",
+        "Once every decade"
+      ],
+      "correctIndex": 0,
+      "citation": "Canon 920 / CCC 2042",
+      "explanation": "The third precept states that the faithful must receive the sacrament of the Eucharist at least during the Easter season (the 'Easter Duty')."
+    },
+    {
+      "id": "c50",
+      "category": "Ecumenical Councils",
+      "question": "Which Council held in 451 AD defined the Hypostatic Union: that Christ is one Divine Person in two unconfused, undivided natures (true God and true man)?",
+      "options": [
+        "Council of Chalcedon",
+        "Council of Trent",
+        "Council of Nicaea",
+        "Council of Lyons"
+      ],
+      "correctIndex": 0,
+      "citation": "Council of Chalcedon (451 AD) / CCC 467",
+      "explanation": "Chalcedon proclaimed Christ perfect in divinity and perfect in humanity, consubstantial with the Father as touching His Godhead, and consubstantial with us as touching His manhood."
+    },
+    {
+      "id": "c51",
+      "category": "Ecumenical Councils",
+      "question": "Which 20th-century Ecumenical Council was opened by Pope St. John XXIII in 1962 to renew Church life and pastoral dialogue with the modern world?",
+      "options": [
+        "Second Vatican Council (Vatican II)",
+        "First Vatican Council",
+        "Council of Florence",
+        "Council of Trent"
+      ],
+      "correctIndex": 0,
+      "citation": "Vatican II (1962-1965) / CCC 18",
+      "explanation": "Vatican II produced sixteen major documents, including 'Lumen Gentium', 'Dei Verbum', 'Sacrosanctum Concilium', and 'Gaudium et Spes'."
+    },
+    {
+      "id": "c52",
+      "category": "Saints & Orders",
+      "question": "Which Italian saint founded the Order of Friars Minor (Franciscans), embraced 'Lady Poverty', and received the holy Stigmata on Mount La Verna?",
+      "options": [
+        "St. Dominic de Guzmán",
+        "St. Francis of Assisi",
+        "St. Ignatius of Loyola",
+        "St. Philip Neri"
+      ],
+      "correctIndex": 1,
+      "citation": "Franciscan Tradition / CCC 956",
+      "explanation": "St. Francis rebuilt San Damiano, renounced worldly wealth, and was configured to the crucified Christ by receiving the sacred wounds."
+    },
+    {
+      "id": "c53",
+      "category": "Saints & Orders",
+      "question": "Which Spanish soldier-turned-mystic founded the Society of Jesus (Jesuits) and wrote the 'Spiritual Exercises' under the motto 'Ad Maiorem Dei Gloriam' (AMDG)?",
+      "options": [
+        "St. Francis Xavier",
+        "St. Ignatius of Loyola",
+        "St. John of the Cross",
+        "St. Peter Canisius"
+      ],
+      "correctIndex": 1,
+      "citation": "Jesuit History / CCC 2015",
+      "explanation": "St. Ignatius founded the Society of Jesus in 1540 to champion the defense and propagation of the faith for the greater glory of God."
+    },
+    {
+      "id": "c54",
+      "category": "Saints & Orders",
+      "question": "Which 6th-century Father of Western Monasticism authored the 'Holy Rule' at Monte Cassino with the famous motto 'Ora et Labora' (Pray and Work)?",
+      "options": [
+        "St. Anthony of the Desert",
+        "St. Benedict of Nursia",
+        "St. Bernard of Clairvaux",
+        "St. Bruno"
+      ],
+      "correctIndex": 1,
+      "citation": "Rule of St. Benedict / Patron of Europe",
+      "explanation": "St. Benedict founded Western monasticism on balance, prayer, community life, and labor, profoundly shaping European civilization."
+    },
+    {
+      "id": "c55",
+      "category": "Liturgical Terms",
+      "question": "What is the small linen cloth placed on the altar upon which the chalice and paten rest during the Holy Sacrifice of the Mass?",
+      "options": [
+        "Corporal",
+        "Purificator",
+        "Pall",
+        "Amice"
+      ],
+      "correctIndex": 0,
+      "citation": "GIRM 117",
+      "explanation": "The corporal (from corpus, body) is the square white linen upon which the sacred Body and Blood of Christ are placed on the altar."
+    },
+    {
+      "id": "c56",
+      "category": "Liturgical Terms",
+      "question": "What is the name of the vessel containing incense and suspended on chains, used for censing the altar, clergy, and congregation?",
+      "options": [
+        "Thurible (Censer)",
+        "Navicula (Boat)",
+        "Aspergillum",
+        "Cruet"
+      ],
+      "correctIndex": 0,
+      "citation": "GIRM 276-277",
+      "explanation": "The thurible holds burning charcoal onto which incense from the incense boat is spooned, symbolizing the prayers of the saints rising to God (Psalm 140:2)."
+    },
+    {
+      "id": "c57",
+      "category": "Canon Law & Jurisdiction",
+      "question": "What is the territorial district and community of the faithful under the pastoral governance of a Catholic Bishop called?",
+      "options": [
+        "A Parish",
+        "A Diocese (or Eparchy)",
+        "A Prelature",
+        "A Vicariate"
+      ],
+      "correctIndex": 1,
+      "citation": "Canon 369",
+      "explanation": "A diocese is a portion of the people of God entrusted to a bishop to be shepherded by him with the cooperation of the presbyterium."
+    },
+    {
+      "id": "c58",
+      "category": "Vatican City State",
+      "question": "By which 1929 bilateral agreement between the Holy See and Italy was the sovereign Vatican City State established?",
+      "options": [
+        "Treaty of Versailles",
+        "Lateran Treaty (Patti Lateranensi)",
+        "Peace of Westphalia",
+        "Concordat of Worms"
+      ],
+      "correctIndex": 1,
+      "citation": "Holy See History (1929)",
+      "explanation": "Signed on February 11, 1929, the Lateran Pacts recognized the full independence and sovereign jurisdiction of the Holy See over Vatican City."
+    },
+    {
+      "id": "c59",
+      "category": "The Papal Flag",
+      "question": "What two colors comprise the official flag of the Holy See and Vatican City State?",
+      "options": [
+        "Red and White",
+        "Yellow (Gold) and White (Silver)",
+        "Blue and Gold",
+        "Black and White"
+      ],
+      "correctIndex": 1,
+      "citation": "Fundamental Law of Vatican City State",
+      "explanation": "The yellow and white vertical fields symbolize gold and silver, matching the keys of heaven held in the papal tiara crest."
+    },
+    {
+      "id": "c60",
+      "category": "Papal Conclave",
+      "question": "What color smoke from the Sistine Chapel chimney signals to St. Peter's Square that a new Pope has been canonically elected?",
+      "options": [
+        "Black smoke (Fumata Nera)",
+        "White smoke (Fumata Bianca)",
+        "Red smoke",
+        "Golden smoke"
+      ],
+      "correctIndex": 1,
+      "citation": "Universi Dominici Gregis",
+      "explanation": "White smoke produced by burning ballots with chemical additives signals the election of the Supreme Pontiff, followed by the bell toll and 'Habemus Papam'."
+    },
+    {
+      "id": "c61",
+      "category": "Creeds of Faith",
+      "question": "Which ancient statement of Catholic faith is traditionally attributed to the twelve Apostles before their dispersion?",
+      "options": [
+        "The Apostles' Creed (Symbolum Apostolicum)",
+        "The Athanasian Creed (Quicumque Vult)",
+        "The Creed of Pope Paul VI",
+        "The Tridentine Profession of Faith"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 194",
+      "explanation": "The Apostles' Creed is considered a faithful summary of the Apostles' faith, anciently used as the baptismal symbol of the Church of Rome."
+    },
+    {
+      "id": "c62",
+      "category": "Athanasian Creed",
+      "question": "Which historic creed opens with the Latin words 'Quicumque vult salvus esse' ('Whosoever will be saved') and articulates the Trinitarian mystery in great precision?",
+      "options": [
+        "Nicene Creed",
+        "Athanasian Creed",
+        "Chalcedonian Definition",
+        "Apostles' Creed"
+      ],
+      "correctIndex": 1,
+      "citation": "Denzinger 75-76 / CCC 192",
+      "explanation": "The Athanasian Creed details orthodox Trinitarian theology and the dual natures of Christ in majestic rhythmical prose."
+    },
+    {
+      "id": "c63",
+      "category": "The Great Commission & Purpose of Man",
+      "question": "According to the Baltimore Catechism (Q. 6), why did God make man?",
+      "options": [
+        "To conquer the natural world through science",
+        "To know Him, to love Him, and to serve Him in this world, and to be happy with Him forever in the next",
+        "To enjoy material abundance and longevity",
+        "To evolve into higher spiritual planes"
+      ],
+      "correctIndex": 1,
+      "citation": "Baltimore Catechism / CCC 1",
+      "explanation": "God, infinitely perfect and blessed in Himself, freely created man to make him share in His own blessed life: to know, love, and serve God."
+    },
+    {
+      "id": "c64",
+      "category": "Communion of Saints",
+      "question": "What three states of the Church comprise the unified Communion of Saints?",
+      "options": [
+        "The Church Militant (earth), Church Suffering (purgatory), and Church Triumphant (heaven)",
+        "The Latin Rite, Byzantine Rite, and Maronite Rite",
+        "The Clergy, Religious, and Laity",
+        "The Past, Present, and Future generations"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 954 / Lumen Gentium 49",
+      "explanation": "All three states form one single family in Christ, interceding for and aiding one another through prayers and the Holy Sacrifice."
+    },
+    {
+      "id": "c65",
+      "category": "Sacramental Grace",
+      "question": "What distinct grace is gratuitously given in the sacraments to establish us in an abiding, supernatural friendship with God?",
+      "options": [
+        "Actual grace",
+        "Sanctifying (Deifying) grace",
+        "Charismatic grace",
+        "Common grace"
+      ],
+      "correctIndex": 1,
+      "citation": "CCC 1999-2000",
+      "explanation": "Sanctifying grace is the habitual, permanent divine gift of God's life infused into our soul by the Holy Spirit to heal it of sin and sanctify it."
+    },
+    {
+      "id": "c66",
+      "category": "Indelible Character",
+      "question": "Which three sacraments imprint an indelible spiritual character (seal) on the soul and therefore can NEVER be repeated?",
+      "options": [
+        "Baptism, Confirmation, and Holy Orders",
+        "Baptism, Eucharist, and Penance",
+        "Confirmation, Matrimony, and Extreme Unction",
+        "Baptism, Matrimony, and Penance"
+      ],
+      "correctIndex": 0,
+      "citation": "Council of Trent / CCC 1121",
+      "explanation": "Baptism, Confirmation, and Holy Orders imprint an indelible sacramental mark that configures the soul to Christ permanently and cannot be effaced."
+    },
+    {
+      "id": "c67",
+      "category": "Mortal vs Venial Sin",
+      "question": "What three simultaneous conditions are required for a sin to be considered mortal (deadly)?",
+      "options": [
+        "Grave matter, full knowledge, and deliberate consent",
+        "Public scandal, legal violation, and arrest",
+        "Harm to others, bad intent, and repeated behavior",
+        "Omission of church attendance, anger, and gossip"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 1857-1859",
+      "explanation": "Mortal sin destroys charity in the heart of man by a grave violation of God's law; it requires grave matter, full knowledge of its evil, and complete deliberate consent."
+    },
+    {
+      "id": "c68",
+      "category": "Angels & Archangels",
+      "question": "Which Archangel whose name means 'Who is like God?' cast Lucifer out of heaven and is invoked in the St. Michael Prayer?",
+      "options": [
+        "St. Gabriel",
+        "St. Michael",
+        "St. Raphael",
+        "St. Uriel"
+      ],
+      "correctIndex": 1,
+      "citation": "Revelation 12:7-9 / CCC 335",
+      "explanation": "St. Michael the Archangel is the leader of the heavenly host and protector of the Church against the snares of the devil."
+    },
+    {
+      "id": "c69",
+      "category": "The Guardian Angels",
+      "question": "According to Catholic doctrine and Tradition, when does each human person receive their personal Guardian Angel?",
+      "options": [
+        "At the age of reason (seven years old)",
+        "From its beginning until death (from conception / birth)",
+        "Only upon receiving holy baptism",
+        "Only when entering religious life"
+      ],
+      "correctIndex": 1,
+      "citation": "CCC 336 / St. Basil the Great",
+      "explanation": "From its beginning until death, human life is surrounded by the watchful care and intercession of holy guardian angels."
+    },
+    {
+      "id": "c70",
+      "category": "Sacramental Signs",
+      "question": "What is the physical sign or gesture by which a Catholic blesses oneself with the words 'In the name of the Father, and of the Son, and of the Holy Spirit'?",
+      "options": [
+        "The Sign of the Cross (Signum Crucis)",
+        "The Genuflection",
+        "The Metania",
+        "The Kiss of Peace"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 2157 / Tertullian",
+      "explanation": "The Sign of the Cross recalls Christ's redemptive sacrifice and the Holy Trinity, sanctifying daily actions since the apostolic age."
+    },
+    {
+      "id": "c71",
+      "category": "Eucharistic Fast",
+      "question": "According to modern Code of Canon Law (Canon 919), how long must a Catholic abstain from all food and drink (water and medicine excepted) prior to Holy Communion?",
+      "options": [
+        "At least one hour",
+        "At least three hours",
+        "From midnight",
+        "At least twenty-four hours"
+      ],
+      "correctIndex": 0,
+      "citation": "Canon 919 §1",
+      "explanation": "A person who is to receive the Most Holy Eucharist is to abstain for at least one hour before Holy Communion from any food and drink, except water and medicine."
+    },
+    {
+      "id": "c72",
+      "category": "Chalice and Paten",
+      "question": "What is the sacred plate upon which the primary host rests during Mass before being broken and placed on the altar?",
+      "options": [
+        "The Paten",
+        "The Pyx",
+        "The Cruet",
+        "The Thurible"
+      ],
+      "correctIndex": 0,
+      "citation": "GIRM 327",
+      "explanation": "The paten (from patina, dish) is the shallow golden plate designated to hold the bread for consecration in the Eucharist."
+    },
+    {
+      "id": "c73",
+      "category": "Feast of Corpus Christi",
+      "question": "Which Pope instituted the worldwide Solemnity of Corpus Christi in 1264 following the Eucharistic miracle of Bolsena, with hymns composed by St. Thomas Aquinas?",
+      "options": [
+        "Pope Urban IV",
+        "Pope Innocent III",
+        "Pope Boniface VIII",
+        "Pope Gregory IX"
+      ],
+      "correctIndex": 0,
+      "citation": "Bull Transiturus de hoc mundo (1264)",
+      "explanation": "Pope Urban IV instituted Corpus Christi to celebrate the Real Presence, adopting the hymns 'Pange Lingua' and 'Lauda Sion' composed by Aquinas."
+    },
+    {
+      "id": "c74",
+      "category": "Sacred Music",
+      "question": "What traditional sacred monophonic chant is recognized by the Second Vatican Council as 'specially suited to the Roman liturgy'?",
+      "options": [
+        "Gregorian Chant",
+        "Byzantine Chant",
+        "Polyphonic Madrigal",
+        "Modern Gospel Hymnody"
+      ],
+      "correctIndex": 0,
+      "citation": "Sacrosanctum Concilium 116 / GIRM 41",
+      "explanation": "The Church acknowledges Gregorian chant as specially suited to the Roman liturgy; therefore, other things being equal, it should be given pride of place."
+    },
+    {
+      "id": "c75",
+      "category": "Holy Days of Obligation",
+      "question": "Which of the following solemnities is universally observed as a Holy Day of Obligation on August 15 in the Roman Catholic Church?",
+      "options": [
+        "The Assumption of the Blessed Virgin Mary",
+        "The Nativity of St. John the Baptist",
+        "The Feast of the Transfiguration",
+        "The Annunciation of the Lord"
+      ],
+      "correctIndex": 0,
+      "citation": "Canon 1246 §1",
+      "explanation": "The Solemnity of the Assumption of the Blessed Virgin Mary into Heaven on August 15 is one of the principal holy days of obligation."
+    },
+    {
+      "id": "c76",
+      "category": "Holy Days of Obligation",
+      "question": "On which date does the Church celebrate the Solemnity of the Immaculate Conception of the Blessed Virgin Mary?",
+      "options": [
+        "March 25",
+        "August 15",
+        "September 8",
+        "December 8"
+      ],
+      "correctIndex": 3,
+      "citation": "Canon 1246 / Liturgical Calendar",
+      "explanation": "December 8 commemorates Mary's preservation from original sin, celebrated exactly nine months before the feast of her Nativity (September 8)."
+    },
+    {
+      "id": "c77",
+      "category": "Ash Wednesday",
+      "question": "What solemn scriptural reminder does the priest pronounce when imposing ashes on the forehead on Ash Wednesday?",
+      "options": [
+        "Remember, man, that thou art dust, and unto dust thou shalt return (or Repent and believe in the Gospel)",
+        "Go in peace to love and serve the Lord",
+        "May the blessing of Almighty God rest upon you",
+        "Peace be to this house and all who dwell in it"
+      ],
+      "correctIndex": 0,
+      "citation": "Genesis 3:19 / Mark 1:15 / Roman Missal",
+      "explanation": "The imposition of ashes initiates the forty days of Lent with the call to penance and remembrance of human mortality."
+    },
+    {
+      "id": "c78",
+      "category": "Sacred Scriptures & Inspiration",
+      "question": "According to the Dogmatic Constitution 'Dei Verbum', how did God author Sacred Scripture through the human writers?",
+      "options": [
+        "By dictating word-for-word while putting the authors in a trance",
+        "By inspiring human authors to use their own faculties to write everything and only what God wanted",
+        "By delivering completed golden books from heaven",
+        "By approving human folklore centuries after it was recorded"
+      ],
+      "correctIndex": 1,
+      "citation": "Dei Verbum 11 / CCC 105-106",
+      "explanation": "God chose men and while employed by Him they made use of their powers and abilities, so that with Him acting in them and through them, they wrote as true authors all that He wanted."
+    },
+    {
+      "id": "c79",
+      "category": "The Deposit of Faith",
+      "question": "What two inseparable fonts make up the single sacred 'Deposit of Faith' (Depositum Fidei) entrusted to the Church?",
+      "options": [
+        "Sacred Scripture and Sacred Tradition",
+        "Canon Law and Civil Law",
+        "The Old Testament and New Testament",
+        "The Papal Encyclicals and Catechisms"
+      ],
+      "correctIndex": 0,
+      "citation": "Dei Verbum 9-10 / CCC 80-84",
+      "explanation": "Sacred Scripture is the speech of God put down in writing under the breath of the Holy Spirit; Sacred Tradition transmits in its entirety the Word of God entrusted to the Apostles."
+    },
+    {
+      "id": "c80",
+      "category": "The Vulgate Translation",
+      "question": "At which ancient town in the Holy Land did St. Jerome dwell in a cave monastery while translating the Latin Vulgate Bible?",
+      "options": [
+        "Bethlehem",
+        "Jerusalem",
+        "Nazareth",
+        "Antioch"
+      ],
+      "correctIndex": 0,
+      "citation": "St. Jerome Biography / Papal Encyclical Spiritus Paraclitus",
+      "explanation": "St. Jerome spent over thirty years in a cave near the Church of the Nativity in Bethlehem laboring over the Latin Vulgate translation."
+    },
+    {
+      "id": "c81",
+      "category": "Titles of Christ",
+      "question": "What Greek acronym for 'Jesus Christ, Son of God, Savior' was symbolized by a fish in the early catacombs of Rome?",
+      "options": [
+        "ICHTHYS (ΙΧΘΥΣ)",
+        "ALPHA & OMEGA",
+        "CHRISTOS",
+        "KYRIOS"
+      ],
+      "correctIndex": 0,
+      "citation": "Early Church Symbolism / CCC 430",
+      "explanation": "Ι-Χ-Θ-Υ-Σ stands for Iēsous Christos Theou Yios Sōtēr (Jesus Christ, Son of God, Savior), forming the Greek word for 'fish'."
+    },
+    {
+      "id": "c82",
+      "category": "Liturgical Actions",
+      "question": "What physical gesture of reverence (bending the right knee to touch the ground) is made toward the Blessed Sacrament in the Tabernacle?",
+      "options": [
+        "Bow of the Head",
+        "Genuflection",
+        "Prostration",
+        "Metania"
+      ],
+      "correctIndex": 1,
+      "citation": "GIRM 274 / CCC 1378",
+      "explanation": "Genuflection (from genua flectere, to bend the knee) is an act of adoration reserved for the Holy Eucharist present in the Tabernacle or exposed upon the altar."
+    },
+    {
+      "id": "c83",
+      "category": "The Tabernacle",
+      "question": "What is the dedicated secure receptacle in every Catholic church where the consecrated Blessed Sacrament is reserved for the sick and for adoration?",
+      "options": [
+        "The Ambo",
+        "The Tabernacle (Tabernaculum)",
+        "The Ambry",
+        "The Sacristy"
+      ],
+      "correctIndex": 1,
+      "citation": "GIRM 314-317 / CCC 1379",
+      "explanation": "The tabernacle (tent/dwelling of God with men) houses the Real Presence of Jesus Christ in the consecrated species, signified by a continuously burning sanctuary lamp."
+    },
+    {
+      "id": "c84",
+      "category": "Sanctuary Lamp",
+      "question": "What color lamp or candle kept burning near the tabernacle indicates the Real Presence of Christ in the reserved Eucharist?",
+      "options": [
+        "Red Sanctuary Lamp",
+        "Green Sanctuary Lamp",
+        "Blue Sanctuary Lamp",
+        "White Candle only"
+      ],
+      "correctIndex": 0,
+      "citation": "GIRM 316",
+      "explanation": "A special lamp, fueled by oil or wax and usually covered in red glass, shines continuously near the tabernacle to indicate and honor the presence of Christ."
+    },
+    {
+      "id": "c85",
+      "category": "The Holy Family",
+      "question": "Who comprise the earthly Holy Family of Nazareth, the model of all Christian households?",
+      "options": [
+        "Jesus, Mary, and Joseph",
+        "Abraham, Sarah, and Isaac",
+        "Zechariah, Elizabeth, and John",
+        "Joachim, Anne, and Mary"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 533",
+      "explanation": "The Holy Family of Jesus, Mary, and Joseph presents the holy sanctuary of silence, domestic prayer, and daily labor."
+    },
+    {
+      "id": "c86",
+      "category": "The Sign of Peace",
+      "question": "At what point in the Holy Sacrifice of the Mass does the priest invite the congregation to share the Pax (Sign of Peace)?",
+      "options": [
+        "Immediately before the Penitential Rite",
+        "After the Lord's Prayer and before the Fraction of the Host (Agnus Dei)",
+        "Immediately after the homily",
+        "After the final dismissal"
+      ],
+      "correctIndex": 1,
+      "citation": "GIRM 82 / Roman Missal",
+      "explanation": "The sign of peace precedes Holy Communion, where the faithful implore peace and unity for the Church and express mutual love before receiving the one Body of Christ."
+    },
+    {
+      "id": "c87",
+      "category": "Devotion to the Sacred Heart",
+      "question": "To which 17th-century French Visitation nun at Paray-le-Monial did Jesus appear, revealing His Sacred Heart inflamed with love for humanity?",
+      "options": [
+        "St. Margaret Mary Alacoque",
+        "St. Bernadette Soubirous",
+        "St. Catherine Labouré",
+        "St. Faustina Kowalska"
+      ],
+      "correctIndex": 0,
+      "citation": "Papal Encyclical Haurietis Aquas (1956)",
+      "explanation": "Jesus revealed His Sacred Heart to St. Margaret Mary Alacoque, requesting the Feast of the Sacred Heart and First Friday communions of reparation."
+    },
+    {
+      "id": "c88",
+      "category": "Divine Mercy Devotion",
+      "question": "Which Polish nun and mystic of the Congregation of Our Lady of Mercy recorded Christ's messages of Divine Mercy in her Diary?",
+      "options": [
+        "St. Faustina Kowalska",
+        "St. Teresa Benedicta of the Cross (Edith Stein)",
+        "St. Gianna Beretta Molla",
+        "St. Maria Goretti"
+      ],
+      "correctIndex": 0,
+      "citation": "Diary of St. Faustina / St. John Paul II",
+      "explanation": "St. Maria Faustina Kowalska was canonized in 2000 by Pope St. John Paul II, who designated the Second Sunday of Easter as Divine Mercy Sunday."
+    },
+    {
+      "id": "c89",
+      "category": "Feast of Christ the King",
+      "question": "Which Pope instituted the worldwide Solemnity of Our Lord Jesus Christ, King of the Universe, in 1925 with the encyclical 'Quas Primas'?",
+      "options": [
+        "Pope Pius XI",
+        "Pope Leo XIII",
+        "Pope St. Pius X",
+        "Pope Benedict XV"
+      ],
+      "correctIndex": 0,
+      "citation": "Quas Primas (1925) / CCC 2105",
+      "explanation": "Pope Pius XI instituted the feast to combat rising secularism and proclaim Christ's sovereign reign over individual hearts, families, and civil nations."
+    },
+    {
+      "id": "c90",
+      "category": "Priesthood of Christ",
+      "question": "In what manner does an ordained Catholic priest act during the Holy Sacrifice of the Mass and the absolution of sins?",
+      "options": [
+        "In persona Christi Capitis (in the person of Christ the Head)",
+        "Solely as a community representative",
+        "As an elected congregational spokesman",
+        "As an honorary master of ceremonies"
+      ],
+      "correctIndex": 0,
+      "citation": "Lumen Gentium 10 / CCC 1548",
+      "explanation": "Through the Sacrament of Holy Orders, the priest is configured to Christ, acting 'in the person of Christ the Head' to offer the one Sacrifice of Calvary."
+    },
+    {
+      "id": "c91",
+      "category": "Universal Call to Holiness",
+      "question": "What central teaching of the Second Vatican Council ('Lumen Gentium', Chapter 5) affirms that all Christians in every state of life are called to the fullness of Christian life and perfection of charity?",
+      "options": [
+        "The Universal Call to Holiness",
+        "The Doctrine of the Two Swords",
+        "The Temporal Power of the Papacy",
+        "The Cluniac Reform"
+      ],
+      "correctIndex": 0,
+      "citation": "Lumen Gentium 39-42 / CCC 2013",
+      "explanation": "'All the faithful, whatever their condition or state, are called by the Lord, each in his own way, to that perfect holiness whereby the Father Himself is perfect.'"
+    },
+    {
+      "id": "c92",
+      "category": "The Miraculous Medal",
+      "question": "To which French Daughter of Charity nun in the Rue du Bac chapel in Paris did the Blessed Virgin Mary reveal the design of the Miraculous Medal in 1830?",
+      "options": [
+        "St. Catherine Labouré",
+        "St. Bernadette Soubirous",
+        "St. Thérèse of Lisieux",
+        "St. Joan of Arc"
+      ],
+      "correctIndex": 0,
+      "citation": "Miraculous Medal History / Holy See",
+      "explanation": "Mary appeared to St. Catherine Labouré, instructing her to have a medal struck with the words: 'O Mary, conceived without sin, pray for us who have recourse to thee.'"
+    },
+    {
+      "id": "c93",
+      "category": "Our Lady of Lourdes",
+      "question": "In 1858, at the Grotto of Massabielle in Lourdes, what name did the heavenly apparition reveal to the young peasant girl St. Bernadette?",
+      "options": [
+        "I am the Queen of Heaven",
+        "I am the Immaculate Conception",
+        "I am the Mystical Rose",
+        "I am the Mother of Mercy"
+      ],
+      "correctIndex": 1,
+      "citation": "Lourdes Apparitions (1858) / CCC 491",
+      "explanation": "Speaking in the local Occitan dialect, Our Lady proclaimed: 'Que soy era Immaculada Councepciou' ('I am the Immaculate Conception'), confirming the dogma defined four years prior."
+    },
+    {
+      "id": "c94",
+      "category": "Our Lady of Fatima",
+      "question": "In 1917, to which three shepherd children did the Blessed Virgin Mary appear in Cova da Iria near Fatima, Portugal?",
+      "options": [
+        "Lucia dos Santos, and Francisco and Jacinta Marto",
+        "Juan Diego, Maria, and Bernardino",
+        "Bernadette, Therese, and Catherine",
+        "Dominic, Anthony, and Clare"
+      ],
+      "correctIndex": 0,
+      "citation": "Fatima Apparitions (1917) / Congregation for the Doctrine of the Faith",
+      "explanation": "Mary appeared six times to Lucia, Francisco, and Jacinta, culminating in the Miracle of the Sun on October 13, 1917, calling for prayer and the daily Rosary."
+    },
+    {
+      "id": "c95",
+      "category": "Our Lady of Guadalupe",
+      "question": "On whose tilma (cloak) was the miraculous image of Our Lady of Guadalupe imprinted atop Tepeyac Hill in Mexico in 1531?",
+      "options": [
+        "St. Juan Diego Cuauhtlatoatzin",
+        "St. Martin de Porres",
+        "St. Peter Claver",
+        "St. Toribio de Mogrovejo"
+      ],
+      "correctIndex": 0,
+      "citation": "Nican Mopohua / Canonization by St. John Paul II",
+      "explanation": "When St. Juan Diego unfolded his tilma before Bishop Zumárraga to present Castilian roses, the miraculous image of the Virgin of Guadalupe was revealed on the cactus-fiber cloth."
+    },
+    {
+      "id": "c96",
+      "category": "Ecumenical Councils",
+      "question": "Which 13th-century Ecumenical Council (1215) under Pope Innocent III mandated annual confession and defined the word 'Transubstantiation'?",
+      "options": [
+        "Fourth Lateran Council (Lateran IV)",
+        "First Council of Lyons",
+        "Council of Vienne",
+        "Third Lateran Council"
+      ],
+      "correctIndex": 0,
+      "citation": "Lateran IV (1215) / Denzinger 800",
+      "explanation": "The Fourth Lateran Council defined that Jesus Christ is priest and sacrifice, whose body and blood are truly contained in the sacrament of the altar under the forms of bread and wine, transubstantiated by divine power."
+    },
+    {
+      "id": "c97",
+      "category": "Catholic Social Teaching",
+      "question": "Which groundbreaking 1891 papal encyclical by Pope Leo XIII addressed the condition of the working classes and inaugurated modern Catholic Social Teaching?",
+      "options": [
+        "Rerum Novarum",
+        "Quadragesimo Anno",
+        "Pacem in Terris",
+        "Centesimus Annus"
+      ],
+      "correctIndex": 0,
+      "citation": "Leo XIII, Rerum Novarum (1891) / CCC 2420",
+      "explanation": "'Rerum Novarum' ('Of Revolutionary Change') defended workers' rights to just wages, fair working hours, private property, and labor unions while refuting unbridled capitalism and socialism."
+    },
+    {
+      "id": "c98",
+      "category": "Patron Saints of Nations",
+      "question": "Which 5th-century bishop and apostle of Ireland used the three-leaf shamrock to illustrate the Holy Trinity?",
+      "options": [
+        "St. Patrick",
+        "St. Columba",
+        "St. Brigid of Kildare",
+        "St. Brendan the Navigator"
+      ],
+      "correctIndex": 0,
+      "citation": "Irish Catholic Tradition",
+      "explanation": "St. Patrick evangelized Ireland, baptizing thousands, founding monasteries, and utilizing the clover to explain three Persons in one divine Essence."
+    },
+    {
+      "id": "c99",
+      "category": "Catholic Apologetics",
+      "question": "What early Church Father and bishop of Antioch was the first to use the phrase 'Catholic Church' (Katholike Ekklesia) around 110 AD?",
+      "options": [
+        "St. Ignatius of Antioch",
+        "St. Polycarp of Smyrna",
+        "St. Justin Martyr",
+        "St. Irenaeus of Lyons"
+      ],
+      "correctIndex": 0,
+      "citation": "Epistle to the Smyrnaeans 8:2 / CCC 830",
+      "explanation": "St. Ignatius wrote on his way to martyrdom in Rome: 'Wherever Jesus Christ is, there is the Catholic Church.'"
+    },
+    {
+      "id": "c100",
+      "category": "Monastic Life & Vows",
+      "question": "What are the three evangelical counsels professed as perpetual vows by members of Catholic religious institutes?",
+      "options": [
+        "Poverty, Chastity, and Obedience",
+        "Silence, Fasting, and Prayer",
+        "Faith, Hope, and Charity",
+        "Study, Preaching, and Solitude"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 915 / Canon 573",
+      "explanation": "Religious consecrate themselves to God through public profession of the evangelical counsels of poverty, consecrated chastity, and obedience."
+    },
+    {
+      "id": "c101",
+      "category": "Holy Water & Sacramentals",
+      "question": "What are sacred signs instituted by the Church (such as holy water, crucifixes, rosaries, and ashes) that prepare us to receive grace?",
+      "options": [
+        "Sacramentals (Sacramentalia)",
+        "Sacraments",
+        "Amulets",
+        "Relics"
+      ],
+      "correctIndex": 0,
+      "citation": "CCC 1667-1670 / Sacrosanctum Concilium 60",
+      "explanation": "Sacramentals are sacred signs that bear a resemblance to the sacraments; they signify effects, especially of a spiritual kind, that are obtained through the Church's intercession."
+    },
+    {
+      "id": "c102",
+      "category": "Church Relics",
+      "question": "In Catholic theology, what constitutes a 'First-Class Relic' of a canonized saint?",
+      "options": [
+        "A physical part of the saint's bodily remains (such as bone, flesh, or hair)",
+        "An item of clothing worn by the saint",
+        "An object touched to the saint's tomb",
+        "A holy card bearing the saint's picture"
+      ],
+      "correctIndex": 0,
+      "citation": "Congregation for the Causes of Saints / CCC 1674",
+      "explanation": "First-class relics are parts of the saint's body. Second-class relics are items owned or used by the saint (e.g. habit, rosary). Third-class relics are items touched to a first- or second-class relic."
+    },
+    {
+      "id": "c103",
+      "category": "Liturgy of the Hours",
+      "question": "What is the official daily liturgical prayer of the Catholic Church, sanctifying the hours of each day through the Psalms and scripture canticles?",
+      "options": [
+        "The Liturgy of the Hours (Divine Office / Breviary)",
+        "The Chaplet of Divine Mercy",
+        "The Novena to St. Joseph",
+        "The Angelus"
+      ],
+      "correctIndex": 0,
+      "citation": "Sacrosanctum Concilium 83-101 / CCC 1174",
+      "explanation": "The Liturgy of the Hours is the public, constant prayer of the Mystical Body of Christ, uniting priests, consecrated religious, and laity worldwide throughout the day."
+    },
+    {
+      "id": "c104",
+      "category": "The Angelus",
+      "question": "What traditional Catholic devotion, recited three times daily (morning, noon, and evening) at the sound of church bells, commemorates the Incarnation?",
+      "options": [
+        "The Angelus (Angelus Domini nuntiavit Mariae)",
+        "The Regina Caeli",
+        "The Sub Tuum Praesidium",
+        "The Salve Regina"
+      ],
+      "correctIndex": 0,
+      "citation": "Catholic Devotional Tradition / Enchiridion Indulgentiarum",
+      "explanation": "The Angelus recalls the Archangel Gabriel's message to Mary and the Word becoming flesh ('Et Verbum caro factum est'). During Eastertide, the 'Regina Caeli' replaces the Angelus."
+    },
+    {
+      "id": "c105",
+      "category": "Papal Encyclicals",
+      "question": "What is an authoritative circular letter written by the Pope addressed to all bishops, clergy, and faithful worldwide called?",
+      "options": [
+        "An Encyclical (Epistola Encyclica)",
+        "A Papal Bull",
+        "An Apostolic Constitution",
+        "A Motu Proprio"
+      ],
+      "correctIndex": 0,
+      "citation": "Vatican Terminology / Magisterium",
+      "explanation": "An encyclical is a formal pastoral letter from the Supreme Pontiff guiding the Church on doctrinal, moral, or social teachings."
+    },
+    {
+      "id": "c106",
+      "category": "The Latin Vulgate & Trent",
+      "question": "Which 1592 edition of the Latin Vulgate, promulgated by Pope Clement VIII following the Council of Trent, served as the standard Bible of the Roman Rite for over three centuries?",
+      "options": [
+        "The Clementine Vulgate (Biblia Sacra Vulgata Clementina)",
+        "The Gutenberg Bible",
+        "The Nova Vulgata",
+        "The Complutensian Polyglot"
+      ],
+      "correctIndex": 0,
+      "citation": "Council of Trent / Cum Sacrorum (1592)",
+      "explanation": "The Clementine Vulgate was the official standardized text of the Latin Vulgate used throughout the Roman Catholic Church from 1592 until the Nova Vulgata in 1979."
     }
   ]
 }
-
