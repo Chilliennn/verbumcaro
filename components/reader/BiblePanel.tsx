@@ -11,8 +11,12 @@ import { TranslationSelector } from "./TranslationSelector";
 import { ChapterReader } from "./ChapterReader";
 import { JapaneseLookupPopover } from "./JapaneseLookupPopover";
 import { LatinLookupPopover } from "./LatinLookupPopover";
+import { EnglishLookupPopover } from "./EnglishLookupPopover";
+import { ChineseLookupPopover } from "./ChineseLookupPopover";
 import { japaneseDebug } from "../../features/japanese/debug";
 import { latinDebug } from "../../features/latin/debug";
+import { englishDebug } from "../../features/english/debug";
+import { chineseDebug } from "../../features/chinese/debug";
 
 interface BiblePanelProps {
   panel: PanelState;
@@ -50,11 +54,15 @@ export function BiblePanel({
     : "en";
   const isJapanese = translation?.language === "ja";
   const isLatin = translation?.language === "la";
+  const isEnglish = translation?.language === "en";
+  const isChinese = translation?.language === "zh-Hans" || translation?.language === "zh";
 
   useEffect(() => {
     japaneseDebug("BiblePanel gate evaluated", { isJapanese, translation: translation?.id });
     latinDebug("BiblePanel gate evaluated", { isLatin, translation: translation?.id });
-    if (!isJapanese && !isLatin) {
+    englishDebug("BiblePanel gate evaluated", { isEnglish, translation: translation?.id });
+    chineseDebug("BiblePanel gate evaluated", { isChinese, translation: translation?.id });
+    if (!isJapanese && !isLatin && !isEnglish && !isChinese) {
       setSelectedText(null);
       return;
     }
@@ -85,12 +93,32 @@ export function BiblePanel({
             commonAncestor: range?.commonAncestorContainer.nodeName ?? null
           });
         }
+        if (isEnglish) {
+          englishDebug("Mouse up event", {
+            text,
+            insideReader: Boolean(range && reader.contains(range.commonAncestorContainer)),
+            commonAncestor: range?.commonAncestorContainer.nodeName ?? null
+          });
+        }
+        if (isChinese) {
+          chineseDebug("Mouse up event", {
+            text,
+            insideReader: Boolean(range && reader.contains(range.commonAncestorContainer)),
+            commonAncestor: range?.commonAncestorContainer.nodeName ?? null
+          });
+        }
         if (!text || !range || !reader.contains(range.commonAncestorContainer)) {
           if (isJapanese) {
             japaneseDebug("Selection ignored", { reason: "empty or outside Japanese reader" });
           }
           if (isLatin) {
             latinDebug("Selection ignored", { reason: "empty or outside Latin reader" });
+          }
+          if (isEnglish) {
+            englishDebug("Selection ignored", { reason: "empty or outside English reader" });
+          }
+          if (isChinese) {
+            chineseDebug("Selection ignored", { reason: "empty or outside Chinese reader" });
           }
           return;
         }
@@ -101,13 +129,19 @@ export function BiblePanel({
         if (isLatin) {
           latinDebug("Selection accepted", { text, top: rect.bottom, left: rect.left });
         }
+        if (isEnglish) {
+          englishDebug("Selection accepted", { text, top: rect.bottom, left: rect.left });
+        }
+        if (isChinese) {
+          chineseDebug("Selection accepted", { text, top: rect.bottom, left: rect.left });
+        }
         setSelectedText({ text, top: rect.bottom, left: rect.left });
       }, 0);
     }
 
     document.addEventListener("mouseup", handleMouseUp);
     return () => document.removeEventListener("mouseup", handleMouseUp);
-  }, [isJapanese, isLatin]);
+  }, [isJapanese, isLatin, isEnglish, isChinese]);
 
   useEffect(() => {
     let cancelled = false;
@@ -256,6 +290,26 @@ export function BiblePanel({
       )}
       {isLatin && selectedText && (
         <LatinLookupPopover
+          text={selectedText.text}
+          anchor={selectedText}
+          onClose={() => {
+            setSelectedText(null);
+            window.getSelection()?.removeAllRanges();
+          }}
+        />
+      )}
+      {isEnglish && selectedText && (
+        <EnglishLookupPopover
+          text={selectedText.text}
+          anchor={selectedText}
+          onClose={() => {
+            setSelectedText(null);
+            window.getSelection()?.removeAllRanges();
+          }}
+        />
+      )}
+      {isChinese && selectedText && (
+        <ChineseLookupPopover
           text={selectedText.text}
           anchor={selectedText}
           onClose={() => {

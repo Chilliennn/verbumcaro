@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VerbumNobis — Interactive Verse Citation Popup Demo</title>
+  <style>
+    :root {
+      --brand-800: #991b1b;
+      --brand-900: #7f1d1d;
+      --brand-700: #b91c1c;
+      --brand-50: #fdf4f4;
+      --brand-100: #fbe8e8;
+
+      --stone-50: #fafaf9;
+      --stone-100: #f5f5f4;
+      --stone-200: #e7e5e4;
+      --stone-300: #d6d3d1;
+      --stone-400: #a8a29e;
+      --stone-500: #78716c;
+      --stone-800: #292524;
+      --stone-900: #1c1917;
+
+      --white: #ffffff;
+      --header-height: 72px;
+      --toolbar-height: 54px;
+
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--stone-800);
+      background: var(--stone-100);
+    }
+
+    :root[data-theme="dark"] {
+      --stone-50: #1c1917;
+      --stone-100: #292524;
+      --stone-200: #44403c;
+      --stone-300: #57534e;
+      --stone-400: #78716c;
+      --stone-500: #a8a29e;
+      --stone-800: #f5f5f4;
+      --stone-900: #fafaf9;
+      --white: #292524;
+
+      --brand-50: #351313;
+      --brand-100: #4b1717;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-width: 320px;
+      background: var(--stone-100);
+      color: var(--stone-800);
+      overflow-x: hidden;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    /* HEADER */
+    .site-header {
+      height: var(--header-height);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--white);
+      border-bottom: 1px solid var(--stone-200);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--brand-900);
+      text-decoration: none;
+      border: 0;
+      background: none;
+      padding: 0;
+    }
+
+    :root[data-theme="dark"] .brand {
+      color: #fca5a5;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      color: var(--brand-800);
+    }
+
+    :root[data-theme="dark"] .brand-mark {
+      color: #ef4444;
+    }
+
+    .brand-name {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    .header-divider {
+      width: 1px;
+      height: 28px;
+      background: var(--stone-200);
+    }
+
+    .search-wrap {
+      flex: 1;
+      max-width: 520px;
+      position: relative;
+    }
+
+    .global-search {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--stone-200);
+      border-radius: 9999px;
+      background: var(--stone-50);
+      padding: 4px 12px 4px 16px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .global-search:focus-within {
+      border-color: var(--brand-700);
+      box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+      background: var(--white);
+    }
+
+    .global-search input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13.5px;
+      color: var(--stone-800);
+    }
+
+    .search-btn {
+      border: none;
+      background: transparent;
+      color: var(--stone-500);
+      display: grid;
+      place-items: center;
+      padding: 4px;
+      border-radius: 50%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .header-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--stone-200);
+      background: var(--white);
+      color: var(--stone-500);
+      display: grid;
+      place-items: center;
+      transition: all 0.15s ease;
+    }
+
+    .header-icon:hover {
+      color: var(--brand-800);
+      border-color: var(--stone-300);
+      background: var(--brand-50);
+    }
+
+    /* HERO BANNER */
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 42px 20px 52px;
+      background-color: var(--stone-900);
+      background-image:
+        radial-gradient(ellipse at center, rgba(10, 11, 14, 0.45) 0%, rgba(6, 7, 9, 0.95) 85%),
+        linear-gradient(135deg, #2b1111 0%, #151012 100%);
+      color: #ffffff;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .hero-pretitle {
+      font-family: Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brand-100);
+      margin-bottom: 14px;
+      opacity: 0.9;
+    }
+
+    .hero-heading {
+      font-family: Georgia, serif;
+      color: #ffffff;
+      max-width: 980px;
+      margin: 0 auto;
+      line-height: 1.15;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+    }
+
+    .hero-heading .line-roman {
+      display: block;
+      font-size: clamp(26px, 5vw, 54px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-heading .line-italic {
+      display: block;
+      font-size: clamp(28px, 5.5vw, 60px);
+      font-style: italic;
+      font-weight: 400;
+      color: #eae7de;
+      margin-top: 6px;
+    }
+
+    .hero-divider-rule {
+      width: 70%;
+      max-width: 600px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.28);
+      margin: 22px auto 16px;
+    }
+
+    .hero-subscript {
+      font-family: Georgia, serif;
+      font-size: clamp(14px, 1.8vw, 17px);
+      font-style: italic;
+      color: #d6d3d1;
+      margin-bottom: 6px;
+    }
+
+    .hero-cjk {
+      font-size: 13.5px;
+      color: #a8a29e;
+      margin-bottom: 22px;
+    }
+
+    .read-scripture-btn {
+      background: var(--brand-800);
+      color: #ffffff;
+      border: 1px solid var(--brand-700);
+      padding: 0.75rem 2.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 9999px;
+      line-height: 1.2;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(153, 27, 27, 0.4);
+    }
+
+    .read-scripture-btn:hover {
+      background: var(--brand-700);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(153, 27, 27, 0.5);
+    }
+
+    /* WIDGETS GRID */
+    .widgets-grid {
+      width: 100%;
+      max-width: 1100px;
+      margin: -36px auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (max-width: 840px) {
+      .widgets-grid {
+        grid-template-columns: 1fr;
+        margin-top: -20px;
+      }
+    }
+
+    .widget-card {
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      border-bottom: 1px dashed var(--stone-200);
+      padding-bottom: 10px;
+    }
+
+    .widget-tag-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .widget-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: var(--brand-800);
+    }
+
+    :root[data-theme="dark"] .widget-tag {
+      color: #f87171;
+    }
+
+    .widget-badge {
+      font-size: 10.5px;
+      background: var(--stone-100);
+      color: var(--stone-500);
+      border: 1px solid var(--stone-200);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .widget-refresh-btn {
+      background: none;
+      border: none;
+      color: var(--stone-500);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .widget-refresh-btn:hover {
+      color: var(--brand-800);
+      background: var(--brand-50);
+    }
+
+    .widget-content {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.65;
+      font-style: italic;
+      color: var(--stone-800);
+      margin-bottom: 14px;
+    }
+
+    .widget-author {
+      font-family: Inter, sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--stone-500);
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    /* QUIZ & TRIVIA STYLES */
+    .quiz-question {
+      font-family: Georgia, serif;
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: var(--stone-800);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .mcq-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 14px;
+    }
+
+    .mcq-option {
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 13.5px;
+      color: var(--stone-800);
+      transition: all 0.18s ease;
+      width: 100%;
+      user-select: none;
+    }
+
+    .mcq-option:hover:not(:disabled) {
+      border-color: var(--brand-700);
+      background: var(--brand-50);
+      transform: translateX(2px);
+    }
+
+    .option-letter {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--stone-100);
+      border: 1px solid var(--stone-300);
+      color: var(--stone-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: all 0.18s ease;
+    }
+
+    .mcq-option:hover:not(:disabled) .option-letter {
+      background: var(--brand-100);
+      color: var(--brand-800);
+      border-color: var(--brand-700);
+    }
+
+    .option-text {
+      flex: 1;
+      font-family: Inter, sans-serif;
+      font-size: 13.5px;
+      line-height: 1.35;
+    }
+
+    .mcq-option.correct {
+      background: #ecfdf5 !important;
+      border-color: #10b981 !important;
+      color: #065f46 !important;
+      font-weight: 600;
+    }
+
+    .mcq-option.correct .option-letter {
+      background: #10b981;
+      color: #ffffff;
+      border-color: #10b981;
+    }
+
+    :root[data-theme="dark"] .mcq-option.correct {
+      background: rgba(6, 78, 59, 0.35) !important;
+      border-color: #059669 !important;
+      color: #6ee7b7 !important;
+    }
+
+    .mcq-option.incorrect {
+      background: #fef2f2 !important;
+      border-color: #ef4444 !important;
+      color: #991b1b !important;
+    }
+
+    .mcq-option.incorrect .option-letter {
+      background: #ef4444;
+      color: #ffffff;
+      border-color: #ef4444;
+    }
+
+    :root[data-theme="dark"] .mcq-option.incorrect {
+      background: rgba(69, 10, 10, 0.4) !important;
+      border-color: #dc2626 !important;
+      color: #fca5a5 !important;
+    }
+
+    .quiz-feedback {
+      background: var(--stone-50);
+      border: 1px solid var(--stone-200);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feedback-status {
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .feedback-status.correct {
+      color: #059669;
+    }
+
+    :root[data-theme="dark"] .feedback-status.correct {
+      color: #34d399;
+    }
+
+    .feedback-status.incorrect {
+      color: var(--brand-800);
+    }
+
+    :root[data-theme="dark"] .feedback-status.incorrect {
+      color: #f87171;
+    }
+
+    .feedback-explanation {
+      font-family: Georgia, serif;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--stone-800);
+      margin-bottom: 8px;
+    }
+
+    .feedback-citation {
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+      color: var(--stone-500);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .quiz-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed var(--stone-200);
+      padding-top: 12px;
+    }
+
+    .quiz-stats {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--stone-500);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .streak-pill {
+      background: #fef3c7;
+      color: #b45309;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    :root[data-theme="dark"] .streak-pill {
+      background: #451a03;
+      color: #fde68a;
+    }
+
+    .quiz-next-action-btn {
+      background: var(--brand-800);
+      color: #ffffff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      transition: background-color 0.15s ease;
+    }
+
+    .quiz-next-action-btn:hover {
+      background: var(--brand-700);
+    }
+
+    /* ========================================================
+       NEW FEATURE: INTERACTIVE CITATION PILL & VERSE POPOVER
+       ======================================================== */
+    .verse-citation-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--brand-50);
+      color: var(--brand-800);
+      border: 1px solid rgba(185, 28, 28, 0.25);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11.5px;
+      font-weight: 650;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    .verse-citation-link:hover {
+      background: var(--brand-100);
+      border-color: var(--brand-700);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(153, 27, 27, 0.15);
+    }
+
+    :root[data-theme="dark"] .verse-citation-link {
+      background: rgba(153, 27, 27, 0.25);
+      color: #fca5a5;
+      border-color: rgba(239, 68, 68, 0.35);
+    }
+
+    :root[data-theme="dark"] .verse-citation-link:hover {
+      background: rgba(153, 27, 27, 0.45);
+      border-color: #f87171;
+    }
+
+    .verse-citation-link svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+    }
+
+    /* Popover Modal Container */
+    .verse-popover-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+      z-index: 999;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .verse-popover-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .verse-popover-card {
+      width: 100%;
+      max-width: 540px;
+      background: var(--white);
+      color: var(--stone-800);
+      border: 1px solid var(--stone-200);
+      border-radius: 12px;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.96) translateY(6px);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .verse-popover-overlay.open .verse-popover-card {
+      transform: scale(1) translateY(0);
+    }
+
+    .popover-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--stone-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--stone-50);
+    }
+
+    .popover-title-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .popover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--brand-50);
+      color: var(--brand-800);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid rgba(185, 28, 28, 0.2);
+    }
+
+    :root[data-theme="dark"] .popover-badge {
+      background: rgba(153, 27, 27, 0.3);
+      color: #fca5a5;
+    }
+
+    .popover-ref-title {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--stone-900);
+    }
+
+    .popover-close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--stone-500);
+      font-size: 20px;
+      display: grid;
+      place-items: center;
+      transition: all 0.15s ease;
+    }
+
+    .popover-close-btn:hover {
+      background: var(--stone-200);
+      color: var(--brand-800);
+    }
+
+    .popover-body {
+      padding: 18px 20px;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .popover-translation-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--stone-200);
+    }
+
+    .translation-select-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--stone-500);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .custom-select {
+      background: var(--stone-100);
+      color: var(--stone-800);
+      border: 1px solid var(--stone-300);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 12.5px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .custom-select:focus {
+      border-color: var(--brand-700);
+    }
+
+    .verse-preview-text {
+      font-family: Georgia, serif;
+      font-size: 16.5px;
+      line-height: 1.7;
+      color: var(--stone-900);
+      background: var(--white);
+      padding: 14px 16px;
+      border-radius: 8px;
+      border-left: 3px solid var(--brand-800);
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .verse-preview-num {
+      font-family: Inter, sans-serif;
+      font-size: 11px;
+      color: var(--stone-400);
+      font-weight: 700;
+      vertical-align: super;
+      margin-right: 5px;
+    }
+
+    .expanded-context-box {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--stone-200);
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .expanded-context-box.active {
+      display: block;
+    }
+
+    .expanded-context-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--stone-500);
+      margin-bottom: 10px;
+    }
+
+    .context-verse-line {
+      font-family: Georgia, serif;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--stone-800);
+      margin-bottom: 8px;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+
+    .context-verse-line.target-verse {
+      background: rgba(153, 27, 27, 0.08);
+      font-weight: 600;
+      border-left: 2px solid var(--brand-700);
+    }
+
+    :root[data-theme="dark"] .context-verse-line.target-verse {
+      background: rgba(185, 28, 28, 0.25);
+    }
+
+    .popover-toggle-expand {
+      background: none;
+      border: 1px dashed var(--stone-300);
+      color: var(--stone-500);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      justify-content: center;
+      transition: all 0.15s ease;
+      margin-bottom: 6px;
+    }
+
+    .popover-toggle-expand:hover {
+      border-color: var(--brand-700);
+      color: var(--brand-800);
+      background: var(--brand-50);
+    }
+
+    .popover-footer-actions {
+      padding: 14px 20px;
+      background: var(--stone-50);
+      border-top: 1px solid var(--stone-200);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .popover-action-btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--stone-800);
+      border: 1px solid var(--stone-300);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--stone-400);
+      background: var(--stone-100);
+    }
+
+    .btn-primary {
+      background: var(--brand-800);
+      color: #ffffff;
+      border: 1px solid var(--brand-700);
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-700);
+      box-shadow: 0 2px 8px rgba(153, 27, 27, 0.3);
+    }
+
+    /* ========================================================
+       READER VIEW (BIBLE PANEL & PARALLEL READER)
+       ======================================================== */
+    .reader-view-container {
+      display: none;
+      min-height: calc(100vh - var(--header-height));
+      flex-direction: column;
+    }
+
+    .reader-view-container.active {
+      display: flex;
+    }
+
+    .reader-toolbar {
+      height: var(--toolbar-height);
+      background: var(--white);
+      border-bottom: 1px solid var(--stone-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      position: sticky;
+      top: var(--header-height);
+      z-index: 20;
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back-home-btn {
+      background: none;
+      border: 1px solid var(--stone-200);
+      color: var(--stone-500);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .back-home-btn:hover {
+      color: var(--brand-800);
+      border-color: var(--brand-700);
+      background: var(--brand-50);
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toolbar-button {
+      height: 36px;
+      border: 1px solid var(--stone-200);
+      background: var(--white);
+      color: var(--stone-800);
+      border-radius: 6px;
+      padding: 0 12px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .toolbar-button .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--stone-400);
+    }
+
+    .toolbar-button.active {
+      background: var(--brand-50);
+      border-color: rgba(185, 28, 28, 0.3);
+      color: var(--brand-800);
+    }
+
+    .toolbar-button.active .dot {
+      background: var(--brand-800);
+    }
+
+    .reader-grid {
+      flex: 1;
+      padding: 16px 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .reader-grid.parallel-mode {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+      .reader-grid.parallel-mode {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .bible-panel {
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 500px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .panel-header {
+      border-bottom: 1px solid var(--stone-200);
+      background: var(--white);
+      padding: 14px 20px;
+    }
+
+    .panel-head-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .passage-title {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--stone-900);
+    }
+
+    .panel-close-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: var(--stone-400);
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 4px;
+    }
+
+    .panel-close-btn:hover {
+      color: var(--brand-800);
+      background: var(--brand-50);
+    }
+
+    .version-selector-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--stone-500);
+    }
+
+    .panel-scroll-content {
+      padding: 24px 28px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .verse-row {
+      padding: 6px 8px;
+      border-radius: 4px;
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--stone-800);
+      transition: background-color 0.2s ease;
+    }
+
+    .verse-row.verse-highlight {
+      background: rgba(153, 27, 27, 0.09) !important;
+      border-left: 3px solid var(--brand-800);
+      font-weight: 550;
+    }
+
+    :root[data-theme="dark"] .verse-row.verse-highlight {
+      background: rgba(185, 28, 28, 0.28) !important;
+      border-left-color: #ef4444;
+    }
+
+    .verse-row .num {
+      font-family: Inter, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--stone-400);
+      vertical-align: super;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <button class="brand" id="brandHomeBtn" title="Return to VerbumNobis Home" type="button">
+      <span class="brand-mark">
+        <svg viewBox="0 0 100 100" width="36" height="36" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter">
+          <circle cx="50" cy="50" r="44" stroke-width="6.5" />
+          <path d="M50 29.5 V70.5 M29.5 50 H70.5" stroke-width="4.5" />
+          <path d="M42.5 29.5 H57.5 M42.5 70.5 H57.5 M29.5 42.5 V57.5 M70.5 42.5 V57.5" stroke-width="4.5" />
+        </svg>
+      </span>
+      <span class="brand-name">VerbumNobis</span>
+    </button>
+    <div class="header-divider"></div>
+    <div class="search-wrap">
+      <form class="global-search" onsubmit="event.preventDefault();">
+        <input placeholder="Search Scripture, passages, or words..." aria-label="Search Bible" />
+        <button type="submit" class="search-btn" title="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" />
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="header-actions">
+      <button class="header-icon" id="themeToggleBtn" title="Toggle dark mode" type="button">
+        <svg id="themeIcon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- LANDING VIEW -->
+  <main id="landingView" class="landing-view">
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-pretitle">The Adoration of the Shepherds by Caravaggio</div>
+      <h1 class="hero-heading">
+        <span class="line-roman">Et Verbum caro factum est,</span>
+        <span class="line-italic">et habitavit in nobis</span>
+      </h1>
+      <div class="hero-divider-rule"></div>
+      <div class="hero-subscript">
+        &ldquo;And the Word was made flesh, and dwelt among us&rdquo; &mdash; John 1:14
+      </div>
+      <div class="hero-cjk">
+        「圣言成了血肉，寄居在我们中间」 — 若望福音 1:14
+      </div>
+      <button type="button" class="read-scripture-btn" id="heroReadBtn">
+        Read Scripture
+      </button>
+    </section>
+
+    <!-- Widgets Grid -->
+    <section class="widgets-grid">
+      <!-- 1. Saint Quote Widget -->
+      <div class="widget-card">
+        <div>
+          <div class="widget-header">
+            <span class="widget-tag">Words of the Saints</span>
+            <button class="widget-refresh-btn" type="button" id="shuffleSaintBtn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19" />
+              </svg>
+              Shuffle
+            </button>
+          </div>
+          <p class="widget-content" id="saintQuoteText">
+            &ldquo;Late have I loved you, beauty so old and so new: late have I loved you.&rdquo;
+          </p>
+        </div>
+        <div class="widget-author" id="saintQuoteAuthor">&mdash; St. Augustine of Hippo</div>
+      </div>
+
+      <!-- 2. Verse of the Day Widget -->
+      <div class="widget-card">
+        <div>
+          <div class="widget-header">
+            <span class="widget-tag">Verse of the Day</span>
+            <button class="widget-refresh-btn" type="button" id="shuffleVerseBtn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19" />
+              </svg>
+              Shuffle
+            </button>
+          </div>
+          <p class="widget-content" id="votdText">
+            &ldquo;In the beginning was the Word, and the Word was with God, and the Word was God.&rdquo;
+          </p>
+        </div>
+        <div class="widget-author">
+          <span>Source:</span>
+          <button type="button" class="verse-citation-link" id="votdRefLink" data-ref="John 1:1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            <span id="votdRefText">John 1:1</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Sacred Scripture Quiz Widget -->
+      <div class="widget-card quiz-widget-card" id="scriptureQuizCard">
+        <div>
+          <div class="widget-header">
+            <div class="widget-tag-group">
+              <span class="widget-tag">Sacred Scripture Quiz</span>
+              <span class="widget-badge" id="bibleQuizCategory">Gospels & Logos</span>
+            </div>
+            <button class="widget-refresh-btn" type="button" id="nextQuizBtn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19" />
+              </svg>
+              Next
+            </button>
+          </div>
+
+          <p class="quiz-question" id="bibleQuizQuestion">
+            Which Gospel opens with the foundational declaration: 'In the beginning was the Word, and the Word was with God, and the Word was God'?
+          </p>
+
+          <div class="mcq-options-list" id="bibleQuizOptions">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="quiz-feedback" id="bibleQuizFeedback" style="display: none;">
+            <div class="feedback-status" id="bibleFeedbackStatus"></div>
+            <p class="feedback-explanation" id="bibleFeedbackExplanation"></p>
+            <div class="feedback-citation">
+              <strong>Ref:</strong>
+              <span id="bibleFeedbackCitationWrap"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-footer">
+          <div class="quiz-stats">
+            <span id="bibleQuizScore">Score: 0/0</span>
+            <span class="streak-pill" id="bibleQuizStreak" style="display: none;">🔥 1 Streak</span>
+          </div>
+          <button class="quiz-next-action-btn" type="button" id="bibleNextActionBtn" style="display: none;">
+            Next Question &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. Catholicism Trivia Widget -->
+      <div class="widget-card quiz-widget-card" id="catholicTriviaCard">
+        <div>
+          <div class="widget-header">
+            <div class="widget-tag-group">
+              <span class="widget-tag">Catholicism Trivia</span>
+              <span class="widget-badge" id="catholicCategory">Sacraments & Scripture</span>
+            </div>
+            <button class="widget-refresh-btn" type="button" id="nextTriviaBtn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19" />
+              </svg>
+              Next
+            </button>
+          </div>
+
+          <p class="quiz-question" id="catholicQuestion">
+            At Caesarea Philippi, to which apostle did Christ say: 'You are Peter, and on this rock I will build my Church'?
+          </p>
+
+          <div class="mcq-options-list" id="catholicOptions">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="quiz-feedback" id="catholicFeedback" style="display: none;">
+            <div class="feedback-status" id="catholicFeedbackStatus"></div>
+            <p class="feedback-explanation" id="catholicFeedbackExplanation"></p>
+            <div class="feedback-citation">
+              <strong>Ref:</strong>
+              <span id="catholicFeedbackCitationWrap"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-footer">
+          <div class="quiz-stats">
+            <span id="catholicScore">Score: 0/0</span>
+            <span class="streak-pill" id="catholicStreak" style="display: none;">🔥 1 Streak</span>
+          </div>
+          <button class="quiz-next-action-btn" type="button" id="catholicNextActionBtn" style="display: none;">
+            Next Question &rarr;
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       VERSE QUICK-ACCESS POPOVER (MODAL DIALOG)
+       ======================================================== -->
+  <div class="verse-popover-overlay" id="versePopoverOverlay" role="dialog" aria-modal="true">
+    <div class="verse-popover-card" id="versePopoverCard">
+      <div class="popover-header">
+        <div class="popover-title-group">
+          <span class="popover-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            Scripture
+          </span>
+          <h3 class="popover-ref-title" id="popoverRefTitle">John 1:1</h3>
+        </div>
+        <button class="popover-close-btn" id="popoverCloseBtn" type="button" title="Close">&times;</button>
+      </div>
+
+      <div class="popover-body">
+        <!-- Translation Selector in Popup -->
+        <div class="popover-translation-bar">
+          <label class="translation-select-label" for="popoverTransSelect">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+            Select Translation:
+          </label>
+          <select id="popoverTransSelect" class="custom-select">
+            <option value="catholic_org">New Jerusalem Bible (English)</option>
+            <option value="sigao">思高圣经 (简体中文)</option>
+            <option value="vulgate">Biblia Sacra Vulgata (Latin)</option>
+            <option value="shinkyo">新共同訳 (日本語)</option>
+          </select>
+        </div>
+
+        <!-- The Target Verse Preview -->
+        <div class="verse-preview-text" id="popoverVerseText">
+          <span class="verse-preview-num" id="popoverVerseNum">1</span>
+          <span id="popoverVerseContent">In the beginning was the Word: the Word was with God and the Word was God.</span>
+        </div>
+
+        <!-- Option to Read Entire Chapter Context -->
+        <button type="button" class="popover-toggle-expand" id="toggleExpandContextBtn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+          <span id="toggleExpandText">Read surrounding verses in chapter context</span>
+        </button>
+
+        <div class="expanded-context-box" id="expandedContextContainer">
+          <div class="expanded-context-title">Full Passage Preview</div>
+          <div id="expandedContextList">
+            <!-- Context verses rendered here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Actions: Open Bible Panel or Open Parallel View -->
+      <div class="popover-footer-actions">
+        <button type="button" class="popover-action-btn btn-secondary" id="popoverOpenParallelBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <line x1="12" y1="3" x2="12" y2="21" />
+          </svg>
+          Open in Parallel View
+        </button>
+        <button type="button" class="popover-action-btn btn-primary" id="popoverOpenPanelBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+          Open in Bible Panel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       BIBLE READER VIEW (SINGLE & PARALLEL MODES)
+       ======================================================== -->
+  <div class="reader-view-container" id="readerView">
+    <div class="reader-toolbar">
+      <div class="toolbar-left">
+        <button class="back-home-btn" id="backToHomeBtn" type="button">
+          &larr; Back to Home
+        </button>
+      </div>
+      <div class="toolbar-actions">
+        <button class="toolbar-button" id="headingsToggleBtn" type="button">
+          <span class="dot"></span> Headings
+        </button>
+        <button class="toolbar-button active" id="syncToggleBtn" type="button">
+          <span class="dot"></span> Sync
+        </button>
+        <button class="toolbar-button" id="parallelToggleBtn" type="button">
+          <span class="dot"></span> Parallel
+        </button>
+      </div>
+    </div>
+
+    <div class="reader-grid" id="readerGrid">
+      <!-- Left Panel -->
+      <section class="bible-panel" id="leftBiblePanel">
+        <div class="panel-header">
+          <div class="panel-head-row">
+            <h2 class="passage-title" id="leftPassageTitle">John 1</h2>
+          </div>
+          <div class="version-selector-row">
+            <span>Translation:</span>
+            <select id="leftPanelTransSelect" class="custom-select" style="padding: 2px 8px; font-size: 11.5px;">
+              <option value="catholic_org">New Jerusalem Bible (English)</option>
+              <option value="sigao">思高圣经 (简体中文)</option>
+              <option value="vulgate">Biblia Sacra Vulgata (Latin)</option>
+              <option value="shinkyo">新共同訳 (日本語)</option>
+            </select>
+          </div>
+        </div>
+        <div class="panel-scroll-content" id="leftPanelContent">
+          <!-- Verses loaded here -->
+        </div>
+      </section>
+
+      <!-- Right Panel (Parallel) -->
+      <section class="bible-panel" id="rightBiblePanel" style="display: none;">
+        <div class="panel-header">
+          <div class="panel-head-row">
+            <h2 class="passage-title" id="rightPassageTitle">John 1</h2>
+            <button class="panel-close-btn" id="closeRightPanelBtn" type="button" title="Close Parallel Panel">&times;</button>
+          </div>
+          <div class="version-selector-row">
+            <span>Parallel Translation:</span>
+            <select id="rightPanelTransSelect" class="custom-select" style="padding: 2px 8px; font-size: 11.5px;">
+              <option value="vulgate">Biblia Sacra Vulgata (Latin)</option>
+              <option value="sigao">思高圣经 (简体中文)</option>
+              <option value="catholic_org">New Jerusalem Bible (English)</option>
+              <option value="shinkyo">新共同訳 (日本語)</option>
+            </select>
+          </div>
+        </div>
+        <div class="panel-scroll-content" id="rightPanelContent">
+          <!-- Verses loaded here -->
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT DEMONSTRATION LOGIC -->
+  <script>
+    /* ========================================================
+       DATA REPOSITORY (VERSES ACROSS 4 TRANSLATIONS)
+       ======================================================== */
+    const TRANSLATIONS = [
+      { id: "catholic_org", name: "New Jerusalem Bible", lang: "en" },
+      { id: "sigao", name: "思高圣经", lang: "zh" },
+      { id: "vulgate", name: "Biblia Sacra Vulgata", lang: "la" },
+      { id: "shinkyo", name: "新共同訳", lang: "ja" }
+    ];
+
+    const BIBLE_DATABASE = {
+      "John 1": {
+        book: "JHN",
+        bookName: "John",
+        chapter: 1,
+        verses: {
+          1: {
+            catholic_org: "In the beginning was the Word: the Word was with God and the Word was God.",
+            sigao: "在起初已有圣言，圣言与天主同在，圣言就是天主。",
+            vulgate: "In principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum.",
+            shinkyo: "初めに言があった。言は神と共にあった。言は神であった。"
+          },
+          2: {
+            catholic_org: "He was with God in the beginning.",
+            sigao: "圣言在起初就与天主同在。",
+            vulgate: "Hoc erat in principio apud Deum.",
+            shinkyo: "この言は、初めに神と共にあった。"
+          },
+          3: {
+            catholic_org: "Through him all things came into being, not one thing came into being except through him.",
+            sigao: "万物是藉着他而造成的；凡受造的，没有一样不是藉着他而造成的。",
+            vulgate: "Omnia per ipsum facta sunt et sine ipso factum est nihil quod factum est.",
+            shinkyo: "万物は言によって成った。成ったもので、言によらずに成ったものは何一つなかった。"
+          },
+          4: {
+            catholic_org: "What has come into being in him was life, life that was the light of men;",
+            sigao: "在他内有生命，这生命是人的光。",
+            vulgate: "In ipso vita erat et vita erat lux hominum.",
+            shinkyo: "言の内に命があった。命は人間を照らす光であった。"
+          },
+          5: {
+            catholic_org: "and light shines in darkness, and darkness could not overpower it.",
+            sigao: "光在黑暗中照耀，黑暗决不能胜过它。",
+            vulgate: "Et lux in tenebris lucet et tenebrae eam non comprehenderunt.",
+            shinkyo: "光は暗闇の中で輝いている。暗闇は光を理解しなかった。"
+          },
+          14: {
+            catholic_org: "And the Word became flesh, he lived among us, and we saw his glory, the glory that he has from the Father as only Son of the Father, full of grace and truth.",
+            sigao: "于是，圣言成了血肉，寄居在我们中间；我们见了他的光荣，正如父独生者的光荣，满溢恩宠和真理。",
+            vulgate: "Et Verbum caro factum est et habitavit in nobis et vidimus gloriam eius gloriam quasi unigeniti a Patre plenum gratiae et veritatis.",
+            shinkyo: "言は肉となって、わたしたちの間に宿られた。わたしたちはその栄光を見た。それは父の独り子としての栄光であって、恵みと真理とに満ちていた。"
+          }
+        }
+      },
+      "James 2": {
+        book: "JAS",
+        bookName: "James",
+        chapter: 2,
+        verses: {
+          14: {
+            catholic_org: "How does it help, my brothers, when someone who has never done a single good act claims to have faith? Will that faith bring salvation?",
+            sigao: "我的弟兄们，若有人说自己有信德，却没有行为，有什么益处呢？难道这信德能救他吗？",
+            vulgate: "Quid proderit fratres mei si fidem quis dicat se habere opera autem non habeat numquid poterit fides salvare eum?",
+            shinkyo: "わたしの兄弟たち、自分は信仰を持っていると言っても、行いが伴わなければ、何の役に立つでしょうか。そのような信仰が、彼を救うことができるでしょうか。"
+          },
+          15: {
+            catholic_org: "If one of the brothers or one of the sisters is in need of clothes and has not enough food to live on,",
+            sigao: "若是弟兄或姐妹赤身露体，缺缺乏日用粮，",
+            vulgate: "Si autem frater aut soror nudi sunt et indigent victu cotidiano,",
+            shinkyo: "もし、兄弟あるいは姉妹が着る物もなく、その日の食べ物にも事欠いているとき、"
+          },
+          16: {
+            catholic_org: "and one of you says to them, 'I wish you well; keep yourself warm and eat plenty,' without giving them these bare necessities of life, then what good is that?",
+            sigao: "你们中有人对他们说：'平安去吧！穿暖吃饱吧！'却不给他们身体所必需的，有什么益处呢？",
+            vulgate: "dicat autem aliquis ex vobis illis ite in pace calefacimini et saturamini non dederitis autem eis quae necessaria sunt corporis quid proderit?",
+            shinkyo: "あなたがたのだれかが、『安心して行きなさい。温まりなさい。満腹しなさい』と言うだけで、体に必要なものを何一つ与えないなら、何の役に立つでしょうか。"
+          },
+          17: {
+            catholic_org: "In the same way faith: if good deeds do not go with it, it is quite dead.",
+            sigao: "同样，信德若没有行为，自身便是死的。",
+            vulgate: "Sic et fides si non habeat opera mortua est in semetipsa.",
+            shinkyo: "信仰もこれと同じです。行いが伴わないなら、信仰はそれだけでは死んだものです。"
+          }
+        }
+      },
+      "Genesis 1": {
+        book: "GEN",
+        bookName: "Genesis",
+        chapter: 1,
+        verses: {
+          1: {
+            catholic_org: "In the beginning God created the heavens and the earth.",
+            sigao: "起初，天主创造了天地。",
+            vulgate: "In principio creavit Deus caelum et terram.",
+            shinkyo: "初めに、神は天地を創造された。"
+          },
+          2: {
+            catholic_org: "Now the earth was a formless void, there was darkness over the deep, with a divine wind sweeping over the waters.",
+            sigao: "大地还是混沌空虚，深渊上还是一团黑暗，天主的神在水面上运行。",
+            vulgate: "Terra autem erat inanis et vacua et tenebrae super faciem abyssi et spiritus Dei ferebatur super aquas.",
+            shinkyo: "地は混沌であって、闇が深淵の面にあり、神の霊が水の面を動いていた。"
+          },
+          3: {
+            catholic_org: "God said, 'Let there be light,' and there was light.",
+            sigao: "天主说：'有光！'就有了光。",
+            vulgate: "Dixitque Deus fiat lux et facta est lux.",
+            shinkyo: "神は言われた。『光あれ。』こうして、光があった。"
+          }
+        }
+      },
+      "Matthew 16": {
+        book: "MAT",
+        bookName: "Matthew",
+        chapter: 16,
+        verses: {
+          16: {
+            catholic_org: "Simon Peter answered, 'You are the Christ, the Son of the living God.'",
+            sigao: "西满伯多禄回答说：'你是默西亚，永生天主之子。'",
+            vulgate: "Respondens Simon Petrus dixit tu es Christus Filius Dei vivi.",
+            shinkyo: "シモン・ペトロが、『あなたはメシア、生ける神の子です』と答えた。"
+          },
+          17: {
+            catholic_org: "Jesus replied, 'Simon son of Jonah, you are a blessed man! Because it was no human agency that revealed this to you but my Father in heaven.'",
+            sigao: "耶稣回答他说：'约纳的儿子西满，你是有福的，因为不是肉和血启示了你，而是我在天之父。'",
+            vulgate: "Respondens autem Iesus dixit ei beatus es Simon Bar Iona quia caro et sanguis non revelavit tibi sed Pater meus qui in caelis est.",
+            shinkyo: "イエスはお答えになった。『ヨナの子シモン、あなたは幸いだ。あなたにこのことを現したのは、人間ではなく、わたしの天の父なのだ。』"
+          },
+          18: {
+            catholic_org: "So I now say to you: You are Peter and on this rock I will build my community, and the gates of the underworld can never overpower it.",
+            sigao: "你是伯多禄（磐石），在这磐石上，我要建立我的教会，阴间的门决不能战胜她。",
+            vulgate: "Et ego dico tibi quia tu es Petrus et super hanc petram aedificabo ecclesiam meam et portae inferi non praevalebunt adversum eam.",
+            shinkyo: "わたしも言っておく。あなたはペトロ。わたしはこの岩の上にわたしの教会を建てよう。陰府の力もこれに対抗できない。"
+          },
+          19: {
+            catholic_org: "I will give you the keys of the kingdom of Heaven: whatever you bind on earth will be bound in heaven; whatever you loose on earth will be loosed in heaven.",
+            sigao: "我要将天国的钥匙给你：凡你在地上所束缚的，在天上也要被束缚；凡你在地上所释放的，在天上也要被释放。",
+            vulgate: "Et tibi dabo claves regni caelorum et quodcumque ligaveris super terram erit ligatum in caelis et quodcumque solveris super terram erit solutum in caelis.",
+            shinkyo: "わたしはあなたに天の国の鍵を授ける。あなたが地上でつなぐことは、天上でもつながれる。あなたが地上で解くことは、天上でも解かれる。"
+          }
+        }
+      },
+      "Philippians 4": {
+        book: "PHP",
+        bookName: "Philippians",
+        chapter: 4,
+        verses: {
+          13: {
+            catholic_org: "I have the strength to face all conditions by the power of him who gives me strength.",
+            sigao: "我赖加强我力量的那位，能应付一切。",
+            vulgate: "Omnia possum in eo qui me confortat.",
+            shinkyo: "わたしを強めてくださる方のお陰で、わたしにはすべてが可能です。"
+          }
+        }
+      },
+      "Psalm 23": {
+        book: "PSA",
+        bookName: "Psalm",
+        chapter: 23,
+        verses: {
+          1: {
+            catholic_org: "The Lord is my shepherd; there is nothing I lack.",
+            sigao: "上主是我的牧者，我实在一无所缺。",
+            vulgate: "Dominus regit me et nihil mihi deerit.",
+            shinkyo: "主は羊飼い、わたしには何も欠けることがない。"
+          }
+        }
+      }
+    };
+
+    /* ========================================================
+       SAINT QUOTES & VERSE OF THE DAY DATA
+       ======================================================== */
+    const SAINT_QUOTES = [
+      { quote: "Late have I loved you, beauty so old and so new: late have I loved you.", author: "St. Augustine of Hippo" },
+      { quote: "To one who has faith, no explanation is necessary. To one without faith, no explanation is possible.", author: "St. Thomas Aquinas" },
+      { quote: "Remember that nothing is small in the eyes of God. Do all that you do with love.", author: "St. Thérèse of Lisieux" },
+      { quote: "Lord, make me an instrument of your peace: where there is hatred, let me sow love.", author: "St. Francis of Assisi" }
+    ];
+
+    const VOTD_LIST = [
+      { text: "In the beginning was the Word, and the Word was with God, and the Word was God.", ref: "John 1:1" },
+      { text: "And the Word became flesh, and dwelt among us.", ref: "John 1:14" },
+      { text: "In the beginning God created heaven, and earth.", ref: "Genesis 1:1" },
+      { text: "The Lord is my shepherd; there is nothing I lack.", ref: "Psalm 23:1" },
+      { text: "I have the strength to face all conditions by the power of him who gives me strength.", ref: "Philippians 4:13" }
+    ];
+
+    /* ========================================================
+       QUIZ & TRIVIA QUESTIONS DATA
+       ======================================================== */
+    const SCRIPTURE_QUESTIONS = [
+      {
+        category: "Gospels & Logos",
+        question: "Which Gospel opens with the foundational declaration: 'In the beginning was the Word, and the Word was with God, and the Word was God'?",
+        options: ["Gospel according to Matthew", "Gospel according to Mark", "Gospel according to Luke", "Gospel according to John"],
+        correctIndex: 3,
+        ref: "John 1:1",
+        explanation: "St. John's prologue presents Christ as the eternal Logos ('Verbum') through whom all creation was made, inspiring the name Verbum Caro."
+      },
+      {
+        category: "Epistles & Works",
+        question: "Which Epistle emphasizes the unity of faith and action with the declaration: 'So faith also, if it have not works, is dead in itself'?",
+        options: ["Epistle of St. James", "Epistle to the Galatians", "First Epistle to the Corinthians", "Epistle to the Hebrews"],
+        correctIndex: 0,
+        ref: "James 2:17",
+        explanation: "St. James teaches that genuine faith is not passive intellectual agreement, but actively lives out love and righteous charity."
+      },
+      {
+        category: "Primeval Creation",
+        question: "In the creation account of Genesis 1, what does God create on the first day by His commanding Word?",
+        options: ["The sun and moon", "Light", "The birds of the air", "Man and woman"],
+        correctIndex: 1,
+        ref: "Genesis 1:3",
+        explanation: "God declared 'Fiat lux' (Let there be light) on the first day, separating light from darkness before shaping celestial bodies on the fourth day."
+      }
+    ];
+
+    const CATHOLIC_QUESTIONS = [
+      {
+        category: "Primacy of Peter",
+        question: "At Caesarea Philippi, to which apostle did Christ say: 'You are Peter, and on this rock I will build my Church'?",
+        options: ["St. John the Evangelist", "St. Simon Peter", "St. James the Greater", "St. Andrew the First-Called"],
+        correctIndex: 1,
+        ref: "Matthew 16:18",
+        explanation: "In Matthew 16:18, Christ confers the keys of the Kingdom of Heaven upon Peter, establishing the apostolic primacy of the Roman See."
+      },
+      {
+        category: "Incarnation",
+        question: "Which sacred Scripture verse solemnly proclaims that the eternal Word became flesh and dwelt among us?",
+        options: ["Luke 1:28", "John 1:14", "Philippians 2:6", "Colossians 1:15"],
+        correctIndex: 1,
+        ref: "John 1:14",
+        explanation: "John 1:14 ('Et Verbum caro factum est, et habitavit in nobis') is the theological anchor of the Incarnation recited at the Angelus."
+      }
+    ];
+
+    /* ========================================================
+       STATE MANAGEMENT
+       ======================================================== */
+    let currentVotdIdx = 0;
+    let currentSaintIdx = 0;
+
+    let scriptureQuizIdx = 0;
+    let scriptureScore = 0;
+    let scriptureTotal = 0;
+    let scriptureStreak = 0;
+    let scriptureAnswered = false;
+
+    let catholicQuizIdx = 0;
+    let catholicScore = 0;
+    let catholicTotal = 0;
+    let catholicStreak = 0;
+    let catholicAnswered = false;
+
+    // Popover active state
+    let activeRefInfo = {
+      rawRef: "John 1:1",
+      passageKey: "John 1",
+      verseNum: 1,
+      selectedTranslation: "catholic_org"
+    };
+
+    // Reader state
+    let isParallel = false;
+    let currentLeftTrans = "catholic_org";
+    let currentRightTrans = "vulgate";
+    let readerPassageKey = "John 1";
+    let readerTargetVerse = 1;
+    let readerOnlySpecificVerse = true; // When true, renders ONLY the specific verse (verseFilter), NOT entire chapter
+
+    /* ========================================================
+       REFERENCE PARSER UTILITY
+       ======================================================== */
+    function parseBibleReference(refStr) {
+      // Handles "John 1:1", "James 2:17", "Genesis 1:3", "Matthew 16:18", etc.
+      const match = refStr.match(/^([1-3]?\s*[A-Za-z]+)\s+(\d+)(?::(\d+)(?:-\d+)?)?/);
+      if (match) {
+        const bookName = match[1].trim();
+        const chapter = parseInt(match[2], 10);
+        const verse = match[3] ? parseInt(match[3], 10) : 1;
+        const passageKey = `${bookName} ${chapter}`;
+        return { bookName, chapter, verse, passageKey };
+      }
+      return { bookName: "John", chapter: 1, verse: 1, passageKey: "John 1" };
+    }
+
+    /* ========================================================
+       RENDER WIDGETS
+       ======================================================== */
+    function renderVotd() {
+      const item = VOTD_LIST[currentVotdIdx];
+      document.getElementById("votdText").textContent = `\u201C${item.text}\u201D`;
+      document.getElementById("votdRefText").textContent = item.ref;
+      document.getElementById("votdRefLink").setAttribute("data-ref", item.ref);
+    }
+
+    function renderSaint() {
+      const item = SAINT_QUOTES[currentSaintIdx];
+      document.getElementById("saintQuoteText").textContent = `\u201C${item.quote}\u201D`;
+      document.getElementById("saintQuoteAuthor").textContent = `\u2014 ${item.author}`;
+    }
+
+    function renderScriptureQuiz() {
+      scriptureAnswered = false;
+      const q = SCRIPTURE_QUESTIONS[scriptureQuizIdx];
+      document.getElementById("bibleQuizCategory").textContent = q.category;
+      document.getElementById("bibleQuizQuestion").textContent = q.question;
+      document.getElementById("bibleQuizFeedback").style.display = "none";
+      document.getElementById("bibleNextActionBtn").style.display = "none";
+
+      const container = document.getElementById("bibleQuizOptions");
+      container.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mcq-option";
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span class="option-text">${opt}</span>`;
+        btn.onclick = () => handleScriptureAnswer(idx);
+        container.appendChild(btn);
+      });
+    }
+
+    function handleScriptureAnswer(chosenIdx) {
+      if (scriptureAnswered) return;
+      scriptureAnswered = true;
+      scriptureTotal++;
+
+      const q = SCRIPTURE_QUESTIONS[scriptureQuizIdx];
+      const isCorrect = chosenIdx === q.correctIndex;
+
+      if (isCorrect) {
+        scriptureScore++;
+        scriptureStreak++;
+      } else {
+        scriptureStreak = 0;
+      }
+
+      // Update options styling
+      const buttons = document.querySelectorAll("#bibleQuizOptions .mcq-option");
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === q.correctIndex) btn.classList.add("correct");
+        else if (idx === chosenIdx) btn.classList.add("incorrect");
+      });
+
+      // Update feedback
+      const feedback = document.getElementById("bibleQuizFeedback");
+      const status = document.getElementById("bibleFeedbackStatus");
+      status.className = `feedback-status ${isCorrect ? "correct" : "incorrect"}`;
+      status.innerHTML = isCorrect ? "&#10003; Correct" : "&#10007; Incorrect";
+
+      document.getElementById("bibleFeedbackExplanation").textContent = q.explanation;
+      
+      // Interactive citation link!
+      const citWrap = document.getElementById("bibleFeedbackCitationWrap");
+      citWrap.innerHTML = `
+        <button type="button" class="verse-citation-link" data-ref="${q.ref}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          ${q.ref}
+        </button>
+      `;
+
+      feedback.style.display = "block";
+      document.getElementById("bibleNextActionBtn").style.display = "inline-block";
+
+      // Stats
+      document.getElementById("bibleQuizScore").textContent = `Score: ${scriptureScore}/${scriptureTotal}`;
+      const streakEl = document.getElementById("bibleQuizStreak");
+      if (scriptureStreak > 1) {
+        streakEl.textContent = `🔥 ${scriptureStreak} Streak`;
+        streakEl.style.display = "inline-block";
+      } else {
+        streakEl.style.display = "none";
+      }
+    }
+
+    function renderCatholicTrivia() {
+      catholicAnswered = false;
+      const q = CATHOLIC_QUESTIONS[catholicQuizIdx];
+      document.getElementById("catholicCategory").textContent = q.category;
+      document.getElementById("catholicQuestion").textContent = q.question;
+      document.getElementById("catholicFeedback").style.display = "none";
+      document.getElementById("catholicNextActionBtn").style.display = "none";
+
+      const container = document.getElementById("catholicOptions");
+      container.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mcq-option";
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span class="option-text">${opt}</span>`;
+        btn.onclick = () => handleCatholicAnswer(idx);
+        container.appendChild(btn);
+      });
+    }
+
+    function handleCatholicAnswer(chosenIdx) {
+      if (catholicAnswered) return;
+      catholicAnswered = true;
+      catholicTotal++;
+
+      const q = CATHOLIC_QUESTIONS[catholicQuizIdx];
+      const isCorrect = chosenIdx === q.correctIndex;
+
+      if (isCorrect) {
+        catholicScore++;
+        catholicStreak++;
+      } else {
+        catholicStreak = 0;
+      }
+
+      const buttons = document.querySelectorAll("#catholicOptions .mcq-option");
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === q.correctIndex) btn.classList.add("correct");
+        else if (idx === chosenIdx) btn.classList.add("incorrect");
+      });
+
+      const feedback = document.getElementById("catholicFeedback");
+      const status = document.getElementById("catholicFeedbackStatus");
+      status.className = `feedback-status ${isCorrect ? "correct" : "incorrect"}`;
+      status.innerHTML = isCorrect ? "&#10003; Correct" : "&#10007; Incorrect";
+
+      document.getElementById("catholicFeedbackExplanation").textContent = q.explanation;
+
+      // Interactive citation link
+      const citWrap = document.getElementById("catholicFeedbackCitationWrap");
+      citWrap.innerHTML = `
+        <button type="button" class="verse-citation-link" data-ref="${q.ref}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          ${q.ref}
+        </button>
+      `;
+
+      feedback.style.display = "block";
+      document.getElementById("catholicNextActionBtn").style.display = "inline-block";
+
+      document.getElementById("catholicScore").textContent = `Score: ${catholicScore}/${catholicTotal}`;
+      const streakEl = document.getElementById("catholicStreak");
+      if (catholicStreak > 1) {
+        streakEl.textContent = `🔥 ${catholicStreak} Streak`;
+        streakEl.style.display = "inline-block";
+      } else {
+        streakEl.style.display = "none";
+      }
+    }
+
+    /* ========================================================
+       VERSE POPOVER CONTROLLER
+       ======================================================== */
+    const popoverOverlay = document.getElementById("versePopoverOverlay");
+    const popoverRefTitle = document.getElementById("popoverRefTitle");
+    const popoverTransSelect = document.getElementById("popoverTransSelect");
+    const popoverVerseNum = document.getElementById("popoverVerseNum");
+    const popoverVerseContent = document.getElementById("popoverVerseContent");
+    const toggleExpandBtn = document.getElementById("toggleExpandContextBtn");
+    const toggleExpandText = document.getElementById("toggleExpandText");
+    const expandedContextContainer = document.getElementById("expandedContextContainer");
+    const expandedContextList = document.getElementById("expandedContextList");
+
+    let isExpandedContext = false;
+
+    function openVersePopover(refStr) {
+      const parsed = parseBibleReference(refStr);
+      activeRefInfo.rawRef = refStr;
+      activeRefInfo.passageKey = parsed.passageKey;
+      activeRefInfo.verseNum = parsed.verse;
+
+      popoverRefTitle.textContent = `${parsed.bookName} ${parsed.chapter}:${parsed.verse}`;
+      popoverTransSelect.value = activeRefInfo.selectedTranslation;
+
+      isExpandedContext = false;
+      expandedContextContainer.classList.remove("active");
+      toggleExpandText.textContent = "Read surrounding verses in chapter context";
+
+      updatePopoverVerseContent();
+      popoverOverlay.classList.add("open");
+    }
+
+    function closeVersePopover() {
+      popoverOverlay.classList.remove("open");
+    }
+
+    function updatePopoverVerseContent() {
+      const passageData = BIBLE_DATABASE[activeRefInfo.passageKey];
+      const trans = activeRefInfo.selectedTranslation;
+
+      if (passageData && passageData.verses[activeRefInfo.verseNum]) {
+        popoverVerseNum.textContent = activeRefInfo.verseNum;
+        popoverVerseContent.textContent = passageData.verses[activeRefInfo.verseNum][trans] || 
+                                          passageData.verses[activeRefInfo.verseNum]["catholic_org"];
+      } else if (passageData) {
+        const firstVerseNum = Object.keys(passageData.verses)[0];
+        popoverVerseNum.textContent = firstVerseNum;
+        popoverVerseContent.textContent = passageData.verses[firstVerseNum][trans] || 
+                                          passageData.verses[firstVerseNum]["catholic_org"];
+      } else {
+        popoverVerseNum.textContent = "";
+        popoverVerseContent.textContent = "Scripture text passage available in Bible Reader.";
+      }
+
+      // If expanded context is open, re-render context verses
+      if (isExpandedContext) {
+        renderExpandedContext();
+      }
+    }
+
+    function renderExpandedContext() {
+      const passageData = BIBLE_DATABASE[activeRefInfo.passageKey];
+      const trans = activeRefInfo.selectedTranslation;
+      expandedContextList.innerHTML = "";
+
+      if (!passageData) return;
+
+      Object.keys(passageData.verses).forEach(vKey => {
+        const vNum = parseInt(vKey, 10);
+        const text = passageData.verses[vNum][trans] || passageData.verses[vNum]["catholic_org"];
+        const line = document.createElement("div");
+        line.className = `context-verse-line ${vNum === activeRefInfo.verseNum ? "target-verse" : ""}`;
+        line.innerHTML = `<strong>${vNum}.</strong> ${text}`;
+        expandedContextList.appendChild(line);
+      });
+    }
+
+    // Delegation for clicking any .verse-citation-link
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".verse-citation-link");
+      if (btn) {
+        const ref = btn.getAttribute("data-ref");
+        if (ref) {
+          openVersePopover(ref);
+        }
+      }
+    });
+
+    popoverTransSelect.addEventListener("change", (e) => {
+      activeRefInfo.selectedTranslation = e.target.value;
+      updatePopoverVerseContent();
+    });
+
+    toggleExpandBtn.addEventListener("click", () => {
+      isExpandedContext = !isExpandedContext;
+      if (isExpandedContext) {
+        renderExpandedContext();
+        expandedContextContainer.classList.add("active");
+        toggleExpandText.textContent = "Hide surrounding verses";
+      } else {
+        expandedContextContainer.classList.remove("active");
+        toggleExpandText.textContent = "Read surrounding verses in chapter context";
+      }
+    });
+
+    document.getElementById("popoverCloseBtn").addEventListener("click", closeVersePopover);
+    popoverOverlay.addEventListener("click", (e) => {
+      if (e.target === popoverOverlay) closeVersePopover();
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && popoverOverlay.classList.contains("open")) {
+        closeVersePopover();
+      }
+    });
+
+    /* ========================================================
+       BIBLE READER CONTROLLER
+       ======================================================== */
+    const landingView = document.getElementById("landingView");
+    const readerView = document.getElementById("readerView");
+    const readerGrid = document.getElementById("readerGrid");
+    const leftPanel = document.getElementById("leftBiblePanel");
+    const rightPanel = document.getElementById("rightBiblePanel");
+    const parallelToggleBtn = document.getElementById("parallelToggleBtn");
+    const leftTransSelect = document.getElementById("leftPanelTransSelect");
+    const rightTransSelect = document.getElementById("rightPanelTransSelect");
+
+    function showReaderView(passageKey, targetVerse, leftTrans, openParallel = false) {
+      readerPassageKey = passageKey;
+      readerTargetVerse = targetVerse;
+      currentLeftTrans = leftTrans || "catholic_org";
+      leftTransSelect.value = currentLeftTrans;
+
+      if (openParallel) {
+        isParallel = true;
+        // If left is vulgate, default right to catholic_org, else default right to vulgate
+        currentRightTrans = currentLeftTrans === "vulgate" ? "catholic_org" : "vulgate";
+        rightTransSelect.value = currentRightTrans;
+      }
+
+      applyParallelMode();
+      renderReaderPanels();
+
+      landingView.style.display = "none";
+      readerView.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // Highlight & scroll to verse
+      setTimeout(() => {
+        const targetEl = document.querySelector(`.verse-row[data-verse="${targetVerse}"]`);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 100);
+    }
+
+    function showLandingView() {
+      readerView.classList.remove("active");
+      landingView.style.display = "flex";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function applyParallelMode() {
+      if (isParallel) {
+        readerGrid.classList.add("parallel-mode");
+        rightPanel.style.display = "flex";
+        parallelToggleBtn.classList.add("active");
+      } else {
+        readerGrid.classList.remove("parallel-mode");
+        rightPanel.style.display = "none";
+        parallelToggleBtn.classList.remove("active");
+      }
+    }
+
+    function renderReaderPanels() {
+      const data = BIBLE_DATABASE[readerPassageKey] || BIBLE_DATABASE["John 1"];
+      document.getElementById("leftPassageTitle").textContent = readerPassageKey;
+      document.getElementById("rightPassageTitle").textContent = readerPassageKey;
+
+      const leftContent = document.getElementById("leftPanelContent");
+      const rightContent = document.getElementById("rightPanelContent");
+
+      leftContent.innerHTML = "";
+      rightContent.innerHTML = "";
+
+      Object.keys(data.verses).forEach(vKey => {
+        const vNum = parseInt(vKey, 10);
+        const isTarget = vNum === readerTargetVerse;
+
+        // Left Verse
+        const leftText = data.verses[vNum][currentLeftTrans] || data.verses[vNum]["catholic_org"];
+        const leftDiv = document.createElement("div");
+        leftDiv.className = `verse-row ${isTarget ? "verse-highlight" : ""}`;
+        leftDiv.setAttribute("data-verse", vNum);
+        leftDiv.innerHTML = `<span class="num">${vNum}</span> ${leftText}`;
+        leftContent.appendChild(leftDiv);
+
+        // Right Verse
+        const rightText = data.verses[vNum][currentRightTrans] || data.verses[vNum]["catholic_org"];
+        const rightDiv = document.createElement("div");
+        rightDiv.className = `verse-row ${isTarget ? "verse-highlight" : ""}`;
+        rightDiv.setAttribute("data-verse", vNum);
+        rightDiv.innerHTML = `<span class="num">${vNum}</span> ${rightText}`;
+        rightContent.appendChild(rightDiv);
+      });
+    }
+
+    // Action buttons inside Popover
+    document.getElementById("popoverOpenPanelBtn").addEventListener("click", () => {
+      closeVersePopover();
+      showReaderView(activeRefInfo.passageKey, activeRefInfo.verseNum, activeRefInfo.selectedTranslation, false);
+    });
+
+    document.getElementById("popoverOpenParallelBtn").addEventListener("click", () => {
+      closeVersePopover();
+      showReaderView(activeRefInfo.passageKey, activeRefInfo.verseNum, activeRefInfo.selectedTranslation, true);
+    });
+
+    // Navigation and toolbar listeners
+    document.getElementById("brandHomeBtn").addEventListener("click", showLandingView);
+    document.getElementById("backToHomeBtn").addEventListener("click", showLandingView);
+    document.getElementById("heroReadBtn").addEventListener("click", () => {
+      showReaderView("John 1", 1, "catholic_org", true);
+    });
+
+    parallelToggleBtn.addEventListener("click", () => {
+      isParallel = !isParallel;
+      applyParallelMode();
+    });
+
+    document.getElementById("closeRightPanelBtn").addEventListener("click", () => {
+      isParallel = false;
+      applyParallelMode();
+    });
+
+    leftTransSelect.addEventListener("change", (e) => {
+      currentLeftTrans = e.target.value;
+      renderReaderPanels();
+    });
+
+    rightTransSelect.addEventListener("change", (e) => {
+      currentRightTrans = e.target.value;
+      renderReaderPanels();
+    });
+
+    // Dark Mode Toggle
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+    themeToggleBtn.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    });
+
+    // Card Shuffle listeners
+    document.getElementById("shuffleVerseBtn").addEventListener("click", () => {
+      currentVotdIdx = (currentVotdIdx + 1) % VOTD_LIST.length;
+      renderVotd();
+    });
+
+    document.getElementById("shuffleSaintBtn").addEventListener("click", () => {
+      currentSaintIdx = (currentSaintIdx + 1) % SAINT_QUOTES.length;
+      renderSaint();
+    });
+
+    document.getElementById("nextQuizBtn").addEventListener("click", () => {
+      scriptureQuizIdx = (scriptureQuizIdx + 1) % SCRIPTURE_QUESTIONS.length;
+      renderScriptureQuiz();
+    });
+
+    document.getElementById("bibleNextActionBtn").addEventListener("click", () => {
+      scriptureQuizIdx = (scriptureQuizIdx + 1) % SCRIPTURE_QUESTIONS.length;
+      renderScriptureQuiz();
+    });
+
+    document.getElementById("nextTriviaBtn").addEventListener("click", () => {
+      catholicQuizIdx = (catholicQuizIdx + 1) % CATHOLIC_QUESTIONS.length;
+      renderCatholicTrivia();
+    });
+
+    document.getElementById("catholicNextActionBtn").addEventListener("click", () => {
+      catholicQuizIdx = (catholicQuizIdx + 1) % CATHOLIC_QUESTIONS.length;
+      renderCatholicTrivia();
+    });
+
+    // Initial render
+    renderVotd();
+    renderSaint();
+    renderScriptureQuiz();
+    renderCatholicTrivia();
+  </script>
+</body>
+</html>

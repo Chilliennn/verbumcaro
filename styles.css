@@ -1157,7 +1157,9 @@ button {
 }
 
 .japanese-lookup,
-.latin-lookup {
+.latin-lookup,
+.english-lookup,
+.chinese-lookup {
   position: fixed;
   z-index: 210;
   width: min(360px, calc(100vw - 24px));
@@ -1175,7 +1177,9 @@ button {
 
 @media (max-width: 600px) {
   .japanese-lookup,
-  .latin-lookup {
+  .latin-lookup,
+  .english-lookup,
+  .chinese-lookup {
     top: 12px !important;
     bottom: 12px;
     max-height: none;
@@ -1183,7 +1187,9 @@ button {
 }
 
 .japanese-lookup-content,
-.latin-lookup-content {
+.latin-lookup-content,
+.english-lookup-content,
+.chinese-lookup-content {
   overflow-y: auto;
   overscroll-behavior: contain;
   scroll-padding-bottom: 28px;
@@ -1193,7 +1199,9 @@ button {
 }
 
 .japanese-lookup-close,
-.latin-lookup-close {
+.latin-lookup-close,
+.english-lookup-close,
+.chinese-lookup-close {
   position: absolute;
   top: 4px;
   right: 4px;
@@ -1214,37 +1222,48 @@ button {
 }
 
 .japanese-lookup-close:hover,
-.latin-lookup-close:hover {
+.latin-lookup-close:hover,
+.english-lookup-close:hover,
+.chinese-lookup-close:hover {
   color: var(--brand-800);
   background: var(--brand-50);
 }
 
 :root[data-theme="dark"] .japanese-lookup-close,
-:root[data-theme="dark"] .latin-lookup-close {
+:root[data-theme="dark"] .latin-lookup-close,
+:root[data-theme="dark"] .english-lookup-close,
+:root[data-theme="dark"] .chinese-lookup-close {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 :root[data-theme="dark"] .japanese-lookup-close:hover,
-:root[data-theme="dark"] .latin-lookup-close:hover {
+:root[data-theme="dark"] .latin-lookup-close:hover,
+:root[data-theme="dark"] .english-lookup-close:hover,
+:root[data-theme="dark"] .chinese-lookup-close:hover {
   color: #fff;
   background: var(--stone-100);
 }
 
 .japanese-lookup-selection,
-.latin-lookup-selection {
+.latin-lookup-selection,
+.english-lookup-selection,
+.chinese-lookup-selection {
   padding-right: 28px;
   font-size: 20px;
   font-weight: 700;
 }
 
-.japanese-lookup-romaji {
+.japanese-lookup-romaji,
+.chinese-lookup-pinyin {
   margin: 4px 0 14px;
   color: var(--brand-800);
   font-size: 14px;
 }
 
 .japanese-word,
-.latin-word {
+.latin-word,
+.english-word,
+.chinese-word {
   padding: 11px 0;
   border-top: 1px solid var(--stone-200);
   font-size: 14px;
@@ -1252,7 +1271,9 @@ button {
 }
 
 .japanese-word-heading,
-.latin-word-heading {
+.latin-word-heading,
+.english-word-heading,
+.chinese-word-heading {
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -1266,18 +1287,30 @@ button {
 .latin-word-heading span,
 .latin-word-reading,
 .latin-lookup-status,
-.latin-lookup-attribution {
+.latin-lookup-attribution,
+.english-word-heading span,
+.english-word-reading,
+.english-lookup-status,
+.english-lookup-attribution,
+.chinese-word-heading span,
+.chinese-word-reading,
+.chinese-lookup-status,
+.chinese-lookup-attribution {
   color: var(--stone-500);
 }
 
 .japanese-word-reading,
-.latin-word-reading {
+.latin-word-reading,
+.english-word-reading,
+.chinese-word-reading {
   margin: 2px 0 5px;
   font-size: 12px;
 }
 
 .japanese-example-toggle,
-.latin-example-toggle {
+.latin-example-toggle,
+.english-example-toggle,
+.chinese-example-toggle {
   margin-top: 7px;
   padding: 0;
   border: 0;
@@ -1289,7 +1322,9 @@ button {
 }
 
 .japanese-examples,
-.latin-examples {
+.latin-examples,
+.english-examples,
+.chinese-examples {
   margin-top: 7px;
   padding-left: 10px;
   border-left: 2px solid var(--brand-100);
@@ -1297,84 +1332,109 @@ button {
 }
 
 .japanese-examples p,
-.latin-examples p {
+.latin-examples p,
+.english-examples p,
+.chinese-examples p {
   margin: 6px 0;
 }
 
 .japanese-examples span,
-.latin-examples span {
+.latin-examples span,
+.english-examples span,
+.chinese-examples span {
   font-family: Georgia, Cambria, "Times New Roman", serif;
 }
 
 .japanese-lookup-attribution,
-.latin-lookup-attribution {
+.latin-lookup-attribution,
+.english-lookup-attribution,
+.chinese-lookup-attribution {
   display: block;
   margin-top: 12px;
   font-size: 10px;
 }
 
-.latin-definition-list {
+.latin-definition-list,
+.english-definition-list,
+.chinese-definition-list {
   margin: 4px 0 6px;
   padding-left: 18px;
 }
 
-.latin-definition-list li {
+.latin-definition-list li,
+.english-definition-list li,
+.chinese-definition-list li {
   margin-bottom: 2px;
 }
 
-.latin-word-pronunciation {
+.latin-word-pronunciation,
+.english-word-pronunciation,
+.chinese-word-pinyin {
   color: var(--stone-500);
   font-size: 13px;
   font-style: italic;
   font-weight: normal;
 }
 
-.latin-word-lemma {
+.latin-word-lemma,
+.english-word-lemma {
   color: var(--brand-800);
   font-size: 13px;
 }
 
-.latin-inflection-info {
+.latin-inflection-info,
+.english-inflection-info {
   margin: 1px 0 3px;
   font-size: 12px;
   color: var(--brand-800);
 }
 
-.latin-word-form em {
+.latin-word-form em,
+.english-word-form em {
   font-style: normal;
   font-weight: 600;
 }
 
-.latin-word-inflection {
+.latin-word-inflection,
+.english-word-inflection {
   color: var(--stone-500);
 }
 
-.latin-word-grammar {
+.latin-word-grammar,
+.english-word-grammar,
+.chinese-word-grammar {
   margin: 2px 0 5px;
   font-size: 12px;
   color: var(--stone-500);
 }
 
-.latin-word-parts {
+.latin-word-parts,
+.english-word-parts {
   color: var(--stone-600);
   font-style: italic;
 }
 
-.latin-word-no-def {
+.latin-word-no-def,
+.english-word-no-def,
+.chinese-word-no-def {
   color: var(--stone-500);
   margin: 4px 0;
 }
 
-.latin-example-quote {
+.latin-example-quote,
+.english-example-quote,
+.chinese-example-quote {
   font-style: italic;
 }
 
-.latin-example-ref {
+.latin-example-ref,
+.english-example-ref {
   color: var(--stone-500);
   font-size: 11px;
 }
 
-.latin-example-trans {
+.latin-example-trans,
+.chinese-example-trans {
   color: var(--stone-600);
   font-size: 12px;
 }

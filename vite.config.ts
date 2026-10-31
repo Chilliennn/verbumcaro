@@ -234,6 +234,273 @@ export default defineConfig({
             response.end();
           });
         });
+
+        server.middlewares.use("/verbumnobis/__dictionaryapi_dev", (request, response) => {
+          const url = new URL(request.url ?? "", "http://localhost");
+          const word = url.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const proxyReq = https.get(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`,
+            {
+              family: 4,
+              headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+              }
+            },
+            (proxyRes) => {
+              response.statusCode = proxyRes.statusCode ?? 200;
+              response.setHeader("Content-Type", "application/json");
+              response.setHeader("Access-Control-Allow-Origin", "*");
+              proxyRes.pipe(response);
+            }
+          );
+
+          proxyReq.on("error", (err) => {
+            console.error("[EnglishLookup] DictionaryApi.dev proxy error:", err);
+            response.statusCode = 502;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ error: String(err) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__freedictionary_en", (request, response) => {
+          const url = new URL(request.url ?? "", "http://localhost");
+          const word = url.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const proxyReq = https.get(
+            `https://freedictionaryapi.com/api/v1/entries/en/${encodeURIComponent(word)}`,
+            {
+              family: 4,
+              headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+              }
+            },
+            (proxyRes) => {
+              response.statusCode = proxyRes.statusCode ?? 200;
+              response.setHeader("Content-Type", "application/json");
+              response.setHeader("Access-Control-Allow-Origin", "*");
+              proxyRes.pipe(response);
+            }
+          );
+
+          proxyReq.on("error", (err) => {
+            console.error("[EnglishLookup] FreeDictionary EN proxy error:", err);
+            response.statusCode = 502;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ error: String(err) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__tatoeba_eng", (request, response) => {
+          const requestUrl = new URL(request.url ?? "", "http://localhost");
+          const word = requestUrl.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const target = new URL("https://api.tatoeba.org/v1/sentences");
+          target.searchParams.set("lang", "eng");
+          target.searchParams.set("q", word);
+          target.searchParams.set("sort", "relevance");
+          target.searchParams.set("limit", "3");
+
+          const proxyReq = https.get(target, { family: 4, headers: { "User-Agent": "VerbumNobis/0.1" } }, (proxyRes) => {
+            response.statusCode = proxyRes.statusCode ?? 200;
+            response.setHeader("Content-Type", "application/json");
+            response.setHeader("Access-Control-Allow-Origin", "*");
+            proxyRes.pipe(response);
+          });
+          proxyReq.on("error", (error) => {
+            console.error("[EnglishLookup] Tatoeba English proxy error:", error);
+            response.statusCode = 502;
+            response.end(JSON.stringify({ error: String(error) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__english-debug", (request, response, next) => {
+          if (request.method !== "POST") {
+            next();
+            return;
+          }
+
+          let body = "";
+          request.on("data", (chunk) => {
+            body += chunk;
+          });
+          request.on("end", () => {
+            try {
+              const event = JSON.parse(body) as { message?: string; details?: unknown; timestamp?: string };
+              console.log(`[EnglishLookup ${event.timestamp ?? ""}] ${event.message ?? "event"}`, event.details ?? "");
+            } catch {
+              console.log("[EnglishLookup] Received malformed debug event", body);
+            }
+            response.statusCode = 204;
+            response.end();
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__youdao_jsonapi", (request, response) => {
+          const url = new URL(request.url ?? "", "http://localhost");
+          const word = url.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const proxyReq = https.get(
+            `https://dict.youdao.com/jsonapi?q=${encodeURIComponent(word)}`,
+            {
+              family: 4,
+              headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+              }
+            },
+            (proxyRes) => {
+              response.statusCode = proxyRes.statusCode ?? 200;
+              response.setHeader("Content-Type", "application/json");
+              response.setHeader("Access-Control-Allow-Origin", "*");
+              proxyRes.pipe(response);
+            }
+          );
+
+          proxyReq.on("error", (err) => {
+            console.error("[ChineseLookup] Youdao jsonapi proxy error:", err);
+            response.statusCode = 502;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ error: String(err) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__youdao_suggest", (request, response) => {
+          const url = new URL(request.url ?? "", "http://localhost");
+          const word = url.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const proxyReq = https.get(
+            `https://dict.youdao.com/suggest?num=5&doctype=json&q=${encodeURIComponent(word)}`,
+            {
+              family: 4,
+              headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+              }
+            },
+            (proxyRes) => {
+              response.statusCode = proxyRes.statusCode ?? 200;
+              response.setHeader("Content-Type", "application/json");
+              response.setHeader("Access-Control-Allow-Origin", "*");
+              proxyRes.pipe(response);
+            }
+          );
+
+          proxyReq.on("error", (err) => {
+            console.error("[ChineseLookup] Youdao suggest proxy error:", err);
+            response.statusCode = 502;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ error: String(err) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__freedictionary_zh", (request, response) => {
+          const url = new URL(request.url ?? "", "http://localhost");
+          const word = url.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const proxyReq = https.get(
+            `https://freedictionaryapi.com/api/v1/entries/zh/${encodeURIComponent(word)}`,
+            {
+              family: 4,
+              headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+              }
+            },
+            (proxyRes) => {
+              response.statusCode = proxyRes.statusCode ?? 200;
+              response.setHeader("Content-Type", "application/json");
+              response.setHeader("Access-Control-Allow-Origin", "*");
+              proxyRes.pipe(response);
+            }
+          );
+
+          proxyReq.on("error", (err) => {
+            console.error("[ChineseLookup] FreeDictionary ZH proxy error:", err);
+            response.statusCode = 502;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ error: String(err) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__tatoeba_cmn", (request, response) => {
+          const requestUrl = new URL(request.url ?? "", "http://localhost");
+          const word = requestUrl.searchParams.get("word") ?? "";
+          if (!word) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Missing word" }));
+            return;
+          }
+
+          const target = new URL("https://api.tatoeba.org/v1/sentences");
+          target.searchParams.set("lang", "cmn");
+          target.searchParams.set("q", word);
+          target.searchParams.set("trans:lang", "eng");
+          target.searchParams.set("showtrans:lang", "eng");
+          target.searchParams.set("sort", "relevance");
+          target.searchParams.set("limit", "3");
+
+          const proxyReq = https.get(target, { family: 4, headers: { "User-Agent": "VerbumNobis/0.1" } }, (proxyRes) => {
+            response.statusCode = proxyRes.statusCode ?? 200;
+            response.setHeader("Content-Type", "application/json");
+            response.setHeader("Access-Control-Allow-Origin", "*");
+            proxyRes.pipe(response);
+          });
+          proxyReq.on("error", (error) => {
+            console.error("[ChineseLookup] Tatoeba Chinese proxy error:", error);
+            response.statusCode = 502;
+            response.end(JSON.stringify({ error: String(error) }));
+          });
+        });
+
+        server.middlewares.use("/verbumnobis/__chinese-debug", (request, response, next) => {
+          if (request.method !== "POST") {
+            next();
+            return;
+          }
+
+          let body = "";
+          request.on("data", (chunk) => {
+            body += chunk;
+          });
+          request.on("end", () => {
+            try {
+              const event = JSON.parse(body) as { message?: string; details?: unknown; timestamp?: string };
+              console.log(`[ChineseLookup ${event.timestamp ?? ""}] ${event.message ?? "event"}`, event.details ?? "");
+            } catch {
+              console.log("[ChineseLookup] Received malformed debug event", body);
+            }
+            response.statusCode = 204;
+            response.end();
+          });
+        });
       }
     }
   ],
