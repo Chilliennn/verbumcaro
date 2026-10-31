@@ -3,7 +3,9 @@ import {
   cleanLatinToken,
   tokenizeLatin,
   normalizeLatinLemma,
+  getLatinSearchCandidates,
   extractLemmaFromDefinition,
+  formatInflectionDescription,
   analyzeLatinWord,
   analyzeLatin,
   loadLatinExamples
@@ -45,6 +47,61 @@ describe("latinLookup", () => {
     it("handles multiple spaces and newlines", () => {
       const tokens = tokenizeLatin("  In \n\n principio   erat   Verbum  ");
       expect(tokens).toEqual(["In", "principio", "erat", "Verbum"]);
+    });
+
+    it("tokenizes sentence with punctuation and colons properly", () => {
+      const sentence =
+        "Litigabant ergo Judæi ad invicem, dicentes: Quomodo potest hic nobis carnem suam dare ad manducandum";
+      const tokens = tokenizeLatin(sentence);
+      expect(tokens).toEqual([
+        "Litigabant",
+        "ergo",
+        "Judæi",
+        "ad",
+        "invicem",
+        "dicentes",
+        "Quomodo",
+        "potest",
+        "hic",
+        "nobis",
+        "carnem",
+        "suam",
+        "dare",
+        "ad",
+        "manducandum"
+      ]);
+      expect(tokens).toHaveLength(15);
+    });
+  });
+
+  describe("getLatinSearchCandidates", () => {
+    it("generates ligature-expanded and classical orthography variants for vitæ", () => {
+      const candidates = getLatinSearchCandidates("vitæ");
+      expect(candidates).toContain("vitae");
+      expect(candidates[0]).toBe("vitae");
+    });
+
+    it("generates candidates for Judæi with ligature expansion and j->i substitution", () => {
+      const candidates = getLatinSearchCandidates("Judæi");
+      expect(candidates).toContain("judaei");
+      expect(candidates).toContain("iudaei");
+    });
+
+    it("generates ligature-expanded variants for cœlum", () => {
+      const candidates = getLatinSearchCandidates("cœlum");
+      expect(candidates).toContain("coelum");
+    });
+  });
+
+  describe("formatInflectionDescription", () => {
+    it("formats inflection with subsenses (e.g. vitae)", () => {
+      const subsenses = [
+        { definition: "nominative/vocative plural" },
+        { definition: "genitive/dative singular" }
+      ];
+      expect(formatInflectionDescription("inflection of vīta:", [], subsenses)).toBe(
+        "nominative/vocative plural, genitive/dative singular"
+      );
     });
   });
 
@@ -240,6 +297,226 @@ describe("latinLookup", () => {
       expect(word.inflection).toBe("nominative/accusative/vocative plural");
       expect(word.definitions).toContain("a word");
       expect(word.definitions).toContain("a promise");
+    });
+
+    it("resolves words with ligatures like vitæ to lemma vīta and its definitions", async () => {
+      const mockVitaeResponse = {
+        word: "vitae",
+        entries: [
+          {
+            partOfSpeech: "noun",
+            forms: [{ word: "vītae", tags: ["canonical", "feminine"] }],
+            senses: [
+              {
+                definition: "inflection of vīta:",
+                subsenses: [
+                  { definition: "nominative/vocative plural", tags: ["form of", "nominative", "plural", "vocative"] },
+                  { definition: "genitive/dative singular", tags: ["dative", "form of", "genitive", "singular"] }
+                ]
+              }
+            ]
+          }
+        ]
+      };
+
+      const mockVitaResponse = {
+        word: "vita",
+        entries: [
+          {
+            partOfSpeech: "noun",
+            pronunciations: [{ text: "[ˈwiː.ta]", type: "ipa" }],
+            forms: [
+              { word: "vīta", tags: ["canonical", "feminine"] },
+              { word: "vītae", tags: ["genitive"] }
+            ],
+            senses: [
+              {
+                definition: "life",
+                tags: ["declension 1"]
+              },
+              {
+                definition: "a way of life",
+                tags: ["declension 1"]
+              }
+            ]
+          }
+        ]
+      };
+
+      vi.spyOn(globalThis, "fetch").mockImplementation(async (input) => {
+        const url = String(input);
+        // Direct query for vitæ returns 0 entries, mimicking freedictionaryapi.com
+        if (url.includes("/vit%C3%A6") || url.includes("word=vit%C3%A6")) {
+          return new Response(JSON.stringify({ word: "vitæ", entries: [] }), { status: 200 });
+        }
+        // Ligature-expanded query for vitae returns the inflection
+        if (url.includes("/vitae") || url.includes("word=vitae")) {
+          return new Response(JSON.stringify(mockVitaeResponse), { status: 200 });
+        }
+        // Lemma query for vita returns the definitions
+        if (url.includes("/vita") || url.includes("word=vita")) {
+          return new Response(JSON.stringify(mockVitaResponse), { status: 200 });
+        }
+        return new Response(JSON.stringify({ count: 0, results: [] }), { status: 200 });
+      });
+
+      const word = await analyzeLatinWord("vitæ");
+      expect(word.surface).toBe("vitæ");
+      expect(word.isInflected).toBe(true);
+      expect(word.lemma).toBe("vīta");
+      expect(word.inflection).toBe("nominative/vocative plural, genitive/dative singular");
+      expect(word.partOfSpeech).toBe("noun");
+      expect(word.definitions).toContain("life");
+      expect(word.definitions).toContain("a way of life");
+    });
+
+    it("resolves words with ligatures and j/i interchange like Judæi", async () => {
+      const mockIudaeiResponse = {
+        word: "iudaei",
+        entries: [
+          {
+            partOfSpeech: "adjective",
+            forms: [{ word: "iūdaeī", tags: ["canonical"] }],
+            senses: [
+              {
+                definition: "inflection of iūdaeus:",
+                subsenses: [
+                  { definition: "nominative/vocative masculine plural", tags: ["form of", "masculine", "nominative", "plural", "vocative"] }
+                ]
+              }
+            ]
+          }
+        ]
+      };
+
+      const mockIudaeusResponse = {
+        word: "iudaeus",
+        entries: [
+          {
+            partOfSpeech: "noun",
+            pronunciations: [{ text: "[juːˈdae̯.ʊs]", type: "ipa" }],
+            forms: [
+              { word: "iūdaeus", tags: ["canonical", "masculine"] },
+              { word: "iūdaeī", tags: ["genitive"] }
+            ],
+            senses: [
+              {
+                definition: "a Judaean, Jew",
+                tags: ["declension 2"]
+              }
+            ]
+          }
+        ]
+      };
+
+      vi.spyOn(globalThis, "fetch").mockImplementation(async (input) => {
+        const url = String(input);
+        if (url.includes("iudaei") || url.includes("word=iudaei")) {
+          return new Response(JSON.stringify(mockIudaeiResponse), { status: 200 });
+        }
+        if (url.includes("iudaeus") || url.includes("word=iudaeus")) {
+          return new Response(JSON.stringify(mockIudaeusResponse), { status: 200 });
+        }
+        return new Response(JSON.stringify({ word: "none", entries: [] }), { status: 200 });
+      });
+
+      const word = await analyzeLatinWord("Judæi");
+      expect(word.surface).toBe("Judæi");
+      expect(word.isInflected).toBe(true);
+      expect(word.lemma).toBe("iūdaeus");
+      expect(word.inflection).toBe("nominative/vocative masculine plural");
+      expect(word.definitions).toContain("a Judaean, Jew");
+    });
+
+    it("preserves participle definitions even when tagged with 'form of' (dicens)", async () => {
+      const mockDicensResponse = {
+        word: "dicens",
+        entries: [
+          {
+            partOfSpeech: "verb",
+            forms: [{ word: "dīcēns", tags: ["canonical"] }],
+            senses: [
+              {
+                definition: "saying, uttering, mentioning, speaking, talking",
+                tags: ["active", "declension 3", "form of", "one termination", "participle", "present"]
+              },
+              {
+                definition: "declaring, stating",
+                tags: ["active", "declension 3", "form of", "one termination", "participle", "present"]
+              }
+            ]
+          }
+        ]
+      };
+
+      vi.spyOn(globalThis, "fetch").mockResolvedValue(
+        new Response(JSON.stringify(mockDicensResponse), { status: 200 })
+      );
+
+      const word = await analyzeLatinWord("dicens");
+      expect(word.definitions).toContain("saying, uttering, mentioning, speaking, talking");
+      expect(word.definitions).toContain("declaring, stating");
+    });
+
+    it("analyzes all words in a 15-word sentence beyond the previous 8-word cutoff", async () => {
+      vi.spyOn(globalThis, "fetch").mockImplementation(async (input) => {
+        const url = String(input);
+        const match = url.match(/(?:entries\/la\/|word=)([^&/?]+)/);
+        const term = match ? decodeURIComponent(match[1]) : "word";
+        return new Response(
+          JSON.stringify({
+            word: term,
+            entries: [
+              {
+                partOfSpeech: "noun",
+                senses: [{ definition: `definition of ${term}` }]
+              }
+            ]
+          }),
+          { status: 200 }
+        );
+      });
+
+      const sentence =
+        "Litigabant ergo Judæi ad invicem, dicentes: Quomodo potest hic nobis carnem suam dare ad manducandum";
+      const result = await analyzeLatin(sentence);
+
+      // Must analyze all 15 words rather than stopping at potest (word 8)
+      expect(result.words).toHaveLength(15);
+      const surfaces = result.words.map((w) => w.surface);
+      expect(surfaces).toEqual([
+        "Litigabant",
+        "ergo",
+        "Judæi",
+        "ad",
+        "invicem",
+        "dicentes",
+        "Quomodo",
+        "potest",
+        "hic",
+        "nobis",
+        "carnem",
+        "suam",
+        "dare",
+        "ad",
+        "manducandum"
+      ]);
+
+      // Words after potest (hic, nobis, carnem, suam, dare, ad, manducandum) must be present with definitions
+      const potestIndex = surfaces.indexOf("potest");
+      expect(potestIndex).toBe(7);
+      expect(surfaces.slice(8)).toEqual([
+        "hic",
+        "nobis",
+        "carnem",
+        "suam",
+        "dare",
+        "ad",
+        "manducandum"
+      ]);
+      for (const word of result.words) {
+        expect(word.definitions.length).toBeGreaterThan(0);
+      }
     });
   });
 

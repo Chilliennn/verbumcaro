@@ -148,6 +148,57 @@ export function normalizeLatinLemma(raw: string): string {
     .replace(/[^a-z]/g, "");
 }
 
+export function getLatinSearchCandidates(rawWord: string): string[] {
+  const lower = rawWord.toLowerCase().trim();
+  const candidates: string[] = [];
+
+  const add = (w: string) => {
+    const val = w.trim();
+    if (val && !candidates.includes(val)) {
+      candidates.push(val);
+    }
+  };
+
+  // 1. Expand ligatures (æ -> ae, œ -> oe) - Wiktionary Latin entries strictly use ae/oe
+  const expanded = lower.replace(/æ/g, "ae").replace(/œ/g, "oe");
+  if (expanded !== lower) {
+    add(expanded);
+  }
+
+  // 2. Classical consonant substitution j -> i on expanded form (e.g. judaei -> iudaei, jesus -> iesus)
+  const jToI = expanded.replace(/j/g, "i");
+  if (jToI !== expanded) {
+    add(jToI);
+  }
+
+  // 3. Lowercased original
+  add(lower);
+
+  // 4. Diacritics/macrons stripped
+  const stripped = expanded
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+  if (stripped !== expanded) {
+    add(stripped);
+    const strippedJ = stripped.replace(/j/g, "i");
+    if (strippedJ !== stripped) {
+      add(strippedJ);
+    }
+  }
+
+  // 5. Classical consonant substitution v -> u (e.g. verbum -> uerbum, vita -> uita)
+  const vToU = expanded.replace(/v/g, "u");
+  if (vToU !== expanded) {
+    add(vToU);
+    const vToUJ = jToI.replace(/v/g, "u");
+    if (vToUJ !== vToU) {
+      add(vToUJ);
+    }
+  }
+
+  return candidates;
+}
+
 export function extractLemmaFromDefinition(def: string): string | undefined {
   // Common Wiktionary patterns:
   // "third-person singular perfect active indicative of creō"
@@ -171,16 +222,35 @@ export function extractLemmaFromDefinition(def: string): string | undefined {
   return undefined;
 }
 
-export function formatInflectionDescription(def: string, tags?: string[]): string {
-  // If def is like "third-person singular perfect active indicative of creō"
-  // extract "third-person singular perfect active indicative"
-  const ofIndex = def.indexOf(" of ");
-  if (ofIndex > 0) {
-    return def.slice(0, ofIndex).trim();
+export function formatInflectionDescription(
+  def: string,
+  tags?: string[],
+  subsenses?: FreeDictionarySense[]
+): string {
+  if (subsenses && subsenses.length > 0) {
+    const subDescs = subsenses
+      .map((s) => s.definition?.replace(/:$/, "").trim())
+      .filter((d): d is string => Boolean(d && !d.toLowerCase().startsWith("inflection of")));
+    if (subDescs.length > 0) {
+      return unique(subDescs).join(", ");
+    }
   }
-  if (def.startsWith("inflection of") && tags && tags.length > 0) {
-    return tags.filter((t) => t !== "form of" && t !== "canonical").join(" ");
+
+  const isGenericInflection = /^(?:inflection|form)\s+of\b/i.test(def);
+  if (!isGenericInflection) {
+    const ofIndex = def.indexOf(" of ");
+    if (ofIndex > 0) {
+      return def.slice(0, ofIndex).trim();
+    }
   }
+
+  if (tags && tags.length > 0) {
+    const filteredTags = tags.filter((t) => t !== "form of" && t !== "canonical");
+    if (filteredTags.length > 0) {
+      return filteredTags.join(" ");
+    }
+  }
+
   return def.replace(/:$/, "").trim();
 }
 
@@ -197,8 +267,7 @@ export function mapPosTag(pos?: string): string {
   return pos;
 }
 
-async function fetchFreeDictionaryData(word: string): Promise<FreeDictionaryResponse | null> {
-  const cacheKey = word.toLowerCase();
+async function fetchFreeDictionarySingle(cacheKey: string): Promise<FreeDictionaryResponse | null> {
   if (freeDictionaryCache.has(cacheKey)) {
     return freeDictionaryCache.get(cacheKey)!;
   }
@@ -247,6 +316,25 @@ async function fetchFreeDictionaryData(word: string): Promise<FreeDictionaryResp
   }
 
   freeDictionaryCache.set(cacheKey, null);
+  return null;
+}
+
+async function fetchFreeDictionaryData(word: string): Promise<FreeDictionaryResponse | null> {
+  const origKey = word.toLowerCase();
+  if (freeDictionaryCache.has(origKey)) {
+    return freeDictionaryCache.get(origKey)!;
+  }
+
+  const candidates = getLatinSearchCandidates(word);
+  for (const candidate of candidates) {
+    const data = await fetchFreeDictionarySingle(candidate);
+    if (data?.entries && data.entries.length > 0) {
+      freeDictionaryCache.set(origKey, data);
+      return data;
+    }
+  }
+
+  freeDictionaryCache.set(origKey, null);
   return null;
 }
 
@@ -324,9 +412,13 @@ async function fetchLatinWordNetSynsets(lemma: string): Promise<string[]> {
   }
 
   let glosses = await tryFetch(cacheKey);
-  // Try classical Latin spelling (v -> u, j -> i) if not found (e.g. uerbum instead of verbum)
+  // Try classical Latin spelling (v -> u, j -> i) and expand ligatures if not found (e.g. uerbum instead of verbum)
   if (!glosses || glosses.length === 0) {
-    const classical = cacheKey.replace(/v/g, "u").replace(/j/g, "i");
+    const classical = cacheKey
+      .replace(/æ/g, "ae")
+      .replace(/œ/g, "oe")
+      .replace(/v/g, "u")
+      .replace(/j/g, "i");
     if (classical !== cacheKey) {
       glosses = await tryFetch(classical);
     }
@@ -405,20 +497,24 @@ function extractQuotesAndExamples(entry?: FreeDictionaryEntry): LatinExample[] {
   return list;
 }
 
+export function isInflectionDefinition(def: string): boolean {
+  return (
+    /\b(?:inflection|form|plural|singular|nominative|genitive|dative|accusative|ablative|vocative|indicative|subjunctive|imperative)\s+of\b/i.test(def) ||
+    /^(?:alternative|archaic|medieval|late|early)\s+form\s+of\b/i.test(def)
+  );
+}
+
 function extractRealDefinitions(entry?: FreeDictionaryEntry): string[] {
   const defs: string[] = [];
   if (!entry?.senses) return defs;
 
   for (const sense of entry.senses) {
-    if (sense.definition) {
-      const isFormOf = sense.tags?.includes("form of") || /\b(?:inflection|form|plural|singular)\s+of\b/i.test(sense.definition);
-      if (!isFormOf) {
-        defs.push(sense.definition);
-      }
+    if (sense.definition && !isInflectionDefinition(sense.definition)) {
+      defs.push(sense.definition);
     }
     if (sense.subsenses) {
       for (const sub of sense.subsenses) {
-        if (sub.definition && !sub.tags?.includes("form of")) {
+        if (sub.definition && !isInflectionDefinition(sub.definition)) {
           defs.push(sub.definition);
         }
       }
@@ -452,7 +548,7 @@ export async function analyzeLatinWord(surface: string): Promise<LatinWord> {
         if (foundLemma && !rawLemma) {
           rawLemma = foundLemma;
           isInflected = true;
-          inflectionDesc = formatInflectionDescription(sense.definition, sense.tags);
+          inflectionDesc = formatInflectionDescription(sense.definition, sense.tags, sense.subsenses);
         }
       }
     }
@@ -477,7 +573,7 @@ export async function analyzeLatinWord(surface: string): Promise<LatinWord> {
   let principalParts: string[] = extractPrincipalParts(entry);
   const examples: LatinExample[] = extractQuotesAndExamples(entry);
 
-  if (isInflected && normalizedLemma !== clean.toLowerCase()) {
+  if (isInflected && normalizedLemma !== normalizeLatinLemma(clean)) {
     // 2. Fetch the original word (lemma) entry from FreeDictionaryAPI to get its true definition!
     latinDebug("Fetching original lemma dictionary entry", { rawLemma, normalizedLemma });
     const lemmaFdData = await fetchFreeDictionaryData(normalizedLemma);
@@ -560,8 +656,9 @@ export async function analyzeLatin(text: string): Promise<LatinLookup> {
     return { text, words: [] };
   }
 
-  // Deduplicate consecutive identical words or limit words to avoid overwhelming
-  const wordsToAnalyze = tokens.slice(0, 8);
+  // Support analyzing full sentences and verses while protecting against extreme bulk selections
+  const maxWords = 50;
+  const wordsToAnalyze = tokens.slice(0, maxWords);
   const words = await Promise.all(wordsToAnalyze.map((t) => analyzeLatinWord(t)));
 
   latinDebug("Latin text analysis complete", { text, count: words.length });
