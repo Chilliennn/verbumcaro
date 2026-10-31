@@ -10,6 +10,15 @@ def verify_all_links():
     saint_quotes = saint_data.get("quotes", [])
     saint_urls = sorted(list(set(q["link"] for q in saint_quotes if "link" in q)))
 
+    wiki_urls = [u for u in saint_urls if "wikipedia.org" in u]
+    if wiki_urls:
+        print(f"ERROR: Found {len(wiki_urls)} Wikipedia URLs in saint quotes!")
+        for u in wiki_urls:
+            print("  [WIKI]", u)
+        return False
+    else:
+        print(f"PASSED: 0 Wikipedia URLs found across saint quotes.")
+
     print(f"Checking {len(saint_urls)} unique Saint URLs across {len(saint_quotes)} quotes...")
 
     # 2. Catholic trivia links
@@ -17,6 +26,15 @@ def verify_all_links():
         trivia_data = json.load(f)
     trivia_questions = trivia_data.get("questions", [])
     trivia_urls = sorted(list(set(q["sourceUrl"] for q in trivia_questions if "sourceUrl" in q)))
+
+    wiki_trivia_urls = [u for u in trivia_urls if "wikipedia.org" in u]
+    if wiki_trivia_urls:
+        print(f"ERROR: Found {len(wiki_trivia_urls)} Wikipedia URLs in trivia questions!")
+        for u in wiki_trivia_urls:
+            print("  [WIKI TRIVIA]", u)
+        return False
+    else:
+        print(f"PASSED: 0 Wikipedia URLs found across catholic trivia.")
 
     print(f"Checking {len(trivia_urls)} unique Catholic Trivia URLs across {len(trivia_questions)} questions...")
 

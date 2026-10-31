@@ -9,7 +9,7 @@ TRIVIA_SOURCES = {
         "sourcePreview": "CCC 1376: By the consecration of the bread and wine there takes place a change of the whole substance of the bread into the substance of the body of Christ our Lord and of the whole substance of the wine into the substance of his blood. This change the holy Catholic Church has fittingly and properly called transubstantiation."
     },
     "c2": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/General_Instruction_of_the_Roman_Missal",
+        "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
         "sourcePreview": "GIRM 346(d): Violet or purple vestments are prescribed during the penitential seasons of Advent and Lent to symbolize repentance, preparation, and spiritual expectation."
     },
     "c3": {
@@ -41,7 +41,7 @@ TRIVIA_SOURCES = {
         "sourcePreview": "CCC 1212: The sacraments of Christian initiation - Baptism, Confirmation, and the Eucharist - lay the foundations of every Christian life, through which believers receive divine life and nourishment."
     },
     "c10": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Kyrie",
+        "sourceUrl": "https://www.newadvent.org/cathen/08714a.htm",
         "sourcePreview": "GIRM 52: The Kyrie, eleison ('Lord, have mercy') is an ancient Greek acclamation and chant preserved in the Roman Rite Mass by which the faithful acclaim the Lord and implore His mercy."
     },
     "c11": {
@@ -121,15 +121,15 @@ TRIVIA_SOURCES = {
         "sourcePreview": "Canon 1012 / CCC 1576: A consecrated bishop alone is the minister of sacred ordination, possessing the fullness of the Sacrament of Holy Orders to ordain deacons, priests, and bishops."
     },
     "c30": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Liturgical_year",
+        "sourceUrl": "https://www.newadvent.org/cathen/09278a.htm",
         "sourcePreview": "General Norms for the Liturgical Year 39: The liturgical year of the Church commences on the First Sunday of Advent, four Sundays prior to Christmas Day, beginning the season of joyful anticipation."
     },
     "c31": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/General_Instruction_of_the_Roman_Missal",
+        "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
         "sourcePreview": "GIRM 346(b): Red vestments are prescribed on Palm Sunday, Good Friday, Pentecost Sunday, the celebrations of the Lord's Passion, and on the feast days of Apostles, Evangelists, and Martyrs."
     },
     "c32": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/General_Instruction_of_the_Roman_Missal",
+        "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
         "sourcePreview": "GIRM 346(c): Green vestments are worn in the Offices and Masses of Ordinary Time, symbolizing life, hope, and steady spiritual growth in following Christ throughout the liturgical year."
     },
     "c33": {
@@ -137,7 +137,7 @@ TRIVIA_SOURCES = {
         "sourcePreview": "CCC 1168: The Easter Triduum (Holy Thursday evening through Easter Sunday evening) is the summit of the Liturgical Year, commemorating the Passion, Death, and Resurrection of Jesus Christ."
     },
     "c34": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Monstrance",
+        "sourceUrl": "https://www.newadvent.org/cathen/11339a.htm",
         "sourcePreview": "Eucharistic Adoration: The monstrance (ostensorium), usually designed as a radiant sunburst, is the sacred vessel used to expose the consecrated Blessed Sacrament for adoration and benediction."
     },
     "c35": {
@@ -221,23 +221,23 @@ TRIVIA_SOURCES = {
         "sourcePreview": "Saint Benedict of Nursia (480–548): Regarded as the Father of Western Monasticism, founder of the Abbey of Monte Cassino, author of the Rule of Saint Benedict ('Ora et Labora'), and Patron of Europe."
     },
     "c55": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Corporal_(liturgy)",
-        "sourcePreview": "GIRM 117: The corporal (from Latin corpus, 'body') is the square white linen cloth spread upon the altar upon which the paten, chalice, and ciborium rest during the celebration of the Eucharist."
+        "sourceUrl": "https://www.newadvent.org/cathen/04386c.htm",
+        "sourcePreview": "GIRM 117 / New Advent: The corporal (from Latin corpus, 'body') is the square white linen cloth spread upon the altar upon which the paten, chalice, and ciborium rest during the celebration of the Eucharist."
     },
     "c56": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Thurible",
-        "sourcePreview": "GIRM 276-277: The thurible (censer) is the metal vessel suspended from chains in which burning charcoal and incense are placed to cense the altar, cross, gifts, Gospel, priest, and congregation."
+        "sourceUrl": "https://www.newadvent.org/cathen/14713c.htm",
+        "sourcePreview": "GIRM 276-277 / New Advent: The thurible (censer) is the metal vessel suspended from chains in which burning charcoal and incense are placed to cense the altar, cross, gifts, Gospel, priest, and congregation."
     },
     "c57": {
         "sourceUrl": "https://www.vatican.va/archive/ENG1104/__P1A.HTM",
         "sourcePreview": "Canon 369: A diocese is a portion of the people of God entrusted to a bishop for him to shepherd with the cooperation of the presbyterium, constituting a particular Church in which the Church of Christ is truly present and operative."
     },
     "c58": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Lateran_Treaty",
+        "sourceUrl": "https://www.vatican.va/roman_curia/secretariat_state/archivio/documents/rc_seg-st_19290211_patti-lateranensi_it.html",
         "sourcePreview": "Lateran Treaty (1929): Signed between the Holy See and the Kingdom of Italy on February 11, 1929, recognizing full sovereignty of the Holy See and establishing the independent Vatican City State."
     },
     "c59": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Flag_of_Vatican_City",
+        "sourceUrl": "https://www.vatican.va/roman_curia/secretariat_state/documents/insigne/sp_ss_scv_stemma-bandiera-sigillo_it.html",
         "sourcePreview": "Fundamental Law of Vatican City State: The official flag of Vatican City consists of two equal vertical bands of yellow (gold) and white (silver), with the papal tiara and crossed keys of Saint Peter on the white band."
     },
     "c60": {
@@ -289,8 +289,8 @@ TRIVIA_SOURCES = {
         "sourcePreview": "Canon 919 §1: One who is to receive the Most Holy Eucharist is to abstain from any food and drink, with the exception only of water and medicine, for at least the period of one hour before Holy Communion."
     },
     "c72": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Paten",
-        "sourcePreview": "GIRM 327: The paten is the shallow round plate, traditionally gilded in gold, upon which the host is placed and consecrated during the Holy Sacrifice of the Mass."
+        "sourceUrl": "https://www.newadvent.org/cathen/11541b.htm",
+        "sourcePreview": "GIRM 327 / New Advent: The paten is the shallow round plate, traditionally gilded in gold, upon which the host is placed and consecrated during the Holy Sacrifice of the Mass."
     },
     "c73": {
         "sourceUrl": "https://www.newadvent.org/cathen/04390b.htm",
@@ -309,8 +309,8 @@ TRIVIA_SOURCES = {
         "sourcePreview": "Canon 1246: The Solemnity of Mary, the Holy Mother of God (Theotokos) is universally celebrated on January 1st, the octave day of Christmas and a holyday of obligation in the Roman Rite."
     },
     "c77": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Ash_Wednesday",
-        "sourcePreview": "Roman Missal (Ash Wednesday): During the imposition of blessed ashes, the minister proclaims: 'Remember that you are dust, and unto dust you shall return' (Gen 3:19) or 'Repent, and believe in the Gospel' (Mark 1:15)."
+        "sourceUrl": "https://www.newadvent.org/cathen/01775b.htm",
+        "sourcePreview": "Roman Missal (Ash Wednesday) / New Advent: During the imposition of blessed ashes, the minister proclaims: 'Remember that you are dust, and unto dust you shall return' (Gen 3:19) or 'Repent, and believe in the Gospel' (Mark 1:15)."
     },
     "c78": {
         "sourceUrl": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
@@ -337,16 +337,16 @@ TRIVIA_SOURCES = {
         "sourcePreview": "GIRM 314-317 / CCC 1379: The tabernacle is an immovable, opaque, secure, and dignified receptacle in which the Holy Eucharist is reserved for communion of the sick, viaticum, and private adoration."
     },
     "c84": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Sanctuary_lamp",
-        "sourcePreview": "GIRM 316: According to traditional usage, an oil lamp or candle with a red glass flame should burn continuously near the tabernacle to indicate and honor the Real Presence of Christ in the reserved Sacrament."
+        "sourceUrl": "https://www.newadvent.org/cathen/01354c.htm",
+        "sourcePreview": "GIRM 316 / New Advent: According to traditional usage, an oil lamp or candle with a red glass flame should burn continuously near the tabernacle to indicate and honor the Real Presence of Christ in the reserved Sacrament."
     },
     "c85": {
         "sourceUrl": "https://www.vatican.va/archive/ENG0015/__P1I.HTM",
         "sourcePreview": "CCC 533: The Holy Family of Nazareth - Jesus, Mary, and Joseph - is the exemplary model and radiant icon of prayer, purity, mutual charity, and domestic life for all Christian households."
     },
     "c86": {
-        "sourceUrl": "https://en.wikipedia.org/wiki/Kiss_of_peace",
-        "sourcePreview": "GIRM 82: The Sign of Peace (Pax) follows the Lord's Prayer and the prayer for peace, where the priest and faithful implore peace and unity for the Church before receiving the Holy Eucharist."
+        "sourceUrl": "https://www.newadvent.org/cathen/08663a.htm",
+        "sourcePreview": "GIRM 82 / New Advent: The Sign of Peace (Pax) follows the Lord's Prayer and the prayer for peace, where the priest and faithful implore peace and unity for the Church before receiving the Holy Eucharist."
     },
     "c87": {
         "sourceUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15051956_haurietis-aquas.html",

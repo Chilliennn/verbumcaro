@@ -93,7 +93,7 @@ describe("Landing Quiz & Trivia Widgets (2x2 Grid)", () => {
     const saintLink = screen.getByRole("link", { name: /St\. Augustine/i });
     expect(saintLink).toBeInTheDocument();
     expect(saintLink).toHaveAttribute("target", "_blank");
-    expect(saintLink).toHaveAttribute("href", expect.stringContaining("wikipedia.org"));
+    expect(saintLink).toHaveAttribute("href", expect.stringContaining("newadvent.org"));
 
     // Check preview button exists and click it to open popover
     const previewBtn = screen.getByTitle("Toggle saint story preview");
@@ -105,7 +105,7 @@ describe("Landing Quiz & Trivia Widgets (2x2 Grid)", () => {
 
     // Preview popover should now be visible
     expect(screen.getByRole("tooltip")).toBeInTheDocument();
-    expect(screen.getByText(/theologian and philosopher of Berber origin/i)).toBeInTheDocument();
+    expect(screen.getByText(/Bishop of Hippo, great Doctor of the Church/i)).toBeInTheDocument();
 
     // Contains link to full story
     const readStoryLink = screen.getByRole("link", { name: /Read Saint's Story/i });
