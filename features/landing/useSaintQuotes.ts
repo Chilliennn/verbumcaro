@@ -4,6 +4,8 @@ export interface SaintQuote {
   index?: number;
   quote: string;
   author: string;
+  link?: string;
+  preview?: string;
 }
 
 interface SaintQuotesPayload {
@@ -14,7 +16,9 @@ interface SaintQuotesPayload {
 const FALLBACK_QUOTE: SaintQuote = {
   index: 1,
   quote: "Pray as though everything depended on God. Work as though everything depended on you.",
-  author: "St. Augustine of Hippo"
+  author: "St. Augustine of Hippo",
+  link: "https://en.wikipedia.org/wiki/Augustine_of_Hippo",
+  preview: "Saint Augustine of Hippo was a theologian and philosopher of Berber origin and the bishop of Hippo Regius in Numidia, Roman North Africa. His writings influenced the development of Western philosophy and Western Christianity."
 };
 
 export function useSaintQuotes() {

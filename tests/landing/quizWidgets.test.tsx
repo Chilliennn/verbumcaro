@@ -1,9 +1,10 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
+import { render, screen, fireEvent, cleanup, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { WidgetsSection } from "../../components/landing/WidgetsSection";
 import { BibleQuizWidget } from "../../components/landing/BibleQuizWidget";
 import { CatholicTriviaWidget } from "../../components/landing/CatholicTriviaWidget";
+import { SaintQuoteWidget } from "../../components/landing/SaintQuoteWidget";
 
 describe("Landing Quiz & Trivia Widgets (2x2 Grid)", () => {
   beforeEach(() => {
@@ -81,5 +82,78 @@ describe("Landing Quiz & Trivia Widgets (2x2 Grid)", () => {
 
     // Score or feedback is displayed
     expect(screen.getByText(/Score:/)).toBeInTheDocument();
+  });
+
+  it("renders saint link and opens story preview popover in SaintQuoteWidget", () => {
+    render(<SaintQuoteWidget />);
+
+    expect(screen.getByText("Words of the Saints")).toBeInTheDocument();
+
+    // Check that saint author is rendered as a link with target="_blank"
+    const saintLink = screen.getByRole("link", { name: /St\. Augustine/i });
+    expect(saintLink).toBeInTheDocument();
+    expect(saintLink).toHaveAttribute("target", "_blank");
+    expect(saintLink).toHaveAttribute("href", expect.stringContaining("wikipedia.org"));
+
+    // Check preview button exists and click it to open popover
+    const previewBtn = screen.getByTitle("Toggle saint story preview");
+    expect(previewBtn).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(previewBtn);
+    });
+
+    // Preview popover should now be visible
+    expect(screen.getByRole("tooltip")).toBeInTheDocument();
+    expect(screen.getByText(/theologian and philosopher of Berber origin/i)).toBeInTheDocument();
+
+    // Contains link to full story
+    const readStoryLink = screen.getByRole("link", { name: /Read Saint's Story/i });
+    expect(readStoryLink).toBeInTheDocument();
+    expect(readStoryLink).toHaveAttribute("target", "_blank");
+
+    // Close preview
+    const closeBtn = screen.getByRole("button", { name: "Close preview" });
+    act(() => {
+      fireEvent.click(closeBtn);
+    });
+
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+  });
+
+  it("interactively opens and closes source teaching preview in CatholicTriviaWidget", () => {
+    render(<CatholicTriviaWidget />);
+
+    const options = screen.getAllByRole("button").filter((b) => b.classList.contains("mcq-option"));
+    act(() => {
+      fireEvent.click(options[1]); // Choose correct option for fallback question
+    });
+
+    // Citation trigger button should be visible
+    const citationBtn = screen.getByTitle("Click to view source teaching preview");
+    expect(citationBtn).toBeInTheDocument();
+    expect(citationBtn).toHaveTextContent("View Source");
+
+    // Click to open source teaching preview popover
+    act(() => {
+      fireEvent.click(citationBtn);
+    });
+
+    expect(citationBtn).toHaveTextContent("Hide Source");
+    expect(screen.getByText(/By the consecration of the bread and wine/i)).toBeInTheDocument();
+
+    // Link to official source document
+    const sourceLink = screen.getByRole("link", { name: /Read Official Source Document/i });
+    expect(sourceLink).toBeInTheDocument();
+    expect(sourceLink).toHaveAttribute("target", "_blank");
+    expect(sourceLink).toHaveAttribute("href", expect.stringContaining("vatican.va"));
+
+    // Click close button inside preview
+    const closeBtn = screen.getByRole("button", { name: "Close preview" });
+    act(() => {
+      fireEvent.click(closeBtn);
+    });
+
+    expect(screen.queryByText(/By the consecration of the bread and wine/i)).not.toBeInTheDocument();
   });
 });

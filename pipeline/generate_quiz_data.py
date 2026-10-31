@@ -1689,14 +1689,19 @@ def main():
         "count": len(CATHOLIC_QUESTIONS),
         "questions": []
     }
+    from scripts.build_trivia_enrichment import TRIVIA_SOURCES
     for idx, q in enumerate(CATHOLIC_QUESTIONS, start=1):
+        qid = f"c{idx}"
+        src = TRIVIA_SOURCES.get(qid, {})
         catholic_payload["questions"].append({
-            "id": f"c{idx}",
+            "id": qid,
             "category": q["category"],
             "question": q["question"],
             "options": q["options"],
             "correctIndex": q["correctIndex"],
             "citation": q["citation"],
+            "sourceUrl": src.get("sourceUrl", ""),
+            "sourcePreview": src.get("sourcePreview", ""),
             "explanation": q["explanation"]
         })
 

@@ -351,3 +351,32 @@ export function parseSearchQuery(query: string): ParsedReference[] {
 
   return references;
 }
+
+export interface ExtractedScripture {
+  reference: string;
+  parsed: ParsedReference;
+  prefixText?: string;
+  suffixText?: string;
+}
+
+export function extractScriptureCitation(citation: string): ExtractedScripture | null {
+  if (!citation) return null;
+  const match = citation.match(/([1-3]?\s*[A-Za-z\u4e00-\u9fa5]+(?:\s+[A-Za-z]+)?\s+\d+[\s:：]+\d+(?:\s*[-–~到至 ]\s*\d+)?)/);
+  if (!match) return null;
+
+  const rawRef = match[1].trim();
+  const parsed = parseReference(rawRef);
+  if (!parsed) return null;
+
+  const matchIndex = match.index ?? 0;
+  const prefixText = citation.slice(0, matchIndex).trim();
+  const suffixText = citation.slice(matchIndex + match[0].length).trim();
+
+  return {
+    reference: rawRef,
+    parsed,
+    prefixText: prefixText || undefined,
+    suffixText: suffixText || undefined
+  };
+}
+

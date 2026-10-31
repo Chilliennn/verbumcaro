@@ -1126,6 +1126,47 @@
       vertical-align: super;
       margin-right: 6px;
     }
+
+    .verse-filter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-family: Inter, sans-serif;
+      font-weight: 600;
+      background: var(--brand-50);
+      color: var(--brand-800);
+      border: 1px solid rgba(185, 28, 28, 0.25);
+      border-radius: 9999px;
+      padding: 3px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+      vertical-align: middle;
+      transition: all 0.15s ease;
+    }
+
+    .verse-filter-badge:hover {
+      background: var(--brand-100);
+      border-color: var(--brand-700);
+    }
+
+    :root[data-theme="dark"] .verse-filter-badge {
+      background: rgba(153, 27, 27, 0.3);
+      color: #fca5a5;
+    }
+
+    .verse-filter-tag {
+      font-size: 11px;
+      font-family: Inter, sans-serif;
+      font-weight: 600;
+      background: var(--stone-100);
+      color: var(--stone-500);
+      border: 1px solid var(--stone-200);
+      border-radius: 4px;
+      padding: 2px 7px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -1392,14 +1433,19 @@
             <rect x="3" y="3" width="18" height="18" rx="2" />
             <line x1="12" y1="3" x2="12" y2="21" />
           </svg>
-          Open in Parallel View
+          Open Verse in Parallel View
         </button>
         <button type="button" class="popover-action-btn btn-primary" id="popoverOpenPanelBtn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
           </svg>
-          Open in Bible Panel
+          Open Verse in Bible Panel
+        </button>
+      </div>
+      <div style="padding: 0 20px 12px; background: var(--stone-50); text-align: right;">
+        <button type="button" id="popoverOpenFullChapterLink" style="background: none; border: none; color: var(--brand-800); font-size: 11.5px; font-weight: 600; cursor: pointer; text-decoration: underline;">
+          Or open entire chapter in reader &rarr;
         </button>
       </div>
     </div>
@@ -2061,15 +2107,15 @@
     const leftTransSelect = document.getElementById("leftPanelTransSelect");
     const rightTransSelect = document.getElementById("rightPanelTransSelect");
 
-    function showReaderView(passageKey, targetVerse, leftTrans, openParallel = false) {
+    function showReaderView(passageKey, targetVerse, leftTrans, openParallel = false, onlySpecificVerse = true) {
       readerPassageKey = passageKey;
       readerTargetVerse = targetVerse;
+      readerOnlySpecificVerse = onlySpecificVerse;
       currentLeftTrans = leftTrans || "catholic_org";
       leftTransSelect.value = currentLeftTrans;
 
       if (openParallel) {
         isParallel = true;
-        // If left is vulgate, default right to catholic_org, else default right to vulgate
         currentRightTrans = currentLeftTrans === "vulgate" ? "catholic_org" : "vulgate";
         rightTransSelect.value = currentRightTrans;
       }
@@ -2081,13 +2127,14 @@
       readerView.classList.add("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
 
-      // Highlight & scroll to verse
-      setTimeout(() => {
-        const targetEl = document.querySelector(`.verse-row[data-verse="${targetVerse}"]`);
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      }, 100);
+      if (!onlySpecificVerse) {
+        setTimeout(() => {
+          const targetEl = document.querySelector(`.verse-row[data-verse="${targetVerse}"]`);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        }, 100);
+      }
     }
 
     function showLandingView() {
@@ -2110,8 +2157,47 @@
 
     function renderReaderPanels() {
       const data = BIBLE_DATABASE[readerPassageKey] || BIBLE_DATABASE["John 1"];
-      document.getElementById("leftPassageTitle").textContent = readerPassageKey;
-      document.getElementById("rightPassageTitle").textContent = readerPassageKey;
+      const title = readerOnlySpecificVerse
+        ? `${readerPassageKey}:${readerTargetVerse}`
+        : readerPassageKey;
+
+      document.getElementById("leftPassageTitle").innerHTML = `
+        ${title}
+        ${readerOnlySpecificVerse ? `
+          <button type="button" class="verse-filter-badge" id="viewFullChapterBtn" title="Click to view full chapter">
+            Specific Verse &bull; View entire chapter &rarr;
+          </button>
+        ` : `
+          <button type="button" class="verse-filter-badge" id="isolateVerseBtn" title="Click to isolate verse">
+            Full Chapter &bull; Focus verse ${readerTargetVerse} only &larr;
+          </button>
+        `}
+      `;
+
+      document.getElementById("rightPassageTitle").innerHTML = `
+        ${title}
+        ${readerOnlySpecificVerse ? `
+          <span class="verse-filter-tag">Verse ${readerTargetVerse} only</span>
+        ` : `
+          <span class="verse-filter-tag">Full Chapter</span>
+        `}
+      `;
+
+      const viewFullChapterBtn = document.getElementById("viewFullChapterBtn");
+      if (viewFullChapterBtn) {
+        viewFullChapterBtn.onclick = () => {
+          readerOnlySpecificVerse = false;
+          renderReaderPanels();
+        };
+      }
+
+      const isolateVerseBtn = document.getElementById("isolateVerseBtn");
+      if (isolateVerseBtn) {
+        isolateVerseBtn.onclick = () => {
+          readerOnlySpecificVerse = true;
+          renderReaderPanels();
+        };
+      }
 
       const leftContent = document.getElementById("leftPanelContent");
       const rightContent = document.getElementById("rightPanelContent");
@@ -2119,7 +2205,12 @@
       leftContent.innerHTML = "";
       rightContent.innerHTML = "";
 
-      Object.keys(data.verses).forEach(vKey => {
+      // KEY LOGIC: When viewing a specific verse, do NOT render the entire chapter!
+      const keysToRender = readerOnlySpecificVerse
+        ? Object.keys(data.verses).filter(vKey => parseInt(vKey, 10) === readerTargetVerse)
+        : Object.keys(data.verses);
+
+      keysToRender.forEach(vKey => {
         const vNum = parseInt(vKey, 10);
         const isTarget = vNum === readerTargetVerse;
 
@@ -2144,19 +2235,27 @@
     // Action buttons inside Popover
     document.getElementById("popoverOpenPanelBtn").addEventListener("click", () => {
       closeVersePopover();
-      showReaderView(activeRefInfo.passageKey, activeRefInfo.verseNum, activeRefInfo.selectedTranslation, false);
+      showReaderView(activeRefInfo.passageKey, activeRefInfo.verseNum, activeRefInfo.selectedTranslation, false, true);
     });
 
     document.getElementById("popoverOpenParallelBtn").addEventListener("click", () => {
       closeVersePopover();
-      showReaderView(activeRefInfo.passageKey, activeRefInfo.verseNum, activeRefInfo.selectedTranslation, true);
+      showReaderView(activeRefInfo.passageKey, activeRefInfo.verseNum, activeRefInfo.selectedTranslation, true, true);
     });
+
+    const popoverOpenFullChapterLink = document.getElementById("popoverOpenFullChapterLink");
+    if (popoverOpenFullChapterLink) {
+      popoverOpenFullChapterLink.addEventListener("click", () => {
+        closeVersePopover();
+        showReaderView(activeRefInfo.passageKey, activeRefInfo.verseNum, activeRefInfo.selectedTranslation, isParallel, false);
+      });
+    }
 
     // Navigation and toolbar listeners
     document.getElementById("brandHomeBtn").addEventListener("click", showLandingView);
     document.getElementById("backToHomeBtn").addEventListener("click", showLandingView);
     document.getElementById("heroReadBtn").addEventListener("click", () => {
-      showReaderView("John 1", 1, "catholic_org", true);
+      showReaderView("John 1", 1, "catholic_org", true, false);
     });
 
     parallelToggleBtn.addEventListener("click", () => {

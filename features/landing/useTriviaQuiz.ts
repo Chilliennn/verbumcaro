@@ -7,6 +7,8 @@ export interface QuizQuestion {
   options: string[];
   correctIndex: number;
   citation: string;
+  sourceUrl?: string;
+  sourcePreview?: string;
   explanation: string;
 }
 
@@ -42,6 +44,8 @@ const FALLBACK_CATHOLIC_QUESTION: QuizQuestion = {
   ],
   correctIndex: 1,
   citation: "Catechism of the Catholic Church (CCC 1376)",
+  sourceUrl: "https://www.vatican.va/archive/ENG0015/__P41.HTM",
+  sourcePreview: "CCC 1376: By the consecration of the bread and wine there takes place a change of the whole substance of the bread into the substance of the body of Christ our Lord and of the whole substance of the wine into the substance of his blood. This change the holy Catholic Church has fittingly and properly called transubstantiation.",
   explanation: "Transubstantiation affirms that the entire substance of bread and wine becomes the Body, Blood, Soul, and Divinity of Christ, while the accidents (sensory appearances) remain."
 };
 

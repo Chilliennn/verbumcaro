@@ -4,7 +4,8 @@ import {
   parseSearchQuery,
   normalizeSearchQuery,
   resolveBookCode,
-  extractLanguageModifiers
+  extractLanguageModifiers,
+  extractScriptureCitation
 } from "../../features/references/parser";
 
 describe("normalizeSearchQuery", () => {
@@ -256,5 +257,39 @@ describe("parseSearchQuery", () => {
     expect(results[0].panel.chapter).toBe(1);
     expect(results[0].translationId).toBe("catholic_org");
     expect(results[0].rightTranslationId).toBe("vulgate");
+  });
+});
+
+describe("extractScriptureCitation", () => {
+  it("extracts clean Scripture citation with suffix notes", () => {
+    const res = extractScriptureCitation("John 1:1 (Vulgate: In principio erat Verbum)");
+    expect(res).not.toBeNull();
+    expect(res?.reference).toBe("John 1:1");
+    expect(res?.parsed.panel.bookCode).toBe("JHN");
+    expect(res?.parsed.panel.chapter).toBe(1);
+    expect(res?.parsed.verse).toBe(1);
+    expect(res?.suffixText).toBe("(Vulgate: In principio erat Verbum)");
+  });
+
+  it("extracts citation with verse range", () => {
+    const res = extractScriptureCitation("Luke 2:25-32 (Nunc Dimittis)");
+    expect(res).not.toBeNull();
+    expect(res?.reference).toBe("Luke 2:25-32");
+    expect(res?.parsed.panel.bookCode).toBe("LUK");
+    expect(res?.parsed.panel.chapter).toBe(2);
+    expect(res?.parsed.verse).toBe(25);
+    expect(res?.parsed.verseEnd).toBe(32);
+  });
+
+  it("extracts citation with prefix text", () => {
+    const res = extractScriptureCitation("CCC 1376 / John 6:51");
+    expect(res).not.toBeNull();
+    expect(res?.reference).toBe("John 6:51");
+    expect(res?.prefixText).toBe("CCC 1376 /");
+  });
+
+  it("returns null for non-Scripture citations", () => {
+    expect(extractScriptureCitation("Council of Trent (1546), CCC 120")).toBeNull();
+    expect(extractScriptureCitation("General Instruction of the Roman Missal (GIRM 346d)")).toBeNull();
   });
 });

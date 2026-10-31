@@ -7,6 +7,7 @@ import { LandingView } from "../components/landing/LandingView";
 import { FontSettingsModal } from "../components/modals/FontSettingsModal";
 import { SearchGuideModal } from "../components/modals/SearchGuideModal";
 import { HubModal } from "../components/modals/HubModal";
+import { VerseCitationPopover, type CitationTarget } from "../components/common/VerseCitationPopover";
 import { MobileDrawer } from "../components/layout/MobileDrawer";
 import { useMobileDrawer } from "../hooks/useMobileDrawer";
 import { bibleRepository } from "../lib/bible/staticRepository";
@@ -25,6 +26,7 @@ export default function App() {
   const [fontModalOpen, setFontModalOpen] = useState(false);
   const [guideModalOpen, setGuideModalOpen] = useState(false);
   const [hubModalOpen, setHubModalOpen] = useState(false);
+  const [citationTarget, setCitationTarget] = useState<CitationTarget | null>(null);
   const [reader, setReader] = useReader();
   const availability = useAvailability();
   const [translations, setTranslations] = useState<Translation[]>([]);
@@ -91,6 +93,57 @@ export default function App() {
     setIsLanding(false);
   }
 
+  function handleOpenCitationPanel(target: CitationTarget, translationId: string) {
+    setCitationTarget(null);
+    const verseFilter = {
+      start: target.verse,
+      end: target.verseEnd ?? target.verse
+    };
+    setReader((state) => ({
+      ...state,
+      parallel: false,
+      left: {
+        ...state.left,
+        translationId,
+        bookCode: target.bookCode,
+        chapter: target.chapter,
+        verseFilter
+      }
+    }));
+    setIsLanding(false);
+  }
+
+  function handleOpenCitationParallel(
+    target: CitationTarget,
+    leftTranslationId: string,
+    rightTranslationId: string
+  ) {
+    setCitationTarget(null);
+    const verseFilter = {
+      start: target.verse,
+      end: target.verseEnd ?? target.verse
+    };
+    setReader((state) => ({
+      ...state,
+      parallel: true,
+      left: {
+        ...state.left,
+        translationId: leftTranslationId,
+        bookCode: target.bookCode,
+        chapter: target.chapter,
+        verseFilter
+      },
+      right: {
+        ...state.right,
+        translationId: rightTranslationId,
+        bookCode: target.bookCode,
+        chapter: target.chapter,
+        verseFilter
+      }
+    }));
+    setIsLanding(false);
+  }
+
   return (
     <AppShell>
       <Header
@@ -149,10 +202,14 @@ export default function App() {
       )}
 
       {isLanding ? (
-        <LandingView onReadScripture={handleReadScripture} />
+        <LandingView
+          onReadScripture={handleReadScripture}
+          onSelectCitation={setCitationTarget}
+        />
       ) : (
         <main className={`main-content ${reader.sync === "verse" ? "scroll-sync" : ""}`}>
           <ReaderToolbar
+            onNavigateHome={navigateHome}
             sync={reader.sync === "verse"}
             parallel={reader.parallel}
             showHeadings={reader.showHeadings}
@@ -244,6 +301,12 @@ export default function App() {
       <HubModal
         isOpen={hubModalOpen}
         onClose={() => setHubModalOpen(false)}
+      />
+      <VerseCitationPopover
+        target={citationTarget}
+        onClose={() => setCitationTarget(null)}
+        onOpenPanel={handleOpenCitationPanel}
+        onOpenParallel={handleOpenCitationParallel}
       />
     </AppShell>
   );

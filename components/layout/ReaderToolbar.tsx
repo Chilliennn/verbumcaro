@@ -5,6 +5,7 @@ interface ReaderToolbarProps {
   onSync: () => void;
   onParallel: () => void;
   onHeadings: () => void;
+  onNavigateHome?: () => void;
 }
 
 export function ReaderToolbar({
@@ -13,10 +14,25 @@ export function ReaderToolbar({
   showHeadings,
   onSync,
   onParallel,
-  onHeadings
+  onHeadings,
+  onNavigateHome
 }: ReaderToolbarProps) {
   return (
     <div className="reader-toolbar">
+      {onNavigateHome && (
+        <button
+          className="toolbar-button back-home-toolbar-btn"
+          onClick={onNavigateHome}
+          type="button"
+          title="Return to home page"
+          aria-label="Return to home page"
+        >
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          <span>Home</span>
+        </button>
+      )}
       <div className="toolbar-actions">
         <button
           className={`toolbar-button ${showHeadings ? "active" : ""}`}

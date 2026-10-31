@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { useCatholicTrivia } from "../../features/landing/useTriviaQuiz";
+import type { CitationTarget } from "../common/VerseCitationPopover";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"];
 
-export function CatholicTriviaWidget() {
+interface CatholicTriviaWidgetProps {
+  onSelectCitation?: (target: CitationTarget) => void;
+}
+
+export function CatholicTriviaWidget({ onSelectCitation: _onSelectCitation }: CatholicTriviaWidgetProps = {}) {
   const {
     question,
     selectedOption,
@@ -15,6 +21,13 @@ export function CatholicTriviaWidget() {
     streak
   } = useCatholicTrivia();
 
+  const [showSourcePreview, setShowSourcePreview] = useState(false);
+
+  function handleNext() {
+    setShowSourcePreview(false);
+    nextQuestion();
+  }
+
   return (
     <div className="widget-card quiz-widget-card">
       <div>
@@ -26,7 +39,7 @@ export function CatholicTriviaWidget() {
           <button
             className="widget-refresh-btn"
             type="button"
-            onClick={nextQuestion}
+            onClick={handleNext}
             title="Next question"
             aria-label="Next question"
           >
@@ -85,8 +98,57 @@ export function CatholicTriviaWidget() {
               )}
             </div>
             <p className="feedback-explanation">{question.explanation}</p>
-            <div className="feedback-citation">
-              <strong>Ref:</strong> {question.citation}
+            <div className="feedback-citation-container">
+              <button
+                type="button"
+                className="citation-trigger-btn"
+                onClick={() => setShowSourcePreview((prev) => !prev)}
+                title="Click to view source teaching preview"
+                aria-expanded={showSourcePreview}
+              >
+                <span className="citation-ref-label">Ref:</span>
+                <span className="citation-ref-text">{question.citation}</span>
+                <span className="citation-preview-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                  </svg>
+                  {showSourcePreview ? "Hide Source" : "View Source"}
+                </span>
+              </button>
+
+              {showSourcePreview && (
+                <div className="source-preview-popover">
+                  <div className="source-preview-header">
+                    <span className="source-preview-title">{question.citation}</span>
+                    <button
+                      type="button"
+                      className="source-preview-close"
+                      onClick={() => setShowSourcePreview(false)}
+                      aria-label="Close preview"
+                    >
+                      &times;
+                    </button>
+                  </div>
+                  <p className="source-preview-body">{question.sourcePreview || question.explanation}</p>
+                  {question.sourceUrl && (
+                    <a
+                      href={question.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="source-preview-link"
+                    >
+                      <span>Read Official Source Document</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -98,7 +160,7 @@ export function CatholicTriviaWidget() {
           {streak > 1 && <span className="streak-pill">🔥 {streak} Streak</span>}
         </div>
         {isAnswered && (
-          <button className="quiz-next-action-btn" type="button" onClick={nextQuestion}>
+          <button className="quiz-next-action-btn" type="button" onClick={handleNext}>
             Next Question &rarr;
           </button>
         )}
@@ -106,4 +168,3 @@ export function CatholicTriviaWidget() {
     </div>
   );
 }
-

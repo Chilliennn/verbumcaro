@@ -1,8 +1,15 @@
+import { useMemo } from "react";
 import { useBibleQuiz } from "../../features/landing/useTriviaQuiz";
+import { extractScriptureCitation } from "../../features/references/parser";
+import type { CitationTarget } from "../common/VerseCitationPopover";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"];
 
-export function BibleQuizWidget() {
+interface BibleQuizWidgetProps {
+  onSelectCitation?: (target: CitationTarget) => void;
+}
+
+export function BibleQuizWidget({ onSelectCitation }: BibleQuizWidgetProps = {}) {
   const {
     question,
     selectedOption,
@@ -14,6 +21,10 @@ export function BibleQuizWidget() {
     totalAnswered,
     streak
   } = useBibleQuiz();
+
+  const extracted = useMemo(() => {
+    return extractScriptureCitation(question.citation);
+  }, [question.citation]);
 
   return (
     <div className="widget-card quiz-widget-card">
@@ -86,7 +97,35 @@ export function BibleQuizWidget() {
             </div>
             <p className="feedback-explanation">{question.explanation}</p>
             <div className="feedback-citation">
-              <strong>Ref:</strong> {question.citation}
+              <strong>Ref:</strong>{" "}
+              {extracted && onSelectCitation ? (
+                <>
+                  {extracted.prefixText && `${extracted.prefixText} `}
+                  <button
+                    type="button"
+                    className="verse-citation-link"
+                    onClick={() =>
+                      onSelectCitation({
+                        reference: extracted.reference,
+                        bookCode: extracted.parsed.panel.bookCode,
+                        chapter: extracted.parsed.panel.chapter,
+                        verse: extracted.parsed.verse ?? 1,
+                        verseEnd: extracted.parsed.verseEnd
+                      })
+                    }
+                    title={`Preview ${extracted.reference}`}
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                    </svg>
+                    <span>{extracted.reference}</span>
+                  </button>
+                  {extracted.suffixText && ` ${extracted.suffixText}`}
+                </>
+              ) : (
+                question.citation
+              )}
             </div>
           </div>
         )}
